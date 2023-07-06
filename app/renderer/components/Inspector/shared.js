@@ -102,6 +102,7 @@ export const SCREENSHOT_INTERACTION_MODE = {
   SWIPE: 'swipe',
   TAP: 'tap',
   GESTURE: 'gesture',
+  ZOOMIN: 'zoomin',
 };
 
 export const APP_MODE = {

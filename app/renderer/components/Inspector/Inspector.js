@@ -26,11 +26,12 @@ import {
   InfoCircleOutlined,
   ThunderboltOutlined,
   HighlightOutlined,
-  CodeOutlined
+  CodeOutlined,
+  ShrinkOutlined
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const {SELECT, SWIPE, TAP} = SCREENSHOT_INTERACTION_MODE;
+const {SELECT, SWIPE, TAP, ZOOMIN} = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -217,6 +218,12 @@ export default class Inspector extends Component {
           <Tooltip title={t('Tap By Coordinates')}>
             <Button icon={<ScanOutlined/>} onClick={() => {this.screenshotInteractionChange(TAP);}}
               type={screenshotInteractionMode === TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
+            />
+          </Tooltip>
+          <Tooltip title={t('Zoom In')}>
+            <Button icon={<ShrinkOutlined/>} onClick={() => {this.screenshotInteractionChange(ZOOMIN);}}
+              type={screenshotInteractionMode === ZOOMIN ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible}
             />
           </Tooltip>
