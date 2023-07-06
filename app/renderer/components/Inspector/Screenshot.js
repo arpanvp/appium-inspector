@@ -14,12 +14,13 @@ const TYPES = {FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, screenshotInteractionMode, swipeStart, swipeEnd,
+  const { screenshot, mjpegScreenshotUrl, screenshotInteractionMode, swipeStart, swipeEnd,
           scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t } = props;
 
   const containerEl = useRef();
   const [x, setX] = useState();
   const [y, setY] = useState();
+
 
   const handleScreenshotClick = async () => {
     const { setSwipeStart, setSwipeEnd, tapTickCoordinates } = props;
@@ -140,7 +141,7 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
-    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl}>
+    <Spin size='large' spinning={false}>
       <div className={styles.innerScreenshotContainer}>
         <div ref={containerEl}
           style={screenshotStyle}
