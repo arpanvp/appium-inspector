@@ -16,7 +16,7 @@ import {
 import { set } from 'lodash';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SWIPE, ZOOMIN, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 /**
@@ -130,7 +130,8 @@ const Screenshot = (props) => {
                 { type: POINTER_MOVE, duration: DURATION_1, x, y },
                 { type: POINTER_DOWN, button: BUTTON },
                 { type: PAUSE, duration: DURATION_2 },
-                { type: POINTER_UP, button: BUTTON }
+                { type: POINTER_UP, button: BUTTON },
+                
               ],
             }
           ],
