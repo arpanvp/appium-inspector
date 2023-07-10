@@ -71,6 +71,8 @@ export const CLEAR_SEARCHED_FOR_ELEMENT_BOUNDS = 'CLEAR_SEARCHED_FOR_ELEMENT_BOU
 
 export const SET_SWIPE_START = 'SET_SWIPE_START';
 export const SET_SWIPE_END = 'SET_SWIPE_END';
+export const SET_SWIPE_START1 = 'SET_SWIPE_START1';
+export const SET_SWIPE_END1 = 'SET_SWIPE_END1';
 export const CLEAR_SWIPE_ACTION = 'CLEAR_SWIPE_ACTION';
 export const PROMPT_KEEP_ALIVE = 'PROMPT_KEEP_ALIVE';
 export const HIDE_PROMPT_KEEP_ALIVE = 'HIDE_PROMPT_KEEP_ALIVE';
@@ -674,13 +676,25 @@ export function setSwipeStart(swipeStartX, swipeStartY) {
   };
 }
 
-export function setSwipeEnd(swipeEndX, swipeEndY) {
+export function setSwipeStart1 (swipeStartX, swipeStartY) {
+  return (dispatch) => {
+    dispatch({type: SET_SWIPE_START1, swipeStartX, swipeStartY});
+  };
+}
+
+export function setSwipeEnd (swipeEndX, swipeEndY) {
   return (dispatch) => {
     dispatch({ type: SET_SWIPE_END, swipeEndX, swipeEndY });
   };
 }
 
-export function clearSwipeAction() {
+export function setSwipeEnd1 (swipeEndX, swipeEndY) {
+  return (dispatch) => {
+    dispatch({type: SET_SWIPE_END1, swipeEndX, swipeEndY});
+  };
+}
+
+export function clearSwipeAction () {
   return (dispatch) => {
     dispatch({ type: CLEAR_SWIPE_ACTION });
   };
