@@ -11,16 +11,13 @@ import B from 'bluebird';
 import styles from './Inspector.css';
 import {
   SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
-  DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP
+  DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP, DEFAULT_ZOOM
 } from './shared';
-import { set } from 'lodash';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
 const { TAP, SELECT, SWIPE, ZOOMIN, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
-import { SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
-         DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_ZOOM } from './shared';
-import { setZoomStart } from '../../actions/Inspector';
+
 
 
 /**
@@ -216,7 +213,7 @@ const Screenshot = (props) => {
       } else if (!swipeStart1) {
         setSwipeStart1(x, y)
       } else if (!swipeEnd1) {
-        setSwipeStart1(x, y)
+        setSwipeEnd1(x, y)
         await B.delay(500); // Wait a second to do the swipe so user can see the SVG line
         await handleDoZoom({x, y},coords); // Pass swipeEnd because otherwise it is not retrieved
       }
@@ -283,8 +280,8 @@ const Screenshot = (props) => {
       ]
     },
     });
-  }
     clearSwipeAction();
+  }
   };
 
 
@@ -419,7 +416,7 @@ const Screenshot = (props) => {
   } else {
     screenshotStyle.cursor = 'pointer';
   }
-  if ([ZOOMIN, ZOOMOUT].includes(screenshotInteractionMode) || selectedTick) {
+  if ([ZOOMIN].includes(screenshotInteractionMode) || selectedTick) {
     screenshotStyle.cursor = 'pointer';
   }
   // const handleDoubleClick = (event) => {
@@ -478,7 +475,7 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
-    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl}>
+    <Spin size='large' spinning={false}>
       <div className={styles.innerScreenshotContainer}>
         <div ref={containerEl}
           style={screenshotStyle}

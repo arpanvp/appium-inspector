@@ -413,6 +413,8 @@ export default function inspector (state = INITIAL_STATE, action) {
         ...state,
         swipeStart: null,
         swipeEnd: null,
+        swipeStart1:null,
+        swipeEnd1:null
       };
 
     case SET_SEARCHED_FOR_ELEMENT_BOUNDS:
