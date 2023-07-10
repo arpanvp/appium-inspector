@@ -132,7 +132,7 @@ export const SCREENSHOT_INTERACTION_MODE = {
   DOUBLE_TAP: 'double tap',
   GESTURE: 'gesture',
   ZOOMIN: 'zoomin',
-  ZOOMOUT: 'zoomout',
+  // ZOOMOUT: 'zoomout',
   SLIDE: 'slide'
 };
 
