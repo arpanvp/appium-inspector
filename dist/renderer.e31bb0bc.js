@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44279;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=36581;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9617,6 +9617,7 @@ const Screenshot = props => {
       BUTTON,
       ORIGIN
     } = _shared.DEFAULT_ZOOM;
+    console.log(`swipeStart.x : ${swipeStart.x}, swipeStart.y : : ${swipeStart.y} , swipeEndLocal1.x : ${swipeEndLocal1.x} , swipeEndLocal1.y : ${swipeEndLocal1.y} , swipeStart1.x : ${swipeStart1.x} , swipeStart1.y : ${swipeStart1.y}, swipeEndLocal.x : ${swipeEndLocal.x} , swipeEndLocal.y : ${swipeEndLocal.y}`);
     if (swipeEndLocal && swipeEndLocal1) {
       await applyClientMethod({
         methodName: SWIPE,
@@ -9846,7 +9847,7 @@ const Screenshot = props => {
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return /*#__PURE__*/_react.default.createElement(_antd.Spin, {
     size: "large",
-    spinning: false
+    spinning: !!methodCallInProgress && !mjpegScreenshotUrl
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default.innerScreenshotContainer
   }, /*#__PURE__*/_react.default.createElement("div", {
@@ -12243,13 +12244,13 @@ class Inspector extends _react.Component {
       window.resizeTo(newWidth, newHeight);
     }
     this.didInitialResize = true;
-    setInterval(() => {
-      this.props.applyClientMethod({
-        methodName: 'getPageSource',
-        ignoreResult: true
-      });
-    }, 8000);
-    // this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    // setInterval(() => {
+    //   this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    // }, 8000);
+    this.props.applyClientMethod({
+      methodName: 'getPageSource',
+      ignoreResult: true
+    });
     this.props.getSavedActionFramework();
     this.props.runKeepAliveLoop();
     window.addEventListener('resize', this.updateSourceTreeWidth);

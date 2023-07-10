@@ -264,6 +264,7 @@ const Screenshot = (props) => {
   const handleDoZoom = async (swipeEndLocal, swipeEndLocal1) => {
     const { clearSwipeAction } = props;
     const { POINTER_NAME1, POINTER_NAME2, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_ZOOM;
+    console.log(`swipeStart.x : ${swipeStart.x}, swipeStart.y : : ${swipeStart.y} , swipeEndLocal1.x : ${swipeEndLocal1.x} , swipeEndLocal1.y : ${swipeEndLocal1.y} , swipeStart1.x : ${swipeStart1.x} , swipeStart1.y : ${swipeStart1.y}, swipeEndLocal.x : ${swipeEndLocal.x} , swipeEndLocal.y : ${swipeEndLocal.y}`)
     if (swipeEndLocal && swipeEndLocal1) {
       await applyClientMethod({
         methodName: SWIPE,
