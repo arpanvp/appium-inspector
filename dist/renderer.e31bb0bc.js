@@ -820,7 +820,7 @@ const SCREENSHOT_INTERACTION_MODE = {
   DOUBLE_TAP: 'double tap',
   GESTURE: 'gesture',
   ZOOMIN: 'zoomin',
-  ZOOMOUT: 'zoomout',
+  // ZOOMOUT: 'zoomout',
   SLIDE: 'slide'
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
@@ -9617,7 +9617,6 @@ const Screenshot = props => {
       BUTTON,
       ORIGIN
     } = _shared.DEFAULT_ZOOM;
-    console.log(`swipeStart.x : ${swipeStart.x}, swipeStart.y : : ${swipeStart.y} , swipeEndLocal1.x : ${swipeEndLocal1.x} , swipeEndLocal1.y : ${swipeEndLocal1.y} , swipeStart1.x : ${swipeStart1.x} , swipeStart1.y : ${swipeStart1.y}, swipeEndLocal.x : ${swipeEndLocal.x} , swipeEndLocal.y : ${swipeEndLocal.y}`);
     if (swipeEndLocal && swipeEndLocal1) {
       await applyClientMethod({
         methodName: SWIPE,
@@ -12244,13 +12243,13 @@ class Inspector extends _react.Component {
       window.resizeTo(newWidth, newHeight);
     }
     this.didInitialResize = true;
-    // setInterval(() => {
-    //   this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
-    // }, 8000);
-    this.props.applyClientMethod({
-      methodName: 'getPageSource',
-      ignoreResult: true
-    });
+    setInterval(() => {
+      this.props.applyClientMethod({
+        methodName: 'getPageSource',
+        ignoreResult: true
+      });
+    }, 8000);
+    // this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
     this.props.getSavedActionFramework();
     this.props.runKeepAliveLoop();
     window.addEventListener('resize', this.updateSourceTreeWidth);
