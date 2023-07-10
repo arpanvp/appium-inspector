@@ -1,4 +1,4 @@
-import { DEFAULT_TAP, DEFAULT_SWIPE } from '../../components/Inspector/shared';
+import { DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_ZOOM, SCREENSHOT_INTERACTION_MODE } from '../../components/Inspector/shared';
 
 export default class Framework {
 
@@ -21,8 +21,16 @@ export default class Framework {
   }
 
   getSwipeCoordinatesFromPointerActions (pointerActions) {
-    const pointerMoveActionStart = pointerActions[DEFAULT_SWIPE.POINTER_NAME][0];
-    const pointerMoveActionEnd = pointerActions[DEFAULT_SWIPE.POINTER_NAME][2];
+    let pointerMoveActionStart;
+    let pointerMoveActionEnd;
+    if (SCREENSHOT_INTERACTION_MODE.SWIPE) {
+      pointerMoveActionStart  = pointerActions[DEFAULT_SWIPE.POINTER_NAME][0];
+      pointerMoveActionEnd  = pointerActions[DEFAULT_SWIPE.POINTER_NAME][2];
+    }
+    if (SCREENSHOT_INTERACTION_MODE.ZOOMIN) {
+      pointerMoveActionStart  = pointerActions[DEFAULT_ZOOM.POINTER_NAME1][0];
+      pointerMoveActionEnd  = pointerActions[DEFAULT_ZOOM.POINTER_NAME2][2];
+    }
 
     return {
       x1: pointerMoveActionStart.x,

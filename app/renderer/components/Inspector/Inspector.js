@@ -35,7 +35,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
+const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP,ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -129,7 +129,10 @@ export default class Inspector extends Component {
       window.resizeTo(newWidth, newHeight);
     }
     this.didInitialResize = true;
-    this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    setInterval(() => {
+      this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    }, 8000);
+    // this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
     this.props.getSavedActionFramework();
     this.props.runKeepAliveLoop();
     window.addEventListener('resize', this.updateSourceTreeWidth);
@@ -239,7 +242,11 @@ export default class Inspector extends Component {
           </Tooltip>
           <Tooltip title={t('Double Tap')}>
             <Button icon={<UpCircleOutlined/>} onClick={() => {this.screenshotInteractionChange(DOUBLE_TAP);}}
-              type={screenshotInteractionMode === DOUBLE_TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              type={screenshotInteractionMode === DOUBLE_TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT}/>
+          </Tooltip>
+          <Tooltip title={t('Zoom In and Zoom Out')}>
+            <Button icon={<ShrinkOutlined/>} onClick={() => {this.screenshotInteractionChange(ZOOMIN);}}
+              type={screenshotInteractionMode === ZOOMIN ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible}
             />
           </Tooltip>

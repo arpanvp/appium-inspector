@@ -80,6 +80,16 @@ export const DEFAULT_SWIPE = {
   ORIGIN: 'viewport'
 };
 
+export const DEFAULT_ZOOM = {
+  POINTER_NAME1: 'finger1',
+  POINTER_NAME2: 'finger2',
+  DURATION_1: 0,
+  DURATION_2: 750,
+  BUTTON: 0,
+  ORIGIN: 'viewport'
+};
+
+
 export const DEFAULT_TAP = {
   POINTER_NAME: 'finger1',
   DURATION_1: 0,
@@ -121,6 +131,8 @@ export const SCREENSHOT_INTERACTION_MODE = {
   DRAG_AND_DROP: 'drag_and_drop',
   DOUBLE_TAP: 'double tap',
   GESTURE: 'gesture',
+  ZOOMIN: 'zoomin',
+  ZOOMOUT: 'zoomout'
 };
 
 export const APP_MODE = {
