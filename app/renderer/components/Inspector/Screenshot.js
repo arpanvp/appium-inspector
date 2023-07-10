@@ -477,7 +477,7 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
-    <Spin size='large' spinning={false}>
+    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl}>
       <div className={styles.innerScreenshotContainer}>
         <div ref={containerEl}
           style={screenshotStyle}
