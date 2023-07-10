@@ -35,7 +35,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP,ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
+const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 

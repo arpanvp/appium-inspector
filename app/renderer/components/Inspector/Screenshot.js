@@ -6,7 +6,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import HighlighterRects from './HighlighterRects';
-import { Spin, Tooltip} from 'antd';
+import { Spin, Tooltip } from 'antd';
 import B from 'bluebird';
 import styles from './Inspector.css';
 import {
@@ -15,7 +15,7 @@ import {
 } from './shared';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -24,7 +24,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, screenshotInteractionMode, swipeStart,swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
   console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
@@ -64,7 +64,7 @@ const Screenshot = (props) => {
   const [y, setY] = useState();
   const [isLongPress, setIsLongPress] = useState(false);
 
-  const [coords,setCoords] = useState({})
+  const [coords, setCoords] = useState({});
   // const [dragging, setDragging] = useState(false);
   // const [coords, setCoords] = useState(false);
   // const [state, setState] = useState({});
@@ -171,7 +171,7 @@ const Screenshot = (props) => {
                 { type: POINTER_DOWN, button: BUTTON },
                 { type: PAUSE, duration: DURATION_2 },
                 { type: POINTER_UP, button: BUTTON },
-                
+
               ],
             }
           ],
@@ -207,16 +207,16 @@ const Screenshot = (props) => {
       } else if (!swipeEnd) {
         setSwipeEnd(x, y);
         await B.delay(500); // Wait a second to do the swipe so user can see the SVG line
-        setCoords({x,y})
+        setCoords({ x, y });
         // setTimeout(() => {
         //  handleDoZoom({x, y});
         // }, 2000);
       } else if (!swipeStart1) {
-        setSwipeStart1(x, y)
+        setSwipeStart1(x, y);
       } else if (!swipeEnd1) {
-        setSwipeEnd1(x, y)
+        setSwipeEnd1(x, y);
         await B.delay(500); // Wait a second to do the swipe so user can see the SVG line
-        await handleDoZoom({x, y},coords); // Pass swipeEnd because otherwise it is not retrieved
+        await handleDoZoom({ x, y }, coords); // Pass swipeEnd because otherwise it is not retrieved
       }
     }
   };
@@ -265,24 +265,25 @@ const Screenshot = (props) => {
     const { clearSwipeAction } = props;
     const { POINTER_NAME1, POINTER_NAME2, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_ZOOM;
     if (swipeEndLocal && swipeEndLocal1) {
-    await applyClientMethod({
-      methodName: SWIPE,
-      args: {[POINTER_NAME1]: [
-        {type: POINTER_MOVE, duration: DURATION_1, x: swipeStart.x, y: swipeStart.y},
-        {type: POINTER_DOWN, button: BUTTON},
-        {type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal1.x, y: swipeEndLocal1.y},
-        {type: POINTER_UP, button: BUTTON}
-      ],
-      [POINTER_NAME2]: [
-        {type: POINTER_MOVE, duration: DURATION_1, x: swipeStart1.x, y: swipeStart1.y},
-        {type: POINTER_DOWN, button: BUTTON},
-        {type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal.x, y: swipeEndLocal.y},
-        {type: POINTER_UP, button: BUTTON}
-      ]
-    },
-    });
-    clearSwipeAction();
-  }
+      await applyClientMethod({
+        methodName: SWIPE,
+        args: {
+          [POINTER_NAME1]: [
+            { type: POINTER_MOVE, duration: DURATION_1, x: swipeStart.x, y: swipeStart.y },
+            { type: POINTER_DOWN, button: BUTTON },
+            { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal1.x, y: swipeEndLocal1.y },
+            { type: POINTER_UP, button: BUTTON }
+          ],
+          [POINTER_NAME2]: [
+            { type: POINTER_MOVE, duration: DURATION_1, x: swipeStart1.x, y: swipeStart1.y },
+            { type: POINTER_DOWN, button: BUTTON },
+            { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal.x, y: swipeEndLocal.y },
+            { type: POINTER_UP, button: BUTTON }
+          ]
+        },
+      });
+      clearSwipeAction();
+    }
   };
 
 
