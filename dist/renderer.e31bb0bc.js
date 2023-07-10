@@ -1,4 +1,4 @@
-process.env.HMR_PORT=37129;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=44279;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -5184,17 +5184,13 @@ function callClientMethod(params) {
   return async (dispatch, getState) => {
     console.log("🚀 ~ file: Inspector.js:803 ~ return ~ params:", params);
     console.log("🚀 ~ file: Inspector.js:804 ~ return ~ getState", getState());
-    // const { selectedElement } = getState().inspector;
-    // console.log("🚀 ~ file: Inspector.js:806 ~ return ~ Table:", selectedElement);
-    // if (selectedElement) {
-    //   console.log("🚀 ~ file: Inspector.js:808 ~ return ~ selectedData:", selectedElement);
-    // }
     const {
       driver,
       appMode,
       mjpegScreenshotUrl,
       isSourceRefreshOn,
-      selectedElement
+      selectedElement,
+      screenshotInteractionMode
     } = getState().inspector;
     console.log("🚀 ~ file: Inspector.js:811 ~ return ~ selectedElement:", selectedElement);
     const {
@@ -5223,7 +5219,8 @@ function callClientMethod(params) {
     let postdata = {
       "session_id": driver.sessionId,
       params,
-      selectedElement
+      selectedElement,
+      'step-name': screenshotInteractionMode
     };
     if (postdata.params.methodName === "click") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
@@ -5253,8 +5250,23 @@ function callClientMethod(params) {
       }).catch(error => {
         console.error("API error:", error);
       });
+
+      //check the if the tap then it would be longpress , double tap, tap and drag and drop
     } else if (postdata.params.methodName === "tap") {
       delete postdata.selectedElement;
+      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(postdata)
+      }).then(response => {
+        console.log("API response:", response);
+      }).catch(error => {
+        console.error("API error:", error);
+      });
+    } else if (postdata.params.methodName === "sendKeys") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
       await fetch("https://apprecord.testing24x7.ai/appAction", {
         method: "POST",
@@ -9239,10 +9251,10 @@ const {
   TAP,
   SELECT,
   SWIPE,
-  ZOOMIN,
   LONGPRESS,
   DRAG_AND_DROP,
-  DOUBLE_TAP
+  DOUBLE_TAP,
+  ZOOMIN
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
