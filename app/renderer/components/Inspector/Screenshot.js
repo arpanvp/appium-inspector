@@ -419,43 +419,8 @@ const Screenshot = (props) => {
     screenshotStyle.cursor = 'pointer';
   }
   if ([ZOOMIN].includes(screenshotInteractionMode) || selectedTick) {
-    screenshotStyle.cursor = 'pointer';
+    screenshotStyle.cursor = 'crosshair';
   }
-  // const handleDoubleClick = (event) => {
-  //   // eslint-disable-next-line no-console
-  //   console.log('🚀 ~ file: Screenshot.js:137 ~ handleDoubleClick ~ event:', event);
-  //   if (screenshotInteractionMode === ZOOMIN) {
-  //     const svgElement = event.target;
-  //     const currentZoomLevel = zoomLevel;
-  //     const newZoomLevel = currentZoomLevel + 0.2; // Toggle between zoom levels
-
-  //     if (svgElement) {
-  //       const svgRect = svgElement.getBoundingClientRect();
-  //       const offsetX = event.clientX - svgRect.left;
-  //       const offsetY = event.clientY - svgRect.top;
-
-  //       svgElement.style.transformOrigin = `${offsetX}px ${offsetY}px`;
-  //       svgElement.style.transform = `scale(${newZoomLevel})`;
-  //     }
-
-  //     setZoomLevel(newZoomLevel);
-  //   }
-  //   if (screenshotInteractionMode === ZOOMOUT) {
-  //     const svgElement = event.target;
-  //     const currentZoomLevel = zoomLevel;
-  //     const newZoomLevel = currentZoomLevel - 0.2; // Toggle between zoom levels
-
-  //     if (svgElement) {
-  //       const svgRect = svgElement.getBoundingClientRect();
-  //       const offsetX = event.clientX - svgRect.left;
-  //       const offsetY = event.clientY - svgRect.top;
-
-  //       svgElement.style.transformOrigin = `${offsetX}px ${offsetY}px`;
-  //       svgElement.style.transform = `scale(${newZoomLevel})`;
-  //     }
-  //     setZoomLevel(newZoomLevel);
-  //   }
-  // };
 
 
   let swipeInstructions = null;

@@ -24,6 +24,7 @@ import {
   DownloadOutlined,
   FileTextOutlined,
   TagOutlined,
+  SlidersOutlined,
   InfoCircleOutlined,
   ThunderboltOutlined,
   HighlightOutlined,
@@ -35,7 +36,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
+const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -250,10 +251,15 @@ export default class Inspector extends Component {
               disabled={isGestureEditorVisible}
             />
           </Tooltip>
+          <Tooltip title={t('Slider')}>
+            <Button icon={<SlidersOutlined />} onClick={() => {this.screenshotInteractionChange(SLIDE);}}
+              type={screenshotInteractionMode === SLIDE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
+            />
+          </Tooltip>
         </ButtonGroup>
       </Space>
     </div>;
-
     let main = <div className={InspectorStyles['inspector-main']} ref={(el) => {this.screenAndSourceEl = el;}}>
       <div id='screenshotContainer' className={InspectorStyles['screenshot-container']} ref={(el) => {this.screenshotEl = el;}}>
         {screenShotControls}
