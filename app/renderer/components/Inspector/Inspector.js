@@ -130,10 +130,10 @@ export default class Inspector extends Component {
       window.resizeTo(newWidth, newHeight);
     }
     this.didInitialResize = true;
-    setInterval(() => {
-      this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
-    }, 8000);
-    // this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    // setInterval(() => {
+    //   this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    // }, 8000);
+    this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
     this.props.getSavedActionFramework();
     this.props.runKeepAliveLoop();
     window.addEventListener('resize', this.updateSourceTreeWidth);
