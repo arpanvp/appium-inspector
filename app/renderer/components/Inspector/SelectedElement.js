@@ -1,3 +1,8 @@
+/* eslint-disable no-console */
+/* eslint-disable quotes */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-unused-vars */
+
 import React, { useRef } from 'react';
 import _ from 'lodash';
 import { getLocators } from './shared';
@@ -31,9 +36,13 @@ const selectedElementTableCell = (text, copyToClipBoard) => {
  * be called on the elements (tap, sendKeys)
  */
 const SelectedElement = (props) => {
+  console.log('props inside the selected Element!!', props);
+  console.log('props.hoveredElement$$$$$$$4!!', props.hoveredElement);
   const { applyClientMethod, contexts, currentContext, getFindElementsTimes, findElementsExecutionTimes,
           isFindingElementsTimes, selectedElement, selectedElementId, sourceXML,
-          elementInteractionsNotAvailable, selectedElementSearchInProgress, t } = props;
+          elementInteractionsNotAvailable, selectedElementSearchInProgress, t } = props; 
+
+  console.log('selectedElementId inside the selected Element!!', selectedElementId);
 
   const sendKeys = useRef();
 
@@ -79,6 +88,7 @@ const SelectedElement = (props) => {
     name: key,
   }));
   dataSource.unshift({key: 'elementId', value: selectedElementId, name: 'elementId'});
+  // console.log('dataSource in the dataSource', dataSource);
 
   // Get the columns for the strategies table
   let findColumns = [{
@@ -157,6 +167,10 @@ const SelectedElement = (props) => {
       find: 'xpath',
       selector: xpath,
     });
+    // console.log('findDataSource in the Xpath condition####', findDataSource);
+    //add the datasource to the findDataSource
+    let sendData = findDataSource.concat(dataSource);
+    console.log("🚀 ~ file: SelectedElement.js:169 ~ SelectedElement ~ sendData:", sendData);
   }
 
   // Replace table data with table data that has the times

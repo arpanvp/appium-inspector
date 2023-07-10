@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { debounce } from 'lodash';
 import { SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE } from './shared';
@@ -27,11 +28,14 @@ import {
   ThunderboltOutlined,
   HighlightOutlined,
   CodeOutlined,
-  ShrinkOutlined
+  ShrinkOutlined,
+  DragOutlined,
+  InfoOutlined,
+  UpCircleOutlined
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const {SELECT, SWIPE, TAP, ZOOMIN} = SCREENSHOT_INTERACTION_MODE;
+const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -221,9 +225,21 @@ export default class Inspector extends Component {
               disabled={isGestureEditorVisible}
             />
           </Tooltip>
-          <Tooltip title={t('Zoom In')}>
-            <Button icon={<ShrinkOutlined/>} onClick={() => {this.screenshotInteractionChange(ZOOMIN);}}
-              type={screenshotInteractionMode === ZOOMIN ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+          <Tooltip title={t('LongPress')}>
+            <Button icon={<InfoOutlined/>} onClick={() => {this.screenshotInteractionChange(LONGPRESS);}}
+              type={screenshotInteractionMode === LONGPRESS ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
+            />
+          </Tooltip>
+          <Tooltip title={t('drag_and_drop')}>
+            <Button icon={<DragOutlined/>} onClick={() => {this.screenshotInteractionChange(DRAG_AND_DROP);}}
+              type={screenshotInteractionMode === DRAG_AND_DROP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
+            />
+          </Tooltip>
+          <Tooltip title={t('Double Tap')}>
+            <Button icon={<UpCircleOutlined/>} onClick={() => {this.screenshotInteractionChange(DOUBLE_TAP);}}
+              type={screenshotInteractionMode === DOUBLE_TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible}
             />
           </Tooltip>
@@ -252,7 +268,7 @@ export default class Inspector extends Component {
           items={[{
             label: t('Source'), key: INTERACTION_MODE.SOURCE, children:
             <div className='action-row'>
-              <div className='action-col'>
+              {/* <div className='action-col'>
                 <Card title={<span><FileTextOutlined /> {t('App Source')} </span>}
                   extra={
                     <span>
@@ -269,7 +285,7 @@ export default class Inspector extends Component {
                   }>
                   <Source {...this.props} />
                 </Card>
-              </div>
+              </div> */}
               <div id='selectedElementContainer'
                 className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
                 <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}

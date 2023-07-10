@@ -1,30 +1,76 @@
-import React, { useRef, useState } from 'react';
+/* eslint-disable space-in-parens */
+/* eslint-disable no-console */
+/* eslint-disable quotes */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-unused-vars */
+
+import React, { useRef, useState, useEffect } from 'react';
 import HighlighterRects from './HighlighterRects';
 import { Spin, Tooltip } from 'antd';
 import B from 'bluebird';
 import styles from './Inspector.css';
-import { SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
-         DEFAULT_TAP, DEFAULT_SWIPE } from './shared';
+import {
+  SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
+  DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP
+} from './shared';
+import { set } from 'lodash';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SWIPE } = SCREENSHOT_INTERACTION_MODE;
-const TYPES = {FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed'};
+const { TAP, SELECT, SWIPE, ZOOMIN, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP } = SCREENSHOT_INTERACTION_MODE;
+const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 /**
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, screenshotInteractionMode, swipeStart, swipeEnd,
-          scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, screenshotInteractionMode, swipeStart, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
+  console.log("inside the screenshot function props!!!", props);
+  const [xLongPress, setXLongPress] = useState(null);
+  const [yLongPress, setYLongPress] = useState(null);
+
+  useEffect(() => {
+    if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
+      const coordinatesString = hoveredElement.attributes.bounds;
+      const coordinatesArray = coordinatesString.match(/\d+/g); // Extract all numbers from the string
+      if (coordinatesArray.length >= 4) {
+        const x1 = parseInt(coordinatesArray[0], 10);
+        const y1 = parseInt(coordinatesArray[1], 10);
+        const x2 = parseInt(coordinatesArray[2], 10);
+        const y2 = parseInt(coordinatesArray[3], 10);
+
+        console.log("x1:", x1);
+        console.log("y1:", y1);
+        console.log("x2:", x2);
+        console.log("y2:", y2);
+        const centerX = Math.round(x2);
+        const centerY = Math.round(y2);
+        // setX(centerX);
+        // setY(centerY);
+        setXLongPress(centerX);
+        setYLongPress(centerY);
+      }
+
+    }
+  }, [hoveredElement]);
+
+  if (hoveredElement) {
+    console.log("hoveredElement.attributes.bounds:", hoveredElement.attributes.bounds);
+  }
+
+
 
   const containerEl = useRef();
   const [x, setX] = useState();
   const [y, setY] = useState();
+  const [isLongPress, setIsLongPress] = useState(false);
+
 
 
   const handleScreenshotClick = async () => {
     const { setSwipeStart, setSwipeEnd, tapTickCoordinates } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON } = DEFAULT_TAP;
+    const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
+
 
     if (screenshotInteractionMode === TAP) {
       applyClientMethod({
@@ -32,14 +78,78 @@ const Screenshot = (props) => {
         args: [
           {
             [POINTER_NAME]: [
-              {type: POINTER_MOVE, duration: DURATION_1, x, y},
-              {type: POINTER_DOWN, button: BUTTON},
-              {type: PAUSE, duration: DURATION_2},
-              {type: POINTER_UP, button: BUTTON}
+              { type: POINTER_MOVE, duration: DURATION_1, x, y },
+              { type: POINTER_DOWN, button: BUTTON },
+              { type: PAUSE, duration: DURATION_2 },
+              { type: POINTER_UP, button: BUTTON }
             ],
           }
         ],
       });
+    } else if (screenshotInteractionMode === LONGPRESS) {
+      console.log("inside the condition of the longpress!!");
+      console.log('xxxxxxxxxx: YYYYYYYYYYY: from the long', xLongPress, yLongPress);
+      console.log('xxxxxxxxxx: YYYYYYYYYYY: after the set', x, y);
+      setTimeout(() => {
+        applyClientMethod({
+          methodName: TAP,
+          args: [
+            {
+              [LONGPRESS_POINTER_NAME]: [
+                { type: POINTER_MOVE, duration: LONGPRESS_DURATION_1, x, y },
+                { type: POINTER_DOWN, button: LONGPRESS_BUTTON },
+                { type: PAUSE, duration: LONGPRESS_DURATION_2 },
+                { type: POINTER_UP, button: LONGPRESS_BUTTON }
+              ],
+            }
+          ],
+        });
+      }, LONGPRESS_DURATION_2);
+    } else if (screenshotInteractionMode === DOUBLE_TAP) {
+      console.log("inside the double tap function!!!");
+      applyClientMethod({
+        methodName: TAP,
+        args: [
+          {
+            [POINTER_NAME]: [
+              { type: POINTER_MOVE, duration: DURATION_1, x, y },
+              { type: POINTER_DOWN, button: BUTTON },
+              { type: PAUSE, duration: DURATION_2 },
+              { type: POINTER_UP, button: BUTTON }
+            ],
+          }
+        ],
+      });
+      const delay = 200;
+      setTimeout(() => {
+        applyClientMethod({
+          methodName: TAP,
+          args: [
+            {
+              [POINTER_NAME]: [
+                { type: POINTER_MOVE, duration: DURATION_1, x, y },
+                { type: POINTER_DOWN, button: BUTTON },
+                { type: PAUSE, duration: DURATION_2 },
+                { type: POINTER_UP, button: BUTTON }
+              ],
+            }
+          ],
+        });
+      }, delay);
+
+    } else if (screenshotInteractionMode === DRAG_AND_DROP) {
+      console.log("inside the drage and drop condition value!!!!!!");
+      if (!swipeStart) {
+        setSwipeStart(x, y);
+      } else if (!swipeEnd) {
+        setSwipeEnd(x, y);
+        if (isLongPress) {
+          // await B.delay(500);
+          // await applyClientMethod({ methodName: SWIPE, args: { /* ... */ } });
+          // await handleDoDragAndDrop({ x, y });
+        }
+        handleDragStart({ x, y });
+      }
     } else if (selectedTick) {
       tapTickCoordinates(x, y);
     } else if (screenshotInteractionMode === SWIPE) {
@@ -47,29 +157,54 @@ const Screenshot = (props) => {
         setSwipeStart(x, y);
       } else if (!swipeEnd) {
         setSwipeEnd(x, y);
-        await B.delay(500); // Wait a second to do the swipe so user can see the SVG line
-        await handleDoSwipe({x, y}); // Pass swipeEnd because otherwise it is not retrieved
+        await B.delay(500);
+        await handleDoSwipe({ x, y });
       }
     }
   };
+
+
+  const handleLongPress = () => {
+    setIsLongPress(true);
+  };
+
 
   const handleDoSwipe = async (swipeEndLocal) => {
     const { clearSwipeAction } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
     await applyClientMethod({
       methodName: SWIPE,
-      args: {[POINTER_NAME]: [
-        {type: POINTER_MOVE, duration: DURATION_1, x: swipeStart.x, y: swipeStart.y},
-        {type: POINTER_DOWN, button: BUTTON},
-        {type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal.x, y: swipeEndLocal.y},
-        {type: POINTER_UP, button: BUTTON}
-      ]},
+      args: {
+        [POINTER_NAME]: [
+          { type: POINTER_MOVE, duration: DURATION_1, x: swipeStart.x, y: swipeStart.y },
+          { type: POINTER_DOWN, button: BUTTON },
+          { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal.x, y: swipeEndLocal.y },
+          { type: POINTER_UP, button: BUTTON }
+        ]
+      },
     });
     clearSwipeAction();
   };
 
+  const handleDoDragAndDrop = async (swipeEndLocal) => {
+    console.log("value of the x and y", swipeEndLocal);
+    const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_DRAG_AND_DROP;
+    await applyClientMethod({
+      methodName: TAP,
+      args: {
+        [POINTER_NAME]: [
+          { type: POINTER_MOVE, duration: DURATION_1, origin: ORIGIN, x: swipeStart.x, y: swipeStart.y },
+          { type: POINTER_DOWN, button: BUTTON },
+          { type: PAUSE, duration: DURATION_2 },
+          { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal.x, y: swipeEndLocal.y },
+          { type: POINTER_UP, button: BUTTON }
+        ]
+      },
+    });
+  };
+
   const handleMouseMove = (e) => {
-    if (screenshotInteractionMode !== SELECT) {
+    if (screenshotInteractionMode !== (SELECT || LONGPRESS)) {
       const offsetX = e.nativeEvent.offsetX;
       const offsetY = e.nativeEvent.offsetY;
       const newX = offsetX * scaleRatio;
@@ -83,12 +218,38 @@ const Screenshot = (props) => {
     setX(null);
     setY(null);
   };
+  const handleDragStart = (startPoint) => {
+    console.log('Drag start:', startPoint);
+
+  };
+
+  const handleDrop = (event) => {
+    // event.preventDefault();
+    const { offsetX, offsetY } = event.nativeEvent;
+    const dropX = offsetX * scaleRatio;
+    const dropY = offsetY * scaleRatio;
+    const roundedDropX = Math.round(dropX);
+    const roundedDropY = Math.round(dropY);
+    console.log('Drop position:', { x: roundedDropX, y: roundedDropY });
+    setX(roundedDropX);
+    setY(roundedDropY);
+
+    setTimeout(async () => {
+      await handleDoDragAndDrop({ x: roundedDropX, y: roundedDropY });
+    }, 1000);
+
+  };
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
 
   // retrieve and format gesture for svg drawings
   const getGestureCoordinates = () => {
     const { showGesture } = props;
     const { FILLED, NEW_DASHED, WHOLE, DASHED } = TYPES;
-    const defaultTypes = {pointerDown: WHOLE, pointerUp: DASHED};
+    const defaultTypes = { pointerDown: WHOLE, pointerUp: DASHED };
 
     if (!showGesture) { return null; }
     return showGesture.map((pointer) => {
@@ -100,11 +261,11 @@ const Screenshot = (props) => {
         const len = temp.length;
         type = tick.type !== POINTER_MOVE ? defaultTypes[tick.type] : type;
         if (tick.type === POINTER_MOVE && tick.x !== undefined && tick.y !== undefined) {
-          temp.push({id: tick.id, type, x: tick.x, y: tick.y, color: pointer.color});
+          temp.push({ id: tick.id, type, x: tick.x, y: tick.y, color: pointer.color });
         }
         if (len === 0) {
           if (tick.type === POINTER_DOWN) {
-            temp.push({id: tick.id, type: FILLED, x: 0, y: 0, color: pointer.color});
+            temp.push({ id: tick.id, type: FILLED, x: 0, y: 0, color: pointer.color });
           }
         } else {
           if (tick.type === POINTER_DOWN && temp[len - 1].type === DASHED) {
@@ -123,6 +284,10 @@ const Screenshot = (props) => {
   const screenshotStyle = {};
   if ([TAP, SWIPE].includes(screenshotInteractionMode) || selectedTick) {
     screenshotStyle.cursor = 'crosshair';
+  } else if ([DRAG_AND_DROP].includes(screenshotInteractionMode) || selectedTick) {
+    screenshotStyle.cursor = 'move';
+  } else {
+    screenshotStyle.cursor = 'pointer';
   }
 
   let swipeInstructions = null;
@@ -141,23 +306,28 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
-    <Spin size='large' spinning={false}>
+    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl}>
       <div className={styles.innerScreenshotContainer}>
         <div ref={containerEl}
           style={screenshotStyle}
-          onClick={handleScreenshotClick}
+          onMouseDown={handleScreenshotClick}
           onMouseMove={handleMouseMove}
           onMouseOut={handleMouseOut}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
           className={styles.screenshotBox}>
           {screenshotInteractionMode !== SELECT && <div className={styles.coordinatesContainer}>
-            <p>{t('xCoordinate', {x})}</p>
-            <p>{t('yCoordinate', {y})}</p>
+            <p>{t('xCoordinate', { x })}</p>
+            <p>{t('yCoordinate', { y })}</p>
           </div>}
           {swipeInstructions && <Tooltip open={true} title={swipeInstructions} placement="topLeft">{screenImg}</Tooltip>}
           {!swipeInstructions && screenImg}
           {screenshotInteractionMode === SELECT && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
           }
+          {/* {screenshotInteractionMode === LONGPRESS && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
+          } */}
           {screenshotInteractionMode === SWIPE &&
             <svg className={styles.swipeSvg}>
               {swipeStart && !swipeEnd && <circle
@@ -187,14 +357,14 @@ const Screenshot = (props) => {
                       y1={pointer[index - 1].y / scaleRatio}
                       x2={tick.x / scaleRatio}
                       y2={tick.y / scaleRatio}
-                      style={{stroke: tick.color}} />
+                      style={{ stroke: tick.color }} />
                     }
                     <circle
                       className={styles[`circle-${tick.type}`]}
                       key={`${tick.id}.circle`}
                       cx={tick.x / scaleRatio}
                       cy={tick.y / scaleRatio}
-                      style={tick.type === TYPES.FILLED ? {fill: tick.color} : {stroke: tick.color}} />
+                      style={tick.type === TYPES.FILLED ? { fill: tick.color } : { stroke: tick.color }} />
                   </React.Fragment>
                 )
               )}

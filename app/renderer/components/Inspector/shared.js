@@ -87,6 +87,22 @@ export const DEFAULT_TAP = {
   BUTTON: 0
 };
 
+export const DEFAULT_LONGPRESS = {
+  LONGPRESS_POINTER_NAME: 'finger1',
+  LONGPRESS_DURATION_1: 0,
+  LONGPRESS_DURATION_2: 1000,
+  LONGPRESS_BUTTON: 0
+};
+
+export const DEFAULT_DRAG_AND_DROP = {
+  POINTER_NAME: 'finger1',
+  DURATION_1: 0,
+  DURATION_2: 750,
+  BUTTON: 0,
+  ORIGIN: 'viewport'
+};
+
+
 // 3 Types of Centroids:
 // CENTROID is the circle/square displayed on the screen
 // EXPAND is the +/- circle displayed on the screen
@@ -101,8 +117,10 @@ export const SCREENSHOT_INTERACTION_MODE = {
   SELECT: 'select',
   SWIPE: 'swipe',
   TAP: 'tap',
+  LONGPRESS: 'longpress',
+  DRAG_AND_DROP: 'drag_and_drop',
+  DOUBLE_TAP: 'double tap',
   GESTURE: 'gesture',
-  ZOOMIN: 'zoomin',
 };
 
 export const APP_MODE = {
