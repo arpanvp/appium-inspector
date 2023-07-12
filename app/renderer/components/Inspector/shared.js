@@ -133,7 +133,9 @@ export const SCREENSHOT_INTERACTION_MODE = {
   GESTURE: 'gesture',
   ZOOMIN: 'zoomin',
   // ZOOMOUT: 'zoomout',
-  SLIDE: 'slide'
+  SLIDE: 'slide',
+  SLIDE_SWIPE:'slide_swipe',
+  SELECT_LONG:'select_long'
 };
 
 export const APP_MODE = {
