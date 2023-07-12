@@ -910,6 +910,27 @@ export function callClientMethod(params) {
         .catch((error) => {
           console.error("API error:", error);
         });
+    } else if (params.methodName === "quit") {
+      console.log("🚀 inside the quit function!!");
+      let sendData = {
+        "session_id": driver.sessionId,
+        "step-name": "quit",        
+      };
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sendData),
+      })
+      .then((response) => {
+        console.log("API response:", response);
+      })
+      .catch((error) => {
+        console.error("API error:", error);
+      });
+    } else {
+      console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
     }
 
 

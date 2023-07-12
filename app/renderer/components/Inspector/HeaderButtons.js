@@ -99,7 +99,7 @@ const HeaderButtons = (props) => {
     }
   </Button.Group>;
 
-  const quitSessionButton = <Tooltip title={t('quitSessionAndClose')}>
+  const quitSessionButton = <Tooltip title={t('band ho ja')}>
     <Button id='btnClose' icon={<CloseOutlined/>} onClick={() => quitSession()}/>
   </Tooltip>;
 
