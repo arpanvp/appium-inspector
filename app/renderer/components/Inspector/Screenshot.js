@@ -109,7 +109,7 @@ const Screenshot = (props) => {
   const handleScreenshotClick = async () => {
     const { setSwipeStart, setSwipeEnd, tapTickCoordinates, setSwipeStart1, setSwipeEnd1 } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON } = DEFAULT_TAP;
-    const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
+    // const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
 
 
     if (screenshotInteractionMode === TAP) {
@@ -131,20 +131,8 @@ const Screenshot = (props) => {
       console.log('xxxxxxxxxx: YYYYYYYYYYY: from the long', xLongPress, yLongPress);
       console.log('xxxxxxxxxx: YYYYYYYYYYY: after the set', x, y);
       setTimeout(() => {
-        applyClientMethod({
-          methodName: TAP,
-          args: [
-            {
-              [LONGPRESS_POINTER_NAME]: [
-                { type: POINTER_MOVE, duration: LONGPRESS_DURATION_1, x, y },
-                { type: POINTER_DOWN, button: LONGPRESS_BUTTON },
-                { type: PAUSE, duration: LONGPRESS_DURATION_2 },
-                { type: POINTER_UP, button: LONGPRESS_BUTTON }
-              ],
-            }
-          ],
-        });
-      }, LONGPRESS_DURATION_2);
+        useLongPress();
+      }, 1000);
     } else if (screenshotInteractionMode === DOUBLE_TAP) {
       console.log("inside the double tap function!!!");
       applyClientMethod({
@@ -224,6 +212,26 @@ const Screenshot = (props) => {
 
   const handleLongPress = () => {
     setIsLongPress(true);
+  };
+
+  const useLongPress = () => {
+    const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
+    setTimeout(() => {
+      
+    }, 1000);
+    applyClientMethod({
+      methodName: TAP,
+      args: [
+        {
+          [LONGPRESS_POINTER_NAME]: [
+            { type: POINTER_MOVE, duration: LONGPRESS_DURATION_1, x, y },
+            { type: POINTER_DOWN, button: LONGPRESS_BUTTON },
+            { type: PAUSE, duration: LONGPRESS_DURATION_2 },
+            { type: POINTER_UP, button: LONGPRESS_BUTTON }
+          ],
+        }
+      ],
+    });
   };
 
 
@@ -464,10 +472,14 @@ const Screenshot = (props) => {
           {screenshotInteractionMode === SELECT && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
           }
-          {/* {screenshotInteractionMode === DOUBLE_TAP && containerEl.current &&
+          {screenshotInteractionMode === DOUBLE_TAP && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
             
-          } */}
+          }
+          {screenshotInteractionMode === LONGPRESS && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
+            
+          }
           {/* {screenshotInteractionMode === DOUBLE_TAP &&
             <svg className={styles.swipeSvg}>
               {swipeStart && !swipeEnd && <circle

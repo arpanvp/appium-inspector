@@ -788,7 +788,7 @@ exports.DEFAULT_TAP = DEFAULT_TAP;
 const DEFAULT_LONGPRESS = {
   LONGPRESS_POINTER_NAME: 'finger1',
   LONGPRESS_DURATION_1: 0,
-  LONGPRESS_DURATION_2: 1000,
+  LONGPRESS_DURATION_2: 1500,
   LONGPRESS_BUTTON: 0
 };
 exports.DEFAULT_LONGPRESS = DEFAULT_LONGPRESS;
@@ -5222,83 +5222,94 @@ function callClientMethod(params) {
       selectedElement,
       'step-name': screenshotInteractionMode
     };
-    if (postdata.params.methodName === "click") {
-      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-      await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postdata)
-      }).then(response => {
-        console.log("API response:", response);
-      }).catch(error => {
-        console.error("API error:", error);
-      });
-    } else if (postdata.params.methodName === "swipe") {
-      // Exclude selectedElement from postdata
-      delete postdata.selectedElement;
-      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-      await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postdata)
-      }).then(response => {
-        console.log("API response:", response);
-      }).catch(error => {
-        console.error("API error:", error);
-      });
+    console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+    // if (postdata.params.methodName === "click") {
+    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(postdata),
+    //   })
+    //     .then((response) => {
+    //       console.log("API response:", response);
+    //     })
+    //     .catch((error) => {
+    //       console.error("API error:", error);
+    //     });
+    // } else if (postdata.params.methodName === "swipe") {
+    //   // Exclude selectedElement from postdata
+    //   delete postdata.selectedElement;
+    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(postdata),
+    //   })
+    //     .then((response) => {
+    //       console.log("API response:", response);
+    //     })
+    //     .catch((error) => {
+    //       console.error("API error:", error);
+    //     });
 
-      //check the if the tap then it would be longpress , double tap, tap and drag and drop
-    } else if (postdata.params.methodName === "tap") {
-      delete postdata.selectedElement;
-      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-      await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postdata)
-      }).then(response => {
-        console.log("API response:", response);
-      }).catch(error => {
-        console.error("API error:", error);
-      });
-    } else if (postdata.params.methodName === "sendKeys") {
-      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-      await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(postdata)
-      }).then(response => {
-        console.log("API response:", response);
-      }).catch(error => {
-        console.error("API error:", error);
-      });
-    } else if (params.methodName === "quit") {
-      console.log("🚀 inside the quit function!!");
-      let sendData = {
-        "session_id": driver.sessionId,
-        "step-name": "quit"
-      };
-      await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(sendData)
-      }).then(response => {
-        console.log("API response:", response);
-      }).catch(error => {
-        console.error("API error:", error);
-      });
-    } else {
-      console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
-    }
+    //     //check the if the tap then it would be longpress , double tap, tap and drag and drop
+    // } else if (postdata.params.methodName === "tap") {
+    //   delete postdata.selectedElement;
+    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+    //     await fetch("https://apprecord.testing24x7.ai/appAction", {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify(postdata),
+    //     })
+    //       .then((response) => {
+    //         console.log("API response:", response);
+    //       })
+    //       .catch((error) => {
+    //         console.error("API error:", error);
+    //       });
+    // } else if (postdata.params.methodName === "sendKeys") {
+    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(postdata),
+    //   })
+    //     .then((response) => {
+    //       console.log("API response:", response);
+    //     })
+    //     .catch((error) => {
+    //       console.error("API error:", error);
+    //     });
+    // } else if (params.methodName === "quit") {
+    //   console.log("🚀 inside the quit function!!");
+    //   let sendData = {
+    //     "session_id": driver.sessionId,
+    //     "step-name": "quit",        
+    //   };
+    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(sendData),
+    //   })
+    //   .then((response) => {
+    //     console.log("API response:", response);
+    //   })
+    //   .catch((error) => {
+    //     console.error("API error:", error);
+    //   });
+    // } else {
+    //   console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
+    // }
 
     // Ignore empty objects
     if (_lodash.default.isObject(res) && _lodash.default.isEmpty(res)) {
@@ -9396,12 +9407,8 @@ const Screenshot = props => {
       DURATION_2,
       BUTTON
     } = _shared.DEFAULT_TAP;
-    const {
-      LONGPRESS_POINTER_NAME,
-      LONGPRESS_DURATION_1,
-      LONGPRESS_DURATION_2,
-      LONGPRESS_BUTTON
-    } = _shared.DEFAULT_LONGPRESS;
+    // const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
+
     if (screenshotInteractionMode === TAP) {
       applyClientMethod({
         methodName: TAP,
@@ -9428,27 +9435,8 @@ const Screenshot = props => {
       console.log('xxxxxxxxxx: YYYYYYYYYYY: from the long', xLongPress, yLongPress);
       console.log('xxxxxxxxxx: YYYYYYYYYYY: after the set', x, y);
       setTimeout(() => {
-        applyClientMethod({
-          methodName: TAP,
-          args: [{
-            [LONGPRESS_POINTER_NAME]: [{
-              type: POINTER_MOVE,
-              duration: LONGPRESS_DURATION_1,
-              x,
-              y
-            }, {
-              type: POINTER_DOWN,
-              button: LONGPRESS_BUTTON
-            }, {
-              type: PAUSE,
-              duration: LONGPRESS_DURATION_2
-            }, {
-              type: POINTER_UP,
-              button: LONGPRESS_BUTTON
-            }]
-          }]
-        });
-      }, LONGPRESS_DURATION_2);
+        useLongPress();
+      }, 1000);
     } else if (screenshotInteractionMode === DOUBLE_TAP) {
       console.log("inside the double tap function!!!");
       applyClientMethod({
@@ -9551,6 +9539,34 @@ const Screenshot = props => {
 
   const handleLongPress = () => {
     setIsLongPress(true);
+  };
+  const useLongPress = () => {
+    const {
+      LONGPRESS_POINTER_NAME,
+      LONGPRESS_DURATION_1,
+      LONGPRESS_DURATION_2,
+      LONGPRESS_BUTTON
+    } = _shared.DEFAULT_LONGPRESS;
+    applyClientMethod({
+      methodName: TAP,
+      args: [{
+        [LONGPRESS_POINTER_NAME]: [{
+          type: POINTER_MOVE,
+          duration: LONGPRESS_DURATION_1,
+          x,
+          y
+        }, {
+          type: POINTER_DOWN,
+          button: LONGPRESS_BUTTON
+        }, {
+          type: PAUSE,
+          duration: LONGPRESS_DURATION_2
+        }, {
+          type: POINTER_UP,
+          button: LONGPRESS_BUTTON
+        }]
+      }]
+    });
   };
   const handleDoSwipe = async swipeEndLocal => {
     const {
@@ -9894,6 +9910,10 @@ const Screenshot = props => {
     title: swipeInstructions,
     placement: "topLeft"
   }, screenImg), !swipeInstructions && screenImg, screenshotInteractionMode === SELECT && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
+    containerEl: containerEl.current
+  })), screenshotInteractionMode === DOUBLE_TAP && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
+    containerEl: containerEl.current
+  })), screenshotInteractionMode === LONGPRESS && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
   })), screenshotInteractionMode === SWIPE && /*#__PURE__*/_react.default.createElement("svg", {
     className: _Inspector.default.swipeSvg
