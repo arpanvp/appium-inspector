@@ -25,7 +25,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  */
 const Screenshot = (props) => {
   const { screenshot, mjpegScreenshotUrl, methodCallInProgress, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
-  console.log("inside the screenshot function props!!!", props);
+  // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
 
@@ -39,10 +39,10 @@ const Screenshot = (props) => {
         const x2 = parseInt(coordinatesArray[2], 10);
         const y2 = parseInt(coordinatesArray[3], 10);
 
-        console.log("x1:", x1);
-        console.log("y1:", y1);
-        console.log("x2:", x2);
-        console.log("y2:", y2);
+        // console.log("x1:", x1);
+        // console.log("y1:", y1);
+        // console.log("x2:", x2);
+        // console.log("y2:", y2);
         const centerX = Math.round(x2);
         const centerY = Math.round(y2);
         // setX(centerX);

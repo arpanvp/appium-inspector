@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-process.env.HMR_PORT=45287;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-process.env.HMR_PORT=36581;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> 05af0dcf070fcba08d3613ff99927cd8628cbe34
+process.env.HMR_PORT=41911;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9288,7 +9284,7 @@ const Screenshot = props => {
     t,
     hoveredElement
   } = props;
-  console.log("inside the screenshot function props!!!", props);
+  // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = (0, _react.useState)(null);
   const [yLongPress, setYLongPress] = (0, _react.useState)(null);
   (0, _react.useEffect)(() => {
@@ -9300,10 +9296,11 @@ const Screenshot = props => {
         const y1 = parseInt(coordinatesArray[1], 10);
         const x2 = parseInt(coordinatesArray[2], 10);
         const y2 = parseInt(coordinatesArray[3], 10);
-        console.log("x1:", x1);
-        console.log("y1:", y1);
-        console.log("x2:", x2);
-        console.log("y2:", y2);
+
+        // console.log("x1:", x1);
+        // console.log("y1:", y1);
+        // console.log("x2:", x2);
+        // console.log("y2:", y2);
         const centerX = Math.round(x2);
         const centerY = Math.round(y2);
         // setX(centerX);
@@ -9621,6 +9618,7 @@ const Screenshot = props => {
       BUTTON,
       ORIGIN
     } = _shared.DEFAULT_ZOOM;
+    console.log(`swipeStart.x : ${swipeStart.x}, swipeStart.y : : ${swipeStart.y} , swipeEndLocal1.x : ${swipeEndLocal1.x} , swipeEndLocal1.y : ${swipeEndLocal1.y} , swipeStart1.x : ${swipeStart1.x} , swipeStart1.y : ${swipeStart1.y}, swipeEndLocal.x : ${swipeEndLocal.x} , swipeEndLocal.y : ${swipeEndLocal.y}`);
     if (swipeEndLocal && swipeEndLocal1) {
       await applyClientMethod({
         methodName: SWIPE,
@@ -12247,13 +12245,13 @@ class Inspector extends _react.Component {
       window.resizeTo(newWidth, newHeight);
     }
     this.didInitialResize = true;
-    setInterval(() => {
-      this.props.applyClientMethod({
-        methodName: 'getPageSource',
-        ignoreResult: true
-      });
-    }, 8000);
-    // this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    // setInterval(() => {
+    //   this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+    // }, 8000);
+    this.props.applyClientMethod({
+      methodName: 'getPageSource',
+      ignoreResult: true
+    });
     this.props.getSavedActionFramework();
     this.props.runKeepAliveLoop();
     window.addEventListener('resize', this.updateSourceTreeWidth);
