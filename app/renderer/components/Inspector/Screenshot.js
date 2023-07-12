@@ -15,7 +15,7 @@ import {
 } from './shared';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT,SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP,SLIDE_SWIPE, ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -24,10 +24,11 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress,selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
   // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
+  const [element, setElement] = useState({});
 
   useEffect(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
@@ -219,6 +220,24 @@ const Screenshot = (props) => {
         await handleDoZoom({ x, y }, coords); // Pass swipeEnd because otherwise it is not retrieved
       }
     }
+    else if (screenshotInteractionMode === SLIDE) {
+      setTimeout(() => {
+        selectScreenshotInteractionMode(SLIDE_SWIPE)
+      }, 1000);
+      if(props.selectedElement){
+        setElement(props.selectedElement)
+      }
+    }
+    else if (screenshotInteractionMode === SLIDE_SWIPE) {
+      if (!swipeStart) {
+        setSwipeStart(x, y);
+      } else if (!swipeEnd) {
+        setSwipeEnd(x, y);
+        await B.delay(500);
+        await handleDoSwipeSlide({ x, y });
+      }
+    }
+    
   };
 
 
@@ -241,6 +260,30 @@ const Screenshot = (props) => {
         ]
       },
     });
+    clearSwipeAction();
+  };
+
+
+  const handleDoSwipeSlide = async (swipeEndLocal) => {
+    const { clearSwipeAction } = props;
+    const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
+    let data = {
+      methodName: SWIPE,
+      args: {
+        [POINTER_NAME]: [
+          { type: POINTER_MOVE, duration: DURATION_1, x: swipeStart.x, y: swipeStart.y },
+          { type: POINTER_DOWN, button: BUTTON },
+          { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: swipeEndLocal.x, y: swipeEndLocal.y },
+          { type: POINTER_UP, button: BUTTON }
+        ]
+      },
+    }
+    if(element.xpath){
+      data['xpath'] = element.xpath
+    }
+    console.log("🚀 ~ file: Screenshot.js:281 ~ handleDoSwipeSlide ~ data:", data)
+    await applyClientMethod(data);
+    selectScreenshotInteractionMode(SLIDE)
     clearSwipeAction();
   };
 
@@ -421,7 +464,7 @@ const Screenshot = (props) => {
   } else {
     screenshotStyle.cursor = 'pointer';
   }
-  if ([ZOOMIN].includes(screenshotInteractionMode) || selectedTick) {
+  if ([ZOOMIN,SLIDE_SWIPE].includes(screenshotInteractionMode) || selectedTick) {
     screenshotStyle.cursor = 'crosshair';
   }
 
@@ -464,6 +507,9 @@ const Screenshot = (props) => {
           {screenshotInteractionMode === SELECT && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
           }
+          {screenshotInteractionMode === SLIDE && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
+          }
           {/* {screenshotInteractionMode === DOUBLE_TAP && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
             
@@ -483,6 +529,21 @@ const Screenshot = (props) => {
             </svg>
           } */}
           {screenshotInteractionMode === SWIPE &&
+            <svg className={styles.swipeSvg}>
+              {swipeStart && !swipeEnd && <circle
+                cx={swipeStart.x / scaleRatio}
+                cy={swipeStart.y / scaleRatio}
+              />}
+              {swipeStart && swipeEnd && <line
+                x1={swipeStart.x / scaleRatio}
+                y1={swipeStart.y / scaleRatio}
+                x2={swipeEnd.x / scaleRatio}
+                y2={swipeEnd.y / scaleRatio}
+              />}
+            </svg>
+          }
+
+          {screenshotInteractionMode === SLIDE_SWIPE &&
             <svg className={styles.swipeSvg}>
               {swipeStart && !swipeEnd && <circle
                 cx={swipeStart.x / scaleRatio}
