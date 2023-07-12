@@ -1,4 +1,4 @@
-process.env.HMR_PORT=42811;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=38107;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9471,7 +9471,7 @@ const Screenshot = props => {
           }]
         }]
       });
-      const delay = 200;
+      const delay = 50;
       setTimeout(() => {
         applyClientMethod({
           methodName: TAP,
@@ -9505,7 +9505,7 @@ const Screenshot = props => {
           // await applyClientMethod({ methodName: SWIPE, args: { /* ... */ } });
           // await handleDoDragAndDrop({ x, y });
         }
-        handleDragStart({
+        handleDoDragAndDrop({
           x,
           y
         });
@@ -9589,6 +9589,9 @@ const Screenshot = props => {
     clearSwipeAction();
   };
   const handleDoDragAndDrop = async swipeEndLocal => {
+    const {
+      clearSwipeAction
+    } = props;
     console.log("value of the x and y", swipeEndLocal);
     const {
       POINTER_NAME,
@@ -9624,6 +9627,7 @@ const Screenshot = props => {
         }]
       }
     });
+    clearSwipeAction();
   };
   const handleDoZoom = async (swipeEndLocal, swipeEndLocal1) => {
     const {
@@ -9892,6 +9896,16 @@ const Screenshot = props => {
   }, screenImg), !swipeInstructions && screenImg, screenshotInteractionMode === SELECT && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
   })), screenshotInteractionMode === SWIPE && /*#__PURE__*/_react.default.createElement("svg", {
+    className: _Inspector.default.swipeSvg
+  }, swipeStart && !swipeEnd && /*#__PURE__*/_react.default.createElement("circle", {
+    cx: swipeStart.x / scaleRatio,
+    cy: swipeStart.y / scaleRatio
+  }), swipeStart && swipeEnd && /*#__PURE__*/_react.default.createElement("line", {
+    x1: swipeStart.x / scaleRatio,
+    y1: swipeStart.y / scaleRatio,
+    x2: swipeEnd.x / scaleRatio,
+    y2: swipeEnd.y / scaleRatio
+  })), screenshotInteractionMode === DRAG_AND_DROP && /*#__PURE__*/_react.default.createElement("svg", {
     className: _Inspector.default.swipeSvg
   }, swipeStart && !swipeEnd && /*#__PURE__*/_react.default.createElement("circle", {
     cx: swipeStart.x / scaleRatio,

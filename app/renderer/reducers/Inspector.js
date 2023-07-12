@@ -388,33 +388,33 @@ export default function inspector (state = INITIAL_STATE, action) {
         },
       };
 
-      case SET_SWIPE_START1:
-        return {
-          ...state,
-          swipeStart1: {
-            x: action.swipeStartX,
-            y: action.swipeStartY,
-          },
-        };  
-     
-      case SET_SWIPE_END1:
-        return {
-          ...state,
-          swipeEnd1: {
-            x: action.swipeEndX,
-            y: action.swipeEndY,
-          },
-        };
-      
-        
+    case SET_SWIPE_START1:
+      return {
+        ...state,
+        swipeStart1: {
+          x: action.swipeStartX,
+          y: action.swipeStartY,
+        },
+      };
+
+    case SET_SWIPE_END1:
+      return {
+        ...state,
+        swipeEnd1: {
+          x: action.swipeEndX,
+          y: action.swipeEndY,
+        },
+      };
+
+
 
     case CLEAR_SWIPE_ACTION:
       return {
         ...state,
         swipeStart: null,
         swipeEnd: null,
-        swipeStart1:null,
-        swipeEnd1:null
+        swipeStart1: null,
+        swipeEnd1: null
       };
 
     case SET_SEARCHED_FOR_ELEMENT_BOUNDS:

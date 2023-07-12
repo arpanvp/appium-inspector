@@ -160,7 +160,7 @@ const Screenshot = (props) => {
           }
         ],
       });
-      const delay = 200;
+      const delay = 50;
       setTimeout(() => {
         applyClientMethod({
           methodName: TAP,
@@ -189,7 +189,7 @@ const Screenshot = (props) => {
           // await applyClientMethod({ methodName: SWIPE, args: { /* ... */ } });
           // await handleDoDragAndDrop({ x, y });
         }
-        handleDragStart({ x, y });
+        handleDoDragAndDrop({ x, y });
       }
     } else if (selectedTick) {
       tapTickCoordinates(x, y);
@@ -245,6 +245,7 @@ const Screenshot = (props) => {
   };
 
   const handleDoDragAndDrop = async (swipeEndLocal) => {
+    const { clearSwipeAction } = props;
     console.log("value of the x and y", swipeEndLocal);
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_DRAG_AND_DROP;
     await applyClientMethod({
@@ -259,6 +260,7 @@ const Screenshot = (props) => {
         ]
       },
     });
+    clearSwipeAction();
   };
 
   const handleDoZoom = async (swipeEndLocal, swipeEndLocal1) => {
@@ -462,8 +464,23 @@ const Screenshot = (props) => {
           {screenshotInteractionMode === SELECT && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
           }
-          {/* {screenshotInteractionMode === LONGPRESS && containerEl.current &&
+          {/* {screenshotInteractionMode === DOUBLE_TAP && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
+            
+          } */}
+          {/* {screenshotInteractionMode === DOUBLE_TAP &&
+            <svg className={styles.swipeSvg}>
+              {swipeStart && !swipeEnd && <circle
+                cx={swipeStart.x / scaleRatio}
+                cy={swipeStart.y / scaleRatio}
+              />}
+              {swipeStart && swipeEnd && <line
+                x1={swipeStart.x / scaleRatio}
+                y1={swipeStart.y / scaleRatio}
+                x2={swipeEnd.x / scaleRatio}
+                y2={swipeEnd.y / scaleRatio}
+              />}
+            </svg>
           } */}
           {screenshotInteractionMode === SWIPE &&
             <svg className={styles.swipeSvg}>
@@ -479,6 +496,22 @@ const Screenshot = (props) => {
               />}
             </svg>
           }
+
+          {screenshotInteractionMode === DRAG_AND_DROP &&
+            <svg className={styles.swipeSvg}>
+              {swipeStart && !swipeEnd && <circle
+                cx={swipeStart.x / scaleRatio}
+                cy={swipeStart.y / scaleRatio}
+              />}
+              {swipeStart && swipeEnd && <line
+                x1={swipeStart.x / scaleRatio}
+                y1={swipeStart.y / scaleRatio}
+                x2={swipeEnd.x / scaleRatio}
+                y2={swipeEnd.y / scaleRatio}
+              />}
+            </svg>
+          }
+
           {screenshotInteractionMode === ZOOMIN &&
             <svg className={styles.swipeSvg}>
               {swipeStart && !swipeEnd && <circle
