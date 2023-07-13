@@ -13,9 +13,10 @@ import {
   SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
   DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP, DEFAULT_ZOOM
 } from './shared';
+import { use } from 'chai';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -132,41 +133,17 @@ const Screenshot = (props) => {
       console.log('xxxxxxxxxx: YYYYYYYYYYY: from the long', xLongPress, yLongPress);
       console.log('xxxxxxxxxx: YYYYYYYYYYY: after the set', x, y);
       setTimeout(() => {
-        useLongPress();
-      }, 1000);
+        selectScreenshotInteractionMode(SELECT_LONG);
+      }, 2000);
+    } else if (screenshotInteractionMode === SELECT_LONG) {
+      await useLongPress();
     } else if (screenshotInteractionMode === DOUBLE_TAP) {
       console.log("inside the double tap function!!!");
-      applyClientMethod({
-        methodName: TAP,
-        args: [
-          {
-            [POINTER_NAME]: [
-              { type: POINTER_MOVE, duration: DURATION_1, x, y },
-              { type: POINTER_DOWN, button: BUTTON },
-              { type: PAUSE, duration: DURATION_2 },
-              { type: POINTER_UP, button: BUTTON }
-            ],
-          }
-        ],
-      });
-      const delay = 50;
       setTimeout(() => {
-        applyClientMethod({
-          methodName: TAP,
-          args: [
-            {
-              [POINTER_NAME]: [
-                { type: POINTER_MOVE, duration: DURATION_1, x, y },
-                { type: POINTER_DOWN, button: BUTTON },
-                { type: PAUSE, duration: DURATION_2 },
-                { type: POINTER_UP, button: BUTTON },
-
-              ],
-            }
-          ],
-        });
-      }, delay);
-
+        selectScreenshotInteractionMode(SELECT_DOUBLE);
+      }, 1000);
+    } else if (screenshotInteractionMode === SELECT_DOUBLE) { 
+      await useDoubleTap();
     } else if (screenshotInteractionMode === DRAG_AND_DROP) {
       console.log("inside the drage and drop condition value!!!!!!");
       if (!swipeStart) {
@@ -195,7 +172,7 @@ const Screenshot = (props) => {
         setSwipeStart(x, y);
       } else if (!swipeEnd) {
         setSwipeEnd(x, y);
-        await B.delay(500); // Wait a second to do the swipe so user can see the SVG line
+        await B.delay(500);
         setCoords({ x, y });
         // setTimeout(() => {
         //  handleDoZoom({x, y});
@@ -204,8 +181,8 @@ const Screenshot = (props) => {
         setSwipeStart1(x, y);
       } else if (!swipeEnd1) {
         setSwipeEnd1(x, y);
-        await B.delay(500); // Wait a second to do the swipe so user can see the SVG line
-        await handleDoZoom({ x, y }, coords); // Pass swipeEnd because otherwise it is not retrieved
+        await B.delay(500);
+        await handleDoZoom({ x, y }, coords);
       }
     } else if (screenshotInteractionMode === SLIDE) {
       setTimeout(() => {
@@ -223,7 +200,7 @@ const Screenshot = (props) => {
         await handleDoSwipeSlide({ x, y });
       }
     }
-    
+
   };
 
 
@@ -231,24 +208,62 @@ const Screenshot = (props) => {
     setIsLongPress(true);
   };
 
-  const useLongPress = () => {
+  const useLongPress = async () => {
     const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
-    setTimeout(() => {
-      
-    }, 1000);
+    const { clearSwipeAction } = props;
+    let longdata = {
+      methodName: TAP,
+      args: {
+        [LONGPRESS_POINTER_NAME]: [
+          { type: POINTER_MOVE, duration: LONGPRESS_DURATION_1, x, y },
+          { type: POINTER_DOWN, button: LONGPRESS_BUTTON },
+          { type: PAUSE, duration: LONGPRESS_DURATION_2 },
+          { type: POINTER_UP, button: LONGPRESS_BUTTON }
+        ],
+      }
+    };
+    // if (element.xpath) {
+    //   longdata.xpath = element.xpath;
+    // }; 
+    await applyClientMethod(longdata);
+    selectScreenshotInteractionMode(LONGPRESS);
+    // clearSwipeAction();
+  };
+
+  const useDoubleTap = () => {
+    const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON } = DEFAULT_TAP;
     applyClientMethod({
       methodName: TAP,
       args: [
         {
-          [LONGPRESS_POINTER_NAME]: [
-            { type: POINTER_MOVE, duration: LONGPRESS_DURATION_1, x, y },
-            { type: POINTER_DOWN, button: LONGPRESS_BUTTON },
-            { type: PAUSE, duration: LONGPRESS_DURATION_2 },
-            { type: POINTER_UP, button: LONGPRESS_BUTTON }
+          [POINTER_NAME]: [
+            { type: POINTER_MOVE, duration: DURATION_1, x, y },
+            { type: POINTER_DOWN, button: BUTTON },
+            { type: PAUSE, duration: DURATION_2 },
+            { type: POINTER_UP, button: BUTTON }
           ],
         }
       ],
     });
+    const delay = 50;
+    setTimeout(() => {
+      applyClientMethod({
+        methodName: TAP,
+        args: [
+          {
+            [POINTER_NAME]: [
+              { type: POINTER_MOVE, duration: DURATION_1, x, y },
+              { type: POINTER_DOWN, button: BUTTON },
+              { type: PAUSE, duration: DURATION_2 },
+              { type: POINTER_UP, button: BUTTON },
+
+            ],
+          }
+        ],
+      });
+    }, delay);
+    selectScreenshotInteractionMode(DOUBLE_TAP);
+    
   };
 
 
@@ -340,7 +355,7 @@ const Screenshot = (props) => {
 
 
   const handleMouseMove = (e) => {
-    if (screenshotInteractionMode !== (SELECT || LONGPRESS)) {
+    if (screenshotInteractionMode !== (SELECT)) {
       const offsetX = e.nativeEvent.offsetX;
       const offsetY = e.nativeEvent.offsetY;
       const newX = offsetX * scaleRatio;
@@ -516,13 +531,12 @@ const Screenshot = (props) => {
           {screenshotInteractionMode === SLIDE && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
           }
-          {/* {screenshotInteractionMode === DOUBLE_TAP && containerEl.current &&
+          {screenshotInteractionMode === DOUBLE_TAP && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
-            
           }
           {screenshotInteractionMode === LONGPRESS && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
-            
+
           }
           {/* {screenshotInteractionMode === DOUBLE_TAP &&
             <svg className={styles.swipeSvg}>

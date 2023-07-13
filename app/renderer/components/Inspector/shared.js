@@ -100,7 +100,7 @@ export const DEFAULT_TAP = {
 export const DEFAULT_LONGPRESS = {
   LONGPRESS_POINTER_NAME: 'finger1',
   LONGPRESS_DURATION_1: 0,
-  LONGPRESS_DURATION_2: 1500,
+  LONGPRESS_DURATION_2: 1000,
   LONGPRESS_BUTTON: 0
 };
 
@@ -132,10 +132,10 @@ export const SCREENSHOT_INTERACTION_MODE = {
   DOUBLE_TAP: 'double tap',
   GESTURE: 'gesture',
   ZOOMIN: 'zoomin',
-  // ZOOMOUT: 'zoomout',
   SLIDE: 'slide',
-  SLIDE_SWIPE:'slide_swipe',
-  SELECT_LONG:'select_long'
+  SLIDE_SWIPE: 'slide_swipe',
+  SELECT_LONG: 'select_long',
+  SELECT_DOUBLE: 'select_double',
 };
 
 export const APP_MODE = {

@@ -846,93 +846,92 @@ export function callClientMethod(params) {
       'step-name': screenshotInteractionMode
     };
     console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-    // if (postdata.params.methodName === "click") {
-    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(postdata),
-    //   })
-    //     .then((response) => {
-    //       console.log("API response:", response);
-    //     })
-    //     .catch((error) => {
-    //       console.error("API error:", error);
-    //     });
-    // } else if (postdata.params.methodName === "swipe") {
-    //   // Exclude selectedElement from postdata
-    //   delete postdata.selectedElement;
-    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(postdata),
-    //   })
-    //     .then((response) => {
-    //       console.log("API response:", response);
-    //     })
-    //     .catch((error) => {
-    //       console.error("API error:", error);
-    //     });
+    if (postdata.params.methodName === "click") {
+      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postdata),
+      })
+        .then((response) => {
+          console.log("API response:", response);
+        })
+        .catch((error) => {
+          console.error("API error:", error);
+        });
+    } else if (postdata.params.methodName === "swipe") {
+      // Exclude selectedElement from postdata
+      delete postdata.selectedElement;
+      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postdata),
+      })
+        .then((response) => {
+          console.log("API response:", response);
+        })
+        .catch((error) => {
+          console.error("API error:", error);
+        });
         
-    //     //check the if the tap then it would be longpress , double tap, tap and drag and drop
-    // } else if (postdata.params.methodName === "tap") {
-    //   delete postdata.selectedElement;
-    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-    //     await fetch("https://apprecord.testing24x7.ai/appAction", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(postdata),
-    //     })
-    //       .then((response) => {
-    //         console.log("API response:", response);
-    //       })
-    //       .catch((error) => {
-    //         console.error("API error:", error);
-    //       });
-    // } else if (postdata.params.methodName === "sendKeys") {
-    //   console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
-    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(postdata),
-    //   })
-    //     .then((response) => {
-    //       console.log("API response:", response);
-    //     })
-    //     .catch((error) => {
-    //       console.error("API error:", error);
-    //     });
-    // } else if (params.methodName === "quit") {
-    //   console.log("🚀 inside the quit function!!");
-    //   let sendData = {
-    //     "session_id": driver.sessionId,
-    //     "step-name": "quit",        
-    //   };
-    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify(sendData),
-    //   })
-    //   .then((response) => {
-    //     console.log("API response:", response);
-    //   })
-    //   .catch((error) => {
-    //     console.error("API error:", error);
-    //   });
-    // } else {
-    //   console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
-    // }
+        //check the if the tap then it would be longpress , double tap, tap and drag and drop
+    } else if (postdata.params.methodName === "tap") {
+      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postdata),
+        })
+          .then((response) => {
+            console.log("API response:", response);
+          })
+          .catch((error) => {
+            console.error("API error:", error);
+          });
+    } else if (postdata.params.methodName === "sendKeys") {
+      console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postdata),
+      })
+        .then((response) => {
+          console.log("API response:", response);
+        })
+        .catch((error) => {
+          console.error("API error:", error);
+        });
+    } else if (params.methodName === "quit") {
+      console.log("🚀 inside the quit function!!");
+      let sendData = {
+        "session_id": driver.sessionId,
+        "step-name": "quit",        
+      };
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sendData),
+      })
+      .then((response) => {
+        console.log("API response:", response);
+      })
+      .catch((error) => {
+        console.error("API error:", error);
+      });
+    } else {
+      console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
+    }
 
 
 
