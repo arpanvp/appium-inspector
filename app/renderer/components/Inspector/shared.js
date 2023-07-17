@@ -138,6 +138,7 @@ export const SCREENSHOT_INTERACTION_MODE = {
   SELECT_DOUBLE: 'select_double',
   FILE_UPLOAD: 'file_upload',
   SELECT_FILE: 'select_file',
+  EXPECTED_VALUE: 'expected_value'
 };
 
 export const APP_MODE = {

@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
@@ -31,6 +32,7 @@ import {
   HighlightOutlined,
   CodeOutlined,
   ShrinkOutlined,
+  DollarOutlined,
   DragOutlined,
   InfoOutlined,
   UpCircleOutlined,
@@ -38,7 +40,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD } = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE} = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -190,12 +192,12 @@ export default class Inspector extends Component {
 
   render() {
     const { screenshot, screenshotError, selectedElement = {},
-            quitSession, showRecord,
-            screenshotInteractionMode, visibleCommandMethod,
-            selectedInteractionMode, selectInteractionMode, setVisibleCommandResult,
-            showKeepAlivePrompt, keepSessionAlive, sourceXML, t, visibleCommandResult,
-            mjpegScreenshotUrl, isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
-            isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn
+      quitSession, showRecord,
+      screenshotInteractionMode, visibleCommandMethod,
+      selectedInteractionMode, selectInteractionMode, setVisibleCommandResult,
+      showKeepAlivePrompt, keepSessionAlive, sourceXML, t, visibleCommandResult,
+      mjpegScreenshotUrl, isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
+      isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn
     } = this.props;
     const { path } = selectedElement;
     const { driver } = this.props;
@@ -289,8 +291,13 @@ export default class Inspector extends Component {
                 this.screenshotInteractionChange(FILE_UPLOAD);
               }
             }}
-            type={screenshotInteractionMode === FILE_UPLOAD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-            disabled={isGestureEditorVisible}
+              type={screenshotInteractionMode === FILE_UPLOAD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} />
+          </Tooltip>
+          <Tooltip title={t('Expected Value')}>
+            <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE); }}
+              type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
             />
           </Tooltip>
         </ButtonGroup>

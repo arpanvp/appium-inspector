@@ -1,3 +1,4 @@
+/* eslint-disable space-before-blocks */
 /* eslint-disable space-in-parens */
 /* eslint-disable no-console */
 /* eslint-disable quotes */
@@ -16,7 +17,7 @@ import {
 import { use } from 'chai';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -207,8 +208,18 @@ const Screenshot = (props) => {
     } else if (screenshotInteractionMode === SELECT_FILE) {
       console.log("inside the select file condition!!!!!!!!!");
       await useFileUpload();
+    } else if (screenshotInteractionMode === EXPECTED_VALUE) {
+      let expected_value = '';
+      let data = {};
+      if (props.selectedElement){
+        expected_value = props.selectedElement.attributes.text;
+        data = {
+          expected_value,
+          xpath: props.selectedElement.xpath
+        };
+      }
+      await fetchExpectedValue(data);
     }
-
   };
 
 
@@ -381,6 +392,26 @@ const Screenshot = (props) => {
       });
       clearSwipeAction();
     }
+  };
+
+  const fetchExpectedValue = async (value) => {
+    console.log('value<<<<<>>>>>>>>>', value);
+    const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
+    let data = {
+      methodName: TAP,
+      args: {
+        [POINTER_NAME]: [
+          { type: POINTER_MOVE, duration: DURATION_1, origin: ORIGIN, x: swipeStart.x, y: swipeStart.y },
+          { type: POINTER_DOWN, button: BUTTON },
+          { type: PAUSE, duration: DURATION_2 }
+        ]
+      },
+      xpath: value.xpath,
+      expected_value: value.expected_value
+    };
+    // console.log('data<<<<<<<<<<<<<<<<>>>>>>>',data)
+    await applyClientMethod(data);
+    // clearSwipeAction();
   };
 
 
@@ -566,7 +597,9 @@ const Screenshot = (props) => {
           }
           {screenshotInteractionMode === LONGPRESS && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
-
+          }
+          {screenshotInteractionMode === EXPECTED_VALUE && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
           }
           {screenshotInteractionMode === FILE_UPLOAD && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
