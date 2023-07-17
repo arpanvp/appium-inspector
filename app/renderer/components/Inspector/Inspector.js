@@ -30,13 +30,14 @@ import {
   HighlightOutlined,
   CodeOutlined,
   ShrinkOutlined,
+  DollarOutlined,
   DragOutlined,
   InfoOutlined,
   UpCircleOutlined
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE } = SCREENSHOT_INTERACTION_MODE;
+const {SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, EXPECTED_VALUE } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -254,6 +255,12 @@ export default class Inspector extends Component {
           <Tooltip title={t('Slider')}>
             <Button icon={<SlidersOutlined />} onClick={() => {this.screenshotInteractionChange(SLIDE);}}
               type={screenshotInteractionMode === SLIDE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
+            />
+          </Tooltip>
+          <Tooltip title={t('Expected Value')}>
+            <Button icon={<DollarOutlined />} onClick={() => {this.screenshotInteractionChange(EXPECTED_VALUE);}}
+              type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible}
             />
           </Tooltip>

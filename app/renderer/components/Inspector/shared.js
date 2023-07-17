@@ -136,6 +136,7 @@ export const SCREENSHOT_INTERACTION_MODE = {
   SLIDE_SWIPE: 'slide_swipe',
   SELECT_LONG: 'select_long',
   SELECT_DOUBLE: 'select_double',
+  EXPECTED_VALUE : 'expected_value'
 };
 
 export const APP_MODE = {

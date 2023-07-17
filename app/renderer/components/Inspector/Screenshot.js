@@ -16,7 +16,7 @@ import {
 import { use } from 'chai';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, EXPECTED_VALUE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -199,8 +199,18 @@ const Screenshot = (props) => {
         await B.delay(500);
         await handleDoSwipeSlide({ x, y });
       }
+    } else if (screenshotInteractionMode === EXPECTED_VALUE) {
+      let expected_value = '';
+      let data = {}
+      if(props.selectedElement){
+        expected_value = props.selectedElement.attributes.text
+        data = {
+          expected_value:expected_value,
+          xpath: props.selectedElement.xpath
+        }
+      }
+      await fetchExpectedValue(data);
     }
-
   };
 
 
@@ -352,6 +362,25 @@ const Screenshot = (props) => {
       clearSwipeAction();
     }
   };
+
+  const fetchExpectedValue = async (value) => {
+    console.log('value<<<<<>>>>>>>>>',value)
+    let data = {
+      methodName: TAP,
+      args: {
+        [POINTER_NAME]: [
+          { type: POINTER_MOVE, duration: DURATION_1, origin: ORIGIN, x: swipeStart.x, y: swipeStart.y },
+          { type: POINTER_DOWN, button: BUTTON },
+          { type: PAUSE, duration: DURATION_2 }
+        ]
+      },
+      xpath:value.xpath,
+      expected_value:value.expected_value
+    }
+    // console.log('data<<<<<<<<<<<<<<<<>>>>>>>',data)
+    await applyClientMethod(data)
+    // clearSwipeAction();
+  }
 
 
   const handleMouseMove = (e) => {
@@ -536,7 +565,9 @@ const Screenshot = (props) => {
           }
           {screenshotInteractionMode === LONGPRESS && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
-
+          }
+          {screenshotInteractionMode === EXPECTED_VALUE && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
           }
           {/* {screenshotInteractionMode === DOUBLE_TAP &&
             <svg className={styles.swipeSvg}>
