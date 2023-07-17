@@ -910,10 +910,10 @@ export function callClientMethod(params) {
         .catch((error) => {
           console.error("API error:", error);
         });
-    } else if (postdata['step-name'] == 'expected_value') {
-      postdata.params['xpath'] = postdata.selectedElement.xpath
-      postdata.params['expected_value'] = postdata.selectedElement.attributes.text
-      console.log("🚀 ~ file: Inspector.js:916 ~ return ~ postdata:", postdata)
+    } else if (postdata['step-name'] === 'expected_value') {
+      postdata.params.xpath = postdata.selectedElement.xpath;
+      postdata.params.expected_value = postdata.selectedElement.attributes.text;
+      console.log("🚀 ~ file: Inspector.js:916 ~ return ~ postdata:", postdata);
       await fetch("https://apprecord.testing24x7.ai/appAction", {
         method: "POST",
         headers: {
@@ -927,8 +927,7 @@ export function callClientMethod(params) {
         .catch((error) => {
           console.error("API error:", error);
         });
-    }
-     else if (params.methodName === "quit") {
+    } else if (params.methodName === "quit") {
       console.log("🚀 inside the quit function!!");
       let sendData = {
         "session_id": driver.sessionId,
