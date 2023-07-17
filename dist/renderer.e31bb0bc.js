@@ -1,4 +1,4 @@
-process.env.HMR_PORT=33907;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=42273;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -823,7 +823,9 @@ const SCREENSHOT_INTERACTION_MODE = {
   SLIDE: 'slide',
   SLIDE_SWIPE: 'slide_swipe',
   SELECT_LONG: 'select_long',
-  SELECT_DOUBLE: 'select_double'
+  SELECT_DOUBLE: 'select_double',
+  FILE_UPLOAD: 'file_upload',
+  SELECT_FILE: 'select_file'
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -9280,7 +9282,9 @@ const {
   SLIDE_SWIPE,
   ZOOMIN,
   SELECT_LONG,
-  SELECT_DOUBLE
+  SELECT_DOUBLE,
+  FILE_UPLOAD,
+  SELECT_FILE
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
@@ -9514,10 +9518,52 @@ const Screenshot = props => {
           y
         });
       }
+    } else if (screenshotInteractionMode === FILE_UPLOAD) {
+      console.log("inside the file upload condition!!!!!!!!!");
+      setTimeout(() => {
+        selectScreenshotInteractionMode(SELECT_FILE);
+      }, 1000);
+    } else if (screenshotInteractionMode === SELECT_FILE) {
+      console.log("inside the select file condition!!!!!!!!!");
+      await useFileUpload();
     }
   };
   const handleLongPress = () => {
     setIsLongPress(true);
+  };
+  const useFileUpload = () => {
+    console.log("inside the use file upload function!!!!!!");
+    const {
+      POINTER_NAME,
+      DURATION_1,
+      DURATION_2,
+      BUTTON
+    } = _shared.DEFAULT_TAP;
+    const {
+      clearSwipeAction
+    } = props;
+    applyClientMethod({
+      methodName: TAP,
+      args: [{
+        [POINTER_NAME]: [{
+          type: POINTER_MOVE,
+          duration: DURATION_1,
+          x,
+          y
+        }, {
+          type: POINTER_DOWN,
+          button: BUTTON
+        }, {
+          type: PAUSE,
+          duration: DURATION_2
+        }, {
+          type: POINTER_UP,
+          button: BUTTON
+        }]
+      }]
+    });
+    clearSwipeAction();
+    selectScreenshotInteractionMode(FILE_UPLOAD);
   };
   const useLongPress = async () => {
     const {
@@ -9999,6 +10045,8 @@ const Screenshot = props => {
   })), screenshotInteractionMode === DOUBLE_TAP && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
   })), screenshotInteractionMode === LONGPRESS && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
+    containerEl: containerEl.current
+  })), screenshotInteractionMode === FILE_UPLOAD && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
   })), screenshotInteractionMode === SWIPE && /*#__PURE__*/_react.default.createElement("svg", {
     className: _Inspector.default.swipeSvg
@@ -12306,7 +12354,7 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
 const {
   SELECT,
   SWIPE,
@@ -12315,7 +12363,8 @@ const {
   DRAG_AND_DROP,
   DOUBLE_TAP,
   ZOOMIN,
-  SLIDE
+  SLIDE,
+  FILE_UPLOAD
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -12396,6 +12445,7 @@ class Inspector extends _react.Component {
     // setInterval(() => {
     //   this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
     // }, 8000);
+    console.log('props in the inspector', this.props);
     this.props.applyClientMethod({
       methodName: 'getPageSource',
       ignoreResult: true
@@ -12481,6 +12531,10 @@ class Inspector extends _react.Component {
     const {
       path
     } = selectedElement;
+    const {
+      driver
+    } = this.props;
+    console.log('driver for iddddddd', driver.sessionId);
     const showScreenshot = screenshot && !screenshotError || mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream);
     let screenShotControls = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['screenshot-controls']
@@ -12567,6 +12621,35 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(SLIDE);
       },
       type: screenshotInteractionMode === SLIDE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible
+    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+      title: t('File Upload')
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FileAddOutlined, null),
+      onClick: async () => {
+        if (screenshotInteractionMode === FILE_UPLOAD) {
+          this.screenshotInteractionChange(null);
+          let data = {
+            'session_id': driver.sessionId,
+            'step-name': 'select_file',
+            'status': 'done'
+          };
+          await fetch('https://apprecord.testing24x7.ai/appAction', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          }).then(response => {
+            console.log('API response:', response);
+          }).catch(error => {
+            console.error('API error:', error);
+          });
+        } else {
+          this.screenshotInteractionChange(FILE_UPLOAD);
+        }
+      },
+      type: screenshotInteractionMode === FILE_UPLOAD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
     })))));
     let main = /*#__PURE__*/_react.default.createElement("div", {

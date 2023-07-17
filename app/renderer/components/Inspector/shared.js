@@ -136,6 +136,8 @@ export const SCREENSHOT_INTERACTION_MODE = {
   SLIDE_SWIPE: 'slide_swipe',
   SELECT_LONG: 'select_long',
   SELECT_DOUBLE: 'select_double',
+  FILE_UPLOAD: 'file_upload',
+  SELECT_FILE: 'select_file',
 };
 
 export const APP_MODE = {

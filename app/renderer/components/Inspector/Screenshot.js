@@ -16,7 +16,7 @@ import {
 import { use } from 'chai';
 
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -199,6 +199,14 @@ const Screenshot = (props) => {
         await B.delay(500);
         await handleDoSwipeSlide({ x, y });
       }
+    } else if (screenshotInteractionMode === FILE_UPLOAD) {
+      console.log("inside the file upload condition!!!!!!!!!");
+      setTimeout(() => {
+        selectScreenshotInteractionMode(SELECT_FILE);
+      }, 1000);
+    } else if (screenshotInteractionMode === SELECT_FILE) {
+      console.log("inside the select file condition!!!!!!!!!");
+      await useFileUpload();
     }
 
   };
@@ -206,6 +214,28 @@ const Screenshot = (props) => {
 
   const handleLongPress = () => {
     setIsLongPress(true);
+  };
+
+  const useFileUpload = () => {
+    console.log("inside the use file upload function!!!!!!");
+    const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON } = DEFAULT_TAP;
+    const { clearSwipeAction } = props;
+    applyClientMethod({
+      methodName: TAP,
+      args: [
+        {
+          [POINTER_NAME]: [
+            { type: POINTER_MOVE, duration: DURATION_1, x, y },
+            { type: POINTER_DOWN, button: BUTTON },
+            { type: PAUSE, duration: DURATION_2 },
+            { type: POINTER_UP, button: BUTTON }
+          ],
+        }
+      ],
+    });
+    clearSwipeAction();
+    selectScreenshotInteractionMode(FILE_UPLOAD);
+
   };
 
   const useLongPress = async () => {
@@ -538,20 +568,10 @@ const Screenshot = (props) => {
             <HighlighterRects {...props} containerEl={containerEl.current} />
 
           }
-          {/* {screenshotInteractionMode === DOUBLE_TAP &&
-            <svg className={styles.swipeSvg}>
-              {swipeStart && !swipeEnd && <circle
-                cx={swipeStart.x / scaleRatio}
-                cy={swipeStart.y / scaleRatio}
-              />}
-              {swipeStart && swipeEnd && <line
-                x1={swipeStart.x / scaleRatio}
-                y1={swipeStart.y / scaleRatio}
-                x2={swipeEnd.x / scaleRatio}
-                y2={swipeEnd.y / scaleRatio}
-              />}
-            </svg>
-          } */}
+          {screenshotInteractionMode === FILE_UPLOAD && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
+
+          }
           {screenshotInteractionMode === SWIPE &&
             <svg className={styles.swipeSvg}>
               {swipeStart && !swipeEnd && <circle
