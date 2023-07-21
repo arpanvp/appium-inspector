@@ -7,7 +7,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import HighlighterRects from './HighlighterRects';
-import { Spin, Tooltip } from 'antd';
+import { Spin, Tooltip,Button } from 'antd';
 import B from 'bluebird';
 import styles from './Inspector.css';
 import {
@@ -15,7 +15,8 @@ import {
   DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP, DEFAULT_ZOOM
 } from './shared';
 import { use } from 'chai';
-
+import { IoChevronBackOutline } from 'react-icons/io5';
+import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
 const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
@@ -26,7 +27,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress,driver, selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
   // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
@@ -561,7 +562,7 @@ const Screenshot = (props) => {
   }
 
   const screenSrc = mjpegScreenshotUrl || `data:image/gif;base64,${screenshot}`;
-  const screenImg = <img src={screenSrc} id="screenshot" />;
+  const screenImg = <img src={screenSrc} id="screenshot" className={styles.screenimage} />;
   const points = getGestureCoordinates();
 
   // const screenshotStyle1 = {
@@ -704,6 +705,23 @@ const Screenshot = (props) => {
           }
         </div>
       </div>
+      {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
+      <Tooltip title={t('Press Back Button')}>
+        <Button id='btnPressHomeButton' className={styles['phone-btn1']}
+          icon={<IoChevronBackOutline className={styles['custom-button-icon']}/>}
+          onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4]})} />
+      </Tooltip>
+      <Tooltip title={t('Press Home Button')}>
+        <Button id='btnPressHomeButton' className={styles['phone-btn2']}
+          icon={<BiCircle className={styles['custom-button-icon']}/>}
+          onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3]})} />
+      </Tooltip>
+      <Tooltip title={t('Press App Switch Button')}>
+        <Button id='btnPressHomeButton' className={styles['phone-btn3']}
+          icon={<BiSquare className={styles['custom-button-icon']}/>}
+          onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187]})} />
+      </Tooltip>
+    </div>}
     </Spin>
   );
 };

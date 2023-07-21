@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=42435;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=46549;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 2a1453d (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -8734,6 +8738,7 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "inspector-container": "_inspector-container_5407d",
   "inspector-toolbar": "_inspector-toolbar_5407d",
   "ant-btn": "_ant-btn_5407d",
@@ -8817,6 +8822,97 @@ module.exports = {
   "tick-input-box": "_tick-input-box_5407d",
   "tick-coord-box": "_tick-coord-box_5407d",
   "option-inpt": "_option-inpt_5407d"
+=======
+  "inspector-container": "_inspector-container_61591",
+  "inspector-toolbar": "_inspector-toolbar_61591",
+  "ant-btn": "_ant-btn_61591",
+  "inspector-main": "_inspector-main_61591",
+  "whole-btn": "_whole-btn_61591",
+  "screenshot-container": "_screenshot-container_61591",
+  "screenshot": "_screenshot_61591",
+  "screenshot-controls": "_screenshot-controls_61591",
+  "screenshotBox": "_screenshotBox_61591",
+  "interaction-tab-container": "_interaction-tab-container_61591",
+  "tree-container": "_tree-container_61591",
+  "session-info-table": "_session-info-table_61591",
+  "session-code-box": "_session-code-box_61591",
+  "session-inner-table": "_session-inner-table_61591",
+  "scroll-buttons": "_scroll-buttons_61591",
+  "scroll-right": "_scroll-right_61591",
+  "recorded-actions": "_recorded-actions_61591",
+  "_inspector-main_0387c": "__inspector-main_0387c_61591",
+  "ant-card-body": "_ant-card-body_61591",
+  "interaction-tab-card": "_interaction-tab-card_61591",
+  "highlighter-box": "_highlighter-box_61591",
+  "inspected-element-box": "_inspected-element-box_61591",
+  "hovered-element-box": "_hovered-element-box_61591",
+  "centroid-box": "_centroid-box_61591",
+  "centroid": "_centroid_61591",
+  "overlap": "_overlap_61591",
+  "expand": "_expand_61591",
+  "plus-minus": "_plus-minus_61591",
+  "phone-btn1": "_phone-btn1_61591",
+  "phone-btn2": "_phone-btn2_61591",
+  "phone-btn3": "_phone-btn3_61591",
+  "custom-button-icon": "_custom-button-icon_61591",
+  "elementActions": "_elementActions_61591",
+  "elementKeyInputActions": "_elementKeyInputActions_61591",
+  "selectedElementContainer": "_selectedElementContainer_61591",
+  "selected-element-table-cells": "_selected-element-table-cells_61591",
+  "element-cell-copy": "_element-cell-copy_61591",
+  "selected-element-card": "_selected-element-card_61591",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
+  "context-selector": "_context-selector_61591",
+  "sourceTag": "_sourceTag_61591",
+  "sourceAttrName": "_sourceAttrName_61591",
+  "no-recorded-actions": "_no-recorded-actions_61591",
+  "recorded-code": "_recorded-code_61591",
+  "framework-dropdown": "_framework-dropdown_61591",
+  "searchResultsList": "_searchResultsList_61591",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
+  "searchResultsActions": "_searchResultsActions_61591",
+  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
+  "elementKeyInput": "_elementKeyInput_61591",
+  "element-count-container": "_element-count-container_61591",
+  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
+  "coordinatesContainer": "_coordinatesContainer_61591",
+  "swipeInstructions": "_swipeInstructions_61591",
+  "swipeSvg": "_swipeSvg_61591",
+  "tapDiv": "_tapDiv_61591",
+  "gestureSvg": "_gestureSvg_61591",
+  "filled": "_filled_61591",
+  "dashed": "_dashed_61591",
+  "whole": "_whole_61591",
+  "newDashed": "_newDashed_61591",
+  "circle-dashed": "_circle-dashed_61591",
+  "circle-newDashed": "_circle-newDashed_61591",
+  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
+  "screenimage": "_screenimage_61591",
+  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
+  "commands-container": "_commands-container_61591",
+  "btn-container": "_btn-container_61591",
+  "arg-row": "_arg-row_61591",
+  "arg-container": "_arg-container_61591",
+  "gesture-header": "_gesture-header_61591",
+  "gesture-header-title": "_gesture-header-title_61591",
+  "gesture-header-description": "_gesture-header-description_61591",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
+  "gesture-header-timeline": "_gesture-header-timeline_61591",
+  "timeline-tick-title": "_timeline-tick-title_61591",
+  "gesture-header-icon": "_gesture-header-icon_61591",
+  "pointer-title": "_pointer-title_61591",
+  "tick-card": "_tick-card_61591",
+  "tick-plus-card": "_tick-plus-card_61591",
+  "tick-plus-btn": "_tick-plus-btn_61591",
+  "spaceContainer": "_spaceContainer_61591",
+  "tick-pointer-input": "_tick-pointer-input_61591",
+  "tick-button-group": "_tick-button-group_61591",
+  "tick-button-input": "_tick-button-input_61591",
+  "tick-input-box": "_tick-input-box_61591",
+  "tick-coord-box": "_tick-coord-box_61591",
+  "option-inpt": "_option-inpt_61591"
+>>>>>>> 2a1453d (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9277,6 +9373,8 @@ var _bluebird = _interopRequireDefault(require("bluebird"));
 var _Inspector = _interopRequireDefault(require("./Inspector.css"));
 var _shared = require("./shared");
 var _chai = require("chai");
+var _io = require("react-icons/io5");
+var _bi = require("react-icons/bi");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -9319,6 +9417,7 @@ const Screenshot = props => {
     screenshot,
     mjpegScreenshotUrl,
     methodCallInProgress,
+    driver,
     selectScreenshotInteractionMode,
     screenshotInteractionMode,
     swipeStart,
@@ -10067,7 +10166,8 @@ const Screenshot = props => {
   const screenSrc = mjpegScreenshotUrl || `data:image/gif;base64,${screenshot}`;
   const screenImg = /*#__PURE__*/_react.default.createElement("img", {
     src: screenSrc,
-    id: "screenshot"
+    id: "screenshot",
+    className: _Inspector.default.screenimage
   });
   const points = getGestureCoordinates();
 
@@ -10187,7 +10287,45 @@ const Screenshot = props => {
     } : {
       stroke: tick.color
     }
-  }))))))));
+  }))))))), driver && driver.client.isAndroid && /*#__PURE__*/_react.default.createElement("div", {
+    className: _Inspector.default['whole-btn']
+  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Press Back Button')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    id: "btnPressHomeButton",
+    className: _Inspector.default['phone-btn1'],
+    icon: /*#__PURE__*/_react.default.createElement(_io.IoChevronBackOutline, {
+      className: _Inspector.default['custom-button-icon']
+    }),
+    onClick: () => applyClientMethod({
+      methodName: 'pressKeyCode',
+      args: [4]
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Press Home Button')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    id: "btnPressHomeButton",
+    className: _Inspector.default['phone-btn2'],
+    icon: /*#__PURE__*/_react.default.createElement(_bi.BiCircle, {
+      className: _Inspector.default['custom-button-icon']
+    }),
+    onClick: () => applyClientMethod({
+      methodName: 'pressKeyCode',
+      args: [3]
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Press App Switch Button')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    id: "btnPressHomeButton",
+    className: _Inspector.default['phone-btn3'],
+    icon: /*#__PURE__*/_react.default.createElement(_bi.BiSquare, {
+      className: _Inspector.default['custom-button-icon']
+    }),
+    onClick: () => applyClientMethod({
+      methodName: 'pressKeyCode',
+      args: [187]
+    })
+  }))));
 };
 var _default = Screenshot;
 exports.default = _default;
@@ -10246,39 +10384,6 @@ const HeaderButtons = props => {
       className: _Inspector.default['custom-button-icon']
     }),
     onClick: showSiriCommandModal
-  }))), driver && driver.client.isAndroid && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Press Back Button')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    id: "btnPressHomeButton",
-    icon: /*#__PURE__*/_react.default.createElement(_io.IoChevronBackOutline, {
-      className: _Inspector.default['custom-button-icon']
-    }),
-    onClick: () => applyClientMethod({
-      methodName: 'pressKeyCode',
-      args: [4]
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Press Home Button')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    id: "btnPressHomeButton",
-    icon: /*#__PURE__*/_react.default.createElement(_bi.BiCircle, {
-      className: _Inspector.default['custom-button-icon']
-    }),
-    onClick: () => applyClientMethod({
-      methodName: 'pressKeyCode',
-      args: [3]
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Press App Switch Button')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    id: "btnPressHomeButton",
-    icon: /*#__PURE__*/_react.default.createElement(_bi.BiSquare, {
-      className: _Inspector.default['custom-button-icon']
-    }),
-    onClick: () => applyClientMethod({
-      methodName: 'pressKeyCode',
-      args: [187]
-    })
   }))));
   const appModeControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     value: appMode

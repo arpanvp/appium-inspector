@@ -353,16 +353,34 @@
     max-width: 100%;
     height: calc(100% - 50px);
 }
+<<<<<<< HEAD
 
 ._inspector-main_5407d ._screenshot-container_5407d {
+=======
+._whole-btn_61591{
+    margin-left: 4%;
+    margin-top: -13%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+._inspector-main_61591 ._screenshot-container_61591 {
+>>>>>>> 2a1453d (added changes)
     max-width: 500px;
     max-height: calc(100% - 50px);
     flex-grow: 1;
     flex-shrink: 2;
     flex-basis: 400px;
 }
+<<<<<<< HEAD
 
 ._screenshot-container_5407d ._screenshot-controls_5407d {
+=======
+#_screenshot_61591{
+    width: 100%;
+}
+._screenshot-container_61591 ._screenshot-controls_61591 {
+>>>>>>> 2a1453d (added changes)
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -679,7 +697,40 @@
     visibility: visible;
 }
 
+<<<<<<< HEAD
 ._custom-button-icon_5407d {
+=======
+._phone-btn1_61591 {
+    width: 44px;
+    height: 40px;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 21px;
+    vertical-align: -3px;
+    background-color: #636363;
+    margin-right: -16%;
+}
+._phone-btn2_61591 {
+    width: 44px;
+    height: 40px;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 21px;
+    vertical-align: -3px;
+    background-color: #636363;
+}
+._phone-btn3_61591 {
+    width: 44px;
+    height: 40px;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 21px;
+    vertical-align: -3px;
+    background-color: #636363;
+    margin-left: -16%;
+}
+._custom-button-icon_61591 {
+>>>>>>> 2a1453d (added changes)
     font-size: 16px;
     vertical-align: middle;
 }
@@ -883,6 +934,55 @@
     flex-direction: column;
     height: 100%;
 }
+._screenimage_61591{
+    width: 100%;
+}
+/* The device with borders */
+._innerScreenshotContainer_61591 {
+    position: relative;
+    width: 360px;
+    height: 100%;
+    margin: auto;
+    border: 16px rgb(30, 30, 39) solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+  }
+  
+  /* The horizontal line on the top of the device */
+  ._innerScreenshotContainer_61591:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+  }
+  
+  /* The circle on the bottom of the device */
+  ._innerScreenshotContainer_61591:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+  }
+  
+  /* The screen (or content) of the device */
+  /* .innerScreenshotContainer .content {
+    width: 360px;
+    height: 640px;
+    background: white;
+  } */
 
 ._innerScreenshotContainer_5407d ._screenshotActionsPanel_5407d {
     margin-bottom: 2px;
