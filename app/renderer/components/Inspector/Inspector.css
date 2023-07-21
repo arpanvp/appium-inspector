@@ -35,7 +35,13 @@
     max-width: 100%;
     height: calc(100% - 50px);
 }
-
+.whole-btn{
+    margin-left: 4%;
+    margin-top: -13%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .inspector-main .screenshot-container {
     max-width: 500px;
     max-height: calc(100% - 50px);
@@ -43,7 +49,9 @@
     flex-shrink: 2;
     flex-basis: 400px;
 }
-
+#screenshot{
+    width: 100%;
+}
 .screenshot-container .screenshot-controls {
     display: flex;
     flex-direction: row;
@@ -361,6 +369,35 @@
     visibility: visible;
 }
 
+.phone-btn1 {
+    width: 44px;
+    height: 40px;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 21px;
+    vertical-align: -3px;
+    background-color: #636363;
+    margin-right: -16%;
+}
+.phone-btn2 {
+    width: 44px;
+    height: 40px;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 21px;
+    vertical-align: -3px;
+    background-color: #636363;
+}
+.phone-btn3 {
+    width: 44px;
+    height: 40px;
+    padding: 4px 0;
+    font-size: 14px;
+    border-radius: 21px;
+    vertical-align: -3px;
+    background-color: #636363;
+    margin-left: -16%;
+}
 .custom-button-icon {
     font-size: 16px;
     vertical-align: middle;
@@ -565,6 +602,55 @@
     flex-direction: column;
     height: 100%;
 }
+.screenimage{
+    width: 100%;
+}
+/* The device with borders */
+.innerScreenshotContainer {
+    position: relative;
+    width: 360px;
+    height: 100%;
+    margin: auto;
+    border: 16px rgb(30, 30, 39) solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+  }
+  
+  /* The horizontal line on the top of the device */
+  .innerScreenshotContainer:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 10px;
+  }
+  
+  /* The circle on the bottom of the device */
+  .innerScreenshotContainer:after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    left: 50%;
+    bottom: -65px;
+    transform: translate(-50%, -50%);
+    background: #333;
+    border-radius: 50%;
+  }
+  
+  /* The screen (or content) of the device */
+  /* .innerScreenshotContainer .content {
+    width: 360px;
+    height: 640px;
+    background: white;
+  } */
 
 .innerScreenshotContainer .screenshotActionsPanel {
     margin-bottom: 2px;

@@ -8738,7 +8738,9 @@ module.exports = {
   "inspector-toolbar": "_inspector-toolbar_5407d",
   "ant-btn": "_ant-btn_5407d",
   "inspector-main": "_inspector-main_5407d",
+  "whole-btn": "_whole-btn_5407d",
   "screenshot-container": "_screenshot-container_5407d",
+  "screenshot": "_screenshot_5407d",
   "screenshot-controls": "_screenshot-controls_5407d",
   "screenshotBox": "_screenshotBox_5407d",
   "interaction-tab-container": "_interaction-tab-container_5407d",
@@ -8760,6 +8762,9 @@ module.exports = {
   "overlap": "_overlap_5407d",
   "expand": "_expand_5407d",
   "plus-minus": "_plus-minus_5407d",
+  "phone-btn1": "_phone-btn1_5407d",
+  "phone-btn2": "_phone-btn2_5407d",
+  "phone-btn3": "_phone-btn3_5407d",
   "custom-button-icon": "_custom-button-icon_5407d",
   "elementActions": "_elementActions_5407d",
   "elementKeyInputActions": "_elementKeyInputActions_5407d",
@@ -8794,6 +8799,7 @@ module.exports = {
   "circle-dashed": "_circle-dashed_5407d",
   "circle-newDashed": "_circle-newDashed_5407d",
   "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
+  "screenimage": "_screenimage_5407d",
   "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
   "commands-container": "_commands-container_5407d",
   "btn-container": "_btn-container_5407d",
@@ -9277,6 +9283,8 @@ var _bluebird = _interopRequireDefault(require("bluebird"));
 var _Inspector = _interopRequireDefault(require("./Inspector.css"));
 var _shared = require("./shared");
 var _chai = require("chai");
+var _io = require("react-icons/io5");
+var _bi = require("react-icons/bi");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -9319,6 +9327,7 @@ const Screenshot = props => {
     screenshot,
     mjpegScreenshotUrl,
     methodCallInProgress,
+    driver,
     selectScreenshotInteractionMode,
     screenshotInteractionMode,
     swipeStart,
@@ -10067,7 +10076,8 @@ const Screenshot = props => {
   const screenSrc = mjpegScreenshotUrl || `data:image/gif;base64,${screenshot}`;
   const screenImg = /*#__PURE__*/_react.default.createElement("img", {
     src: screenSrc,
-    id: "screenshot"
+    id: "screenshot",
+    className: _Inspector.default.screenimage
   });
   const points = getGestureCoordinates();
 
@@ -10187,7 +10197,45 @@ const Screenshot = props => {
     } : {
       stroke: tick.color
     }
-  }))))))));
+  }))))))), driver && driver.client.isAndroid && /*#__PURE__*/_react.default.createElement("div", {
+    className: _Inspector.default['whole-btn']
+  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Press Back Button')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    id: "btnPressHomeButton",
+    className: _Inspector.default['phone-btn1'],
+    icon: /*#__PURE__*/_react.default.createElement(_io.IoChevronBackOutline, {
+      className: _Inspector.default['custom-button-icon']
+    }),
+    onClick: () => applyClientMethod({
+      methodName: 'pressKeyCode',
+      args: [4]
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Press Home Button')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    id: "btnPressHomeButton",
+    className: _Inspector.default['phone-btn2'],
+    icon: /*#__PURE__*/_react.default.createElement(_bi.BiCircle, {
+      className: _Inspector.default['custom-button-icon']
+    }),
+    onClick: () => applyClientMethod({
+      methodName: 'pressKeyCode',
+      args: [3]
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Press App Switch Button')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    id: "btnPressHomeButton",
+    className: _Inspector.default['phone-btn3'],
+    icon: /*#__PURE__*/_react.default.createElement(_bi.BiSquare, {
+      className: _Inspector.default['custom-button-icon']
+    }),
+    onClick: () => applyClientMethod({
+      methodName: 'pressKeyCode',
+      args: [187]
+    })
+  }))));
 };
 var _default = Screenshot;
 exports.default = _default;
@@ -10246,39 +10294,6 @@ const HeaderButtons = props => {
       className: _Inspector.default['custom-button-icon']
     }),
     onClick: showSiriCommandModal
-  }))), driver && driver.client.isAndroid && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Press Back Button')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    id: "btnPressHomeButton",
-    icon: /*#__PURE__*/_react.default.createElement(_io.IoChevronBackOutline, {
-      className: _Inspector.default['custom-button-icon']
-    }),
-    onClick: () => applyClientMethod({
-      methodName: 'pressKeyCode',
-      args: [4]
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Press Home Button')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    id: "btnPressHomeButton",
-    icon: /*#__PURE__*/_react.default.createElement(_bi.BiCircle, {
-      className: _Inspector.default['custom-button-icon']
-    }),
-    onClick: () => applyClientMethod({
-      methodName: 'pressKeyCode',
-      args: [3]
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Press App Switch Button')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    id: "btnPressHomeButton",
-    icon: /*#__PURE__*/_react.default.createElement(_bi.BiSquare, {
-      className: _Inspector.default['custom-button-icon']
-    }),
-    onClick: () => applyClientMethod({
-      methodName: 'pressKeyCode',
-      args: [187]
-    })
   }))));
   const appModeControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     value: appMode

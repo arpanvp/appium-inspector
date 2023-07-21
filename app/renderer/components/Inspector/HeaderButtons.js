@@ -38,7 +38,7 @@ const HeaderButtons = (props) => {
           onClick={showSiriCommandModal} />
       </Tooltip>
     </>}
-    {driver && driver.client.isAndroid && <>
+    {/* {driver && driver.client.isAndroid && <>
       <Tooltip title={t('Press Back Button')}>
         <Button id='btnPressHomeButton'
           icon={<IoChevronBackOutline className={InspectorStyles['custom-button-icon']}/>}
@@ -54,7 +54,7 @@ const HeaderButtons = (props) => {
           icon={<BiSquare className={InspectorStyles['custom-button-icon']}/>}
           onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187]})} />
       </Tooltip>
-    </>}
+    </>} */}
   </Button.Group>;
 
   const appModeControls = <Button.Group value={appMode}>
