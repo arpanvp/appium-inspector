@@ -601,6 +601,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    margin-left: 10%;
 }
 .screenimage{
     width: 100%;
@@ -609,7 +610,7 @@
 .innerScreenshotContainer {
     position: relative;
     width: 360px;
-    height: 100%;
+    height: 95%;
     margin: auto;
     border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;

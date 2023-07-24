@@ -7,7 +7,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import HighlighterRects from './HighlighterRects';
-import { Spin, Tooltip,Button } from 'antd';
+import { Spin, Tooltip, Button } from 'antd';
 import B from 'bluebird';
 import styles from './Inspector.css';
 import {
@@ -27,7 +27,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress,driver, selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
   // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
@@ -706,22 +706,22 @@ const Screenshot = (props) => {
         </div>
       </div>
       {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
-      <Tooltip title={t('Press Back Button')}>
-        <Button id='btnPressHomeButton' className={styles['phone-btn1']}
-          icon={<IoChevronBackOutline className={styles['custom-button-icon']}/>}
-          onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4]})} />
-      </Tooltip>
-      <Tooltip title={t('Press Home Button')}>
-        <Button id='btnPressHomeButton' className={styles['phone-btn2']}
-          icon={<BiCircle className={styles['custom-button-icon']}/>}
-          onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3]})} />
-      </Tooltip>
-      <Tooltip title={t('Press App Switch Button')}>
-        <Button id='btnPressHomeButton' className={styles['phone-btn3']}
-          icon={<BiSquare className={styles['custom-button-icon']}/>}
-          onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187]})} />
-      </Tooltip>
-    </div>}
+        <Tooltip title={t('Press Back Button')}>
+          <Button id='btnPressHomeButton' className={styles['phone-btn1']}
+            icon={<IoChevronBackOutline className={styles['custom-button-icon']}/>}
+            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4]})} />
+        </Tooltip>
+        <Tooltip title={t('Press Home Button')}>
+          <Button id='btnPressHomeButton' className={styles['phone-btn2']}
+            icon={<BiCircle className={styles['custom-button-icon']}/>}
+            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3]})} />
+        </Tooltip>
+        <Tooltip title={t('Press App Switch Button')}>
+          <Button id='btnPressHomeButton' className={styles['phone-btn3']}
+            icon={<BiSquare className={styles['custom-button-icon']}/>}
+            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187]})} />
+        </Tooltip>
+      </div>}
     </Spin>
   );
 };

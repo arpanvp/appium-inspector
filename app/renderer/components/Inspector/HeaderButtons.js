@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Tooltip, Space } from 'antd';
 import InspectorStyles from './Inspector.css';
@@ -99,7 +100,7 @@ const HeaderButtons = (props) => {
     }
   </Button.Group>;
 
-  const quitSessionButton = <Tooltip title={t('band ho ja')}>
+  const quitSessionButton = <Tooltip title={t('Close')}>
     <Button id='btnClose' icon={<CloseOutlined/>} onClick={() => quitSession()}/>
   </Tooltip>;
 
