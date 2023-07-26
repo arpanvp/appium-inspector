@@ -299,6 +299,8 @@ const Screenshot = (props) => {
 
 
   const handleDoSwipeSlide = async (swipeEndLocal) => {
+    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props)
+    let xpath = props.selectedElement.xpath
     const { clearSwipeAction } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
     let data = {
@@ -312,8 +314,8 @@ const Screenshot = (props) => {
         ]
       },
     };
-    if (element.xpath) {
-      data.xpath = element.xpath;
+    if (xpath) {
+      data.xpath = xpath;
     }
     await applyClientMethod(data);
     selectScreenshotInteractionMode(SLIDE);
