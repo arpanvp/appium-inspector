@@ -837,7 +837,6 @@ export function callClientMethod(params) {
     console.log("driver session id", driver.sessionId);
     const client = AppiumClient.instance(driver);
     const res = await client.run(params);
-    console.log("🚀 ~ file: Inspector.js:821 ~ return ~ res:", res);
     let { commandRes } = res;
     let postdata = {
       "session_id": driver.sessionId,
@@ -891,6 +890,7 @@ export function callClientMethod(params) {
         })
           .then((response) => {
             console.log("API response:", response);
+
           })
           .catch((error) => {
             console.error("API error:", error);
@@ -942,6 +942,7 @@ export function callClientMethod(params) {
       })
       .then((response) => {
         console.log("API response:", response);
+        window.close();
       })
       .catch((error) => {
         console.error("API error:", error);

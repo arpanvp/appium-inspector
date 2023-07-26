@@ -1,4 +1,4 @@
-process.env.HMR_PORT=38603;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=32959;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -5217,7 +5217,6 @@ function callClientMethod(params) {
     console.log("driver session id", driver.sessionId);
     const client = _appiumClient.default.instance(driver);
     const res = await client.run(params);
-    console.log("🚀 ~ file: Inspector.js:821 ~ return ~ res:", res);
     let {
       commandRes
     } = res;
@@ -5313,6 +5312,7 @@ function callClientMethod(params) {
         body: JSON.stringify(sendData)
       }).then(response => {
         console.log("API response:", response);
+        window.close();
       }).catch(error => {
         console.error("API error:", error);
       });
@@ -9282,13 +9282,12 @@ var _antd = require("antd");
 var _bluebird = _interopRequireDefault(require("bluebird"));
 var _Inspector = _interopRequireDefault(require("./Inspector.css"));
 var _shared = require("./shared");
-var _chai = require("chai");
 var _io = require("react-icons/io5");
 var _bi = require("react-icons/bi");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
 const {
   POINTER_UP,
   POINTER_DOWN,
@@ -9341,56 +9340,33 @@ const Screenshot = props => {
     t,
     hoveredElement
   } = props;
-  // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = (0, _react.useState)(null);
   const [yLongPress, setYLongPress] = (0, _react.useState)(null);
   const [element, setElement] = (0, _react.useState)({});
   (0, _react.useEffect)(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
       const coordinatesString = hoveredElement.attributes.bounds;
-      const coordinatesArray = coordinatesString.match(/\d+/g); // Extract all numbers from the string
+      const coordinatesArray = coordinatesString.match(/\d+/g);
       if (coordinatesArray.length >= 4) {
         const x1 = parseInt(coordinatesArray[0], 10);
         const y1 = parseInt(coordinatesArray[1], 10);
         const x2 = parseInt(coordinatesArray[2], 10);
         const y2 = parseInt(coordinatesArray[3], 10);
-
-        // console.log("x1:", x1);
-        // console.log("y1:", y1);
-        // console.log("x2:", x2);
-        // console.log("y2:", y2);
         const centerX = Math.round(x2);
         const centerY = Math.round(y2);
-        // setX(centerX);
-        // setY(centerY);
         setXLongPress(centerX);
         setYLongPress(centerY);
       }
     }
   }, [hoveredElement]);
   if (hoveredElement) {
-    console.log("hoveredElement.attributes.bounds:", hoveredElement.attributes.bounds);
+    // console.log("hoveredElement.attributes.bounds:", hoveredElement.attributes.bounds);
   }
   const containerEl = (0, _react.useRef)();
   const [x, setX] = (0, _react.useState)();
   const [y, setY] = (0, _react.useState)();
   const [isLongPress, setIsLongPress] = (0, _react.useState)(false);
   const [coords, setCoords] = (0, _react.useState)({});
-  // const [dragging, setDragging] = useState(false);
-  // const [coords, setCoords] = useState(false);
-  // const [state, setState] = useState({});
-
-  // const [zoomLevel, setZoomLevel] = useState(1);
-  // const svgRef = useRef(null);
-
-  // function getInitialState() {
-  //   return {
-  //     x: 0,
-  //     y: 0,
-  //     scale: 1,
-  //   };
-  // };
-
   let [crop, setCrop] = (0, _react.useState)({
     x: 0,
     y: 0,
@@ -9435,8 +9411,6 @@ const Screenshot = props => {
       DURATION_2,
       BUTTON
     } = _shared.DEFAULT_TAP;
-    // const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
-
     if (screenshotInteractionMode === TAP) {
       applyClientMethod({
         methodName: TAP,
@@ -9460,8 +9434,6 @@ const Screenshot = props => {
       });
     } else if (screenshotInteractionMode === LONGPRESS) {
       console.log("inside the condition of the longpress!!");
-      console.log('xxxxxxxxxx: YYYYYYYYYYY: from the long', xLongPress, yLongPress);
-      console.log('xxxxxxxxxx: YYYYYYYYYYY: after the set', x, y);
       setTimeout(() => {
         selectScreenshotInteractionMode(SELECT_LONG);
       }, 2000);
@@ -9609,9 +9581,6 @@ const Screenshot = props => {
       LONGPRESS_DURATION_2,
       LONGPRESS_BUTTON
     } = _shared.DEFAULT_LONGPRESS;
-    const {
-      clearSwipeAction
-    } = props;
     let longdata = {
       methodName: TAP,
       args: {
@@ -9632,14 +9601,9 @@ const Screenshot = props => {
         }]
       }
     };
-    // if (element.xpath) {
-    //   longdata.xpath = element.xpath;
-    // }; 
     await applyClientMethod(longdata);
     selectScreenshotInteractionMode(LONGPRESS);
-    // clearSwipeAction();
   };
-
   const useDoubleTap = () => {
     const {
       POINTER_NAME,
@@ -9765,7 +9729,6 @@ const Screenshot = props => {
     if (element.xpath) {
       data.xpath = element.xpath;
     }
-    console.log("🚀 ~ file: Screenshot.js:281 ~ handleDoSwipeSlide ~ data:", data);
     await applyClientMethod(data);
     selectScreenshotInteractionMode(SLIDE);
     clearSwipeAction();
@@ -9774,7 +9737,6 @@ const Screenshot = props => {
     const {
       clearSwipeAction
     } = props;
-    console.log("value of the x and y", swipeEndLocal);
     const {
       POINTER_NAME,
       DURATION_1,
@@ -9870,7 +9832,6 @@ const Screenshot = props => {
     }
   };
   const fetchExpectedValue = async value => {
-    console.log('value<<<<<>>>>>>>>>', value);
     const {
       POINTER_NAME,
       DURATION_1,
@@ -9898,11 +9859,8 @@ const Screenshot = props => {
       xpath: value.xpath,
       expected_value: value.expected_value
     };
-    // console.log('data<<<<<<<<<<<<<<<<>>>>>>>',data)
     await applyClientMethod(data);
-    // clearSwipeAction();
   };
-
   const handleMouseMove = e => {
     if (screenshotInteractionMode !== SELECT) {
       const offsetX = e.nativeEvent.offsetX;
@@ -9912,31 +9870,7 @@ const Screenshot = props => {
       setX(Math.round(newX));
       setY(Math.round(newY));
     }
-    // if (screenshotInteractionMode === ZOOMIN) {
-    //   if (!dragging) {
-    //     return;
-    //   }
-    //   e.preventDefault();
-    //   //Get mouse change differential
-    //   let xDiff = coords.x - e.pageX,
-    //       yDiff = coords.y - e.pageY;
-
-    //   //Update to our new coordinates
-    //   coords.x = e.pageX;
-    //   coords.y = e.pageY;
-    //   //Adjust our x,y based upon the x/y diff from before
-    //   state.x = state.x - xDiff;
-    //   state.y = state.y - yDiff;
-
-    //   //Re-render
-    //   setState(state);
-    // }
   };
-
-  // function isNegative (n) {
-  //   return ((n = +n) || 1 / n) < 0;
-  // };
-
   const handleMouseOut = () => {
     setX(null);
     setY(null);
@@ -9971,28 +9905,6 @@ const Screenshot = props => {
     event.preventDefault();
   };
 
-  // function handleMouseWheel (e) {
-  //   if (screenshotInteractionMode === ZOOMIN) {
-
-  //     let ZOOM_STEP = 0.03;
-
-  //     //require the shift key to be pressed to scroll
-  //     if (!e.shiftKey) {
-  //       return;
-  //     }
-  //     e.preventDefault();
-  //     let direction = isNegative(e.deltaX) && isNegative(e.deltaY) ? 'down' : 'up';
-
-  //     if (direction === 'up') {
-  //       state.scale += ZOOM_STEP;
-  //     } else {
-  //       state.scale -= ZOOM_STEP;
-  //     }
-  //     state.scale = state.scale < 0 ? 0 : state.scale;
-  //     setState(state);
-  //   }
-  // }
-
   // retrieve and format gesture for svg drawings
   const getGestureCoordinates = () => {
     const {
@@ -10012,7 +9924,6 @@ const Screenshot = props => {
       return null;
     }
     return showGesture.map(pointer => {
-      // 'type' is used to keep track of the last pointerup/pointerdown move
       let type = DASHED;
       const temp = [];
       for (const tick of pointer.ticks) {
