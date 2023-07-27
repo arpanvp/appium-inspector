@@ -1,3 +1,4 @@
+/* eslint-disable dot-notation */
 /* eslint-disable indent */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
@@ -267,7 +268,7 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === SLIDE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
-          </Tooltip> 
+          </Tooltip>
           <Tooltip title={t('File Upload')}>
             <Button className={InspectorStyles['user_actions']} icon={<FileAddOutlined />} onClick={async () => {
               if (screenshotInteractionMode === FILE_UPLOAD) {

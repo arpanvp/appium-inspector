@@ -5571,46 +5571,46 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_5ede3",
-  "sessionContainer": "_sessionContainer_5ede3",
-  "cloudProviderModal": "_cloudProviderModal_5ede3",
-  "sessionFooter": "_sessionFooter_5ede3",
-  "desiredCapsLink": "_desiredCapsLink_5ede3",
-  "tabText": "_tabText_5ede3",
-  "serverTabs": "_serverTabs_5ede3",
-  "scrollingTabCont": "_scrollingTabCont_5ede3",
-  "scrollingTab": "_scrollingTab_5ede3",
-  "savedSessions": "_savedSessions_5ede3",
-  "newSessionForm": "_newSessionForm_5ede3",
-  "capsFormattedCol": "_capsFormattedCol_5ede3",
-  "formattedCaps": "_formattedCaps_5ede3",
-  "formattedCapsBody": "_formattedCapsBody_5ede3",
-  "start-session-button": "_start-session-button_5ede3",
-  "filepath-button": "_filepath-button_5ede3",
-  "capsFormCol": "_capsFormCol_5ede3",
-  "capsFormRow": "_capsFormRow_5ede3",
-  "capsBoxFont": "_capsBoxFont_5ede3",
-  "capsValueControl": "_capsValueControl_5ede3",
-  "fileControlWrapper": "_fileControlWrapper_5ede3",
-  "localDesc": "_localDesc_5ede3",
-  "selected": "_selected_5ede3",
-  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
-  "capsEditorControls": "_capsEditorControls_5ede3",
-  "capsEditorButton": "_capsEditorButton_5ede3",
-  "capsEditor": "_capsEditor_5ede3",
-  "capsEditorTitle": "_capsEditorTitle_5ede3",
-  "capsEditorBody": "_capsEditorBody_5ede3",
-  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
-  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
-  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
-  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
-  "editSession": "_editSession_5ede3",
-  "btnReload": "_btnReload_5ede3",
-  "btnDeleteCap": "_btnDeleteCap_5ede3",
-  "inputDataCenter": "_inputDataCenter_5ede3",
-  "addonDataCenter": "_addonDataCenter_5ede3",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
+  "active-session": "_active-session_46061",
+  "sessionContainer": "_sessionContainer_46061",
+  "cloudProviderModal": "_cloudProviderModal_46061",
+  "sessionFooter": "_sessionFooter_46061",
+  "desiredCapsLink": "_desiredCapsLink_46061",
+  "tabText": "_tabText_46061",
+  "serverTabs": "_serverTabs_46061",
+  "scrollingTabCont": "_scrollingTabCont_46061",
+  "scrollingTab": "_scrollingTab_46061",
+  "savedSessions": "_savedSessions_46061",
+  "newSessionForm": "_newSessionForm_46061",
+  "capsFormattedCol": "_capsFormattedCol_46061",
+  "formattedCaps": "_formattedCaps_46061",
+  "formattedCapsBody": "_formattedCapsBody_46061",
+  "start-session-button": "_start-session-button_46061",
+  "filepath-button": "_filepath-button_46061",
+  "capsFormCol": "_capsFormCol_46061",
+  "capsFormRow": "_capsFormRow_46061",
+  "capsBoxFont": "_capsBoxFont_46061",
+  "capsValueControl": "_capsValueControl_46061",
+  "fileControlWrapper": "_fileControlWrapper_46061",
+  "localDesc": "_localDesc_46061",
+  "selected": "_selected_46061",
+  "capsNameEditorButton": "_capsNameEditorButton_46061",
+  "capsEditorControls": "_capsEditorControls_46061",
+  "capsEditorButton": "_capsEditorButton_46061",
+  "capsEditor": "_capsEditor_46061",
+  "capsEditorTitle": "_capsEditorTitle_46061",
+  "capsEditorBody": "_capsEditorBody_46061",
+  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
+  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
+  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
+  "add-desired-capability-button": "_add-desired-capability-button_46061",
+  "editSession": "_editSession_46061",
+  "btnReload": "_btnReload_46061",
+  "btnDeleteCap": "_btnDeleteCap_46061",
+  "inputDataCenter": "_inputDataCenter_46061",
+  "addonDataCenter": "_addonDataCenter_46061",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -8737,7 +8737,10 @@ module.hot.accept(reloadCSS);
 module.exports = {
   "inspector-container": "_inspector-container_5407d",
   "inspector-toolbar": "_inspector-toolbar_5407d",
+  "button_wrapper": "_button_wrapper_5407d",
   "ant-btn": "_ant-btn_5407d",
+  "actionButton": "_actionButton_5407d",
+  "user_actions": "_user_actions_5407d",
   "inspector-main": "_inspector-main_5407d",
   "whole-btn": "_whole-btn_5407d",
   "screenshot-container": "_screenshot-container_5407d",
@@ -12698,7 +12701,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(EXPECTED_VALUE);
       },
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Expected Value')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12818,9 +12822,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_70832",
-  "loader": "_loader_70832",
-  "load1": "_load1_70832"
+  "container": "_container_afc3f",
+  "loader": "_loader_afc3f",
+  "load1": "_load1_afc3f"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -12906,8 +12910,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_8d2a9",
-  "copyTraceBtn": "_copyTraceBtn_8d2a9"
+  "errorMessage": "_errorMessage_e36f2",
+  "copyTraceBtn": "_copyTraceBtn_e36f2"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
