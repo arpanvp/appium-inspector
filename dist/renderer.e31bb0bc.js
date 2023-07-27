@@ -8792,6 +8792,7 @@ module.exports = {
   "swipeInstructions": "_swipeInstructions_5407d",
   "swipeSvg": "_swipeSvg_5407d",
   "tapDiv": "_tapDiv_5407d",
+  "iphone_x": "_iphone_x_5407d",
   "gestureSvg": "_gestureSvg_5407d",
   "filled": "_filled_5407d",
   "dashed": "_dashed_5407d",
@@ -9068,6 +9069,7 @@ const {
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = props => {
+  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props);
   const {
     source,
     containerEl,
@@ -9699,6 +9701,8 @@ const Screenshot = props => {
     clearSwipeAction();
   };
   const handleDoSwipeSlide = async swipeEndLocal => {
+    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props);
+    let xpath = props.selectedElement.xpath;
     const {
       clearSwipeAction
     } = props;
@@ -9732,8 +9736,8 @@ const Screenshot = props => {
         }]
       }
     };
-    if (element.xpath) {
-      data.xpath = element.xpath;
+    if (xpath) {
+      data.xpath = xpath;
     }
     await applyClientMethod(data);
     selectScreenshotInteractionMode(SLIDE);

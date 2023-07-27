@@ -9,6 +9,7 @@ const { CENTROID, OVERLAP, EXPAND } = RENDER_CENTROID_AS;
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = (props) => {
+  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props)
   const { source, containerEl, searchedForElementBounds, scaleRatio, showCentroids,
           isLocatorTestModalVisible, isSiriCommandModalVisible } = props;
 
@@ -183,7 +184,7 @@ const HighlighterRects = (props) => {
   if (containerEl) {
     screenshotEl = containerEl.querySelector('img');
     highlighterXOffset = screenshotEl.getBoundingClientRect().left -
-                         containerEl.getBoundingClientRect().left;
+    containerEl.getBoundingClientRect().left;
   }
 
   // If the user selected an element that they searched for, highlight that element
