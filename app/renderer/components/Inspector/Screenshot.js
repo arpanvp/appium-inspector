@@ -18,7 +18,7 @@ import {
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -196,6 +196,10 @@ const Screenshot = (props) => {
         };
       }
       await fetchExpectedValue(data);
+    } else if (screenshotInteractionMode === TAKE_SCREENSHOT) {
+      console.log("here the take screenshot condition!!!!!!!");
+      const image = await driver.client.takeScreenshot();
+      console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
     }
   };
 

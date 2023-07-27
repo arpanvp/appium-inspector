@@ -1,4 +1,4 @@
-process.env.HMR_PORT=32959;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=34225;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -826,7 +826,8 @@ const SCREENSHOT_INTERACTION_MODE = {
   SELECT_DOUBLE: 'select_double',
   FILE_UPLOAD: 'file_upload',
   SELECT_FILE: 'select_file',
-  EXPECTED_VALUE: 'expected_value'
+  EXPECTED_VALUE: 'expected_value',
+  TAKE_SCREENSHOT: 'take_screenshot'
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -5312,7 +5313,7 @@ function callClientMethod(params) {
         body: JSON.stringify(sendData)
       }).then(response => {
         console.log("API response:", response);
-        window.close();
+        // window.close();
       }).catch(error => {
         console.error("API error:", error);
       });
@@ -9308,7 +9309,8 @@ const {
   SELECT_DOUBLE,
   FILE_UPLOAD,
   SELECT_FILE,
-  EXPECTED_VALUE
+  EXPECTED_VALUE,
+  TAKE_SCREENSHOT
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
@@ -9535,6 +9537,10 @@ const Screenshot = props => {
         };
       }
       await fetchExpectedValue(data);
+    } else if (screenshotInteractionMode === TAKE_SCREENSHOT) {
+      console.log("here the take screenshot condition!!!!!!!");
+      const image = await driver.client.takeScreenshot();
+      console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
     }
   };
   const handleLongPress = () => {
@@ -12357,7 +12363,8 @@ const {
   ZOOMIN,
   SLIDE,
   FILE_UPLOAD,
-  EXPECTED_VALUE
+  EXPECTED_VALUE,
+  TAKE_SCREENSHOT
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -12652,6 +12659,15 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(EXPECTED_VALUE);
       },
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible
+    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+      title: t('Expected Value')
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(TAKE_SCREENSHOT);
+      },
+      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
     })))));
     let main = /*#__PURE__*/_react.default.createElement("div", {
