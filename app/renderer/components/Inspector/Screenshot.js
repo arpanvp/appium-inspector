@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable space-before-blocks */
 /* eslint-disable space-in-parens */
 /* eslint-disable no-console */
@@ -14,7 +15,6 @@ import {
   SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
   DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP, DEFAULT_ZOOM
 } from './shared';
-import { use } from 'chai';
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
@@ -28,7 +28,6 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  */
 const Screenshot = (props) => {
   const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
-  // console.log("inside the screenshot function props!!!", props);
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
   const [element, setElement] = useState({});
@@ -36,21 +35,15 @@ const Screenshot = (props) => {
   useEffect(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
       const coordinatesString = hoveredElement.attributes.bounds;
-      const coordinatesArray = coordinatesString.match(/\d+/g); // Extract all numbers from the string
+      const coordinatesArray = coordinatesString.match(/\d+/g);
       if (coordinatesArray.length >= 4) {
         const x1 = parseInt(coordinatesArray[0], 10);
         const y1 = parseInt(coordinatesArray[1], 10);
         const x2 = parseInt(coordinatesArray[2], 10);
         const y2 = parseInt(coordinatesArray[3], 10);
 
-        // console.log("x1:", x1);
-        // console.log("y1:", y1);
-        // console.log("x2:", x2);
-        // console.log("y2:", y2);
         const centerX = Math.round(x2);
         const centerY = Math.round(y2);
-        // setX(centerX);
-        // setY(centerY);
         setXLongPress(centerX);
         setYLongPress(centerY);
       }
@@ -59,7 +52,7 @@ const Screenshot = (props) => {
   }, [hoveredElement]);
 
   if (hoveredElement) {
-    console.log("hoveredElement.attributes.bounds:", hoveredElement.attributes.bounds);
+    // console.log("hoveredElement.attributes.bounds:", hoveredElement.attributes.bounds);
   }
 
 
@@ -69,20 +62,6 @@ const Screenshot = (props) => {
   const [isLongPress, setIsLongPress] = useState(false);
 
   const [coords, setCoords] = useState({});
-  // const [dragging, setDragging] = useState(false);
-  // const [coords, setCoords] = useState(false);
-  // const [state, setState] = useState({});
-
-  // const [zoomLevel, setZoomLevel] = useState(1);
-  // const svgRef = useRef(null);
-
-  // function getInitialState() {
-  //   return {
-  //     x: 0,
-  //     y: 0,
-  //     scale: 1,
-  //   };
-  // };
 
   let [crop, setCrop] = useState({ x: 0, y: 0, scale: 1 });
   let imageElement = containerEl.current;
@@ -113,7 +92,6 @@ const Screenshot = (props) => {
   const handleScreenshotClick = async () => {
     const { setSwipeStart, setSwipeEnd, tapTickCoordinates, setSwipeStart1, setSwipeEnd1 } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON } = DEFAULT_TAP;
-    // const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
 
 
     if (screenshotInteractionMode === TAP) {
@@ -132,8 +110,6 @@ const Screenshot = (props) => {
       });
     } else if (screenshotInteractionMode === LONGPRESS) {
       console.log("inside the condition of the longpress!!");
-      console.log('xxxxxxxxxx: YYYYYYYYYYY: from the long', xLongPress, yLongPress);
-      console.log('xxxxxxxxxx: YYYYYYYYYYY: after the set', x, y);
       setTimeout(() => {
         selectScreenshotInteractionMode(SELECT_LONG);
       }, 2000);
@@ -252,7 +228,6 @@ const Screenshot = (props) => {
 
   const useLongPress = async () => {
     const { LONGPRESS_POINTER_NAME, LONGPRESS_DURATION_1, LONGPRESS_DURATION_2, LONGPRESS_BUTTON } = DEFAULT_LONGPRESS;
-    const { clearSwipeAction } = props;
     let longdata = {
       methodName: TAP,
       args: {
@@ -264,12 +239,8 @@ const Screenshot = (props) => {
         ],
       }
     };
-    // if (element.xpath) {
-    //   longdata.xpath = element.xpath;
-    // }; 
     await applyClientMethod(longdata);
     selectScreenshotInteractionMode(LONGPRESS);
-    // clearSwipeAction();
   };
 
   const useDoubleTap = () => {
@@ -328,6 +299,8 @@ const Screenshot = (props) => {
 
 
   const handleDoSwipeSlide = async (swipeEndLocal) => {
+    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props)
+    let xpath = props.selectedElement.xpath
     const { clearSwipeAction } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
     let data = {
@@ -341,10 +314,9 @@ const Screenshot = (props) => {
         ]
       },
     };
-    if (element.xpath) {
-      data.xpath = element.xpath;
+    if (xpath) {
+      data.xpath = xpath;
     }
-    console.log("🚀 ~ file: Screenshot.js:281 ~ handleDoSwipeSlide ~ data:", data);
     await applyClientMethod(data);
     selectScreenshotInteractionMode(SLIDE);
     clearSwipeAction();
@@ -352,7 +324,6 @@ const Screenshot = (props) => {
 
   const handleDoDragAndDrop = async (swipeEndLocal) => {
     const { clearSwipeAction } = props;
-    console.log("value of the x and y", swipeEndLocal);
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_DRAG_AND_DROP;
     await applyClientMethod({
       methodName: TAP,
@@ -396,7 +367,6 @@ const Screenshot = (props) => {
   };
 
   const fetchExpectedValue = async (value) => {
-    console.log('value<<<<<>>>>>>>>>', value);
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
     let data = {
       methodName: TAP,
@@ -410,9 +380,7 @@ const Screenshot = (props) => {
       xpath: value.xpath,
       expected_value: value.expected_value
     };
-    // console.log('data<<<<<<<<<<<<<<<<>>>>>>>',data)
     await applyClientMethod(data);
-    // clearSwipeAction();
   };
 
 
@@ -425,30 +393,9 @@ const Screenshot = (props) => {
       setX(Math.round(newX));
       setY(Math.round(newY));
     }
-    // if (screenshotInteractionMode === ZOOMIN) {
-    //   if (!dragging) {
-    //     return;
-    //   }
-    //   e.preventDefault();
-    //   //Get mouse change differential
-    //   let xDiff = coords.x - e.pageX,
-    //       yDiff = coords.y - e.pageY;
 
-    //   //Update to our new coordinates
-    //   coords.x = e.pageX;
-    //   coords.y = e.pageY;
-    //   //Adjust our x,y based upon the x/y diff from before
-    //   state.x = state.x - xDiff;
-    //   state.y = state.y - yDiff;
-
-    //   //Re-render
-    //   setState(state);
-    // }
   };
 
-  // function isNegative (n) {
-  //   return ((n = +n) || 1 / n) < 0;
-  // };
 
   const handleMouseOut = () => {
     setX(null);
@@ -481,28 +428,6 @@ const Screenshot = (props) => {
   };
 
 
-  // function handleMouseWheel (e) {
-  //   if (screenshotInteractionMode === ZOOMIN) {
-
-  //     let ZOOM_STEP = 0.03;
-
-  //     //require the shift key to be pressed to scroll
-  //     if (!e.shiftKey) {
-  //       return;
-  //     }
-  //     e.preventDefault();
-  //     let direction = isNegative(e.deltaX) && isNegative(e.deltaY) ? 'down' : 'up';
-
-  //     if (direction === 'up') {
-  //       state.scale += ZOOM_STEP;
-  //     } else {
-  //       state.scale -= ZOOM_STEP;
-  //     }
-  //     state.scale = state.scale < 0 ? 0 : state.scale;
-  //     setState(state);
-  //   }
-  // }
-
   // retrieve and format gesture for svg drawings
   const getGestureCoordinates = () => {
     const { showGesture } = props;
@@ -511,7 +436,6 @@ const Screenshot = (props) => {
 
     if (!showGesture) { return null; }
     return showGesture.map((pointer) => {
-      // 'type' is used to keep track of the last pointerup/pointerdown move
       let type = DASHED;
       const temp = [];
       for (const tick of pointer.ticks) {
@@ -564,6 +488,7 @@ const Screenshot = (props) => {
   const screenSrc = mjpegScreenshotUrl || `data:image/gif;base64,${screenshot}`;
   const screenImg = <img src={screenSrc} id="screenshot" className={styles.screenimage} />;
   const points = getGestureCoordinates();
+  
 
   // const screenshotStyle1 = {
   //   transform: `scale(${2})`, // Apply the zoom level to the transform style
