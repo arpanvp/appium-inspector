@@ -222,52 +222,54 @@ export default class Inspector extends Component {
           <Tooltip title={t('Select Elements')}>
             <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT); }}
               type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('Swipe By Coordinates')}>
             <Button icon={<SwapRightOutlined />} onClick={() => { this.screenshotInteractionChange(SWIPE); }}
               type={screenshotInteractionMode === SWIPE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('Tap By Coordinates')}>
             <Button icon={<ScanOutlined />} onClick={() => { this.screenshotInteractionChange(TAP); }}
               type={screenshotInteractionMode === TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('LongPress')}>
             <Button icon={<InfoOutlined />} onClick={() => { this.screenshotInteractionChange(LONGPRESS); }}
               type={screenshotInteractionMode === LONGPRESS ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('drag_and_drop')}>
             <Button icon={<DragOutlined />} onClick={() => { this.screenshotInteractionChange(DRAG_AND_DROP); }}
               type={screenshotInteractionMode === DRAG_AND_DROP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('Double Tap')}>
             <Button icon={<UpCircleOutlined />} onClick={() => { this.screenshotInteractionChange(DOUBLE_TAP); }}
-              type={screenshotInteractionMode === DOUBLE_TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT} />
+              type={screenshotInteractionMode === DOUBLE_TAP ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              className={InspectorStyles['user_actions']}
+              />
 
           </Tooltip>
           <Tooltip title={t('Zoom In and Zoom Out')}>
             <Button icon={<ShrinkOutlined />} onClick={() => { this.screenshotInteractionChange(ZOOMIN); }}
               type={screenshotInteractionMode === ZOOMIN ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('Slider')}>
             <Button icon={<SlidersOutlined />} onClick={() => { this.screenshotInteractionChange(SLIDE); }}
               type={screenshotInteractionMode === SLIDE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
-          </Tooltip>
+          </Tooltip> 
           <Tooltip title={t('File Upload')}>
-            <Button icon={<FileAddOutlined />} onClick={async () => {
+            <Button className={InspectorStyles['user_actions']} icon={<FileAddOutlined />} onClick={async () => {
               if (screenshotInteractionMode === FILE_UPLOAD) {
                 this.screenshotInteractionChange(null);
                 let data = {
@@ -298,7 +300,7 @@ export default class Inspector extends Component {
           <Tooltip title={t('Expected Value')}>
             <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE); }}
               type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
           <Tooltip title={t('Expected Value')}>

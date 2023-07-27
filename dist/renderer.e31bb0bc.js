@@ -5571,46 +5571,46 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_46061",
-  "sessionContainer": "_sessionContainer_46061",
-  "cloudProviderModal": "_cloudProviderModal_46061",
-  "sessionFooter": "_sessionFooter_46061",
-  "desiredCapsLink": "_desiredCapsLink_46061",
-  "tabText": "_tabText_46061",
-  "serverTabs": "_serverTabs_46061",
-  "scrollingTabCont": "_scrollingTabCont_46061",
-  "scrollingTab": "_scrollingTab_46061",
-  "savedSessions": "_savedSessions_46061",
-  "newSessionForm": "_newSessionForm_46061",
-  "capsFormattedCol": "_capsFormattedCol_46061",
-  "formattedCaps": "_formattedCaps_46061",
-  "formattedCapsBody": "_formattedCapsBody_46061",
-  "start-session-button": "_start-session-button_46061",
-  "filepath-button": "_filepath-button_46061",
-  "capsFormCol": "_capsFormCol_46061",
-  "capsFormRow": "_capsFormRow_46061",
-  "capsBoxFont": "_capsBoxFont_46061",
-  "capsValueControl": "_capsValueControl_46061",
-  "fileControlWrapper": "_fileControlWrapper_46061",
-  "localDesc": "_localDesc_46061",
-  "selected": "_selected_46061",
-  "capsNameEditorButton": "_capsNameEditorButton_46061",
-  "capsEditorControls": "_capsEditorControls_46061",
-  "capsEditorButton": "_capsEditorButton_46061",
-  "capsEditor": "_capsEditor_46061",
-  "capsEditorTitle": "_capsEditorTitle_46061",
-  "capsEditorBody": "_capsEditorBody_46061",
-  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
-  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
-  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
-  "add-desired-capability-button": "_add-desired-capability-button_46061",
-  "editSession": "_editSession_46061",
-  "btnReload": "_btnReload_46061",
-  "btnDeleteCap": "_btnDeleteCap_46061",
-  "inputDataCenter": "_inputDataCenter_46061",
-  "addonDataCenter": "_addonDataCenter_46061",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
+  "active-session": "_active-session_5ede3",
+  "sessionContainer": "_sessionContainer_5ede3",
+  "cloudProviderModal": "_cloudProviderModal_5ede3",
+  "sessionFooter": "_sessionFooter_5ede3",
+  "desiredCapsLink": "_desiredCapsLink_5ede3",
+  "tabText": "_tabText_5ede3",
+  "serverTabs": "_serverTabs_5ede3",
+  "scrollingTabCont": "_scrollingTabCont_5ede3",
+  "scrollingTab": "_scrollingTab_5ede3",
+  "savedSessions": "_savedSessions_5ede3",
+  "newSessionForm": "_newSessionForm_5ede3",
+  "capsFormattedCol": "_capsFormattedCol_5ede3",
+  "formattedCaps": "_formattedCaps_5ede3",
+  "formattedCapsBody": "_formattedCapsBody_5ede3",
+  "start-session-button": "_start-session-button_5ede3",
+  "filepath-button": "_filepath-button_5ede3",
+  "capsFormCol": "_capsFormCol_5ede3",
+  "capsFormRow": "_capsFormRow_5ede3",
+  "capsBoxFont": "_capsBoxFont_5ede3",
+  "capsValueControl": "_capsValueControl_5ede3",
+  "fileControlWrapper": "_fileControlWrapper_5ede3",
+  "localDesc": "_localDesc_5ede3",
+  "selected": "_selected_5ede3",
+  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
+  "capsEditorControls": "_capsEditorControls_5ede3",
+  "capsEditorButton": "_capsEditorButton_5ede3",
+  "capsEditor": "_capsEditor_5ede3",
+  "capsEditorTitle": "_capsEditorTitle_5ede3",
+  "capsEditorBody": "_capsEditorBody_5ede3",
+  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
+  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
+  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
+  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
+  "editSession": "_editSession_5ede3",
+  "btnReload": "_btnReload_5ede3",
+  "btnDeleteCap": "_btnDeleteCap_5ede3",
+  "inputDataCenter": "_inputDataCenter_5ede3",
+  "addonDataCenter": "_addonDataCenter_5ede3",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -10219,59 +10219,76 @@ const HeaderButtons = props => {
     onClick: showSiriCommandModal
   }))));
   const appModeControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
-    value: appMode
+    value: appMode,
+    style: {
+      display: "flex",
+      gap: "10px"
+    }
   }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Native App Mode')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     icon: /*#__PURE__*/_react.default.createElement(_icons.AppstoreOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.NATIVE);
-    },
-    type: appMode === _shared.APP_MODE.NATIVE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    }
+    // type={appMode === APP_MODE.NATIVE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+  }, "Native Mode")), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Web/Hybrid App Mode')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     icon: /*#__PURE__*/_react.default.createElement(_icons.GlobalOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.WEB_HYBRID);
-    },
-    type: appMode === _shared.APP_MODE.WEB_HYBRID ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT
-  })));
-  const generalControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, mjpegScreenshotUrl && !isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    }
+    // type={appMode === APP_MODE.WEB_HYBRID ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+  }, "Hybrid Mode")));
+  const generalControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
+    style: {
+      display: "flex",
+      gap: "10px"
+    }
+  }, mjpegScreenshotUrl && !isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Start Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     id: "btnStartRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PlayCircleOutlined, null),
     onClick: toggleRefreshingState
   })), mjpegScreenshotUrl && isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Pause Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     id: "btnPauseRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseCircleOutlined, null),
     onClick: toggleRefreshingState
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+  }, "Pause Recording")), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('refreshSource')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     id: "btnReload",
     icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null),
     onClick: () => applyClientMethod({
       methodName: 'getPageSource'
     })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+  }, "Refresh")), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Search for element')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     id: "searchForElement",
     icon: /*#__PURE__*/_react.default.createElement(_icons.SearchOutlined, null),
     onClick: showLocatorTestModal
-  })), !isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+  }, "Search")), !isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Start Recording')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     id: "btnStartRecording",
     icon: /*#__PURE__*/_react.default.createElement(_icons.EyeOutlined, null),
     onClick: startRecording
-  })), isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+  }, "Start Recording")), isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Pause Recording')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    className: _Inspector.default['actionButton'],
     id: "btnPause",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseOutlined, null),
     type: _AntdTypes.BUTTON.DANGER,
@@ -10280,6 +10297,10 @@ const HeaderButtons = props => {
   const quitSessionButton = /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Close')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    style: {
+      borderRadius: "50%"
+    },
+    className: _Inspector.default['actionButton'],
     id: "btnClose",
     icon: /*#__PURE__*/_react.default.createElement(_icons.CloseOutlined, null),
     onClick: () => quitSession()
@@ -10287,8 +10308,13 @@ const HeaderButtons = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['inspector-toolbar']
   }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    size: "middle"
-  }, deviceControls, appModeControls, generalControls, quitSessionButton));
+    className: _Inspector.default['button_wrapper']
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    style: {
+      display: "flex",
+      gap: "10px"
+    }
+  }, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
 };
 var _default = HeaderButtons;
 exports.default = _default;
@@ -12563,7 +12589,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(SELECT);
       },
       type: screenshotInteractionMode === SELECT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Swipe By Coordinates')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12572,7 +12599,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(SWIPE);
       },
       type: screenshotInteractionMode === SWIPE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Tap By Coordinates')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12581,7 +12609,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(TAP);
       },
       type: screenshotInteractionMode === TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('LongPress')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12590,7 +12619,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(LONGPRESS);
       },
       type: screenshotInteractionMode === LONGPRESS ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('drag_and_drop')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12599,7 +12629,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(DRAG_AND_DROP);
       },
       type: screenshotInteractionMode === DRAG_AND_DROP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Double Tap')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12607,7 +12638,8 @@ class Inspector extends _react.Component {
       onClick: () => {
         this.screenshotInteractionChange(DOUBLE_TAP);
       },
-      type: screenshotInteractionMode === DOUBLE_TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT
+      type: screenshotInteractionMode === DOUBLE_TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Zoom In and Zoom Out')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12616,7 +12648,8 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(ZOOMIN);
       },
       type: screenshotInteractionMode === ZOOMIN ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Slider')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12625,10 +12658,12 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(SLIDE);
       },
       type: screenshotInteractionMode === SLIDE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('File Upload')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      className: _Inspector.default['user_actions'],
       icon: /*#__PURE__*/_react.default.createElement(_icons.FileAddOutlined, null),
       onClick: async () => {
         if (screenshotInteractionMode === FILE_UPLOAD) {
@@ -12783,9 +12818,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_afc3f",
-  "loader": "_loader_afc3f",
-  "load1": "_load1_afc3f"
+  "container": "_container_70832",
+  "loader": "_loader_70832",
+  "load1": "_load1_70832"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -12871,8 +12906,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_e36f2",
-  "copyTraceBtn": "_copyTraceBtn_e36f2"
+  "errorMessage": "_errorMessage_8d2a9",
+  "copyTraceBtn": "_copyTraceBtn_8d2a9"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
