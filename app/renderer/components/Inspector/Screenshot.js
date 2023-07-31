@@ -18,7 +18,7 @@ import {
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -31,6 +31,10 @@ const Screenshot = (props) => {
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
   const [element, setElement] = useState({});
+  const [coordinates, setCoordinates] = useState([]);
+  const [scratch, setScratch] = useState(false);
+
+
 
   useEffect(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
@@ -89,7 +93,7 @@ const Screenshot = (props) => {
   //   );
   // }
 
-  const handleScreenshotClick = async () => {
+  const handleScreenshotClick = async (e) => {
     const { setSwipeStart, setSwipeEnd, tapTickCoordinates, setSwipeStart1, setSwipeEnd1 } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON } = DEFAULT_TAP;
 
@@ -191,7 +195,7 @@ const Screenshot = (props) => {
       if (props.selectedElement){
         expected_value = props.selectedElement.attributes.text;
         data = {
-          expected_value,
+          expected_value : expected_value,
           xpath: props.selectedElement.xpath
         };
       }
@@ -216,6 +220,14 @@ const Screenshot = (props) => {
     //   .catch((error) => {
     //     console.error("API error:", error);
     //   });
+    } else if (screenshotInteractionMode === SCRATCH){
+      console.log("🚀 ~ file: Screenshot.js:201 ~ handleScreenshotClick ~ e:", e)
+      if(!swipeStart){
+        setScratch(true)
+        setCoordinates([]);
+        await scratchCard(e)
+        setSwipeStart(x,y)
+      }
     }
   };
 
@@ -296,8 +308,15 @@ const Screenshot = (props) => {
       });
     }, delay);
     selectScreenshotInteractionMode(DOUBLE_TAP);
-    
   };
+
+  const scratchCard = async (e) => {
+    console.log("🚀 ~ file: Screenshot.js:293 ~ scratchCard ~ e:", e)
+    console.log('scratching');
+    if(scratch === true){
+      await handleMouseMove(e)
+    }
+  }
 
 
   const handleDoSwipe = async (swipeEndLocal) => {
@@ -319,8 +338,9 @@ const Screenshot = (props) => {
 
 
   const handleDoSwipeSlide = async (swipeEndLocal) => {
-    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props);
-    let xpath = props.selectedElement.xpath;
+    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props)
+    let xpath = props.selectedElement.xpath
+    console.log("🚀 ~ file: Screenshot.js:304 ~ handleDoSwipeSlide ~ xpath:", xpath)
     const { clearSwipeAction } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
     let data = {
@@ -405,19 +425,59 @@ const Screenshot = (props) => {
 
 
   const handleMouseMove = (e) => {
-    if (screenshotInteractionMode !== (SELECT)) {
+    const { clearSwipeAction } = props
+    const { POINTER_NAME1, POINTER_NAME2, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_ZOOM;
+    if (screenshotInteractionMode !== SELECT) {
       const offsetX = e.nativeEvent.offsetX;
       const offsetY = e.nativeEvent.offsetY;
       const newX = offsetX * scaleRatio;
       const newY = offsetY * scaleRatio;
       setX(Math.round(newX));
       setY(Math.round(newY));
-    }
+  
+      if (screenshotInteractionMode === SCRATCH) {
+      // console.log("🚀 ~ file: Screenshot.js:299 ~ scratchCard ~ coordinates.length:", coordinates.length)
+        setCoordinates((prevCoordinates) => [
+          ...prevCoordinates,
+          { x: Math.round(newX), y: Math.round(newY) },
+        ]);
 
+        if(coordinates.length > 250){
+          console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates)
+          // setTimeout(() => {
+            applyClientMethod({
+              methodName: SWIPE,
+              args: {
+                [POINTER_NAME1]: [
+                  { type: POINTER_MOVE, duration: DURATION_1, x: coordinates[0].x, y: coordinates[0].y },
+                  { type: POINTER_DOWN, button: BUTTON },
+                  { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: coordinates[80].x, y: coordinates[80].y },
+                  { type: POINTER_UP, button: BUTTON }
+                ],
+                [POINTER_NAME2]: [
+                  { type: POINTER_MOVE, duration: DURATION_1, x: coordinates[80].x, y: coordinates[80].y },
+                  { type: POINTER_DOWN, button: BUTTON },
+                  { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: coordinates[160].x, y: coordinates[160].y },
+                  { type: POINTER_UP, button: BUTTON }
+                ]
+              },
+            });
+          // }, 500);
+          clearSwipeAction();
+          setCoordinates([])
+          // selectScreenshotInteractionMode(SELECT);
+          setScratch(false)
+        }
+        
+      }
+    }
+    console.log("🚀 ~ file: Screenshot.js:406 ~ handleMouseMove ~ e:", e);
   };
+  
 
 
   const handleMouseOut = () => {
+    // setCoordinates([])
     setX(null);
     setY(null);
   };
@@ -436,7 +496,8 @@ const Screenshot = (props) => {
     console.log('Drop position:', { x: roundedDropX, y: roundedDropY });
     setX(roundedDropX);
     setY(roundedDropY);
-
+    setCoordinates([])
+    setScratch(false)
     setTimeout(async () => {
       await handleDoDragAndDrop({ x: roundedDropX, y: roundedDropY });
     }, 1000);
@@ -565,6 +626,14 @@ const Screenshot = (props) => {
               />}
             </svg>
           }
+          {screenshotInteractionMode === SCRATCH && (
+            <svg className={styles.swipeSvg}>
+              {swipeStart && scratch && coordinates.map((coord, index) => (
+                <circle key={index} cx={coord.x / scaleRatio} cy={coord.y / scaleRatio} />
+              ))}
+            </svg>
+          )}
+
 
           {screenshotInteractionMode === SLIDE_SWIPE &&
             <svg className={styles.swipeSvg}>

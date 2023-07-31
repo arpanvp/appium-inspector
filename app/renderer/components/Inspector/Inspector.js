@@ -42,7 +42,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT} = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH} = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -308,6 +308,12 @@ export default class Inspector extends Component {
             <Button icon={<FundProjectionScreenOutlined />} onClick={() => { this.screenshotInteractionChange(TAKE_SCREENSHOT); }}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            />
+          </Tooltip>
+          <Tooltip title={t('Scratch')}>
+            <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(SCRATCH); }}
+              type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
             />
           </Tooltip>
         </ButtonGroup>
