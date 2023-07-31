@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=45291;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 282e24e (mobile screen fix)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -8839,6 +8843,7 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "inspector-container": "_inspector-container_61591",
   "inspector-toolbar": "_inspector-toolbar_61591",
   "button_wrapper": "_button_wrapper_61591",
@@ -8933,6 +8938,102 @@ module.exports = {
   "tick-input-box": "_tick-input-box_61591",
   "tick-coord-box": "_tick-coord-box_61591",
   "option-inpt": "_option-inpt_61591"
+=======
+  "inspector-container": "_inspector-container_3421c",
+  "inspector-toolbar": "_inspector-toolbar_3421c",
+  "button_wrapper": "_button_wrapper_3421c",
+  "ant-btn": "_ant-btn_3421c",
+  "user_actions": "_user_actions_3421c",
+  "actionButton": "_actionButton_3421c",
+  "inspector-main": "_inspector-main_3421c",
+  "whole-btn": "_whole-btn_3421c",
+  "screenshot-container": "_screenshot-container_3421c",
+  "screenshot": "_screenshot_3421c",
+  "screenshot-controls": "_screenshot-controls_3421c",
+  "logoContainer": "_logoContainer_3421c",
+  "screenshotBox": "_screenshotBox_3421c",
+  "interaction-tab-container": "_interaction-tab-container_3421c",
+  "tree-container": "_tree-container_3421c",
+  "session-info-table": "_session-info-table_3421c",
+  "session-code-box": "_session-code-box_3421c",
+  "session-inner-table": "_session-inner-table_3421c",
+  "scroll-buttons": "_scroll-buttons_3421c",
+  "scroll-right": "_scroll-right_3421c",
+  "recorded-actions": "_recorded-actions_3421c",
+  "_inspector-main_0387c": "__inspector-main_0387c_3421c",
+  "ant-card-body": "_ant-card-body_3421c",
+  "interaction-tab-card": "_interaction-tab-card_3421c",
+  "highlighter-box": "_highlighter-box_3421c",
+  "inspected-element-box": "_inspected-element-box_3421c",
+  "hovered-element-box": "_hovered-element-box_3421c",
+  "centroid-box": "_centroid-box_3421c",
+  "centroid": "_centroid_3421c",
+  "overlap": "_overlap_3421c",
+  "expand": "_expand_3421c",
+  "plus-minus": "_plus-minus_3421c",
+  "phone-btn1": "_phone-btn1_3421c",
+  "phone-btn2": "_phone-btn2_3421c",
+  "phone-btn3": "_phone-btn3_3421c",
+  "custom-button-icon": "_custom-button-icon_3421c",
+  "elementActions": "_elementActions_3421c",
+  "elementKeyInputActions": "_elementKeyInputActions_3421c",
+  "selectedElementContainer": "_selectedElementContainer_3421c",
+  "selected-element-table-cells": "_selected-element-table-cells_3421c",
+  "element-cell-copy": "_element-cell-copy_3421c",
+  "selected-element-card": "_selected-element-card_3421c",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_3421c",
+  "context-selector": "_context-selector_3421c",
+  "sourceTag": "_sourceTag_3421c",
+  "sourceAttrName": "_sourceAttrName_3421c",
+  "no-recorded-actions": "_no-recorded-actions_3421c",
+  "recorded-code": "_recorded-code_3421c",
+  "framework-dropdown": "_framework-dropdown_3421c",
+  "searchResultsList": "_searchResultsList_3421c",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_3421c",
+  "searchResultsActions": "_searchResultsActions_3421c",
+  "searchResultsKeyInput": "_searchResultsKeyInput_3421c",
+  "elementKeyInput": "_elementKeyInput_3421c",
+  "element-count-container": "_element-count-container_3421c",
+  "locatorStrategyBtn": "_locatorStrategyBtn_3421c",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_3421c",
+  "coordinatesContainer": "_coordinatesContainer_3421c",
+  "swipeInstructions": "_swipeInstructions_3421c",
+  "swipeSvg": "_swipeSvg_3421c",
+  "tapDiv": "_tapDiv_3421c",
+  "iphone_x": "_iphone_x_3421c",
+  "gestureSvg": "_gestureSvg_3421c",
+  "filled": "_filled_3421c",
+  "dashed": "_dashed_3421c",
+  "whole": "_whole_3421c",
+  "newDashed": "_newDashed_3421c",
+  "circle-dashed": "_circle-dashed_3421c",
+  "circle-newDashed": "_circle-newDashed_3421c",
+  "screenimage": "_screenimage_3421c",
+  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
+  "screenshotActionsPanel": "_screenshotActionsPanel_3421c",
+  "commands-container": "_commands-container_3421c",
+  "btn-container": "_btn-container_3421c",
+  "arg-row": "_arg-row_3421c",
+  "arg-container": "_arg-container_3421c",
+  "gesture-header": "_gesture-header_3421c",
+  "gesture-header-title": "_gesture-header-title_3421c",
+  "gesture-header-description": "_gesture-header-description_3421c",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_3421c",
+  "gesture-header-timeline": "_gesture-header-timeline_3421c",
+  "timeline-tick-title": "_timeline-tick-title_3421c",
+  "gesture-header-icon": "_gesture-header-icon_3421c",
+  "pointer-title": "_pointer-title_3421c",
+  "tick-card": "_tick-card_3421c",
+  "tick-plus-card": "_tick-plus-card_3421c",
+  "tick-plus-btn": "_tick-plus-btn_3421c",
+  "spaceContainer": "_spaceContainer_3421c",
+  "tick-pointer-input": "_tick-pointer-input_3421c",
+  "tick-button-group": "_tick-button-group_3421c",
+  "tick-button-input": "_tick-button-input_3421c",
+  "tick-input-box": "_tick-input-box_3421c",
+  "tick-coord-box": "_tick-coord-box_3421c",
+  "option-inpt": "_option-inpt_3421c"
+>>>>>>> 282e24e (mobile screen fix)
 };
 },{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9461,6 +9562,7 @@ const Screenshot = props => {
   (0, _react.useEffect)(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
       const coordinatesString = hoveredElement.attributes.bounds;
+      console.log("coordinatestring", coordinatesString);
       const coordinatesArray = coordinatesString.match(/\d+/g);
       if (coordinatesArray.length >= 4) {
         const x1 = parseInt(coordinatesArray[0], 10);
@@ -10429,12 +10531,6 @@ const HeaderButtons = props => {
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['logoContainer']
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: _hamburger.default,
-    alt: "toggleButton",
-    style: {
-      height: "45px"
-    }
-  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {

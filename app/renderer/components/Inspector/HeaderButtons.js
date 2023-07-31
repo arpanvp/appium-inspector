@@ -27,9 +27,9 @@ const HeaderButtons = (props) => {
 
   const headerLogo =
     <div className={InspectorStyles['logoContainer']}>
-      <div>
+      {/* <div>
         <img src={menuButton} alt="toggleButton" style={{height:"45px"}}></img>
-      </div>
+      </div> */}
       <div>
         <img src={logo} alt="testingLogo" style={{height:"45px"}}></img>
       </div>
