@@ -42,7 +42,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT} = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH} = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -216,10 +216,10 @@ export default class Inspector extends Component {
             defaultChecked={false}
             onChange={() => toggleShowCentroids()}
             disabled={isGestureEditorVisible}
-            style={{width:"40px"}}
+            style={{width: '40px'}}
           />
         </Tooltip>
-         <ButtonGroup value={screenshotInteractionMode} style={{display:"flex", flexDirection:"column", gap:"10px"}}>
+         <ButtonGroup value={screenshotInteractionMode} style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
           <Tooltip title={t('Select Elements')}>
             <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT); }}
               type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -304,10 +304,16 @@ export default class Inspector extends Component {
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
-          <Tooltip title={t('Expected Value')}>
+          <Tooltip title={t('Take ScreenShot')}>
             <Button icon={<FundProjectionScreenOutlined />} onClick={() => { this.screenshotInteractionChange(TAKE_SCREENSHOT); }}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            />
+          </Tooltip>
+          <Tooltip title={t('Scratch')}>
+            <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(SCRATCH); }}
+              type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible}
             />
           </Tooltip>
         </ButtonGroup>

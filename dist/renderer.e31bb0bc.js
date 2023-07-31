@@ -827,7 +827,8 @@ const SCREENSHOT_INTERACTION_MODE = {
   FILE_UPLOAD: 'file_upload',
   SELECT_FILE: 'select_file',
   EXPECTED_VALUE: 'expected_value',
-  TAKE_SCREENSHOT: 'take_screenshot'
+  TAKE_SCREENSHOT: 'take_screenshot',
+  SCRATCH: 'scratch'
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -9316,7 +9317,8 @@ const {
   FILE_UPLOAD,
   SELECT_FILE,
   EXPECTED_VALUE,
-  TAKE_SCREENSHOT
+  TAKE_SCREENSHOT,
+  SCRATCH
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
@@ -9351,6 +9353,8 @@ const Screenshot = props => {
   const [xLongPress, setXLongPress] = (0, _react.useState)(null);
   const [yLongPress, setYLongPress] = (0, _react.useState)(null);
   const [element, setElement] = (0, _react.useState)({});
+  const [coordinates, setCoordinates] = (0, _react.useState)([]);
+  const [scratch, setScratch] = (0, _react.useState)(false);
   (0, _react.useEffect)(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
       const coordinatesString = hoveredElement.attributes.bounds;
@@ -9406,7 +9410,7 @@ const Screenshot = props => {
   //   );
   // }
 
-  const handleScreenshotClick = async () => {
+  const handleScreenshotClick = async e => {
     const {
       setSwipeStart,
       setSwipeEnd,
@@ -9539,15 +9543,39 @@ const Screenshot = props => {
       if (props.selectedElement) {
         expected_value = props.selectedElement.attributes.text;
         data = {
-          expected_value,
+          expected_value: expected_value,
           xpath: props.selectedElement.xpath
         };
       }
       await fetchExpectedValue(data);
     } else if (screenshotInteractionMode === TAKE_SCREENSHOT) {
-      console.log("here the take screenshot condition!!!!!!!");
       const image = await driver.client.takeScreenshot();
-      console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+      //   console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+      //   let sendData = {
+      //     "session_id": driver.sessionId,
+      //     "step-name": "take_screenshot",
+      //   };
+      //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(sendData),
+      //   })
+      //   .then((response) => {
+      //     console.log("API response:", response);
+      //   })
+      //   .catch((error) => {
+      //     console.error("API error:", error);
+      //   });
+    } else if (screenshotInteractionMode === SCRATCH) {
+      console.log("🚀 ~ file: Screenshot.js:201 ~ handleScreenshotClick ~ e:", e);
+      if (!swipeStart) {
+        setScratch(true);
+        setCoordinates([]);
+        await scratchCard(e);
+        setSwipeStart(x, y);
+      }
     }
   };
   const handleLongPress = () => {
@@ -9669,6 +9697,13 @@ const Screenshot = props => {
     }, delay);
     selectScreenshotInteractionMode(DOUBLE_TAP);
   };
+  const scratchCard = async e => {
+    console.log("🚀 ~ file: Screenshot.js:293 ~ scratchCard ~ e:", e);
+    console.log('scratching');
+    if (scratch === true) {
+      await handleMouseMove(e);
+    }
+  };
   const handleDoSwipe = async swipeEndLocal => {
     const {
       clearSwipeAction
@@ -9708,6 +9743,7 @@ const Screenshot = props => {
   const handleDoSwipeSlide = async swipeEndLocal => {
     console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props);
     let xpath = props.selectedElement.xpath;
+    console.log("🚀 ~ file: Screenshot.js:304 ~ handleDoSwipeSlide ~ xpath:", xpath);
     const {
       clearSwipeAction
     } = props;
@@ -9877,6 +9913,17 @@ const Screenshot = props => {
     await applyClientMethod(data);
   };
   const handleMouseMove = e => {
+    const {
+      clearSwipeAction
+    } = props;
+    const {
+      POINTER_NAME1,
+      POINTER_NAME2,
+      DURATION_1,
+      DURATION_2,
+      BUTTON,
+      ORIGIN
+    } = _shared.DEFAULT_ZOOM;
     if (screenshotInteractionMode !== SELECT) {
       const offsetX = e.nativeEvent.offsetX;
       const offsetY = e.nativeEvent.offsetY;
@@ -9884,9 +9931,68 @@ const Screenshot = props => {
       const newY = offsetY * scaleRatio;
       setX(Math.round(newX));
       setY(Math.round(newY));
+      if (screenshotInteractionMode === SCRATCH) {
+        // console.log("🚀 ~ file: Screenshot.js:299 ~ scratchCard ~ coordinates.length:", coordinates.length)
+        setCoordinates(prevCoordinates => [...prevCoordinates, {
+          x: Math.round(newX),
+          y: Math.round(newY)
+        }]);
+        if (coordinates.length > 250) {
+          console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates);
+          // setTimeout(() => {
+          applyClientMethod({
+            methodName: SWIPE,
+            args: {
+              [POINTER_NAME1]: [{
+                type: POINTER_MOVE,
+                duration: DURATION_1,
+                x: coordinates[0].x,
+                y: coordinates[0].y
+              }, {
+                type: POINTER_DOWN,
+                button: BUTTON
+              }, {
+                type: POINTER_MOVE,
+                duration: DURATION_2,
+                origin: ORIGIN,
+                x: coordinates[80].x,
+                y: coordinates[80].y
+              }, {
+                type: POINTER_UP,
+                button: BUTTON
+              }],
+              [POINTER_NAME2]: [{
+                type: POINTER_MOVE,
+                duration: DURATION_1,
+                x: coordinates[80].x,
+                y: coordinates[80].y
+              }, {
+                type: POINTER_DOWN,
+                button: BUTTON
+              }, {
+                type: POINTER_MOVE,
+                duration: DURATION_2,
+                origin: ORIGIN,
+                x: coordinates[160].x,
+                y: coordinates[160].y
+              }, {
+                type: POINTER_UP,
+                button: BUTTON
+              }]
+            }
+          });
+          // }, 500);
+          clearSwipeAction();
+          setCoordinates([]);
+          // selectScreenshotInteractionMode(SELECT);
+          setScratch(false);
+        }
+      }
     }
+    console.log("🚀 ~ file: Screenshot.js:406 ~ handleMouseMove ~ e:", e);
   };
   const handleMouseOut = () => {
+    // setCoordinates([])
     setX(null);
     setY(null);
   };
@@ -9909,6 +10015,8 @@ const Screenshot = props => {
     });
     setX(roundedDropX);
     setY(roundedDropY);
+    setCoordinates([]);
+    setScratch(false);
     setTimeout(async () => {
       await handleDoDragAndDrop({
         x: roundedDropX,
@@ -10058,7 +10166,13 @@ const Screenshot = props => {
     y1: swipeStart.y / scaleRatio,
     x2: swipeEnd.x / scaleRatio,
     y2: swipeEnd.y / scaleRatio
-  })), screenshotInteractionMode === SLIDE_SWIPE && /*#__PURE__*/_react.default.createElement("svg", {
+  })), screenshotInteractionMode === SCRATCH && /*#__PURE__*/_react.default.createElement("svg", {
+    className: _Inspector.default.swipeSvg
+  }, swipeStart && scratch && coordinates.map((coord, index) => /*#__PURE__*/_react.default.createElement("circle", {
+    key: index,
+    cx: coord.x / scaleRatio,
+    cy: coord.y / scaleRatio
+  }))), screenshotInteractionMode === SLIDE_SWIPE && /*#__PURE__*/_react.default.createElement("svg", {
     className: _Inspector.default.swipeSvg
   }, swipeStart && !swipeEnd && /*#__PURE__*/_react.default.createElement("circle", {
     cx: swipeStart.x / scaleRatio,
@@ -12414,7 +12528,8 @@ const {
   SLIDE,
   FILE_UPLOAD,
   EXPECTED_VALUE,
-  TAKE_SCREENSHOT
+  TAKE_SCREENSHOT,
+  SCRATCH
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -12598,14 +12713,14 @@ class Inspector extends _react.Component {
       onChange: () => toggleShowCentroids(),
       disabled: isGestureEditorVisible,
       style: {
-        width: "40px"
+        width: '40px'
       }
     })), /*#__PURE__*/_react.default.createElement(ButtonGroup, {
       value: screenshotInteractionMode,
       style: {
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px"
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Select Elements')
@@ -12727,7 +12842,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Expected Value')
+      title: t('Take ScreenShot')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {
@@ -12736,6 +12851,15 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+      title: t('Scratch')
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(SCRATCH);
+      },
+      type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible
     }))));
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],

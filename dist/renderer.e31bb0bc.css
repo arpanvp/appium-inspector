@@ -348,7 +348,7 @@
     width: auto !important;
 }
 
-._user_actions_3421c{
+._user_actions_5407d{
     background-color:#ffffff;
     border-radius:50%!important;
     color:black;
@@ -357,7 +357,7 @@
     height:45px;
 }
 
-._actionButton_3421c{
+._actionButton_5407d{
     background-color:#ffffff;
     border-radius:5px!important;
     color:black;
@@ -370,7 +370,7 @@
     border:1px solid #1877f2;
 } */
 
-._actionButton_3421c:hover, ._actionButton_3421c:focus, ._user_actions_3421c:hover, ._user_actions_3421c:focus {
+._actionButton_5407d:hover, ._actionButton_5407d:focus, ._user_actions_5407d:hover, ._user_actions_5407d:focus {
     color:white!important;
     background-color:#1877f2;
     border:1px solid #1877f2;
@@ -396,7 +396,7 @@
     flex-direction: row;
     justify-content: space-around;
 }
-._inspector-main_3421c ._screenshot-container_3421c {
+._inspector-main_5407d ._screenshot-container_5407d {
     display: flex;
     max-width: 500px!important;
     max-height: calc(100% - 50px);
@@ -419,16 +419,16 @@
     -webkit-app-region: drag;
 }
 
-._logoContainer_3421c{
+._logoContainer_5407d{
     display:flex;
     gap:5px;
 }
 
-._logoContainer_3421c div{
+._logoContainer_5407d div{
     cursor:pointer;
 }
 
-._inspector-main_3421c ._screenshot-container_3421c img {
+._inspector-main_5407d ._screenshot-container_5407d img {
     max-width: 338px;
     border-radius:26px;
     max-height: 95%;
@@ -935,7 +935,7 @@
     width: 100%;
 }
 
-._iphone_x_3421c {
+._iphone_x_5407d {
     position: relative;
     margin: 40px auto;
     width: 360px;
@@ -970,7 +970,7 @@
     }
 }
 
-._gestureSvg_3421c {
+._gestureSvg_5407d {
     position: absolute;
     z-index: 100000000;
     top: 0;
