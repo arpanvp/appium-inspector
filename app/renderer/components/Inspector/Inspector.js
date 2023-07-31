@@ -304,7 +304,7 @@ export default class Inspector extends Component {
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
-          <Tooltip title={t('Expected Value')}>
+          <Tooltip title={t('Take ScreenShot')}>
             <Button icon={<FundProjectionScreenOutlined />} onClick={() => { this.screenshotInteractionChange(TAKE_SCREENSHOT); }}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible}

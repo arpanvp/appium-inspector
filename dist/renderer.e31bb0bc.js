@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44721;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=36911;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9543,11 +9543,28 @@ const Screenshot = props => {
       }
       await fetchExpectedValue(data);
     } else if (screenshotInteractionMode === TAKE_SCREENSHOT) {
-      console.log("here the take screenshot condition!!!!!!!");
       const image = await driver.client.takeScreenshot();
-      console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+      //   console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+      //   let sendData = {
+      //     "session_id": driver.sessionId,
+      //     "step-name": "take_screenshot",
+      //   };
+      //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(sendData),
+      //   })
+      //   .then((response) => {
+      //     console.log("API response:", response);
+      //   })
+      //   .catch((error) => {
+      //     console.error("API error:", error);
+      //   });
     }
   };
+
   const handleLongPress = () => {
     setIsLongPress(true);
   };
@@ -12385,7 +12402,7 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
 const {
   SELECT,
   SWIPE,
@@ -12704,7 +12721,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Expected Value')
+      title: t('Take ScreenShot')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {

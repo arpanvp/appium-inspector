@@ -197,9 +197,25 @@ const Screenshot = (props) => {
       }
       await fetchExpectedValue(data);
     } else if (screenshotInteractionMode === TAKE_SCREENSHOT) {
-      console.log("here the take screenshot condition!!!!!!!");
       const image = await driver.client.takeScreenshot();
-      console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+    //   console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+    //   let sendData = {
+    //     "session_id": driver.sessionId,
+    //     "step-name": "take_screenshot",
+    //   };
+    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(sendData),
+    //   })
+    //   .then((response) => {
+    //     console.log("API response:", response);
+    //   })
+    //   .catch((error) => {
+    //     console.error("API error:", error);
+    //   });
     }
   };
 
