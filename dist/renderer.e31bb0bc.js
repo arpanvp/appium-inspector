@@ -1,4 +1,4 @@
-process.env.HMR_PORT=35977;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -8804,8 +8804,8 @@ module.exports = {
   "newDashed": "_newDashed_3421c",
   "circle-dashed": "_circle-dashed_3421c",
   "circle-newDashed": "_circle-newDashed_3421c",
-  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
   "screenimage": "_screenimage_3421c",
+  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
   "screenshotActionsPanel": "_screenshotActionsPanel_3421c",
   "commands-container": "_commands-container_3421c",
   "btn-container": "_btn-container_3421c",
@@ -9354,6 +9354,7 @@ const Screenshot = props => {
   (0, _react.useEffect)(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
       const coordinatesString = hoveredElement.attributes.bounds;
+      console.log("coordinatestring", coordinatesString);
       const coordinatesArray = coordinatesString.match(/\d+/g);
       if (coordinatesArray.length >= 4) {
         const x1 = parseInt(coordinatesArray[0], 10);
@@ -10209,12 +10210,6 @@ const HeaderButtons = props => {
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['logoContainer']
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
-    src: _hamburger.default,
-    alt: "toggleButton",
-    style: {
-      height: "45px"
-    }
-  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
@@ -12729,8 +12724,6 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(EXPECTED_VALUE);
       },
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
