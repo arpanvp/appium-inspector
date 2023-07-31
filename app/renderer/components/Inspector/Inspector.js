@@ -209,7 +209,6 @@ export default class Inspector extends Component {
       (mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream)));
 
     let screenShotControls = <div className={InspectorStyles['screenshot-controls']}>
-      <Space size='middle'>
         <Tooltip title={t(showCentroids ? 'Hide Element Handles' : 'Show Element Handles')} placement="topRight">
           <Switch
             checkedChildren={<CheckCircleOutlined />}
@@ -217,9 +216,10 @@ export default class Inspector extends Component {
             defaultChecked={false}
             onChange={() => toggleShowCentroids()}
             disabled={isGestureEditorVisible}
+            style={{width: '40px'}}
           />
         </Tooltip>
-        <ButtonGroup value={screenshotInteractionMode}>
+         <ButtonGroup value={screenshotInteractionMode} style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
           <Tooltip title={t('Select Elements')}>
             <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT); }}
               type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -307,11 +307,10 @@ export default class Inspector extends Component {
           <Tooltip title={t('Take ScreenShot')}>
             <Button icon={<FundProjectionScreenOutlined />} onClick={() => { this.screenshotInteractionChange(TAKE_SCREENSHOT); }}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
         </ButtonGroup>
-      </Space>
     </div>;
     let main = <div className={InspectorStyles['inspector-main']} ref={(el) => { this.screenAndSourceEl = el; }}>
       <div id='screenshotContainer' className={InspectorStyles['screenshot-container']} ref={(el) => { this.screenshotEl = el; }}>

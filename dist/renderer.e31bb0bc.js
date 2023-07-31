@@ -1,4 +1,4 @@
-process.env.HMR_PORT=36911;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=39461;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -8739,13 +8739,14 @@ module.exports = {
   "inspector-toolbar": "_inspector-toolbar_5407d",
   "button_wrapper": "_button_wrapper_5407d",
   "ant-btn": "_ant-btn_5407d",
-  "actionButton": "_actionButton_5407d",
   "user_actions": "_user_actions_5407d",
+  "actionButton": "_actionButton_5407d",
   "inspector-main": "_inspector-main_5407d",
   "whole-btn": "_whole-btn_5407d",
   "screenshot-container": "_screenshot-container_5407d",
   "screenshot": "_screenshot_5407d",
   "screenshot-controls": "_screenshot-controls_5407d",
+  "logoContainer": "_logoContainer_5407d",
   "screenshotBox": "_screenshotBox_5407d",
   "interaction-tab-container": "_interaction-tab-container_5407d",
   "tree-container": "_tree-container_5407d",
@@ -8829,7 +8830,7 @@ module.exports = {
   "tick-coord-box": "_tick-coord-box_5407d",
   "option-inpt": "_option-inpt_5407d"
 };
-},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
+},{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10180,7 +10181,11 @@ const Screenshot = props => {
 };
 var _default = Screenshot;
 exports.default = _default;
-},{"./HighlighterRects":"components/Inspector/HighlighterRects.js","./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js"}],"components/Inspector/HeaderButtons.js":[function(require,module,exports) {
+},{"./HighlighterRects":"components/Inspector/HighlighterRects.js","./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js"}],"../../assets/images/testinglogo.png":[function(require,module,exports) {
+module.exports = "testinglogo.3ef8e341.png";
+},{}],"../../assets/images/hamburger.jpg":[function(require,module,exports) {
+module.exports = "hamburger.8977aadd.jpg";
+},{}],"components/Inspector/HeaderButtons.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -10196,6 +10201,8 @@ var _io = require("react-icons/io5");
 var _shared = require("./shared");
 var _AntdTypes = require("../AntdTypes");
 var _icons = require("@ant-design/icons");
+var _testinglogo = _interopRequireDefault(require("../../../../assets/images/testinglogo.png"));
+var _hamburger = _interopRequireDefault(require("../../../../assets/images/hamburger.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /* eslint-disable no-unused-vars */
 
@@ -10216,6 +10223,21 @@ const HeaderButtons = props => {
     driver,
     t
   } = props;
+  const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
+    className: _Inspector.default['logoContainer']
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _hamburger.default,
+    alt: "toggleButton",
+    style: {
+      height: "45px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _testinglogo.default,
+    alt: "testingLogo",
+    style: {
+      height: "45px"
+    }
+  })));
   const deviceControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, driver && driver.client.isIOS && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Press Home Button')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -10244,8 +10266,6 @@ const HeaderButtons = props => {
       display: "flex",
       gap: "10px"
     }
-  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Native App Mode')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     icon: /*#__PURE__*/_react.default.createElement(_icons.AppstoreOutlined, null),
@@ -10253,16 +10273,14 @@ const HeaderButtons = props => {
       selectAppMode(_shared.APP_MODE.NATIVE);
     }
     // type={appMode === APP_MODE.NATIVE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-  }, "Native Mode")), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Web/Hybrid App Mode')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, "Native Mode"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     icon: /*#__PURE__*/_react.default.createElement(_icons.GlobalOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.WEB_HYBRID);
     }
     // type={appMode === APP_MODE.WEB_HYBRID ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-  }, "Hybrid Mode")));
+  }, "Hybrid Mode"));
   const generalControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     style: {
       display: "flex",
@@ -10282,41 +10300,42 @@ const HeaderButtons = props => {
     id: "btnPauseRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseCircleOutlined, null),
     onClick: toggleRefreshingState
-  }, "Pause Recording")), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('refreshSource')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, "Pause Recording")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     id: "btnReload",
     icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null),
     onClick: () => applyClientMethod({
       methodName: 'getPageSource'
     })
-  }, "Refresh")), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Search for element')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, "Refresh"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     id: "searchForElement",
     icon: /*#__PURE__*/_react.default.createElement(_icons.SearchOutlined, null),
     onClick: showLocatorTestModal
-  }, "Search")), !isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+  }, "Search"), !isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Start Recording')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     id: "btnStartRecording",
     icon: /*#__PURE__*/_react.default.createElement(_icons.EyeOutlined, null),
     onClick: startRecording
-  }, "Start Recording")), isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Pause Recording')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, "Start Recording")), isRecording &&
+  /*#__PURE__*/
+  // <Tooltip title={t('Pause Recording')}>
+  _react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     id: "btnPause",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseOutlined, null),
     type: _AntdTypes.BUTTON.DANGER,
     onClick: pauseRecording
-  })));
-  const quitSessionButton = /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Close')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, "Pause Recording")
+  // </Tooltip>
+  );
+
+  const quitSessionButton =
+  /*#__PURE__*/
+  // <Tooltip title={t('Close')}>
+  _react.default.createElement(_antd.Button, {
     style: {
       borderRadius: "50%"
     },
@@ -10324,7 +10343,9 @@ const HeaderButtons = props => {
     id: "btnClose",
     icon: /*#__PURE__*/_react.default.createElement(_icons.CloseOutlined, null),
     onClick: () => quitSession()
-  }));
+  });
+  // </Tooltip>;
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['inspector-toolbar']
   }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
@@ -10332,13 +10353,14 @@ const HeaderButtons = props => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     style: {
       display: "flex",
-      gap: "10px"
+      gap: "10px",
+      alignItems: "center"
     }
-  }, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
+  }, headerLogo, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
 };
 var _default = HeaderButtons;
 exports.default = _default;
-},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js"}],"components/Inspector/SelectedElement.js":[function(require,module,exports) {
+},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/SelectedElement.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12588,8 +12610,6 @@ class Inspector extends _react.Component {
     const showScreenshot = screenshot && !screenshotError || mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream);
     let screenShotControls = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['screenshot-controls']
-    }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-      size: "middle"
     }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t(showCentroids ? 'Hide Element Handles' : 'Show Element Handles'),
       placement: "topRight"
@@ -12598,9 +12618,17 @@ class Inspector extends _react.Component {
       unCheckedChildren: /*#__PURE__*/_react.default.createElement(_icons.CloseCircleOutlined, null),
       defaultChecked: false,
       onChange: () => toggleShowCentroids(),
-      disabled: isGestureEditorVisible
+      disabled: isGestureEditorVisible,
+      style: {
+        width: '40px'
+      }
     })), /*#__PURE__*/_react.default.createElement(ButtonGroup, {
-      value: screenshotInteractionMode
+      value: screenshotInteractionMode,
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px'
+      }
     }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
       title: t('Select Elements')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -12728,8 +12756,9 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(TAKE_SCREENSHOT);
       },
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
-    })))));
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }))));
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
