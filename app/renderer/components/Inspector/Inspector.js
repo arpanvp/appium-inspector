@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable dot-notation */
 /* eslint-disable indent */
 /* eslint-disable no-console */

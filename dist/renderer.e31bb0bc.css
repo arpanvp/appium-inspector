@@ -428,23 +428,44 @@
     cursor:pointer;
 }
 
-._inspector-main_5407d ._screenshot-container_5407d img {
+/* .inspector-main .screenshot-container img {
     max-width: 338px;
     border-radius:26px;
     max-height: 95%;
     margin:auto;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+} */
+._inspector-main_5407d ._screenshot-container_5407d img {
+    max-width: 338px;
+    border-radius:26px;
+    max-height: 95%;
+    position: absolute;
+    top:30px;
+    left: 10px;
     /* border: 1px solid #eee; */
     box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
+/* .inspector-main .screenshot-container .screenshotBox {
     width: 100%;
     height: 100%;
     text-align: left;
     position: absolute;
     overflow: hidden;
-    background-image: url("mobile.85cb68fa.png");
+    background-image: url("../../../../assets/images/mobile.png");
     background-size:contain;
+    background-repeat:no-repeat;
+    display:flex;
+} */
+._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
+    width: 100%;
+    height: 97%;
+    /* text-align: left; */
+    position: absolute;
+    overflow: hidden;
+    background-image: url("mobile.85cb68fa.png");
+    background-size:360px 100%;
     background-repeat:no-repeat;
     display:flex;
 }
@@ -1002,19 +1023,31 @@
     border-style: dashed;
 }
 
-._innerScreenshotContainer_5407d {
+/* .innerScreenshotContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
     margin-left: 10%;
-}
+} */
 ._screenimage_5407d{
     width: 100%;
 }
 /* The device with borders */
-._innerScreenshotContainer_5407d {
+/* .innerScreenshotContainer {
     position: relative;
     width: 360px;
+    height: 95%;
+    margin: auto;
+    border: 16px rgb(30, 30, 39) solid;
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-radius: 36px;
+  } */
+  ._innerScreenshotContainer_5407d {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 360px;   
     height: 95%;
     margin: auto;
     /* border: 16px rgb(30, 30, 39) solid;

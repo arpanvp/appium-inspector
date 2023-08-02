@@ -1,4 +1,4 @@
-process.env.HMR_PORT=39461;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=34011;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -6500,12 +6500,15 @@ var _i18nextConfig = _interopRequireDefault(require("../../configs/i18next.confi
 var _CloudProviders = _interopRequireDefault(require("../components/Session/CloudProviders"));
 var _web2driver = require("web2driver");
 var _util = require("../util");
-var _umd = _interopRequireDefault(require("ky/umd"));
 var _moment = _interopRequireDefault(require("moment"));
 var _shared = require("../components/Inspector/shared");
 var _polyfills = require("../polyfills");
 var _helpers = require("../../main/helpers");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* eslint-disable no-console */
+
+// import ky from 'ky/umd';
+
 const NEW_SESSION_REQUESTED = 'NEW_SESSION_REQUESTED';
 exports.NEW_SESSION_REQUESTED = NEW_SESSION_REQUESTED;
 const NEW_SESSION_LOADING = 'NEW_SESSION_LOADING';
@@ -6876,9 +6879,10 @@ function newSession(caps, attachSessId = null) {
         https = session.server.browserstack.ssl = parseInt(port, 10) === 443;
         break;
       case ServerTypes.lambdatest:
-        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'mobile-hub.lambdatest.com';
+        // https://apprecord.testing24x7.ai/lambdatest
+        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai';
         port = session.server.lambdatest.port = process.env.LAMBDATEST_PORT || 443;
-        path = session.server.lambdatest.path = '/wd/hub';
+        path = session.server.lambdatest.path = '/lambdatest';
         username = session.server.lambdatest.username || process.env.LAMBDATEST_USERNAME;
         if (desiredCapabilities.hasOwnProperty.call(desiredCapabilities, 'lt:options')) {
           desiredCapabilities['lt:options'].source = 'appiumdesktop';
@@ -7130,6 +7134,7 @@ function newSession(caps, attachSessId = null) {
       mode,
       mjpegScreenshotUrl
     });
+    console.log('sessionDetails', _Inspector.setSessionDetails);
     action(dispatch);
     dispatch((0, _reduxFirstHistory.push)('/inspector'));
   };
@@ -7471,22 +7476,38 @@ function getRunningSessions() {
       return;
     }
     try {
+      console.log('inside the try block to check iiiiiii');
       const adjPath = path.endsWith('/') ? path : `${path}/`;
-      const res = username && accessKey ? await (0, _umd.default)(`http${ssl ? 's' : ''}://${hostname}:${port}${adjPath}sessions`, {
+      console.log('getting the adj path', adjPath);
+      console.log('url value', `http${ssl ? 's' : ''}://${hostname}${adjPath}sessions`);
+      console.log('this is 2nd api which i call', `http${ssl ? 's' : ''}://${hostname}:${port}${adjPath}sessions`);
+      const res = username && accessKey ? await fetch(`http${ssl ? 's' : ''}://${hostname}:${port}${adjPath}`, {
         headers: {
           'Authorization': `Basic ${btoa(`${username}:${accessKey}`)}`,
-          'content-type': HEADERS_CONTENT
+          'content-type': HEADERS_CONTENT,
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+          mode: 'no-cors',
+          crosscredentials: false,
+          crossorigin: false,
+          crossoriginEmbed: false
         }
-      }).json() : await (0, _umd.default)(`http${ssl ? 's' : ''}://${hostname}:${port}${adjPath}sessions`, {
+      }) : await fetch(`http${ssl ? 's' : ''}://${hostname}${adjPath}`, {
         headers: {
-          'content-type': HEADERS_CONTENT
+          'content-type': HEADERS_CONTENT,
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+          mode: 'no-cors'
         }
-      }).json();
+      });
+      console.log('🚀 ~ file: Session.js:864 ~ return ~ res:', res);
+      console.log('the res valueuuuuuuuuuuuuuuuuuuuuuuu', res.value);
       dispatch({
         type: GET_SESSIONS_DONE,
         sessions: res.value
       });
     } catch (err) {
+      console.log('inside the catch file');
       console.warn(`Ignoring error in getting list of active sessions: ${err}`); // eslint-disable-line no-console
       dispatch({
         type: GET_SESSIONS_DONE
@@ -8804,8 +8825,8 @@ module.exports = {
   "newDashed": "_newDashed_5407d",
   "circle-dashed": "_circle-dashed_5407d",
   "circle-newDashed": "_circle-newDashed_5407d",
-  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
   "screenimage": "_screenimage_5407d",
+  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
   "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
   "commands-container": "_commands-container_5407d",
   "btn-container": "_btn-container_5407d",
@@ -12424,7 +12445,7 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
 const {
   SELECT,
   SWIPE,
