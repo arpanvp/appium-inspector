@@ -329,10 +329,18 @@
     /* justify-content: center; */
     width: 100%;
     height: 50px;
-    background: linear-gradient(180deg, #e2e2e2, #e0e0e0, 10%, #d6d6d6, 50%, #cacaca);
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-top: 1px solid #f5f4f5;
-    border-bottom: 1px solid #a5a4a5;
+    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid #a5a4a5; */
     -webkit-app-region: drag;
+    padding:0px 10px;
+}
+
+._button_wrapper_61591{
+    width:100%!important;
+    justify-content:space-between!important;
 }
 
 ._inspector-toolbar_61591 ._ant-btn_61591 {
@@ -340,6 +348,34 @@
     width: auto !important;
 }
 
+._user_actions_61591{
+    background-color:#ffffff;
+    border-radius:50%!important;
+    color:black;
+    font-weight:bold;
+    width:45px;
+    height:45px;
+}
+
+._actionButton_61591{
+    background-color:#ffffff;
+    border-radius:5px!important;
+    color:black;
+    font-weight:bold;
+}
+
+/* .user_actions:hover, .user_actions:focus{
+    color:white!important;
+    background-color:#1877f2;
+    border:1px solid #1877f2;
+} */
+
+._actionButton_61591:hover, ._actionButton_61591:focus, ._user_actions_61591:hover, ._user_actions_61591:focus {
+    color:white!important;
+    background-color:#1877f2;
+    border:1px solid #1877f2;
+    transform:scale(1.1);
+}
 ._inspector-toolbar_61591 button {
     border-color: #cacaca;
     -webkit-app-region: no-drag;
@@ -355,47 +391,62 @@
 }
 ._whole-btn_61591{
     margin-left: 4%;
-    margin-top: -13%;
+    margin-top: -20%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 ._inspector-main_61591 ._screenshot-container_61591 {
-    max-width: 500px;
+    display: flex;
+    max-width: 500px!important;
     max-height: calc(100% - 50px);
     flex-grow: 1;
     flex-shrink: 2;
-    flex-basis: 400px;
+    flex-basis: 328px!important;
 }
 #_screenshot_61591{
     width: 100%;
 }
 ._screenshot-container_61591 ._screenshot-controls_61591 {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap:16px;
+    /* align-items: center; */
+    /* justify-content: center; */
     width: 100%;
-    height: 38px;
+    /* height: 38px; */
     margin-bottom: 12px;
     -webkit-app-region: drag;
 }
 
-
-._inspector-main_61591 ._screenshot-container_61591 img {
-    max-width: 100%;
-    max-height: 100%;
-    border: 1px solid #eee;
-    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+._logoContainer_61591{
+    display:flex;
+    gap:5px;
 }
 
-._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
+._logoContainer_61591 div{
+    cursor:pointer;
+}
+
+/* .inspector-main .screenshot-container img {
+    max-width: 338px;
+    border-radius:26px;
+    max-height: 95%;
+    margin:auto;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+} */
+
+/* .inspector-main .screenshot-container .screenshotBox {
     width: 100%;
     height: 100%;
     text-align: left;
     position: absolute;
     overflow: hidden;
-}
+    background-image: url("../../../../assets/images/mobile.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:flex;
+} */
 
 ._inspector-main_61591 ._interaction-tab-container_61591 .ant-tabs-tabpane {
     height: 100%;
@@ -692,9 +743,9 @@
     height: 40px;
     padding: 4px 0;
     font-size: 14px;
-    border-radius: 21px;
+    border-radius: 50%;
     vertical-align: -3px;
-    background-color: #636363;
+    background-color: #ffffff;
     margin-right: -16%;
 }
 ._phone-btn2_61591 {
@@ -702,18 +753,18 @@
     height: 40px;
     padding: 4px 0;
     font-size: 14px;
-    border-radius: 21px;
+    border-radius: 50%;
     vertical-align: -3px;
-    background-color: #636363;
+    background-color: #ffffff;
 }
 ._phone-btn3_61591 {
     width: 44px;
     height: 40px;
     padding: 4px 0;
     font-size: 14px;
-    border-radius: 21px;
+    border-radius: 50%;
     vertical-align: -3px;
-    background-color: #636363;
+    background-color: #ffffff;
     margin-left: -16%;
 }
 ._custom-button-icon_61591 {
@@ -763,7 +814,21 @@
     width: 100%;
     margin-bottom: 1em;
 }
-
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 ._sourceTag_61591 {
     color: #7d2020;
     font-weight: normal
@@ -881,6 +946,41 @@
     width: 100%;
 }
 
+._iphone_x_61591 {
+    position: relative;
+    margin: 40px auto;
+    width: 360px;
+    height: 780px;
+    background-color: #7371ee;
+    background-image: linear-gradient(60deg, #7371ee 1%,#a1d9d6 100%);
+    border-radius: 40px;
+    box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+    
+    &:before,
+    &:after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    &:after {
+      bottom: 7px;
+      width: 140px;
+      height: 4px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+    }
+    
+    &:before {
+      top: 0px;
+      width: 56%;
+      height: 30px;
+      background-color: #1f1f1f;
+      border-radius: 0px 0px 40px 40px;
+    }
+}
+
 ._gestureSvg_61591 {
     position: absolute;
     z-index: 100000000;
@@ -915,28 +1015,64 @@
     border-style: dashed;
 }
 
-._innerScreenshotContainer_61591 {
+/* .innerScreenshotContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
+    margin-left: 10%;
+} */
 ._screenimage_61591{
     width: 100%;
 }
 /* The device with borders */
-._innerScreenshotContainer_61591 {
+/* .innerScreenshotContainer {
     position: relative;
     width: 360px;
-    height: 100%;
+    height: 95%;
     margin: auto;
-    border: 16px rgb(30, 30, 39) solid;
+
+  } */
+
+  ._innerScreenshotContainer_61591 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 360px;   
+    height: 95%;
+    margin: auto;
+    /* border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
-    border-radius: 36px;
+    border-radius: 36px; */
   }
+
+._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
+    width: 100%;
+    height: 97%;
+    /* text-align: left; */
+    position: absolute;
+    overflow: hidden;
+    background-image: url("mobile.85cb68fa.png");
+    background-size:360px 100%;
+    background-repeat:no-repeat;
+    display:flex;
+}
+
+._inspector-main_61591 ._screenshot-container_61591 img {
+    max-width: 338px;
+    border-radius:26px;
+    max-height: 95%;
+    position: absolute;
+    top:30px;
+    left: 10px;
+    /* border: 1px solid #eee; */
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
   
   /* The horizontal line on the top of the device */
-  ._innerScreenshotContainer_61591:before {
+  /* .innerScreenshotContainer:before {
     content: '';
     display: block;
     width: 60px;
@@ -947,10 +1083,10 @@
     transform: translate(-50%, -50%);
     background: #333;
     border-radius: 10px;
-  }
+  } */
   
   /* The circle on the bottom of the device */
-  ._innerScreenshotContainer_61591:after {
+  /* .innerScreenshotContainer:after {
     content: '';
     display: block;
     width: 35px;
@@ -961,7 +1097,7 @@
     transform: translate(-50%, -50%);
     background: #333;
     border-radius: 50%;
-  }
+  } */
   
   /* The screen (or content) of the device */
   /* .innerScreenshotContainer .content {

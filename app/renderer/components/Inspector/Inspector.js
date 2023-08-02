@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
-import { debounce } from 'lodash';
+import { debounce, flow } from 'lodash';
 import { SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE } from './shared';
 import { Card, Button, Spin, Tooltip, Modal, Tabs, Space, Switch } from 'antd';
 import Screenshot from './Screenshot';
@@ -17,6 +17,7 @@ import SavedGestures from './SavedGestures';
 import GestureEditor from './GestureEditor';
 import SessionInfo from './SessionInfo';
 import { clipboard } from '../../polyfills';
+
 import {
   SelectOutlined,
   ScanOutlined,
@@ -72,6 +73,7 @@ export default class Inspector extends Component {
     this.didInitialResize = false;
     this.state = {
       scaleRatio: 1,
+      flowSteps:[]
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -204,7 +206,10 @@ export default class Inspector extends Component {
     const { path } = selectedElement;
     const { driver } = this.props;
     console.log('driver for iddddddd', driver.sessionId);
-
+    const { flow_steps } = this.props
+    if(flow_steps){
+    console.log("🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:", flow_steps)
+    }
     const showScreenshot = ((screenshot && !screenshotError) ||
       (mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream)));
 
@@ -278,6 +283,10 @@ export default class Inspector extends Component {
                   'step-name': 'select_file',
                   'status': 'done',
                 };
+                // let data1 = {
+                //   'session_id': driver.sessionId,
+                //   'step-name': 'steps',
+                // };
                 await fetch('https://apprecord.testing24x7.ai/appAction', {
                   method: 'POST',
                   headers: {
@@ -287,10 +296,28 @@ export default class Inspector extends Component {
                 })
                   .then((response) => {
                     console.log('API response:', response);
+                    data['response'] = response
+                    flow_steps.push(data)
                   })
                   .catch((error) => {
                     console.error('API error:', error);
                   });
+
+                //   await fetch('https://apprecord.testing24x7.ai/appAction', {
+                //   method: 'POST',
+                //   headers: {
+                //     'Content-Type': 'application/json',
+                //   },
+                //   body: JSON.stringify(data1),
+                // })
+                //   .then((response) => {
+                //     console.log('API response:', response);
+                //     data['response'] = response
+                //     flow_steps.push(data)
+                //   })
+                //   .catch((error) => {
+                //     console.error('API error:', error);
+                //   });
               } else {
                 this.screenshotInteractionChange(FILE_UPLOAD);
               }
@@ -313,7 +340,7 @@ export default class Inspector extends Component {
           <Tooltip title={t('Scratch')}>
             <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(SCRATCH); }}
               type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             />
           </Tooltip>
         </ButtonGroup>
@@ -357,6 +384,32 @@ export default class Inspector extends Component {
                   <Source {...this.props} />
                 </Card>
               </div> */}
+              <div style={{fontWeight:'bold'}}>
+              FLOW TABLE:
+              </div>
+              <br></br>
+                <table>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Step Name</th>
+                    <th>Step Name</th>
+                    <th>Search By</th>
+                    <th>Search By Value</th>
+                  </tr>
+              {flow_steps && flow_steps.map((item, key) => (
+                  <tr key={key}>
+                    <td>{key + 1}</td>
+                    <td>{item['step']}</td>
+                    <td>{item['step_name']}</td>
+                    <td>{item['search_by']}</td>
+                    <td>{item['search_by_value']}</td>
+                    {/* {item.response.status === 200 ?
+                     <td><span style={{color:'green'}}>Success</span></td> : 
+                    <td><span style={{color:'red'}}>Failed</span></td>
+                    } */}
+                  </tr>
+              ))}
+                </table>
                 <div id='selectedElementContainer'
                   className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
                   <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
