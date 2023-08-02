@@ -83,6 +83,8 @@ export const DEFAULT_SWIPE = {
 export const DEFAULT_ZOOM = {
   POINTER_NAME1: 'finger1',
   POINTER_NAME2: 'finger2',
+  POINTER_NAME3: 'finger2',
+  POINTER_NAME4: 'finger2',
   DURATION_1: 0,
   DURATION_2: 750,
   BUTTON: 0,
