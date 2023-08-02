@@ -1,4 +1,4 @@
-process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=39669;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -10324,6 +10324,12 @@ const HeaderButtons = props => {
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['logoContainer']
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _hamburger.default,
+    alt: "toggleButton",
+    style: {
+      height: "45px"
+    }
+  })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
@@ -10404,14 +10410,17 @@ const HeaderButtons = props => {
     id: "searchForElement",
     icon: /*#__PURE__*/_react.default.createElement(_icons.SearchOutlined, null),
     onClick: showLocatorTestModal
-  }, "Search"), !isRecording && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Start Recording')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, "Search"), !isRecording &&
+  /*#__PURE__*/
+  // <Tooltip title={t('Start Recording')}>
+  _react.default.createElement(_antd.Button, {
     className: _Inspector.default['actionButton'],
     id: "btnStartRecording",
     icon: /*#__PURE__*/_react.default.createElement(_icons.EyeOutlined, null),
     onClick: startRecording
-  }, "Start Recording")), isRecording &&
+  }, "Start Recording")
+  // </Tooltip>
+  , isRecording &&
   /*#__PURE__*/
   // <Tooltip title={t('Pause Recording')}>
   _react.default.createElement(_antd.Button, {
@@ -12550,7 +12559,9 @@ class Inspector extends _react.Component {
     super();
     this.didInitialResize = false;
     this.state = {
-      scaleRatio: 1
+      scaleRatio: 1,
+      activeIndex: 0,
+      showPanel: false
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -12660,6 +12671,11 @@ class Inspector extends _react.Component {
       this.mjpegStreamCheckInterval = null;
     }
   }
+  handlePanel(val) {
+    this.setState({
+      showPanel: !this.state.showPanel
+    });
+  }
   screenshotInteractionChange(mode) {
     const {
       selectScreenshotInteractionMode,
@@ -12667,6 +12683,11 @@ class Inspector extends _react.Component {
     } = this.props;
     clearSwipeAction(); // When the action changes, reset the swipe action
     selectScreenshotInteractionMode(mode);
+  }
+  setActiveIndex(val) {
+    this.setState({
+      activeIndex: val
+    });
   }
   render() {
     const {
@@ -12715,16 +12736,21 @@ class Inspector extends _react.Component {
       style: {
         width: '40px'
       }
-    })), /*#__PURE__*/_react.default.createElement(ButtonGroup, {
+    })), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.BarsOutlined, null),
+      onClick: () => this.handlePanel(this.state.showPanel)
+    }), /*#__PURE__*/_react.default.createElement(ButtonGroup, {
       value: screenshotInteractionMode,
       style: {
         display: 'flex',
         flexDirection: 'column',
-        gap: '10px'
+        position: "absolute",
+        top: "150px",
+        zIndex: "99"
       }
-    }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Select Elements')
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(1),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.SelectOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SELECT);
@@ -12732,9 +12758,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SELECT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Swipe By Coordinates')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 1 && /*#__PURE__*/_react.default.createElement("span", null, "Select Elements")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(2),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwapRightOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SWIPE);
@@ -12742,9 +12768,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SWIPE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Tap By Coordinates')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 2 && /*#__PURE__*/_react.default.createElement("span", null, "Swipe By Coordinates")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(3),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.ScanOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(TAP);
@@ -12752,9 +12778,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('LongPress')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("span", null, "Tap By Coordinates")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(4),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.InfoOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(LONGPRESS);
@@ -12762,9 +12788,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === LONGPRESS ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('drag_and_drop')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("span", null, "LongPress")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(5),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.DragOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(DRAG_AND_DROP);
@@ -12772,18 +12798,18 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === DRAG_AND_DROP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Double Tap')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 5 && /*#__PURE__*/_react.default.createElement("span", null, "Drag & Drop")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(6),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.UpCircleOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(DOUBLE_TAP);
       },
       type: screenshotInteractionMode === DOUBLE_TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Zoom In and Zoom Out')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 6 && /*#__PURE__*/_react.default.createElement("span", null, "Double Tap")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(7),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.ShrinkOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(ZOOMIN);
@@ -12791,9 +12817,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === ZOOMIN ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Slider')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 7 && /*#__PURE__*/_react.default.createElement("span", null, "Zoom")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(8),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.SlidersOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SLIDE);
@@ -12801,9 +12827,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SLIDE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('File Upload')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 8 && /*#__PURE__*/_react.default.createElement("span", null, "Slider")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(9),
+      onMouseOut: () => this.setActiveIndex(0),
       className: _Inspector.default['user_actions'],
       icon: /*#__PURE__*/_react.default.createElement(_icons.FileAddOutlined, null),
       onClick: async () => {
@@ -12831,9 +12857,9 @@ class Inspector extends _react.Component {
       },
       type: screenshotInteractionMode === FILE_UPLOAD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Expected Value')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 9 && /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(10),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(EXPECTED_VALUE);
@@ -12841,9 +12867,9 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Take ScreenShot')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 10 && /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(11),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(TAKE_SCREENSHOT);
@@ -12851,16 +12877,17 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('Scratch')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, this.state.activeIndex === 11 && /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(12),
+      onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH);
       },
       type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible
-    }))));
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, this.state.activeIndex === 12 && /*#__PURE__*/_react.default.createElement("span", null, "Scratch"))));
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {

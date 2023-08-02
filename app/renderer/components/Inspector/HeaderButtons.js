@@ -27,9 +27,9 @@ const HeaderButtons = (props) => {
 
   const headerLogo =
     <div className={InspectorStyles['logoContainer']}>
-      {/* <div>
+      <div>
         <img src={menuButton} alt="toggleButton" style={{height:"45px"}}></img>
-      </div> */}
+      </div>
       <div>
         <img src={logo} alt="testingLogo" style={{height:"45px"}}></img>
       </div>
@@ -99,9 +99,9 @@ const HeaderButtons = (props) => {
     <Button className={InspectorStyles['actionButton']} id='searchForElement' icon={<SearchOutlined />} onClick={showLocatorTestModal}>Search</Button>
     {/* </Tooltip> */}
     {!isRecording &&
-      <Tooltip title={t('Start Recording')}>
+      // <Tooltip title={t('Start Recording')}>
         <Button className={InspectorStyles['actionButton']} id='btnStartRecording' icon={<EyeOutlined />} onClick={startRecording}>Start Recording</Button>
-      </Tooltip>
+      // </Tooltip>
     }
     {isRecording &&
       // <Tooltip title={t('Pause Recording')}>
