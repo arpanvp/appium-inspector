@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 process.env.HMR_PORT=45291;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 =======
 process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
@@ -7,6 +8,12 @@ process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are d
 =======
 process.env.HMR_PORT=39669;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 >>>>>>> 445587c (icon panel design change)
+=======
+process.env.HMR_PORT=39669;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=45291;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require

@@ -337,13 +337,21 @@
     -webkit-app-region: drag;
     padding:0px 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 9187904 (added changes)
 }
 
 ._button_wrapper_61591{
     width:100%!important;
     justify-content:space-between!important;
+<<<<<<< HEAD
 =======
 >>>>>>> 282e24e (mobile screen fix)
+=======
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 }
 
 ._button_wrapper_3421c{
@@ -357,10 +365,17 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._user_actions_61591{
 =======
 ._user_actions_3421c{
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._user_actions_3421c{
+=======
+._user_actions_61591{
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     background-color:#ffffff;
     border-radius:50%!important;
     color:black;
@@ -370,10 +385,17 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._actionButton_61591{
 =======
 ._actionButton_3421c{
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._actionButton_3421c{
+=======
+._actionButton_61591{
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     background-color:#ffffff;
     border-radius:5px!important;
     color:black;
@@ -387,20 +409,34 @@
 } */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._actionButton_61591:hover, ._actionButton_61591:focus, ._user_actions_61591:hover, ._user_actions_61591:focus {
 =======
 ._actionButton_3421c:hover, ._actionButton_3421c:focus, ._user_actions_3421c:hover, ._user_actions_3421c:focus {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._actionButton_3421c:hover, ._actionButton_3421c:focus, ._user_actions_3421c:hover, ._user_actions_3421c:focus {
+=======
+._actionButton_61591:hover, ._actionButton_61591:focus, ._user_actions_61591:hover, ._user_actions_61591:focus {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     color:white!important;
     background-color:#1877f2;
     border:1px solid #1877f2;
     transform:scale(1.1);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._inspector-toolbar_61591 button {
 =======
 ._inspector-toolbar_3421c button {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._inspector-toolbar_3421c button {
+=======
+._inspector-toolbar_61591 button {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     border-color: #cacaca;
     -webkit-app-region: no-drag;
 }
@@ -421,10 +457,17 @@
     justify-content: space-around;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._inspector-main_61591 ._screenshot-container_61591 {
 =======
 ._inspector-main_3421c ._screenshot-container_3421c {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._inspector-main_3421c ._screenshot-container_3421c {
+=======
+._inspector-main_61591 ._screenshot-container_61591 {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     display: flex;
     max-width: 500px!important;
     max-height: calc(100% - 50px);
@@ -448,6 +491,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._logoContainer_61591{
     display:flex;
     gap:5px;
@@ -467,6 +511,8 @@
 
 /* .inspector-main .screenshot-container .screenshotBox {
 =======
+=======
+>>>>>>> 9187904 (added changes)
 ._logoContainer_3421c{
     display:flex;
     gap:5px;
@@ -486,12 +532,36 @@
 }
 
 ._inspector-main_3421c ._screenshot-container_3421c ._screenshotBox_3421c {
+<<<<<<< HEAD
 >>>>>>> 282e24e (mobile screen fix)
+=======
+=======
+._logoContainer_61591{
+    display:flex;
+    gap:5px;
+}
+
+._logoContainer_61591 div{
+    cursor:pointer;
+}
+
+/* .inspector-main .screenshot-container img {
+    max-width: 338px;
+    border-radius:26px;
+    max-height: 95%;
+    margin:auto;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+} */
+
+/* .inspector-main .screenshot-container .screenshotBox {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     width: 100%;
     height: 100%;
     text-align: left;
     position: absolute;
     overflow: hidden;
+<<<<<<< HEAD
 <<<<<<< HEAD
     background-image: url("../../../../assets/images/mobile.png");
     background-size:contain;
@@ -499,12 +569,24 @@
     display:flex;
 } */
 =======
+=======
+>>>>>>> 9187904 (added changes)
     background-image: url("mobile.85cb68fa.png");
     background-size:contain;
     background-repeat:no-repeat;
     display:flex;
 }
+<<<<<<< HEAD
 >>>>>>> 282e24e (mobile screen fix)
+=======
+=======
+    background-image: url("../../../../assets/images/mobile.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:flex;
+} */
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 
 ._inspector-main_3421c ._interaction-tab-container_3421c .ant-tabs-tabpane {
     height: 100%;
@@ -873,6 +955,7 @@
     margin-bottom: 1em;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
@@ -893,6 +976,28 @@ table {
 
 ._sourceTag_3421c {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+
+._sourceTag_3421c {
+=======
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+._sourceTag_61591 {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     color: #7d2020;
     font-weight: normal
 }
@@ -1010,10 +1115,17 @@ table {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._iphone_x_61591 {
 =======
 ._iphone_x_3421c {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._iphone_x_3421c {
+=======
+._iphone_x_61591 {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     position: relative;
     margin: 40px auto;
     width: 360px;
@@ -1049,10 +1161,17 @@ table {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._gestureSvg_61591 {
 =======
 ._gestureSvg_3421c {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._gestureSvg_3421c {
+=======
+._gestureSvg_61591 {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     position: absolute;
     z-index: 100000000;
     top: 0;
@@ -1087,14 +1206,22 @@ table {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* .innerScreenshotContainer {
 =======
 ._innerScreenshotContainer_3421c {
 >>>>>>> 282e24e (mobile screen fix)
+=======
+._innerScreenshotContainer_3421c {
+=======
+/* .innerScreenshotContainer {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     display: flex;
     flex-direction: column;
     height: 100%;
     margin-left: 10%;
+<<<<<<< HEAD
 <<<<<<< HEAD
 } */
 ._screenimage_61591{
@@ -1103,18 +1230,35 @@ table {
 /* The device with borders */
 /* .innerScreenshotContainer {
 =======
+=======
+>>>>>>> 9187904 (added changes)
 }
 ._screenimage_3421c{
     width: 100%;
 }
 /* The device with borders */
 ._innerScreenshotContainer_3421c {
+<<<<<<< HEAD
 >>>>>>> 282e24e (mobile screen fix)
+=======
+=======
+} */
+._screenimage_61591{
+    width: 100%;
+}
+/* The device with borders */
+/* .innerScreenshotContainer {
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     position: relative;
     width: 360px;
     height: 95%;
     margin: auto;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 9187904 (added changes)
 
   } */
 
@@ -1125,8 +1269,12 @@ table {
     width: 360px;   
     height: 95%;
     margin: auto;
+<<<<<<< HEAD
 =======
 >>>>>>> 282e24e (mobile screen fix)
+=======
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     /* border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;
     border-bottom-width: 60px;

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 process.env.HMR_PORT=45291;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 =======
 process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
@@ -7,6 +8,12 @@ process.env.HMR_PORT=42049;process.env.HMR_HOSTNAME="localhost";// modules are d
 =======
 process.env.HMR_PORT=39669;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 >>>>>>> 445587c (icon panel design change)
+=======
+process.env.HMR_PORT=39669;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=45291;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -5683,6 +5690,51 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  "active-session": "_active-session_5ede3",
+  "sessionContainer": "_sessionContainer_5ede3",
+  "cloudProviderModal": "_cloudProviderModal_5ede3",
+  "sessionFooter": "_sessionFooter_5ede3",
+  "desiredCapsLink": "_desiredCapsLink_5ede3",
+  "tabText": "_tabText_5ede3",
+  "serverTabs": "_serverTabs_5ede3",
+  "scrollingTabCont": "_scrollingTabCont_5ede3",
+  "scrollingTab": "_scrollingTab_5ede3",
+  "savedSessions": "_savedSessions_5ede3",
+  "newSessionForm": "_newSessionForm_5ede3",
+  "capsFormattedCol": "_capsFormattedCol_5ede3",
+  "formattedCaps": "_formattedCaps_5ede3",
+  "formattedCapsBody": "_formattedCapsBody_5ede3",
+  "start-session-button": "_start-session-button_5ede3",
+  "filepath-button": "_filepath-button_5ede3",
+  "capsFormCol": "_capsFormCol_5ede3",
+  "capsFormRow": "_capsFormRow_5ede3",
+  "capsBoxFont": "_capsBoxFont_5ede3",
+  "capsValueControl": "_capsValueControl_5ede3",
+  "fileControlWrapper": "_fileControlWrapper_5ede3",
+  "localDesc": "_localDesc_5ede3",
+  "selected": "_selected_5ede3",
+  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
+  "capsEditorControls": "_capsEditorControls_5ede3",
+  "capsEditorButton": "_capsEditorButton_5ede3",
+  "capsEditor": "_capsEditor_5ede3",
+  "capsEditorTitle": "_capsEditorTitle_5ede3",
+  "capsEditorBody": "_capsEditorBody_5ede3",
+  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
+  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
+  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
+  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
+  "editSession": "_editSession_5ede3",
+  "btnReload": "_btnReload_5ede3",
+  "btnDeleteCap": "_btnDeleteCap_5ede3",
+  "inputDataCenter": "_inputDataCenter_5ede3",
+  "addonDataCenter": "_addonDataCenter_5ede3",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
+=======
+>>>>>>> 9187904 (added changes)
   "active-session": "_active-session_8105c",
   "sessionContainer": "_sessionContainer_8105c",
   "cloudProviderModal": "_cloudProviderModal_8105c",
@@ -5723,6 +5775,10 @@ module.exports = {
   "inputDataCenter": "_inputDataCenter_8105c",
   "addonDataCenter": "_addonDataCenter_8105c",
   "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
+<<<<<<< HEAD
+=======
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -8848,6 +8904,7 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "inspector-container": "_inspector-container_61591",
   "inspector-toolbar": "_inspector-toolbar_61591",
   "button_wrapper": "_button_wrapper_61591",
@@ -8943,6 +9000,8 @@ module.exports = {
   "tick-coord-box": "_tick-coord-box_61591",
   "option-inpt": "_option-inpt_61591"
 =======
+=======
+>>>>>>> 9187904 (added changes)
   "inspector-container": "_inspector-container_3421c",
   "inspector-toolbar": "_inspector-toolbar_3421c",
   "button_wrapper": "_button_wrapper_3421c",
@@ -9037,7 +9096,106 @@ module.exports = {
   "tick-input-box": "_tick-input-box_3421c",
   "tick-coord-box": "_tick-coord-box_3421c",
   "option-inpt": "_option-inpt_3421c"
+<<<<<<< HEAD
 >>>>>>> 282e24e (mobile screen fix)
+=======
+=======
+  "inspector-container": "_inspector-container_61591",
+  "inspector-toolbar": "_inspector-toolbar_61591",
+  "button_wrapper": "_button_wrapper_61591",
+  "ant-btn": "_ant-btn_61591",
+  "user_actions": "_user_actions_61591",
+  "actionButton": "_actionButton_61591",
+  "inspector-main": "_inspector-main_61591",
+  "whole-btn": "_whole-btn_61591",
+  "screenshot-container": "_screenshot-container_61591",
+  "screenshot": "_screenshot_61591",
+  "screenshot-controls": "_screenshot-controls_61591",
+  "logoContainer": "_logoContainer_61591",
+  "interaction-tab-container": "_interaction-tab-container_61591",
+  "tree-container": "_tree-container_61591",
+  "session-info-table": "_session-info-table_61591",
+  "session-code-box": "_session-code-box_61591",
+  "session-inner-table": "_session-inner-table_61591",
+  "scroll-buttons": "_scroll-buttons_61591",
+  "scroll-right": "_scroll-right_61591",
+  "recorded-actions": "_recorded-actions_61591",
+  "_inspector-main_0387c": "__inspector-main_0387c_61591",
+  "ant-card-body": "_ant-card-body_61591",
+  "interaction-tab-card": "_interaction-tab-card_61591",
+  "highlighter-box": "_highlighter-box_61591",
+  "inspected-element-box": "_inspected-element-box_61591",
+  "hovered-element-box": "_hovered-element-box_61591",
+  "centroid-box": "_centroid-box_61591",
+  "centroid": "_centroid_61591",
+  "overlap": "_overlap_61591",
+  "expand": "_expand_61591",
+  "plus-minus": "_plus-minus_61591",
+  "phone-btn1": "_phone-btn1_61591",
+  "phone-btn2": "_phone-btn2_61591",
+  "phone-btn3": "_phone-btn3_61591",
+  "custom-button-icon": "_custom-button-icon_61591",
+  "elementActions": "_elementActions_61591",
+  "elementKeyInputActions": "_elementKeyInputActions_61591",
+  "selectedElementContainer": "_selectedElementContainer_61591",
+  "selected-element-table-cells": "_selected-element-table-cells_61591",
+  "element-cell-copy": "_element-cell-copy_61591",
+  "selected-element-card": "_selected-element-card_61591",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
+  "context-selector": "_context-selector_61591",
+  "sourceTag": "_sourceTag_61591",
+  "sourceAttrName": "_sourceAttrName_61591",
+  "no-recorded-actions": "_no-recorded-actions_61591",
+  "recorded-code": "_recorded-code_61591",
+  "framework-dropdown": "_framework-dropdown_61591",
+  "searchResultsList": "_searchResultsList_61591",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
+  "searchResultsActions": "_searchResultsActions_61591",
+  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
+  "elementKeyInput": "_elementKeyInput_61591",
+  "element-count-container": "_element-count-container_61591",
+  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
+  "coordinatesContainer": "_coordinatesContainer_61591",
+  "swipeInstructions": "_swipeInstructions_61591",
+  "swipeSvg": "_swipeSvg_61591",
+  "tapDiv": "_tapDiv_61591",
+  "iphone_x": "_iphone_x_61591",
+  "gestureSvg": "_gestureSvg_61591",
+  "filled": "_filled_61591",
+  "dashed": "_dashed_61591",
+  "whole": "_whole_61591",
+  "newDashed": "_newDashed_61591",
+  "circle-dashed": "_circle-dashed_61591",
+  "circle-newDashed": "_circle-newDashed_61591",
+  "screenimage": "_screenimage_61591",
+  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
+  "screenshotBox": "_screenshotBox_61591",
+  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
+  "commands-container": "_commands-container_61591",
+  "btn-container": "_btn-container_61591",
+  "arg-row": "_arg-row_61591",
+  "arg-container": "_arg-container_61591",
+  "gesture-header": "_gesture-header_61591",
+  "gesture-header-title": "_gesture-header-title_61591",
+  "gesture-header-description": "_gesture-header-description_61591",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
+  "gesture-header-timeline": "_gesture-header-timeline_61591",
+  "timeline-tick-title": "_timeline-tick-title_61591",
+  "gesture-header-icon": "_gesture-header-icon_61591",
+  "pointer-title": "_pointer-title_61591",
+  "tick-card": "_tick-card_61591",
+  "tick-plus-card": "_tick-plus-card_61591",
+  "tick-plus-btn": "_tick-plus-btn_61591",
+  "spaceContainer": "_spaceContainer_61591",
+  "tick-pointer-input": "_tick-pointer-input_61591",
+  "tick-button-group": "_tick-button-group_61591",
+  "tick-button-input": "_tick-button-input_61591",
+  "tick-input-box": "_tick-input-box_61591",
+  "tick-coord-box": "_tick-coord-box_61591",
+  "option-inpt": "_option-inpt_61591"
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 };
 },{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -12772,11 +12930,19 @@ class Inspector extends _react.Component {
     this.state = {
       scaleRatio: 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
       flowSteps: []
 =======
       activeIndex: 0,
       showPanel: false
 >>>>>>> 445587c (icon panel design change)
+=======
+      activeIndex: 0,
+      showPanel: false
+=======
+      flowSteps: []
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -13120,9 +13286,15 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, this.state.activeIndex === 11 && /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(12),
       onMouseOut: () => this.setActiveIndex(0),
+=======
+    })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+      title: t('Scratch')
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> 1747aa8 (added changes)
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH);
@@ -13131,10 +13303,17 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
 <<<<<<< HEAD
+<<<<<<< HEAD
     }))));
 =======
     }, this.state.activeIndex === 12 && /*#__PURE__*/_react.default.createElement("span", null, "Scratch"))));
 >>>>>>> 445587c (icon panel design change)
+=======
+    }, this.state.activeIndex === 12 && /*#__PURE__*/_react.default.createElement("span", null, "Scratch"))));
+=======
+    }))));
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
@@ -13250,9 +13429,21 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "container": "_container_9b1d1",
   "loader": "_loader_9b1d1",
   "load1": "_load1_9b1d1"
+=======
+<<<<<<< HEAD
+  "container": "_container_70832",
+  "loader": "_loader_70832",
+  "load1": "_load1_70832"
+=======
+  "container": "_container_9b1d1",
+  "loader": "_loader_9b1d1",
+  "load1": "_load1_9b1d1"
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -13338,8 +13529,18 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "errorMessage": "_errorMessage_cd7c8",
   "copyTraceBtn": "_copyTraceBtn_cd7c8"
+=======
+<<<<<<< HEAD
+  "errorMessage": "_errorMessage_8d2a9",
+  "copyTraceBtn": "_copyTraceBtn_8d2a9"
+=======
+  "errorMessage": "_errorMessage_cd7c8",
+  "copyTraceBtn": "_copyTraceBtn_cd7c8"
+>>>>>>> 1747aa8 (added changes)
+>>>>>>> 9187904 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
