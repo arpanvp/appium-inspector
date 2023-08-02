@@ -1,9 +1,13 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 process.env.HMR_PORT=41947;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 =======
 <<<<<<< HEAD
 process.env.HMR_PORT=41861;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 >>>>>>> d9216115b058abb31e28fb48b5d53b90b6b55d39
+=======
+process.env.HMR_PORT=46213;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 1af2115 (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -777,6 +781,8 @@ exports.DEFAULT_SWIPE = DEFAULT_SWIPE;
 const DEFAULT_ZOOM = {
   POINTER_NAME1: 'finger1',
   POINTER_NAME2: 'finger2',
+  POINTER_NAME3: 'finger2',
+  POINTER_NAME4: 'finger2',
   DURATION_1: 0,
   DURATION_2: 750,
   BUTTON: 0,
@@ -13041,7 +13047,7 @@ class Inspector extends _react.Component {
           style: {
             fontWeight: 'bold'
           }
-        }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S.No"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), flow_steps && flow_steps.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
+        }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), flow_steps && flow_steps.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
           key: key
         }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value'])))), /*#__PURE__*/_react.default.createElement("div", {
           id: "selectedElementContainer",
@@ -14566,6 +14572,7 @@ function hmrAcceptRun(bundle, id) {
 
 },{}]},{},["../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 process.env.HMR_PORT=0;process.env.HMR_HOSTNAME="localhost";parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"Suti":[function(require,module,exports) {
@@ -14765,4 +14772,6 @@ module.exports={errorMessage:"_errorMessage_cd7c8",copyTraceBtn:"_copyTraceBtn_c
 },{"./containers/Root":"j8ta","./components/ErrorBoundary/ErrorBoundary":"SZdX","./store":"iz0v"}]},{},["Focm"], null)
 >>>>>>> 4c681b9 (added live flow steps table)
 >>>>>>> d9216115b058abb31e28fb48b5d53b90b6b55d39
+=======
+>>>>>>> 1af2115 (added changes)
 //# sourceMappingURL=renderer.e31bb0bc.js.map

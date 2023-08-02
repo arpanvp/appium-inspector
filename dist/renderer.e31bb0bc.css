@@ -1109,10 +1109,10 @@ table {
     width: 360px;   
     height: 95%;
     margin: auto;
-    border: 16px rgb(30, 30, 39) solid;
+    /* border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
-    border-radius: 36px;
+    border-radius: 36px; */
   } 
   ._innerScreenshotContainer_61591 {
 >>>>>>> d9216115b058abb31e28fb48b5d53b90b6b55d39
