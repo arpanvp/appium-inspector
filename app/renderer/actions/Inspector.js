@@ -1,3 +1,4 @@
+/* eslint-disable promise/prefer-await-to-callbacks */
 /* eslint-disable indent */
 /* eslint-disable space-in-parens */
 /* eslint-disable no-console */
@@ -817,17 +818,15 @@ export function keepSessionAlive() {
   };
 }
 
-const fetchSteps = (data) => {
-   return fetch("https://apprecord.testing24x7.ai/appAction", {
+const fetchSteps = (data) => fetch("https://apprecord.testing24x7.ai/appAction", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
-}
+      });
 
-let data = []
+let data = [];
 export function callClientMethod(params) {
   return async (dispatch, getState) => {
     console.log("🚀 ~ file: Inspector.js:803 ~ return ~ params:", params);
@@ -862,7 +861,7 @@ export function callClientMethod(params) {
     let data1 = {
       "session_id": driver.sessionId,
       'step-name': 'steps'
-    }
+    };
     console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
     if (postdata.params.methodName === "click") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
@@ -875,20 +874,20 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response:", response);
-          postdata['response'] = response
-          data.push(...[postdata])
-          dispatch({ type: STEPS_ARRAY, data })
+          postdata.response = response;
+          data.push(...[postdata]);
+          dispatch({ type: STEPS_ARRAY, data });
         })
         .catch((error) => {
           console.error("API error:", error);
         });
         fetchSteps(data1).then((res) => {
-          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res)
-          let data = res.steps
-          dispatch({ type: STEPS_ARRAY, data })
+          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+          let data = res.steps;
+          dispatch({ type: STEPS_ARRAY, data });
         }).catch((error) => {
-          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error)   
-        })
+          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        });
     } else if (postdata.params.methodName === "swipe") {
       // Exclude selectedElement from postdata
       delete postdata.selectedElement;
@@ -903,11 +902,11 @@ export function callClientMethod(params) {
         .then((response) => {
           console.log("API response:", response);
           // console.log("🚀 ~ file: Inspector.js:884 ~ .then ~ totalData:", totalData)
-          postdata['response'] = response
+          postdata.response = response;
           // if(postdata['step-name'] != 'scratch'){
           //   data.push(...[postdata])
           // }
-          console.log("🚀 ~ file: Inspector.js:882 ~ .then ~ data:", data)
+          console.log("🚀 ~ file: Inspector.js:882 ~ .then ~ data:", data);
           // dispatch({ type: STEPS_ARRAY, data })
         })
         .catch((error) => {
@@ -917,12 +916,12 @@ export function callClientMethod(params) {
         //   data.push(...[postdata])
         // }
         fetchSteps(data1).then((res) => {
-          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res)
-          let data = res.steps
-          dispatch({ type: STEPS_ARRAY, data })
+          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+          let data = res.steps;
+          dispatch({ type: STEPS_ARRAY, data });
         }).catch((error) => {
-          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error)   
-        })
+          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        });
         //check the if the tap then it would be longpress , double tap, tap and drag and drop
     } else if (postdata.params.methodName === "tap") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
@@ -943,12 +942,12 @@ export function callClientMethod(params) {
             console.error("API error:", error);
           });
           fetchSteps(data1).then((res) => {
-            console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res)
-            let data = res.steps
-            dispatch({ type: STEPS_ARRAY, data })
+            console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+            let data = res.steps;
+            dispatch({ type: STEPS_ARRAY, data });
           }).catch((error) => {
-            console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error)   
-          })
+            console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+          });
     } else if (postdata.params.methodName === "sendKeys") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
       await fetch("https://apprecord.testing24x7.ai/appAction", {
@@ -960,20 +959,20 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response:", response);
-          postdata['response'] = response
-          data.push(...[postdata])
+          postdata.response = response;
+          data.push(...[postdata]);
           // dispatch({ type: STEPS_ARRAY, data })
         })
         .catch((error) => {
           console.error("API error:", error);
         });
         fetchSteps(data1).then((res) => {
-          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res)
-          let data = res.steps
-          dispatch({ type: STEPS_ARRAY, data })
+          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+          let data = res.steps;
+          dispatch({ type: STEPS_ARRAY, data });
         }).catch((error) => {
-          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error)   
-        })
+          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        });
     } else if (postdata['step-name'] === 'expected_value') {
       postdata.params.xpath = postdata.selectedElement.xpath;
       postdata.params.expected_value = postdata.selectedElement.attributes.text;
@@ -987,20 +986,20 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response for expected_value:", response);
-          postdata['response'] = response
-          data.push(...[postdata])
+          postdata.response = response;
+          data.push(...[postdata]);
           // dispatch({ type: STEPS_ARRAY, data })
         })
         .catch((error) => {
           console.error("API error:", error);
         });
         fetchSteps(data1).then((res) => {
-          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res)
-          let data = res.steps
-          dispatch({ type: STEPS_ARRAY, data })
+          console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+          let data = res.steps;
+          dispatch({ type: STEPS_ARRAY, data });
         }).catch((error) => {
-          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error)   
-        })
+          console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        });
     } else if (params.methodName === "quit") {
       console.log("🚀 inside the quit function!!");
       let sendData = {
@@ -1022,12 +1021,12 @@ export function callClientMethod(params) {
         console.error("API error:", error);
       });
       fetchSteps(data1).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res)
-        let data = res.steps
-        dispatch({ type: STEPS_ARRAY, data })
+        console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+        let data = res.steps;
+        dispatch({ type: STEPS_ARRAY, data });
       }).catch((error) => {
-        console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error)   
-      })
+        console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+      });
     } else {
       console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
     }
