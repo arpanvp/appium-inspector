@@ -365,8 +365,8 @@ export default class Inspector extends Component {
               <br></br>
                 <table>
                   <tr>
-                    <th>S.No</th>
-                    <th>Step Name</th>
+                    <th>S No.</th>
+                    <th>Step</th>
                     <th>Step Name</th>
                     <th>Search By</th>
                     <th>Search By Value</th>
