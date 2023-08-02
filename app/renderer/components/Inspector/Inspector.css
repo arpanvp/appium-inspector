@@ -739,10 +739,10 @@ table {
     width: 360px;   
     height: 95%;
     margin: auto;
-    border: 16px rgb(30, 30, 39) solid;
-    border-top-width: 60px;
+    /* border: 16px rgb(30, 30, 39) solid; */
+    /* border-top-width: 60px;
     border-bottom-width: 60px;
-    border-radius: 36px;
+    border-radius: 36px; */
   } 
   .innerScreenshotContainer {
     position: relative;
