@@ -139,7 +139,8 @@ export const SCREENSHOT_INTERACTION_MODE = {
   FILE_UPLOAD: 'file_upload',
   SELECT_FILE: 'select_file',
   EXPECTED_VALUE: 'expected_value',
-  TAKE_SCREENSHOT: 'take_screenshot'
+  TAKE_SCREENSHOT: 'take_screenshot',
+  SCRATCH: 'scratch'
 };
 
 export const APP_MODE = {

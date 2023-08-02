@@ -336,6 +336,14 @@
     /* border-bottom: 1px solid #a5a4a5; */
     -webkit-app-region: drag;
     padding:0px 10px;
+<<<<<<< HEAD
+=======
+}
+
+._button_wrapper_61591{
+    width:100%!important;
+    justify-content:space-between!important;
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
 }
 
 ._button_wrapper_5407d{
@@ -348,6 +356,7 @@
     width: auto !important;
 }
 
+<<<<<<< HEAD
 ._user_actions_5407d{
     background-color:#ffffff;
     border-radius:50%!important;
@@ -359,6 +368,22 @@
 
 ._actionButton_5407d{
     background-color:#ffffff;
+=======
+._user_actions_61591{
+    background-color:#ffffff;
+    /* border-radius:10px!important; */
+    color:black;
+    font-weight:bold;
+    /* width:45px; */
+    display:flex;
+    align-items:center;
+    height:45px;
+    padding-left:8px;
+}
+
+._actionButton_61591{
+    background-color:transparent!important;
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     border-radius:5px!important;
     color:black;
     font-weight:bold;
@@ -370,6 +395,7 @@
     border:1px solid #1877f2;
 } */
 
+<<<<<<< HEAD
 ._actionButton_5407d:hover, ._actionButton_5407d:focus, ._user_actions_5407d:hover, ._user_actions_5407d:focus {
     color:white!important;
     background-color:#1877f2;
@@ -377,6 +403,22 @@
     transform:scale(1.1);
 }
 ._inspector-toolbar_5407d button {
+=======
+._actionButton_61591:hover, ._actionButton_61591:focus {
+    color:white!important;
+    background-color:#1877f2!important;
+    border:1px solid #1877f2;
+    transform:scale(1.1);
+}
+
+._user_actions_61591:hover, ._user_actions_61591:focus {
+    color:white!important;
+    background-color:#1877f2!important;
+    border:1px solid #1877f2;
+    /* transform:scale(1.1); */
+}
+._inspector-toolbar_61591 button {
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     border-color: #cacaca;
     -webkit-app-region: no-drag;
 }
@@ -396,7 +438,11 @@
     flex-direction: row;
     justify-content: space-around;
 }
+<<<<<<< HEAD
 ._inspector-main_5407d ._screenshot-container_5407d {
+=======
+._inspector-main_61591 ._screenshot-container_61591 {
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     display: flex;
     max-width: 500px!important;
     max-height: calc(100% - 50px);
@@ -419,6 +465,7 @@
     -webkit-app-region: drag;
 }
 
+<<<<<<< HEAD
 ._logoContainer_5407d{
     display:flex;
     gap:5px;
@@ -448,11 +495,37 @@
 }
 
 /* .inspector-main .screenshot-container .screenshotBox {
+=======
+._logoContainer_61591{
+    display:flex;
+    gap:5px;
+}
+
+._logoContainer_61591 div{
+    cursor:pointer;
+}
+
+ ._inspector-main_61591 ._screenshot-container_61591 img {
+    max-width: 338px;
+    border-radius:26px;
+    max-height: 95%;
+    margin:auto;
+    position: absolute;
+    top:30px;
+    left: 12px;
+    /* border: 1px solid #eee; */
+    margin:auto;
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+} 
+
+ ._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     width: 100%;
-    height: 100%;
-    text-align: left;
+    height: 97%;
+    /* text-align: left; */
     position: absolute;
     overflow: hidden;
+<<<<<<< HEAD
     background-image: url("../../../../assets/images/mobile.png");
     background-size:contain;
     background-repeat:no-repeat;
@@ -464,11 +537,17 @@
     /* text-align: left; */
     position: absolute;
     overflow: hidden;
+=======
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     background-image: url("mobile.85cb68fa.png");
     background-size:360px 100%;
     background-repeat:no-repeat;
     display:flex;
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
 
 ._inspector-main_5407d ._interaction-tab-container_5407d .ant-tabs-tabpane {
     height: 100%;
@@ -836,8 +915,27 @@
     width: 100%;
     margin-bottom: 1em;
 }
+<<<<<<< HEAD
 
 ._sourceTag_5407d {
+=======
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+._sourceTag_61591 {
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     color: #7d2020;
     font-weight: normal
 }
@@ -954,7 +1052,11 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
 ._iphone_x_5407d {
+=======
+._iphone_x_61591 {
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     position: relative;
     margin: 40px auto;
     width: 360px;
@@ -989,7 +1091,11 @@
     }
 }
 
+<<<<<<< HEAD
 ._gestureSvg_5407d {
+=======
+._gestureSvg_61591 {
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     position: absolute;
     z-index: 100000000;
     top: 0;
@@ -1029,18 +1135,39 @@
     height: 100%;
     margin-left: 10%;
 } */
+<<<<<<< HEAD
 ._screenimage_5407d{
+=======
+._screenimage_61591{
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     width: 100%;
 }
 /* The device with borders */
 /* .innerScreenshotContainer {
     position: relative;
+<<<<<<< HEAD
     width: 360px;
+=======
+    display: flex;
+    flex-direction: column;
+    width: 360px;   
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     height: 95%;
     margin: auto;
-    border: 16px rgb(30, 30, 39) solid;
+
+  } */
+
+  ._innerScreenshotContainer_61591 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 360px;   
+    height: 95%;
+    margin: auto;
+    /* border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
+<<<<<<< HEAD
     border-radius: 36px;
   } */
   ._innerScreenshotContainer_5407d {
@@ -1053,8 +1180,35 @@
     /* border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
+=======
+>>>>>>> c98095396052b57963dc3b4e9317c41e03018bb7
     border-radius: 36px; */
   }
+
+._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
+    width: 100%;
+    height: 97%;
+    /* text-align: left; */
+    position: absolute;
+    overflow: hidden;
+    background-image: url("mobile.85cb68fa.png");
+    background-size:360px 100%;
+    background-repeat:no-repeat;
+    display:flex;
+}
+
+._inspector-main_61591 ._screenshot-container_61591 img {
+    max-width: 338px;
+    border-radius:26px;
+    max-height: 95%;
+    position: absolute;
+    top:30px;
+    left: 10px;
+    /* border: 1px solid #eee; */
+    box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
   
   /* The horizontal line on the top of the device */
   /* .innerScreenshotContainer:before {
