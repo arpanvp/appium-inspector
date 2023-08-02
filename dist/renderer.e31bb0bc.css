@@ -623,17 +623,29 @@
     width: auto !important;
 }
 
+<<<<<<< HEAD
 ._user_actions_61591{
+=======
+._user_actions_3421c{
+>>>>>>> 445587c (icon panel design change)
     background-color:#ffffff;
-    border-radius:50%!important;
+    /* border-radius:10px!important; */
     color:black;
     font-weight:bold;
-    width:45px;
+    /* width:45px; */
+    display:flex;
+    align-items:center;
     height:45px;
+    padding-left:8px;
 }
 
+<<<<<<< HEAD
 ._actionButton_61591{
     background-color:#ffffff;
+=======
+._actionButton_3421c{
+    background-color:transparent!important;
+>>>>>>> 445587c (icon panel design change)
     border-radius:5px!important;
     color:black;
     font-weight:bold;
@@ -645,15 +657,29 @@
     border:1px solid #1877f2;
 } */
 
+<<<<<<< HEAD
 ._actionButton_61591:hover, ._actionButton_61591:focus, ._user_actions_61591:hover, ._user_actions_61591:focus {
+=======
+._actionButton_3421c:hover, ._actionButton_3421c:focus {
+>>>>>>> 445587c (icon panel design change)
     color:white!important;
-    background-color:#1877f2;
+    background-color:#1877f2!important;
     border:1px solid #1877f2;
     transform:scale(1.1);
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._inspector-toolbar_61591 button {
 =======
+=======
+
+._user_actions_3421c:hover, ._user_actions_3421c:focus {
+    color:white!important;
+    background-color:#1877f2!important;
+    border:1px solid #1877f2;
+    /* transform:scale(1.1); */
+}
+>>>>>>> 445587c (icon panel design change)
 ._inspector-toolbar_3421c button {
 >>>>>>> 282e24e (mobile screen fix)
     border-color: #cacaca;
@@ -683,7 +709,11 @@
     flex-direction: row;
     justify-content: space-around;
 }
+<<<<<<< HEAD
 ._inspector-main_61591 ._screenshot-container_61591 {
+=======
+._inspector-main_3421c ._screenshot-container_3421c {
+>>>>>>> 445587c (icon panel design change)
     display: flex;
     max-width: 500px!important;
     max-height: calc(100% - 50px);
@@ -713,16 +743,28 @@
     -webkit-app-region: drag;
 }
 
+<<<<<<< HEAD
 ._logoContainer_61591{
+=======
+._logoContainer_3421c{
+>>>>>>> 445587c (icon panel design change)
     display:flex;
     gap:5px;
 }
 
+<<<<<<< HEAD
 ._logoContainer_61591 div{
     cursor:pointer;
 }
 
 /* .inspector-main .screenshot-container img {
+=======
+._logoContainer_3421c div{
+    cursor:pointer;
+}
+
+._inspector-main_3421c ._screenshot-container_3421c img {
+>>>>>>> 445587c (icon panel design change)
     max-width: 338px;
     border-radius:26px;
     max-height: 95%;
@@ -731,7 +773,7 @@
 =======
     position: absolute;
     top:30px;
-    left: 10px;
+    left: 12px;
     /* border: 1px solid #eee; */
 >>>>>>> 282e24e (mobile screen fix)
     box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
@@ -1584,7 +1626,11 @@ table {
     width: 100%;
 }
 
+<<<<<<< HEAD
 ._iphone_x_61591 {
+=======
+._iphone_x_3421c {
+>>>>>>> 445587c (icon panel design change)
     position: relative;
     margin: 40px auto;
     width: 360px;
@@ -1619,7 +1665,11 @@ table {
     }
 }
 
+<<<<<<< HEAD
 ._gestureSvg_61591 {
+=======
+._gestureSvg_3421c {
+>>>>>>> 445587c (icon panel design change)
     position: absolute;
     z-index: 100000000;
     top: 0;
