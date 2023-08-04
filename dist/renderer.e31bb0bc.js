@@ -1,34 +1,4 @@
-<<<<<<< HEAD
-process.env.HMR_PORT=44019;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-process.env.HMR_PORT=34019;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-process.env.HMR_PORT=42211;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-process.env.HMR_PORT=42641;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-process.env.HMR_PORT=41947;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-process.env.HMR_PORT=41861;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> d9216115b058abb31e28fb48b5d53b90b6b55d39
-=======
-process.env.HMR_PORT=46213;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> 1af2115 (added changes)
->>>>>>> 548cabee6a9d54cbe3b841c27a2caa815c5a0e9b
->>>>>>> 3fa90943ee6c3a1791f18937c0394213e7aa2f60
-=======
-process.env.HMR_PORT=38103;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> 4ec0649 (added changes)
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
+process.env.HMR_PORT=37965;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -860,19 +830,11 @@ const SCREENSHOT_INTERACTION_MODE = {
   SELECT_FILE: 'select_file',
   EXPECTED_VALUE: 'expected_value',
   TAKE_SCREENSHOT: 'take_screenshot',
-<<<<<<< HEAD
-  SCRATCH: 'scratch'
-=======
   SCRATCH: 'scratch',
   HIDE_KEYBOARD: 'hide_keyboard',
   GET_DEVICE_TIME: 'get_device_time',
   GET_CLIPBOARD: 'get_clipboard',
   ROTATE: 'rotate'
-<<<<<<< HEAD
-=======
->>>>>>> 4ec0649 (added changes)
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -5791,7 +5753,6 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
   "active-session": "_active-session_46061",
   "sessionContainer": "_sessionContainer_46061",
   "cloudProviderModal": "_cloudProviderModal_46061",
@@ -5832,91 +5793,6 @@ module.exports = {
   "inputDataCenter": "_inputDataCenter_46061",
   "addonDataCenter": "_addonDataCenter_46061",
   "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
-=======
-<<<<<<< HEAD
-  "active-session": "_active-session_5ede3",
-  "sessionContainer": "_sessionContainer_5ede3",
-  "cloudProviderModal": "_cloudProviderModal_5ede3",
-  "sessionFooter": "_sessionFooter_5ede3",
-  "desiredCapsLink": "_desiredCapsLink_5ede3",
-  "tabText": "_tabText_5ede3",
-  "serverTabs": "_serverTabs_5ede3",
-  "scrollingTabCont": "_scrollingTabCont_5ede3",
-  "scrollingTab": "_scrollingTab_5ede3",
-  "savedSessions": "_savedSessions_5ede3",
-  "newSessionForm": "_newSessionForm_5ede3",
-  "capsFormattedCol": "_capsFormattedCol_5ede3",
-  "formattedCaps": "_formattedCaps_5ede3",
-  "formattedCapsBody": "_formattedCapsBody_5ede3",
-  "start-session-button": "_start-session-button_5ede3",
-  "filepath-button": "_filepath-button_5ede3",
-  "capsFormCol": "_capsFormCol_5ede3",
-  "capsFormRow": "_capsFormRow_5ede3",
-  "capsBoxFont": "_capsBoxFont_5ede3",
-  "capsValueControl": "_capsValueControl_5ede3",
-  "fileControlWrapper": "_fileControlWrapper_5ede3",
-  "localDesc": "_localDesc_5ede3",
-  "selected": "_selected_5ede3",
-  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
-  "capsEditorControls": "_capsEditorControls_5ede3",
-  "capsEditorButton": "_capsEditorButton_5ede3",
-  "capsEditor": "_capsEditor_5ede3",
-  "capsEditorTitle": "_capsEditorTitle_5ede3",
-  "capsEditorBody": "_capsEditorBody_5ede3",
-  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
-  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
-  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
-  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
-  "editSession": "_editSession_5ede3",
-  "btnReload": "_btnReload_5ede3",
-  "btnDeleteCap": "_btnDeleteCap_5ede3",
-  "inputDataCenter": "_inputDataCenter_5ede3",
-  "addonDataCenter": "_addonDataCenter_5ede3",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
-=======
-  "active-session": "_active-session_8105c",
-  "sessionContainer": "_sessionContainer_8105c",
-  "cloudProviderModal": "_cloudProviderModal_8105c",
-  "sessionFooter": "_sessionFooter_8105c",
-  "desiredCapsLink": "_desiredCapsLink_8105c",
-  "tabText": "_tabText_8105c",
-  "serverTabs": "_serverTabs_8105c",
-  "scrollingTabCont": "_scrollingTabCont_8105c",
-  "scrollingTab": "_scrollingTab_8105c",
-  "savedSessions": "_savedSessions_8105c",
-  "newSessionForm": "_newSessionForm_8105c",
-  "capsFormattedCol": "_capsFormattedCol_8105c",
-  "formattedCaps": "_formattedCaps_8105c",
-  "formattedCapsBody": "_formattedCapsBody_8105c",
-  "start-session-button": "_start-session-button_8105c",
-  "filepath-button": "_filepath-button_8105c",
-  "capsFormCol": "_capsFormCol_8105c",
-  "capsFormRow": "_capsFormRow_8105c",
-  "capsBoxFont": "_capsBoxFont_8105c",
-  "capsValueControl": "_capsValueControl_8105c",
-  "fileControlWrapper": "_fileControlWrapper_8105c",
-  "localDesc": "_localDesc_8105c",
-  "selected": "_selected_8105c",
-  "capsNameEditorButton": "_capsNameEditorButton_8105c",
-  "capsEditorControls": "_capsEditorControls_8105c",
-  "capsEditorButton": "_capsEditorButton_8105c",
-  "capsEditor": "_capsEditor_8105c",
-  "capsEditorTitle": "_capsEditorTitle_8105c",
-  "capsEditorBody": "_capsEditorBody_8105c",
-  "capsEditorBodyFull": "_capsEditorBodyFull_8105c",
-  "capsEditorBodyResized": "_capsEditorBodyResized_8105c",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_8105c",
-  "advancedSettingsContainer": "_advancedSettingsContainer_8105c",
-  "add-desired-capability-button": "_add-desired-capability-button_8105c",
-  "editSession": "_editSession_8105c",
-  "btnReload": "_btnReload_8105c",
-  "btnDeleteCap": "_btnDeleteCap_8105c",
-  "inputDataCenter": "_inputDataCenter_8105c",
-  "addonDataCenter": "_addonDataCenter_8105c",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -9042,7 +8918,6 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
   "inspector-container": "_inspector-container_5407d",
   "inspector-toolbar": "_inspector-toolbar_5407d",
   "button_wrapper": "_button_wrapper_5407d",
@@ -9105,6 +8980,9 @@ module.exports = {
   "swipeSvg": "_swipeSvg_5407d",
   "tapDiv": "_tapDiv_5407d",
   "iphone_x": "_iphone_x_5407d",
+  "custom_menu": "_custom_menu_5407d",
+  "ant-menu-submenu": "_ant-menu-submenu_5407d",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_5407d",
   "gestureSvg": "_gestureSvg_5407d",
   "filled": "_filled_5407d",
   "dashed": "_dashed_5407d",
@@ -9137,203 +9015,6 @@ module.exports = {
   "tick-input-box": "_tick-input-box_5407d",
   "tick-coord-box": "_tick-coord-box_5407d",
   "option-inpt": "_option-inpt_5407d"
-=======
-<<<<<<< HEAD
-  "inspector-container": "_inspector-container_3421c",
-  "inspector-toolbar": "_inspector-toolbar_3421c",
-  "button_wrapper": "_button_wrapper_3421c",
-  "ant-btn": "_ant-btn_3421c",
-  "user_actions": "_user_actions_3421c",
-  "actionButton": "_actionButton_3421c",
-  "inspector-main": "_inspector-main_3421c",
-  "whole-btn": "_whole-btn_3421c",
-  "screenshot-container": "_screenshot-container_3421c",
-  "screenshot": "_screenshot_3421c",
-  "screenshot-controls": "_screenshot-controls_3421c",
-  "logoContainer": "_logoContainer_3421c",
-  "screenshotBox": "_screenshotBox_3421c",
-  "interaction-tab-container": "_interaction-tab-container_3421c",
-  "tree-container": "_tree-container_3421c",
-  "session-info-table": "_session-info-table_3421c",
-  "session-code-box": "_session-code-box_3421c",
-  "session-inner-table": "_session-inner-table_3421c",
-  "scroll-buttons": "_scroll-buttons_3421c",
-  "scroll-right": "_scroll-right_3421c",
-  "recorded-actions": "_recorded-actions_3421c",
-  "_inspector-main_0387c": "__inspector-main_0387c_3421c",
-  "ant-card-body": "_ant-card-body_3421c",
-  "interaction-tab-card": "_interaction-tab-card_3421c",
-  "highlighter-box": "_highlighter-box_3421c",
-  "inspected-element-box": "_inspected-element-box_3421c",
-  "hovered-element-box": "_hovered-element-box_3421c",
-  "centroid-box": "_centroid-box_3421c",
-  "centroid": "_centroid_3421c",
-  "overlap": "_overlap_3421c",
-  "expand": "_expand_3421c",
-  "plus-minus": "_plus-minus_3421c",
-  "phone-btn1": "_phone-btn1_3421c",
-  "phone-btn2": "_phone-btn2_3421c",
-  "phone-btn3": "_phone-btn3_3421c",
-  "custom-button-icon": "_custom-button-icon_3421c",
-  "elementActions": "_elementActions_3421c",
-  "elementKeyInputActions": "_elementKeyInputActions_3421c",
-  "selectedElementContainer": "_selectedElementContainer_3421c",
-  "selected-element-table-cells": "_selected-element-table-cells_3421c",
-  "element-cell-copy": "_element-cell-copy_3421c",
-  "selected-element-card": "_selected-element-card_3421c",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_3421c",
-  "context-selector": "_context-selector_3421c",
-  "sourceTag": "_sourceTag_3421c",
-  "sourceAttrName": "_sourceAttrName_3421c",
-  "no-recorded-actions": "_no-recorded-actions_3421c",
-  "recorded-code": "_recorded-code_3421c",
-  "framework-dropdown": "_framework-dropdown_3421c",
-  "searchResultsList": "_searchResultsList_3421c",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_3421c",
-  "searchResultsActions": "_searchResultsActions_3421c",
-  "searchResultsKeyInput": "_searchResultsKeyInput_3421c",
-  "elementKeyInput": "_elementKeyInput_3421c",
-  "element-count-container": "_element-count-container_3421c",
-  "locatorStrategyBtn": "_locatorStrategyBtn_3421c",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_3421c",
-  "coordinatesContainer": "_coordinatesContainer_3421c",
-  "swipeInstructions": "_swipeInstructions_3421c",
-  "swipeSvg": "_swipeSvg_3421c",
-  "tapDiv": "_tapDiv_3421c",
-  "iphone_x": "_iphone_x_3421c",
-  "custom_menu": "_custom_menu_3421c",
-  "ant-menu-submenu": "_ant-menu-submenu_3421c",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_3421c",
-  "gestureSvg": "_gestureSvg_3421c",
-  "filled": "_filled_3421c",
-  "dashed": "_dashed_3421c",
-  "whole": "_whole_3421c",
-  "newDashed": "_newDashed_3421c",
-  "circle-dashed": "_circle-dashed_3421c",
-  "circle-newDashed": "_circle-newDashed_3421c",
-  "screenimage": "_screenimage_3421c",
-  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
-  "ant-menu-submenu-arrow": "_ant-menu-submenu-arrow_3421c",
-  "screenshotActionsPanel": "_screenshotActionsPanel_3421c",
-  "commands-container": "_commands-container_3421c",
-  "btn-container": "_btn-container_3421c",
-  "arg-row": "_arg-row_3421c",
-  "arg-container": "_arg-container_3421c",
-  "gesture-header": "_gesture-header_3421c",
-  "gesture-header-title": "_gesture-header-title_3421c",
-  "gesture-header-description": "_gesture-header-description_3421c",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_3421c",
-  "gesture-header-timeline": "_gesture-header-timeline_3421c",
-  "timeline-tick-title": "_timeline-tick-title_3421c",
-  "gesture-header-icon": "_gesture-header-icon_3421c",
-  "pointer-title": "_pointer-title_3421c",
-  "tick-card": "_tick-card_3421c",
-  "tick-plus-card": "_tick-plus-card_3421c",
-  "tick-plus-btn": "_tick-plus-btn_3421c",
-  "spaceContainer": "_spaceContainer_3421c",
-  "tick-pointer-input": "_tick-pointer-input_3421c",
-  "tick-button-group": "_tick-button-group_3421c",
-  "tick-button-input": "_tick-button-input_3421c",
-  "tick-input-box": "_tick-input-box_3421c",
-  "tick-coord-box": "_tick-coord-box_3421c",
-  "option-inpt": "_option-inpt_3421c"
-=======
-  "inspector-container": "_inspector-container_61591",
-  "inspector-toolbar": "_inspector-toolbar_61591",
-  "button_wrapper": "_button_wrapper_61591",
-  "ant-btn": "_ant-btn_61591",
-  "user_actions": "_user_actions_61591",
-  "actionButton": "_actionButton_61591",
-  "inspector-main": "_inspector-main_61591",
-  "whole-btn": "_whole-btn_61591",
-  "screenshot-container": "_screenshot-container_61591",
-  "screenshot": "_screenshot_61591",
-  "screenshot-controls": "_screenshot-controls_61591",
-  "logoContainer": "_logoContainer_61591",
-  "screenshotBox": "_screenshotBox_61591",
-  "interaction-tab-container": "_interaction-tab-container_61591",
-  "tree-container": "_tree-container_61591",
-  "session-info-table": "_session-info-table_61591",
-  "session-code-box": "_session-code-box_61591",
-  "session-inner-table": "_session-inner-table_61591",
-  "scroll-buttons": "_scroll-buttons_61591",
-  "scroll-right": "_scroll-right_61591",
-  "recorded-actions": "_recorded-actions_61591",
-  "_inspector-main_0387c": "__inspector-main_0387c_61591",
-  "ant-card-body": "_ant-card-body_61591",
-  "interaction-tab-card": "_interaction-tab-card_61591",
-  "highlighter-box": "_highlighter-box_61591",
-  "inspected-element-box": "_inspected-element-box_61591",
-  "hovered-element-box": "_hovered-element-box_61591",
-  "centroid-box": "_centroid-box_61591",
-  "centroid": "_centroid_61591",
-  "overlap": "_overlap_61591",
-  "expand": "_expand_61591",
-  "plus-minus": "_plus-minus_61591",
-  "phone-btn1": "_phone-btn1_61591",
-  "phone-btn2": "_phone-btn2_61591",
-  "phone-btn3": "_phone-btn3_61591",
-  "custom-button-icon": "_custom-button-icon_61591",
-  "elementActions": "_elementActions_61591",
-  "elementKeyInputActions": "_elementKeyInputActions_61591",
-  "selectedElementContainer": "_selectedElementContainer_61591",
-  "selected-element-table-cells": "_selected-element-table-cells_61591",
-  "element-cell-copy": "_element-cell-copy_61591",
-  "selected-element-card": "_selected-element-card_61591",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
-  "context-selector": "_context-selector_61591",
-  "sourceTag": "_sourceTag_61591",
-  "sourceAttrName": "_sourceAttrName_61591",
-  "no-recorded-actions": "_no-recorded-actions_61591",
-  "recorded-code": "_recorded-code_61591",
-  "framework-dropdown": "_framework-dropdown_61591",
-  "searchResultsList": "_searchResultsList_61591",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
-  "searchResultsActions": "_searchResultsActions_61591",
-  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
-  "elementKeyInput": "_elementKeyInput_61591",
-  "element-count-container": "_element-count-container_61591",
-  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
-  "coordinatesContainer": "_coordinatesContainer_61591",
-  "swipeInstructions": "_swipeInstructions_61591",
-  "swipeSvg": "_swipeSvg_61591",
-  "tapDiv": "_tapDiv_61591",
-  "iphone_x": "_iphone_x_61591",
-  "gestureSvg": "_gestureSvg_61591",
-  "filled": "_filled_61591",
-  "dashed": "_dashed_61591",
-  "whole": "_whole_61591",
-  "newDashed": "_newDashed_61591",
-  "circle-dashed": "_circle-dashed_61591",
-  "circle-newDashed": "_circle-newDashed_61591",
-  "screenimage": "_screenimage_61591",
-  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
-  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
-  "commands-container": "_commands-container_61591",
-  "btn-container": "_btn-container_61591",
-  "arg-row": "_arg-row_61591",
-  "arg-container": "_arg-container_61591",
-  "gesture-header": "_gesture-header_61591",
-  "gesture-header-title": "_gesture-header-title_61591",
-  "gesture-header-description": "_gesture-header-description_61591",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
-  "gesture-header-timeline": "_gesture-header-timeline_61591",
-  "timeline-tick-title": "_timeline-tick-title_61591",
-  "gesture-header-icon": "_gesture-header-icon_61591",
-  "pointer-title": "_pointer-title_61591",
-  "tick-card": "_tick-card_61591",
-  "tick-plus-card": "_tick-plus-card_61591",
-  "tick-plus-btn": "_tick-plus-btn_61591",
-  "spaceContainer": "_spaceContainer_61591",
-  "tick-pointer-input": "_tick-pointer-input_61591",
-  "tick-button-group": "_tick-button-group_61591",
-  "tick-button-input": "_tick-button-input_61591",
-  "tick-input-box": "_tick-input-box_61591",
-  "tick-coord-box": "_tick-coord-box_61591",
-  "option-inpt": "_option-inpt_61591"
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
 };
 },{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9822,12 +9503,8 @@ const {
   SELECT_FILE,
   EXPECTED_VALUE,
   TAKE_SCREENSHOT,
-<<<<<<< HEAD
-  SCRATCH
-=======
   SCRATCH,
   ROTATE
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
@@ -13046,7 +12723,7 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-undef */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
 const {
   SELECT,
   SWIPE,
@@ -13059,19 +12736,11 @@ const {
   FILE_UPLOAD,
   EXPECTED_VALUE,
   TAKE_SCREENSHOT,
-<<<<<<< HEAD
-  SCRATCH
-=======
   SCRATCH,
   HIDE_KEYBOARD,
   GET_DEVICE_TIME,
   GET_CLIPBOARD,
   ROTATE
-<<<<<<< HEAD
-=======
->>>>>>> 4ec0649 (added changes)
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -13095,12 +12764,8 @@ class Inspector extends _react.Component {
       scaleRatio: 1,
       activeIndex: 0,
       showPanel: false,
-<<<<<<< HEAD
-      currentSelection: null
-=======
       isInput: false,
       inputBundleId: ''
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -13214,11 +12879,7 @@ class Inspector extends _react.Component {
       showPanel: !this.state.showPanel
     });
   }
-<<<<<<< HEAD
-  screenshotInteractionChange(mode, option) {
-=======
   screenshotInteractionChange(mode) {
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
     const {
       selectScreenshotInteractionMode,
       clearSwipeAction
@@ -13234,17 +12895,6 @@ class Inspector extends _react.Component {
       activeIndex: val
     });
   }
-<<<<<<< HEAD
-
-  // getItem(label, key, icon, children, type) {
-  //   return {
-  //     key,
-  //     icon,
-  //     children,
-  //     label,
-  //     type,
-  //   };
-=======
   async hideKeyboard() {
     const {
       driver,
@@ -13306,7 +12956,6 @@ class Inspector extends _react.Component {
   //   const clipboard = await driver.getClipboard();
   //   console.log('🚀 ~ file: Inspector.js:228 ~ Inspector ~ getDeviceclipBoard ~ clipboard:', clipboard);
   //   alert(clipboard);
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
   // }
 
   render() {
@@ -13366,30 +13015,6 @@ class Inspector extends _react.Component {
     })), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.BarsOutlined, null),
       onClick: () => this.handlePanel(this.state.showPanel)
-<<<<<<< HEAD
-    }), showScreenshot && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(1),
-      onMouseOut: () => this.setActiveIndex(0),
-      style: {
-        textAlign: "center",
-        padding: "5px",
-        borderBottom: "1px solid grey",
-        position: "relative",
-        cursor: "pointer"
-      }
-    }, /*#__PURE__*/_react.default.createElement(_icons.HeatMapOutlined, {
-      style: {
-        fontSize: "20px"
-      }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Actions"), this.state.activeIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: "flex",
-        flexDirection: "column",
-        position: "absolute",
-        zIndex: "999",
-        left: "100%",
-        top: "10%"
-=======
     }), /*#__PURE__*/_react.default.createElement(ButtonGroup, {
       value: screenshotInteractionMode,
       style: {
@@ -13398,150 +13023,94 @@ class Inspector extends _react.Component {
         position: 'absolute',
         top: '150px',
         zIndex: '99'
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(1),
       onMouseOut: () => this.setActiveIndex(0),
       icon: /*#__PURE__*/_react.default.createElement(_icons.SelectOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(SELECT, "Select Elements");
+        this.screenshotInteractionChange(SELECT);
       },
       type: screenshotInteractionMode === SELECT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Select Elements")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 1 && /*#__PURE__*/_react.default.createElement("span", null, "Select Elements")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(2),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwapRightOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(SWIPE, "Swipe by coordinates");
+        this.screenshotInteractionChange(SWIPE);
       },
       type: screenshotInteractionMode === SWIPE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Swipe By Coordinates")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 2 && /*#__PURE__*/_react.default.createElement("span", null, "Swipe By Coordinates")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(3),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.ScanOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(TAP, "Tap by coordinates");
+        this.screenshotInteractionChange(TAP);
       },
       type: screenshotInteractionMode === TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Tap By Coordinates")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("span", null, "Tap By Coordinates")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(4),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.InfoOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(LONGPRESS, "Longpress");
+        this.screenshotInteractionChange(LONGPRESS);
       },
       type: screenshotInteractionMode === LONGPRESS ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "LongPress")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("span", null, "LongPress")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(5),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.DragOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(DRAG_AND_DROP, "Drag & Drop");
+        this.screenshotInteractionChange(DRAG_AND_DROP);
       },
       type: screenshotInteractionMode === DRAG_AND_DROP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Drag & Drop")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 5 && /*#__PURE__*/_react.default.createElement("span", null, "Drag & Drop")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(6),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.UpCircleOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(DOUBLE_TAP, "Double tap");
+        this.screenshotInteractionChange(DOUBLE_TAP);
       },
       type: screenshotInteractionMode === DOUBLE_TAP ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Double Tap")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 6 && /*#__PURE__*/_react.default.createElement("span", null, "Double Tap")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(7),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.ShrinkOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(ZOOMIN, "Zoom");
+        this.screenshotInteractionChange(ZOOMIN);
       },
       type: screenshotInteractionMode === ZOOMIN ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Zoom")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 7 && /*#__PURE__*/_react.default.createElement("span", null, "Zoom")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(8),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.SlidersOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(SLIDE, "Slider");
+        this.screenshotInteractionChange(SLIDE);
       },
       type: screenshotInteractionMode === SLIDE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")))), /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(2),
-      onMouseOut: () => this.setActiveIndex(0),
-      style: {
-        textAlign: "center",
-        padding: "5px",
-        borderBottom: "1px solid grey",
-        position: "relative",
-        cursor: "pointer"
-      }
-    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
-      style: {
-        fontSize: "20px"
-      }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: "flex",
-        flexDirection: "column",
-        position: "absolute",
-        zIndex: "999",
-        left: "100%",
-        top: "10%"
-      }
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 8 && /*#__PURE__*/_react.default.createElement("span", null, "Slider")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(9),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       className: _Inspector.default['user_actions'],
       icon: /*#__PURE__*/_react.default.createElement(_icons.FileAddOutlined, null),
       onClick: async () => {
         if (screenshotInteractionMode === FILE_UPLOAD) {
-          this.screenshotInteractionChange(null, null);
+          this.screenshotInteractionChange(null);
           let data = {
             'session_id': driver.sessionId,
             'step-name': 'select_file',
@@ -13579,56 +13148,41 @@ class Inspector extends _react.Component {
             console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
           });
         } else {
-          this.screenshotInteractionChange(FILE_UPLOAD, "File Upload");
+          this.screenshotInteractionChange(FILE_UPLOAD);
         }
       },
       type: screenshotInteractionMode === FILE_UPLOAD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 9 && /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(10),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(EXPECTED_VALUE, "Expected Value");
+        this.screenshotInteractionChange(EXPECTED_VALUE);
       },
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 10 && /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(11),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(TAKE_SCREENSHOT, "Take screenshot");
+        this.screenshotInteractionChange(TAKE_SCREENSHOT);
       },
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, this.state.activeIndex === 11 && /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(12),
       onMouseOut: () => this.setActiveIndex(0),
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
-        this.screenshotInteractionChange(SCRATCH, "Scratch");
+        this.screenshotInteractionChange(SCRATCH);
       },
       type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch"))))));
-=======
     }, this.state.activeIndex === 12 && /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       onMouseOver: () => this.setActiveIndex(13),
       onMouseOut: () => this.setActiveIndex(0),
@@ -13783,13 +13337,7 @@ class Inspector extends _react.Component {
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
     }, this.state.activeIndex === 18 && /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))));
-=======
-    }, this.state.activeIndex === 16 && /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))));
->>>>>>> 4ec0649 (added changes)
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
@@ -13803,12 +13351,12 @@ class Inspector extends _react.Component {
       }
     }, screenShotControls, showScreenshot && /*#__PURE__*/_react.default.createElement("div", {
       style: {
-        display: "flex",
-        flexDirection: "column"
+        display: 'flex',
+        flexDirection: 'column'
       }
     }, this.state.currentSelection !== null && /*#__PURE__*/_react.default.createElement("div", {
       style: {
-        textAlign: "center"
+        textAlign: 'center'
       }
     }, "Current Selection : ", this.state.currentSelection), /*#__PURE__*/_react.default.createElement(_Screenshot.default, _extends({}, this.props, {
       scaleRatio: this.state.scaleRatio
@@ -13914,21 +13462,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
   "container": "_container_afc3f",
   "loader": "_loader_afc3f",
   "load1": "_load1_afc3f"
-=======
-<<<<<<< HEAD
-  "container": "_container_70832",
-  "loader": "_loader_70832",
-  "load1": "_load1_70832"
-=======
-  "container": "_container_9b1d1",
-  "loader": "_loader_9b1d1",
-  "load1": "_load1_9b1d1"
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -14014,18 +13550,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
   "errorMessage": "_errorMessage_e36f2",
   "copyTraceBtn": "_copyTraceBtn_e36f2"
-=======
-<<<<<<< HEAD
-  "errorMessage": "_errorMessage_8d2a9",
-  "copyTraceBtn": "_copyTraceBtn_8d2a9"
-=======
-  "errorMessage": "_errorMessage_cd7c8",
-  "copyTraceBtn": "_copyTraceBtn_cd7c8"
->>>>>>> e8af83d7bf2ea22c6f00c82c9f35afb1f034cc47
->>>>>>> 960470ff1d290a1201ece83d747e5c693763ebcf
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
