@@ -1,3 +1,4 @@
+/* eslint-disable promise/prefer-await-to-callbacks */
 /* eslint-disable indent */
 /* eslint-disable space-in-parens */
 /* eslint-disable no-console */
@@ -15,6 +16,7 @@ import { getSetting, setSetting, SAVED_FRAMEWORK, SET_SAVED_GESTURES } from '../
 import i18n from '../../configs/i18next.config.renderer';
 import AppiumClient, { NATIVE_APP } from '../lib/appium-client';
 import { notification } from 'antd';
+// import { useState } from 'react';
 
 export const SET_SESSION_DETAILS = 'SET_SESSION_DETAILS';
 export const SET_SOURCE_AND_SCREENSHOT = 'SET_SOURCE_AND_SCREENSHOT';
@@ -45,6 +47,7 @@ export const CLEAR_RECORDING = 'CLEAR_RECORDING';
 export const CLOSE_RECORDER = 'CLOSE_RECORDER';
 export const SET_ACTION_FRAMEWORK = 'SET_ACTION_FRAMEWORK';
 export const RECORD_ACTION = 'RECORD_ACTION';
+export const STEPS_ARRAY = 'STEPS_ARRAY';
 export const SET_SHOW_BOILERPLATE = 'SET_SHOW_BOILERPLATE';
 
 export const SHOW_LOCATOR_TEST_MODAL = 'SHOW_LOCATOR_TEST_MODAL';
@@ -120,6 +123,7 @@ const KEEP_ALIVE_PING_INTERVAL = 20 * 1000;
 const NO_NEW_COMMAND_LIMIT = 24 * 60 * 60 * 1000; // Set timeout to 24 hours
 const WAIT_FOR_USER_KEEP_ALIVE = 60 * 60 * 1000; // Give user 1 hour to reply
 
+// const [steps,setFlowSteps] = useState({})
 // A debounced function that calls findElement and gets info about the element
 const findElement = _.debounce(async function (strategyMap, dispatch, getState, path) {
   for (let [strategy, selector] of strategyMap) {
@@ -676,6 +680,7 @@ export function setSwipeStart(swipeStartX, swipeStartY) {
   };
 }
 
+
 export function setSwipeStart1 (swipeStartX, swipeStartY) {
   return (dispatch) => {
     dispatch({type: SET_SWIPE_START1, swipeStartX, swipeStartY});
@@ -813,6 +818,15 @@ export function keepSessionAlive() {
   };
 }
 
+const fetchSteps = (data) =>  fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+let data = [];
 export function callClientMethod(params) {
   return async (dispatch, getState) => {
     console.log("🚀 ~ file: Inspector.js:803 ~ return ~ params:", params);
@@ -844,6 +858,10 @@ export function callClientMethod(params) {
       selectedElement,
       'step-name': screenshotInteractionMode
     };
+    let data1 = {
+      "session_id": driver.sessionId,
+      'step-name': 'steps'
+    };
     console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
     if (postdata.params.methodName === "click") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
@@ -856,10 +874,32 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response:", response);
+          postdata.response = response;
+          data.push(...[postdata]);
+          dispatch({ type: STEPS_ARRAY, data });
         })
         .catch((error) => {
           console.error("API error:", error);
         });
+        // fetchSteps(data1).then((res) => {
+        //   console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+        //   let data = res.steps;
+        //   dispatch({ type: STEPS_ARRAY, data });
+        // }).catch((error) => {
+        //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        // });
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data1),
+      }).then((res) => {
+        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+        dispatch({ type: STEPS_ARRAY, res });
+      }).catch((error) => {
+        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+      })
     } else if (postdata.params.methodName === "swipe") {
       // Exclude selectedElement from postdata
       delete postdata.selectedElement;
@@ -873,11 +913,39 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response:", response);
+          // console.log("🚀 ~ file: Inspector.js:884 ~ .then ~ totalData:", totalData)
+          postdata.response = response;
+          // if(postdata['step-name'] != 'scratch'){
+          //   data.push(...[postdata])
+          // }
+          console.log("🚀 ~ file: Inspector.js:882 ~ .then ~ data:", data);
+          // dispatch({ type: STEPS_ARRAY, data })
         })
         .catch((error) => {
           console.error("API error:", error);
         });
-        
+        // if(postdata['step-name'] === 'scratch'){
+        //   data.push(...[postdata])
+        // }
+        // fetchSteps(data1).then((res) => {
+        //   console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+        //   let data = res.steps;
+        //   dispatch({ type: STEPS_ARRAY, data });
+        // }).catch((error) => {
+        //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        // });
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data1),
+      }).then((res) => {
+        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+        dispatch({ type: STEPS_ARRAY, res });
+      }).catch((error) => {
+        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+      })
         //check the if the tap then it would be longpress , double tap, tap and drag and drop
     } else if (postdata.params.methodName === "tap") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
@@ -890,11 +958,33 @@ export function callClientMethod(params) {
         })
           .then((response) => {
             console.log("API response:", response);
-
+          //   postdata['response'] = response
+          // data.push(...[postdata])
+          // dispatch({ type: STEPS_ARRAY, data })
           })
           .catch((error) => {
             console.error("API error:", error);
           });
+          // fetchSteps(data1).then((res) => {
+          //   console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+          //   let data = res.steps;
+          //   dispatch({ type: STEPS_ARRAY, data });
+          // }).catch((error) => {
+          //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+          // });
+
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data1),
+      }).then((res) => {
+        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+        dispatch({ type: STEPS_ARRAY, res });
+      }).catch((error) => {
+        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+      })
     } else if (postdata.params.methodName === "sendKeys") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
       await fetch("https://apprecord.testing24x7.ai/appAction", {
@@ -906,10 +996,32 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response:", response);
+          postdata.response = response;
+          data.push(...[postdata]);
+          // dispatch({ type: STEPS_ARRAY, data })
         })
         .catch((error) => {
           console.error("API error:", error);
         });
+        // fetchSteps(data1).then((res) => {
+        //   console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+        //   let data = res.steps;
+        //   dispatch({ type: STEPS_ARRAY, data });
+        // }).catch((error) => {
+        //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        // });
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data1),
+      }).then((res) => {
+        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+        dispatch({ type: STEPS_ARRAY, res });
+      }).catch((error) => {
+        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+      })
     } else if (postdata['step-name'] === 'expected_value') {
       postdata.params.xpath = postdata.selectedElement.xpath;
       postdata.params.expected_value = postdata.selectedElement.attributes.text;
@@ -923,10 +1035,32 @@ export function callClientMethod(params) {
       })
         .then((response) => {
           console.log("API response for expected_value:", response);
+          postdata.response = response;
+          data.push(...[postdata]);
+          // dispatch({ type: STEPS_ARRAY, data })
         })
         .catch((error) => {
           console.error("API error:", error);
         });
+        // fetchSteps(data1).then((res) => {
+        //   console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+        //   let data = res.steps;
+        //   dispatch({ type: STEPS_ARRAY, data });
+        // }).catch((error) => {
+        //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+        // });
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data1),
+      }).then((res) => {
+        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+        dispatch({ type: STEPS_ARRAY, res });
+      }).catch((error) => {
+        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+      })
     } else if (params.methodName === "quit") {
       console.log("🚀 inside the quit function!!");
       let sendData = {
@@ -947,6 +1081,25 @@ export function callClientMethod(params) {
       .catch((error) => {
         console.error("API error:", error);
       });
+      // fetchSteps(data1).then((res) => {
+      //   console.log("🚀 ~ file: Inspector.js:886 ~ fetchSteps ~ res:", res);
+      //   let data = res.steps;
+      //   dispatch({ type: STEPS_ARRAY, data });
+      // }).catch((error) => {
+      //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
+      // });
+      await fetch("https://apprecord.testing24x7.ai/appAction", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data1),
+      }).then((res) => {
+        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+        dispatch({ type: STEPS_ARRAY, res });
+      }).catch((error) => {
+        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+      })
     } else {
       console.log("no api will call becopuse of the no action happend@@@@@@@@@@@");
     }

@@ -10,6 +10,9 @@ const LocatedElements = (props) => {
 
   const sendKeys = useRef(null);
 
+  if(locatorTestElement){
+    console.log("🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:", locatorTestElement)
+  }
   const showIdAutocompleteInfo = () => {
     const { locatorTestStrategy, locatorTestValue } = props;
     const automationName = driver.client.capabilities.automationName;

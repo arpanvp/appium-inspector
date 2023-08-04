@@ -18,7 +18,7 @@ import {
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH , ROTATE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -27,7 +27,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode,step_object, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement,locatorTestElement } = props;
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
   const [element, setElement] = useState({});
@@ -211,11 +211,11 @@ const Screenshot = (props) => {
     //   await fetch("https://apprecord.testing24x7.ai/appAction", {
     //     method: "POST",
     //     headers: {
-    //       "Content-Type": "application/json",
+    //       "Content-Type": "application/json"
     //     },
     //     body: JSON.stringify(sendData),
     //   })
-    //   .then((response) => {
+    //   .then((response) => {*
     //     console.log("API response:", response);
     //   })
     //   .catch((error) => {
@@ -335,6 +335,9 @@ const Screenshot = (props) => {
       },
     });
     clearSwipeAction();
+    if(step_object){
+      console.log("🚀 ~ file: Screenshot.js:97 ~ Screenshot ~ step_object:", step_object)
+    }
   };
 
 

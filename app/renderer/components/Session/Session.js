@@ -98,7 +98,7 @@ const Session = (props) => {
           {!isAttaching && <Button type={BUTTON.PRIMARY} id='btnStartSession'
             onClick={() => newSession(caps)} className={SessionStyles['start-session-button']}>{t('startSession')}
           </Button>}
-          {isAttaching && <Button type={BUTTON.PRIMARY} disabled={!attachSessId}
+          {isAttaching && <Button type={BUTTON.PRIMARY} disabled={!attachSessId} id='attchedtosession'
             onClick={() => newSession(null, attachSessId)}>{t('attachToSession')}
           </Button>}
         </div>
