@@ -238,7 +238,7 @@ export default function inspector (state = INITIAL_STATE, action) {
     case STEPS_ARRAY:
         return {
           ...state,
-          flow_steps:action.data
+          flow_steps:action.res
       };  
 
     case ADD_ASSIGNED_VAR_CACHE:
