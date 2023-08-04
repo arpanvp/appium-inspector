@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable dot-notation */
 /* eslint-disable indent */
@@ -26,6 +27,8 @@ import {
   SelectOutlined,
   ScanOutlined,
   SwapRightOutlined,
+  EditOutlined,
+  HeatMapOutlined,
   CheckCircleOutlined,
   CloseCircleOutlined,
   BarsOutlined,
@@ -97,7 +100,6 @@ export default class Inspector extends Component {
     this.updateScaleRatio = debounce(this.updateScaleRatio.bind(this), 500);
     this.mjpegStreamCheckInterval = null;
   }
-
   /**
    * Calculates the ratio that the image is being scaled by
    */
@@ -210,6 +212,7 @@ export default class Inspector extends Component {
     const { selectScreenshotInteractionMode, clearSwipeAction } = this.props;
     clearSwipeAction(); // When the action changes, reset the swipe action
     selectScreenshotInteractionMode(mode);
+    this.setState({currentSelection: option});
   }
 
   setActiveIndex(val) {
@@ -536,7 +539,11 @@ export default class Inspector extends Component {
     let main = <div className={InspectorStyles['inspector-main']} ref={(el) => { this.screenAndSourceEl = el; }}>
       <div id='screenshotContainer' className={InspectorStyles['screenshot-container']} ref={(el) => { this.screenshotEl = el; }}>
         {screenShotControls}
-        {showScreenshot && <Screenshot {...this.props} scaleRatio={this.state.scaleRatio} />}
+        {showScreenshot &&
+        <div style={{display: 'flex', flexDirection: 'column'}}>
+          {this.state.currentSelection !== null && <div style={{textAlign: 'center'}}>Current Selection : {this.state.currentSelection}</div>}
+          <Screenshot {...this.props} scaleRatio={this.state.scaleRatio} />
+        </div>}
         {screenshotError && t('couldNotObtainScreenshot', { screenshotError })}
         {!showScreenshot &&
           <Spin size="large" spinning={true}>
