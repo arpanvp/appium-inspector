@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 process.env.HMR_PORT=34725;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 =======
 process.env.HMR_PORT=44855;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 >>>>>>> 6e290d3 (added changes)
+=======
+process.env.HMR_PORT=42665;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 6cd41be (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -13385,6 +13389,15 @@ class Inspector extends _react.Component {
         children: /*#__PURE__*/_react.default.createElement("div", {
           className: "action-row"
         }, /*#__PURE__*/_react.default.createElement("div", {
+<<<<<<< HEAD
+=======
+          style: {
+            fontWeight: 'bold'
+          }
+        }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), flow_steps && flow_steps.steps && flow_steps.steps.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
+          key: key
+        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value'])))), /*#__PURE__*/_react.default.createElement("div", {
+>>>>>>> 6cd41be (added changes)
           id: "selectedElementContainer",
           className: `${_Inspector.default['interaction-tab-container']} ${_Inspector.default['element-detail-container']} action-col`
         }, /*#__PURE__*/_react.default.createElement(_antd.Card, {

@@ -399,6 +399,114 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === GET_CLIPBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Get clipboard</span></Button>
+            <Button icon={<RotateRightOutlined />} onClick={async() => { await driver.client.setOrientation('LANDSCAPE') }}
+            type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Rotate</span></Button>
+            <Button icon={<NotificationOutlined />}
+           onClick={async() => { 
+            await driver.client.openNotifications()
+            let data = {
+                'session_id': driver.sessionId,
+                'step-name': 'notification',
+              };
+              await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              })
+                .then((response) => {
+                  console.log('API response:', response);
+                })
+                .catch((error) => {
+                  console.error('API error:', error);
+                });
+
+                let data1 = {
+                  "session_id": driver.sessionId,
+                  'step-name': 'steps'
+                };
+                await fetch("https://apprecord.testing24x7.ai/appAction", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data1),
+              }).then((res) => {
+                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+                dispatch({ type: STEPS_ARRAY, res });
+              }).catch((error) => {
+                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+              })
+
+            await applyClientMethod({ methodName: 'getPageSource' })
+           }}
+            type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+          ><span>Open Notifications</span></Button>
+          { !this.state.isInput ? (<Button icon={<SwitcherOutlined />} onClick={() =>  this.setState({ isInput: true })}
+            type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+          ><span>Switch App</span></Button>) : (
+            <div>
+              <Input
+                placeholder="enter bundle id"
+                onChange={(event) => this.setState({ inputBundleId: event.target.value })}
+              />
+              <Button
+                onClick={async () => {
+                  await driver.client.activateApp(this.state.inputBundleId);
+                  
+                  let data = {
+                'session_id': driver.sessionId,
+                'step-name': 'switch_app',
+                'bundle_id': this.state.inputBundleId
+              };
+              await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+              })
+                .then((response) => {
+                  console.log('API response:', response);
+                })
+                .catch((error) => {
+                  console.error('API error:', error);
+                });
+
+                let data1 = {
+                  "session_id": driver.sessionId,
+                  'step-name': 'steps'
+                };
+                await fetch("https://apprecord.testing24x7.ai/appAction", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data1),
+              }).then((res) => {
+                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+                dispatch({ type: STEPS_ARRAY, res });
+              }).catch((error) => {
+                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
+              })
+
+                await applyClientMethod({ methodName: 'getPageSource' })
+                  this.setState({ isInput: false, inputBundleId: '' });
+                }}
+                style={{ backgroundColor:'blue'}}
+              >
+                Activate App
+              </Button>
+              <Button icon={<AimOutlined />} onClick={async() => { await driver.client.resetApp() }}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+          > <span>Reset App</span></Button>
+            </div>
+          )}
           </div>}
         </div>
       </div>}
@@ -533,6 +641,32 @@ export default class Inspector extends Component {
                   <Source {...this.props} />
                 </Card>
               </div> */}
+              <div style={{fontWeight: 'bold'}}>
+              FLOW TABLE:
+              </div>
+              <br></br>
+                <table>
+                  <tr>
+                    <th>S No.</th>
+                    <th>Step</th>
+                    <th>Step Name</th>
+                    <th>Search By</th>
+                    <th>Search By Value</th>
+                  </tr>
+              {flow_steps && flow_steps.steps && flow_steps.steps.map((item, key) => (
+                  <tr key={key}>
+                    <td>{key + 1}</td>
+                    <td>{item['step']}</td>
+                    <td>{item['step_name']}</td>
+                    <td>{item['search_by']}</td>
+                    <td>{item['search_by_value']}</td>
+                    {/* {item.response.status === 200 ?
+                     <td><span style={{color:'green'}}>Success</span></td> :
+                    <td><span style={{color:'red'}}>Failed</span></td>
+                    } */}
+                  </tr>
+              ))}
+                </table>
                 <div id='selectedElementContainer'
                   className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
                   <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
