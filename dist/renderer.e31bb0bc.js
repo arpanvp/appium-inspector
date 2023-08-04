@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=34725;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=44855;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 6e290d3 (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -10131,7 +10135,7 @@ const Screenshot = props => {
         if (coordinates.length > 250) {
           console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates);
           // setTimeout(() => {
-          applyClientMethod({
+          let data = {
             methodName: SWIPE,
             args: {
               [POINTER_NAME1]: [{
@@ -10171,7 +10175,8 @@ const Screenshot = props => {
                 button: BUTTON
               }]
             }
-          });
+          };
+          applyClientMethod(data);
           // }, 500);
           clearSwipeAction();
           setCoordinates([]);
@@ -12739,7 +12744,12 @@ const {
   SCRATCH,
   HIDE_KEYBOARD,
   GET_DEVICE_TIME,
+<<<<<<< HEAD
   GET_CLIPBOARD
+=======
+  GET_CLIPBOARD,
+  ROTATE
+>>>>>>> 6e290d3 (added changes)
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -13167,7 +13177,13 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, this.state.activeIndex === 12 && /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(13),
+      onMouseOut: () => this.setActiveIndex(0),
+>>>>>>> 6e290d3 (added changes)
       icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
@@ -13185,15 +13201,148 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === GET_DEVICE_TIME ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Get Device Time")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.PaperClipOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard');
+=======
+    }, this.state.activeIndex === 14 && /*#__PURE__*/_react.default.createElement("span", null, "Get Device Time")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(13),
+      onMouseOut: () => this.setActiveIndex(0),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
+      onClick: async () => {
+        await driver.client.setOrientation('LANDSCAPE');
+>>>>>>> 6e290d3 (added changes)
       },
       type: screenshotInteractionMode === GET_CLIPBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard"))))));
+=======
+    }, this.state.activeIndex === 13 && /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(14),
+      onMouseOut: () => this.setActiveIndex(0),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
+      onClick: async () => {
+        await driver.client.openNotifications();
+        let data = {
+          'session_id': driver.sessionId,
+          'step-name': 'notification'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          console.log('API response:', response);
+        }).catch(error => {
+          console.error('API error:', error);
+        });
+        let data1 = {
+          "session_id": driver.sessionId,
+          'step-name': 'steps'
+        };
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data1)
+        }).then(res => {
+          console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
+          dispatch({
+            type: STEPS_ARRAY,
+            res
+          });
+        }).catch(error => {
+          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+      },
+      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, this.state.activeIndex === 14 && /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(15),
+      onMouseOut: () => this.setActiveIndex(0),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
+      onClick: () => this.setState({
+        isInput: true
+      }),
+      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, this.state.activeIndex === 15 && /*#__PURE__*/_react.default.createElement("span", null, "Switch App")) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+      placeholder: "enter bundle id",
+      onChange: event => this.setState({
+        inputBundleId: event.target.value
+      })
+    }), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onClick: async () => {
+        await driver.client.activateApp(this.state.inputBundleId);
+        let data = {
+          'session_id': driver.sessionId,
+          'step-name': 'switch_app',
+          'bundle_id': this.state.inputBundleId
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          console.log('API response:', response);
+        }).catch(error => {
+          console.error('API error:', error);
+        });
+        let data1 = {
+          "session_id": driver.sessionId,
+          'step-name': 'steps'
+        };
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data1)
+        }).then(res => {
+          console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
+          dispatch({
+            type: STEPS_ARRAY,
+            res
+          });
+        }).catch(error => {
+          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+        this.setState({
+          isInput: false,
+          inputBundleId: ''
+        });
+      },
+      style: {
+        backgroundColor: 'blue'
+      }
+    }, "Activate App")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onMouseOver: () => this.setActiveIndex(16),
+      onMouseOut: () => this.setActiveIndex(0),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      onClick: async () => {
+        await driver.client.resetApp();
+      },
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, this.state.activeIndex === 16 && /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))));
+>>>>>>> 6e290d3 (added changes)
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {

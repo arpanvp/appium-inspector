@@ -449,7 +449,7 @@ const Screenshot = (props) => {
         if(coordinates.length > 250){
           console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates)
           // setTimeout(() => {
-            applyClientMethod({
+            let data = {
               methodName: SWIPE,
               args: {
                 [POINTER_NAME1]: [
@@ -465,7 +465,8 @@ const Screenshot = (props) => {
                   { type: POINTER_UP, button: BUTTON }
                 ]
               },
-            });
+            }
+            applyClientMethod(data);
           // }, 500);
           clearSwipeAction();
           setCoordinates([])
