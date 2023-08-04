@@ -1063,29 +1063,6 @@ table {
     border-radius: 36px; */
   } 
   ._innerScreenshotContainer_5407d {
-<<<<<<< HEAD
-=======
-=======
-    height: 95%;
-    margin: auto;
-
-  } */
-
-  ._innerScreenshotContainer_61591 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 360px;   
-    height: 95%;
-    margin: auto;
-    /* border: 16px rgb(30, 30, 39) solid;
-    border-top-width: 60px;
-    border-bottom-width: 60px;
-    border-radius: 36px; */
-  } 
-  ._innerScreenshotContainer_61591 {
->>>>>>> d9216115b058abb31e28fb48b5d53b90b6b55d39
->>>>>>> 548cabee6a9d54cbe3b841c27a2caa815c5a0e9b
     position: relative;
     display: flex;
     flex-direction: column;

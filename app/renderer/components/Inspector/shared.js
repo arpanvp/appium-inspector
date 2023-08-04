@@ -142,7 +142,10 @@ export const SCREENSHOT_INTERACTION_MODE = {
   SELECT_FILE: 'select_file',
   EXPECTED_VALUE: 'expected_value',
   TAKE_SCREENSHOT: 'take_screenshot',
-  SCRATCH: 'scratch'
+  SCRATCH: 'scratch',
+  HIDE_KEYBOARD: 'hide_keyboard',
+  GET_DEVICE_TIME: 'get_device_time',
+  GET_CLIPBOARD: 'get_clipboard',
 };
 
 export const APP_MODE = {

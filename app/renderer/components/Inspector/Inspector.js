@@ -18,6 +18,9 @@ import SavedGestures from './SavedGestures';
 import GestureEditor from './GestureEditor';
 import SessionInfo from './SessionInfo';
 import { clipboard } from '../../polyfills';
+import moment from 'moment';
+
+
 
 import {
   SelectOutlined,
@@ -42,10 +45,13 @@ import {
   UpCircleOutlined,
   FileAddOutlined,
   FundProjectionScreenOutlined,
+  CaretDownOutlined,
+  FieldTimeOutlined,
+  PaperClipOutlined,
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH } = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -203,6 +209,67 @@ export default class Inspector extends Component {
   setActiveIndex(val) {
     this.setState({ activeIndex: val });
   }
+  async hideKeyboard() {
+    const { driver, screenshotInteractionMode } = this.props;
+    driver.client.hideKeyboard();
+    console.log('hide keyboard^^^^^^^^^^^^^^^^');
+    this.props.applyClientMethod({methodName: 'getPageSource', ignoreResult: true});
+
+    let postdata = {
+      'session_id': driver.sessionId,
+      'step-name': 'hideKeyboard',
+    };
+    console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ hideKeyboard ~ postdata:', postdata);
+
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postdata),
+    })
+      .then((response) => {
+        console.log('API response:', response);
+        postdata.response = response;
+      })
+      .catch((error) => {
+        console.error('API error:', error);
+      });
+  }
+  async getDeviceTime() {
+    const { driver } = this.props;
+    const time = await driver.client.getDeviceTime();
+    console.log('get device timeeeeeeeeeeeeeeeeee', time);
+    const deviceTime = moment.utc(time).utcOffset('+05:30');
+    const formattedTime = deviceTime.format('YYYY-MM-DD HH:mm:ss');
+    let postdata = {
+      'session_id': driver.sessionId,
+      'step-name': 'getDeviceTime',
+    };
+    console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ getDeviceTime ~ postdata:', postdata);
+
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postdata),
+    })
+      .then((response) => {
+        console.log('API response:', response);
+        postdata.response = response;
+      })
+      .catch((error) => {
+        console.error('API error:', error);
+      });
+    alert(formattedTime);
+  }
+  // async getDeviceclipBoard() {
+  //   const { driver } = this.props;
+  //   const clipboard = await driver.getClipboard();
+  //   console.log('🚀 ~ file: Inspector.js:228 ~ Inspector ~ getDeviceclipBoard ~ clipboard:', clipboard);
+  //   alert(clipboard);
+  // }
 
   render() {
     const { screenshot, screenshotError, selectedElement = {},
@@ -318,6 +385,18 @@ export default class Inspector extends Component {
             type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
           >{this.state.activeIndex === 12 && <span>Scratch</span>}</Button>
+            <Button onMouseOver={() => this.setActiveIndex(13)} onMouseOut={() => this.setActiveIndex(0)} icon={<CaretDownOutlined />} onClick={() => { this.screenshotInteractionChange(HIDE_KEYBOARD); this.hideKeyboard(); }}
+            type={screenshotInteractionMode === HIDE_KEYBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+          >{this.state.activeIndex === 13 && <span>Hide Keyboard</span>}</Button>
+          <Button onMouseOver={() => this.setActiveIndex(14)} onMouseOut={() => this.setActiveIndex(0)} icon={<FieldTimeOutlined />} onClick={() => { this.screenshotInteractionChange(GET_DEVICE_TIME); this.getDeviceTime(); }}
+            type={screenshotInteractionMode === GET_DEVICE_TIME ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+          >{this.state.activeIndex === 14 && <span>Get Device Time</span>}</Button>
+           {/* <Button onMouseOver={() => this.setActiveIndex(15)} onMouseOut={() => this.setActiveIndex(0)} icon={<PaperClipOutlined />} onClick={() => { this.screenshotInteractionChange(GET_CLIPBOARD); this.getDeviceclipBoard(); }}
+            type={screenshotInteractionMode === GET_CLIPBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+            disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+          >{this.state.activeIndex === 15 && <span>Get Device Clipboard</span>}</Button> */}
       </ButtonGroup>
     </div>;
     let main = <div className={InspectorStyles['inspector-main']} ref={(el) => { this.screenAndSourceEl = el; }}>
@@ -449,5 +528,6 @@ export default class Inspector extends Component {
         <pre><code>{visibleCommandResult}</code></pre>
       </Modal>
     </div>);
+
   }
 }
