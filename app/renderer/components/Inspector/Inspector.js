@@ -34,7 +34,7 @@ import {
   FileTextOutlined,
   TagOutlined,
   SlidersOutlined,
-  AimOutlined, 
+  AimOutlined,
   InfoCircleOutlined,
   ThunderboltOutlined,
   HighlightOutlined,
@@ -55,7 +55,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD , ROTATE } = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD, ROTATE } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -87,8 +87,8 @@ export default class Inspector extends Component {
       scaleRatio: 1,
       activeIndex: 0,
       showPanel: false,
-      isInput:false,
-      inputBundleId:''
+      isInput: false,
+      inputBundleId: ''
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -284,7 +284,7 @@ export default class Inspector extends Component {
       selectedInteractionMode, selectInteractionMode, setVisibleCommandResult,
       showKeepAlivePrompt, keepSessionAlive, sourceXML, t, visibleCommandResult,
       mjpegScreenshotUrl, isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
-      isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn,applyClientMethod
+      isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn, applyClientMethod
     } = this.props;
     const { path } = selectedElement;
     const { driver } = this.props;
@@ -374,21 +374,22 @@ export default class Inspector extends Component {
                   console.error('API error:', error);
                 });
                 let data1 = {
-                  "session_id": driver.sessionId,
+                  'session_id': driver.sessionId,
                   'step-name': 'steps'
                 };
-                await fetch("https://apprecord.testing24x7.ai/appAction", {
-                method: "POST",
+                await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
                 headers: {
-                  "Content-Type": "application/json",
+                  'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data1),
               }).then((res) => {
-                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+                console.log('🚀 ~ file: Inspector.js:898 ~ return ~ res:', res);
+                // eslint-disable-next-line no-undef
                 dispatch({ type: STEPS_ARRAY, res });
               }).catch((error) => {
-                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
-              })
+                console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+              });
             } else {
               this.screenshotInteractionChange(FILE_UPLOAD);
             }
@@ -419,13 +420,13 @@ export default class Inspector extends Component {
             type={screenshotInteractionMode === GET_CLIPBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
           >{this.state.activeIndex === 15 && <span>Get Device Clipboard</span>}</Button> */}
-          <Button onMouseOver={() => this.setActiveIndex(13)} onMouseOut={() => this.setActiveIndex(0)} icon={<RotateRightOutlined />} onClick={async() => { await driver.client.setOrientation('LANDSCAPE') }}
+          <Button onMouseOver={() => this.setActiveIndex(15)} onMouseOut={() => this.setActiveIndex(0)} icon={<RotateRightOutlined />} onClick={async() => { await driver.client.setOrientation('LANDSCAPE'); }}
             type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-          >{this.state.activeIndex === 13 && <span>Rotate</span>}</Button>
-          <Button onMouseOver={() => this.setActiveIndex(14)} onMouseOut={() => this.setActiveIndex(0)} icon={<NotificationOutlined />}
-           onClick={async() => { 
-            await driver.client.openNotifications()
+          >{this.state.activeIndex === 15 && <span>Rotate</span>}</Button>
+          <Button onMouseOver={() => this.setActiveIndex(16)} onMouseOut={() => this.setActiveIndex(0)} icon={<NotificationOutlined />}
+           onClick={async() => {
+            await driver.client.openNotifications();
             let data = {
                 'session_id': driver.sessionId,
                 'step-name': 'notification',
@@ -445,31 +446,32 @@ export default class Inspector extends Component {
                 });
 
                 let data1 = {
-                  "session_id": driver.sessionId,
+                  'session_id': driver.sessionId,
                   'step-name': 'steps'
                 };
-                await fetch("https://apprecord.testing24x7.ai/appAction", {
-                method: "POST",
+                await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
                 headers: {
-                  "Content-Type": "application/json",
+                  'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data1),
               }).then((res) => {
-                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+                console.log('🚀 ~ file: Inspector.js:898 ~ return ~ res:', res);
+                // eslint-disable-next-line no-undef
                 dispatch({ type: STEPS_ARRAY, res });
               }).catch((error) => {
-                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
-              })
+                console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+              });
 
-            await applyClientMethod({ methodName: 'getPageSource' })
+            await applyClientMethod({ methodName: 'getPageSource' });
            }}
             type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-          >{this.state.activeIndex === 14 && <span>Open Notifications</span>}</Button>
-         { !this.state.isInput ? (<Button onMouseOver={() => this.setActiveIndex(15)} onMouseOut={() => this.setActiveIndex(0)} icon={<SwitcherOutlined />} onClick={() =>  this.setState({ isInput: true })}
+          >{this.state.activeIndex === 16 && <span>Open Notifications</span>}</Button>
+         { !this.state.isInput ? (<Button onMouseOver={() => this.setActiveIndex(17)} onMouseOut={() => this.setActiveIndex(0)} icon={<SwitcherOutlined />} onClick={() => this.setState({ isInput: true })}
             type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-          >{this.state.activeIndex === 15 && <span>Switch App</span>}</Button>) : (
+          >{this.state.activeIndex === 17 && <span>Switch App</span>}</Button>) : (
             <div>
               <Input
                 placeholder="enter bundle id"
@@ -478,7 +480,7 @@ export default class Inspector extends Component {
               <Button
                 onClick={async () => {
                   await driver.client.activateApp(this.state.inputBundleId);
-                  
+
                   let data = {
                 'session_id': driver.sessionId,
                 'step-name': 'switch_app',
@@ -499,35 +501,36 @@ export default class Inspector extends Component {
                 });
 
                 let data1 = {
-                  "session_id": driver.sessionId,
+                  'session_id': driver.sessionId,
                   'step-name': 'steps'
                 };
-                await fetch("https://apprecord.testing24x7.ai/appAction", {
-                method: "POST",
+                await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
                 headers: {
-                  "Content-Type": "application/json",
+                  'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data1),
               }).then((res) => {
-                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
+                console.log('🚀 ~ file: Inspector.js:898 ~ return ~ res:', res);
+                // eslint-disable-next-line no-undef
                 dispatch({ type: STEPS_ARRAY, res });
               }).catch((error) => {
-                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
-              })
+                console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+              });
 
-                await applyClientMethod({ methodName: 'getPageSource' })
+                await applyClientMethod({ methodName: 'getPageSource' });
                   this.setState({ isInput: false, inputBundleId: '' });
                 }}
-                style={{ backgroundColor:'blue'}}
+                style={{ backgroundColor: 'blue'}}
               >
                 Activate App
               </Button>
             </div>
           )}
 
-          <Button onMouseOver={() => this.setActiveIndex(16)} onMouseOut={() => this.setActiveIndex(0)} icon={<AimOutlined />} onClick={async() => { await driver.client.resetApp() }}
+          <Button onMouseOver={() => this.setActiveIndex(18)} onMouseOut={() => this.setActiveIndex(0)} icon={<AimOutlined />} onClick={async() => { await driver.client.resetApp(); }}
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-          >{this.state.activeIndex === 16 && <span>Reset App</span>}</Button>
+          >{this.state.activeIndex === 18 && <span>Reset App</span>}</Button>
       </ButtonGroup>
     </div>;
     let main = <div className={InspectorStyles['inspector-main']} ref={(el) => { this.screenAndSourceEl = el; }}>
