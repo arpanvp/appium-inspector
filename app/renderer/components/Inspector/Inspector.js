@@ -6,7 +6,7 @@
 import React, { Component } from 'react';
 import { debounce } from 'lodash';
 import { SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE } from './shared';
-import { Card, Button, Spin, Tooltip, Modal, Tabs, Space, Switch, Menu } from 'antd';
+import { Card, Button, Spin, Tooltip, Modal, Tabs, Space,Input, Switch, Menu } from 'antd';
 import Screenshot from './Screenshot';
 import HeaderButtons from './HeaderButtons';
 import SelectedElement from './SelectedElement';
@@ -19,6 +19,7 @@ import GestureEditor from './GestureEditor';
 import SessionInfo from './SessionInfo';
 import { clipboard } from '../../polyfills';
 import moment from 'moment';
+import { useDispatch } from 'react-redux';
 import {
   SelectOutlined,
   ScanOutlined,
@@ -34,6 +35,10 @@ import {
   CopyOutlined,
   DownloadOutlined,
   FileTextOutlined,
+  RotateRightOutlined,
+  NotificationOutlined,
+  AimOutlined,
+  SwitcherOutlined,
   TagOutlined,
   SlidersOutlined,
   InfoCircleOutlined,
@@ -53,7 +58,7 @@ import {
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD } = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE,ROTATE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -85,7 +90,9 @@ export default class Inspector extends Component {
       scaleRatio: 1,
       activeIndex: 0,
       showPanel: false,
-      currentSelection: null
+      currentSelection: null,
+    step_array:[],
+    total_array:[]
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -121,7 +128,6 @@ export default class Inspector extends Component {
     if (!img) {
       return;
     }
-
     const imgRect = img.getBoundingClientRect();
     const screenshotRect = screenshotBox.getBoundingClientRect();
     screenshotBox.style.flexBasis = `${imgRect.width}px`;
@@ -281,10 +287,15 @@ export default class Inspector extends Component {
       selectedInteractionMode, selectInteractionMode, setVisibleCommandResult,
       showKeepAlivePrompt, keepSessionAlive, sourceXML, t, visibleCommandResult,
       mjpegScreenshotUrl, isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
-      isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn
+      isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn,applyClientMethod
     } = this.props;
     const { path } = selectedElement;
     const { driver } = this.props;
+    const { flow_steps } = this.props;
+    if (flow_steps) {
+    console.log('🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:', flow_steps);
+    this.state.total_array = flow_steps.steps.steps
+    }
     console.log('driver for iddddddd', driver.sessionId);
 
     const showScreenshot = ((screenshot && !screenshotError) ||
@@ -387,15 +398,73 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Scratch</span></Button>
-            <Button icon={<CaretDownOutlined />} onClick={() => { this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword'); this.hideKeyboard(); }}
+            <Button icon={<CaretDownOutlined />} onClick={async() => { 
+              this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
+               this.hideKeyboard();
+               let data1 = {
+                  "session_id": driver.sessionId,
+                  'step-name': 'steps'
+                };
+
+                await fetch("https://apprecord.testing24x7.ai/appAction", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data1),
+              })
+              .then((res) => {
+                // Convert the response to JSON
+                return res.json();
+              })
+              .then((res) => {
+                console.log("Response data:", res);
+                this.setState({total_array: res.steps.steps})
+              })
+              .catch((error) => {
+                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+              });
+              await applyClientMethod({ methodName: 'getPageSource' })
+
+                }}
               type={screenshotInteractionMode === HIDE_KEYBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Hide Keyboard</span></Button>
-              <Button icon={<FieldTimeOutlined />} onClick={() => { this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time'); this.getDeviceTime(); }}
+              <Button icon={<FieldTimeOutlined />} onClick={async() => { 
+                this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
+                 this.getDeviceTime();
+                 let data1 = {
+                  "session_id": driver.sessionId,
+                  'step-name': 'steps'
+                };
+              
+                await fetch("https://apprecord.testing24x7.ai/appAction", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data1),
+              })
+              .then((res) => {
+                // Convert the response to JSON
+                return res.json();
+              })
+              .then((res) => {
+                console.log("Response data:", res);
+                this.setState({total_array: res.steps.steps})
+              })
+              .catch((error) => {
+                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+              });
+              await applyClientMethod({ methodName: 'getPageSource' })
+              }}
               type={screenshotInteractionMode === GET_DEVICE_TIME ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Get Device Time</span></Button>
-            <Button icon={<PaperClipOutlined />} onClick={() => { this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard'); }}
+            <Button icon={<PaperClipOutlined />} onClick={async() => {
+               this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard'); 
+               await applyClientMethod({ methodName: 'getPageSource' })
+               }}
               type={screenshotInteractionMode === GET_CLIPBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Get clipboard</span></Button>
@@ -428,19 +497,25 @@ export default class Inspector extends Component {
                   "session_id": driver.sessionId,
                   'step-name': 'steps'
                 };
+                console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId)
                 await fetch("https://apprecord.testing24x7.ai/appAction", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(data1),
-              }).then((res) => {
-                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
-                dispatch({ type: STEPS_ARRAY, res });
-              }).catch((error) => {
-                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
               })
-
+              .then((res) => {
+                // Convert the response to JSON
+                return res.json();
+              })
+              .then((res) => {
+                console.log("Response data:", res);
+                this.setState({total_array: res.steps.steps})
+              })
+              .catch((error) => {
+                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+              });
             await applyClientMethod({ methodName: 'getPageSource' })
            }}
             type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -488,12 +563,18 @@ export default class Inspector extends Component {
                   "Content-Type": "application/json",
                 },
                 body: JSON.stringify(data1),
-              }).then((res) => {
-                console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res)
-                dispatch({ type: STEPS_ARRAY, res });
-              }).catch((error) => {
-                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error)    
               })
+              .then((res) => {
+                // Convert the response to JSON
+                return res.json();
+              })
+              .then((res) => {
+                console.log("Response data:", res);
+                this.setState({total_array: res.steps.steps})
+              })
+              .catch((error) => {
+                console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+              });
 
                 await applyClientMethod({ methodName: 'getPageSource' })
                   this.setState({ isInput: false, inputBundleId: '' });
@@ -641,11 +722,11 @@ export default class Inspector extends Component {
                   <Source {...this.props} />
                 </Card>
               </div> */}
-              <div style={{fontWeight: 'bold'}}>
+              <div style={{fontWeight: 'bold', width:"9%"}}>
               FLOW TABLE:
               </div>
-              <br></br>
-                <table>
+              <div style={{width:"100%", overflowX:"auto", overflowY:"auto"}}>
+              <table>
                   <tr>
                     <th>S No.</th>
                     <th>Step</th>
@@ -653,7 +734,7 @@ export default class Inspector extends Component {
                     <th>Search By</th>
                     <th>Search By Value</th>
                   </tr>
-              {flow_steps && flow_steps.steps && flow_steps.steps.map((item, key) => (
+              {this.state.total_array && this.state.total_array.map((item, key) => (
                   <tr key={key}>
                     <td>{key + 1}</td>
                     <td>{item['step']}</td>
@@ -667,6 +748,7 @@ export default class Inspector extends Component {
                   </tr>
               ))}
                 </table>
+              </div>
                 <div id='selectedElementContainer'
                   className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
                   <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}

@@ -875,8 +875,8 @@ export function callClientMethod(params) {
         .then((response) => {
           console.log("API response:", response);
           postdata.response = response;
-          data.push(...[postdata]);
-          dispatch({ type: STEPS_ARRAY, data });
+          // data.push(...[postdata]);
+          // dispatch({ type: STEPS_ARRAY, data });
         })
         .catch((error) => {
           console.error("API error:", error);
@@ -889,17 +889,23 @@ export function callClientMethod(params) {
         //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
         // });
         await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data1),
-      }).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
-        dispatch({ type: STEPS_ARRAY, res });
-      }).catch((error) => {
-        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
-      });
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data1),
+        })
+        .then((res) => {
+          // Convert the response to JSON
+          return res.json();
+        })
+        .then((res) => {
+          console.log("Response data:", res);
+          dispatch({ type: STEPS_ARRAY, res });
+        })
+        .catch((error) => {
+          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+        });
     } else if (postdata.params.methodName === "swipe") {
       // Exclude selectedElement from postdata
       delete postdata.selectedElement;
@@ -940,10 +946,16 @@ export function callClientMethod(params) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data1),
-      }).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
+      })
+      .then((res) => {
+        // Convert the response to JSON
+        return res.json();
+      })
+      .then((res) => {
+        console.log("Response data:", res);
         dispatch({ type: STEPS_ARRAY, res });
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
       });
         //check the if the tap then it would be longpress , double tap, tap and drag and drop
@@ -973,18 +985,24 @@ export function callClientMethod(params) {
           //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
           // });
 
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data1),
-      }).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
-        dispatch({ type: STEPS_ARRAY, res });
-      }).catch((error) => {
-        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
-      });
+          await fetch("https://apprecord.testing24x7.ai/appAction", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data1),
+          })
+          .then((res) => {
+            // Convert the response to JSON
+            return res.json();
+          })
+          .then((res) => {
+            console.log("Response data:", res);
+            dispatch({ type: STEPS_ARRAY, res });
+          })
+          .catch((error) => {
+            console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+          });
     } else if (postdata.params.methodName === "sendKeys") {
       console.log("🚀 ~ file: Inspector.js:825 ~ return ~ postdata:", postdata);
       await fetch("https://apprecord.testing24x7.ai/appAction", {
@@ -1011,17 +1029,23 @@ export function callClientMethod(params) {
         //   console.log("🚀 ~ file: Inspector.js:890 ~ fetchSteps ~ error:", error);   
         // });
         await fetch("https://apprecord.testing24x7.ai/appAction", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data1),
-      }).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
-        dispatch({ type: STEPS_ARRAY, res });
-      }).catch((error) => {
-        console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
-      });
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data1),
+        })
+        .then((res) => {
+          // Convert the response to JSON
+          return res.json();
+        })
+        .then((res) => {
+          console.log("Response data:", res);
+          dispatch({ type: STEPS_ARRAY, res });
+        })
+        .catch((error) => {
+          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
+        });
     } else if (postdata['step-name'] === 'expected_value') {
       postdata.params.xpath = postdata.selectedElement.xpath;
       postdata.params.expected_value = postdata.selectedElement.attributes.text;
@@ -1055,10 +1079,16 @@ export function callClientMethod(params) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data1),
-      }).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
+      })
+      .then((res) => {
+        // Convert the response to JSON
+        return res.json();
+      })
+      .then((res) => {
+        console.log("Response data:", res);
         dispatch({ type: STEPS_ARRAY, res });
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
       });
     } else if (params.methodName === "quit") {
@@ -1094,10 +1124,16 @@ export function callClientMethod(params) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data1),
-      }).then((res) => {
-        console.log("🚀 ~ file: Inspector.js:898 ~ return ~ res:", res);
+      })
+      .then((res) => {
+        // Convert the response to JSON
+        return res.json();
+      })
+      .then((res) => {
+        console.log("Response data:", res);
         dispatch({ type: STEPS_ARRAY, res });
-      }).catch((error) => {
+      })
+      .catch((error) => {
         console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);    
       });
     } else {
