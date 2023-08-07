@@ -67,6 +67,7 @@ const AttachToSession = ({ serverType, attachSessId, setAttachSessId, runningApp
           <div className={SessionStyles.btnReload}>
             <Button
               onClick={getRunningSessions}
+              id='refreshButton'
               icon={<ReloadOutlined/>} />
           </div>
         </Col>

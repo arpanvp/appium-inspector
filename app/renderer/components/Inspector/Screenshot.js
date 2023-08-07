@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable space-before-blocks */
 /* eslint-disable space-in-parens */
@@ -18,7 +19,7 @@ import {
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH , ROTATE } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, ROTATE } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -27,7 +28,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode,step_object, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement,locatorTestElement } = props;
+  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode, step_object, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement, locatorTestElement } = props;
   const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
   const [element, setElement] = useState({});
@@ -39,7 +40,7 @@ const Screenshot = (props) => {
   useEffect(() => {
     if (hoveredElement && hoveredElement.attributes && hoveredElement.attributes.bounds) {
       const coordinatesString = hoveredElement.attributes.bounds;
-      console.log("coordinatestring", coordinatesString)
+      console.log("coordinatestring", coordinatesString);
       const coordinatesArray = coordinatesString.match(/\d+/g);
       if (coordinatesArray.length >= 4) {
         const x1 = parseInt(coordinatesArray[0], 10);
@@ -100,6 +101,7 @@ const Screenshot = (props) => {
 
 
     if (screenshotInteractionMode === TAP) {
+      console.log('inside the sreenshot page!!!!!! tap');
       applyClientMethod({
         methodName: TAP,
         args: [
@@ -196,7 +198,7 @@ const Screenshot = (props) => {
       if (props.selectedElement){
         expected_value = props.selectedElement.attributes.text;
         data = {
-          expected_value : expected_value,
+          expectedValue: expected_value,
           xpath: props.selectedElement.xpath
         };
       }
@@ -222,12 +224,12 @@ const Screenshot = (props) => {
     //     console.error("API error:", error);
     //   });
     } else if (screenshotInteractionMode === SCRATCH){
-      console.log("🚀 ~ file: Screenshot.js:201 ~ handleScreenshotClick ~ e:", e)
-      if(!swipeStart){
-        setScratch(true)
+      console.log("🚀 ~ file: Screenshot.js:201 ~ handleScreenshotClick ~ e:", e);
+      if (!swipeStart){
+        setScratch(true);
         setCoordinates([]);
-        await scratchCard(e)
-        setSwipeStart(x,y)
+        await scratchCard(e);
+        setSwipeStart(x, y);
       }
     }
   };
@@ -312,12 +314,12 @@ const Screenshot = (props) => {
   };
 
   const scratchCard = async (e) => {
-    console.log("🚀 ~ file: Screenshot.js:293 ~ scratchCard ~ e:", e)
+    console.log("🚀 ~ file: Screenshot.js:293 ~ scratchCard ~ e:", e);
     console.log('scratching');
-    if(scratch === true){
-      await handleMouseMove(e)
+    if (scratch === true){
+      await handleMouseMove(e);
     }
-  }
+  };
 
 
   const handleDoSwipe = async (swipeEndLocal) => {
@@ -335,16 +337,16 @@ const Screenshot = (props) => {
       },
     });
     clearSwipeAction();
-    if(step_object){
-      console.log("🚀 ~ file: Screenshot.js:97 ~ Screenshot ~ step_object:", step_object)
+    if (step_object){
+      console.log("🚀 ~ file: Screenshot.js:97 ~ Screenshot ~ step_object:", step_object);
     }
   };
 
 
   const handleDoSwipeSlide = async (swipeEndLocal) => {
-    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props)
-    let xpath = props.selectedElement.xpath
-    console.log("🚀 ~ file: Screenshot.js:304 ~ handleDoSwipeSlide ~ xpath:", xpath)
+    console.log("🚀 ~ file: Screenshot.js:332 ~ handleDoSwipeSlide ~ props:", props);
+    let xpath = props.selectedElement.xpath;
+    console.log("🚀 ~ file: Screenshot.js:304 ~ handleDoSwipeSlide ~ xpath:", xpath);
     const { clearSwipeAction } = props;
     const { POINTER_NAME, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_SWIPE;
     let data = {
@@ -429,7 +431,7 @@ const Screenshot = (props) => {
 
 
   const handleMouseMove = (e) => {
-    const { clearSwipeAction } = props
+    const { clearSwipeAction } = props;
     const { POINTER_NAME1, POINTER_NAME2, DURATION_1, DURATION_2, BUTTON, ORIGIN } = DEFAULT_ZOOM;
     if (screenshotInteractionMode !== SELECT) {
       const offsetX = e.nativeEvent.offsetX;
@@ -446,32 +448,32 @@ const Screenshot = (props) => {
           { x: Math.round(newX), y: Math.round(newY) },
         ]);
 
-        if(coordinates.length > 250){
-          console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates)
+        if (coordinates.length > 250){
+          console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates);
           // setTimeout(() => {
-            let data = {
-              methodName: SWIPE,
-              args: {
-                [POINTER_NAME1]: [
-                  { type: POINTER_MOVE, duration: DURATION_1, x: coordinates[0].x, y: coordinates[0].y },
-                  { type: POINTER_DOWN, button: BUTTON },
-                  { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: coordinates[80].x, y: coordinates[80].y },
-                  { type: POINTER_UP, button: BUTTON }
-                ],
-                [POINTER_NAME2]: [
-                  { type: POINTER_MOVE, duration: DURATION_1, x: coordinates[80].x, y: coordinates[80].y },
-                  { type: POINTER_DOWN, button: BUTTON },
-                  { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: coordinates[160].x, y: coordinates[160].y },
-                  { type: POINTER_UP, button: BUTTON }
-                ]
-              },
-            }
-            applyClientMethod(data);
+          let data = {
+            methodName: SWIPE,
+            args: {
+              [POINTER_NAME1]: [
+                { type: POINTER_MOVE, duration: DURATION_1, x: coordinates[0].x, y: coordinates[0].y },
+                { type: POINTER_DOWN, button: BUTTON },
+                { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: coordinates[80].x, y: coordinates[80].y },
+                { type: POINTER_UP, button: BUTTON }
+              ],
+              [POINTER_NAME2]: [
+                { type: POINTER_MOVE, duration: DURATION_1, x: coordinates[80].x, y: coordinates[80].y },
+                { type: POINTER_DOWN, button: BUTTON },
+                { type: POINTER_MOVE, duration: DURATION_2, origin: ORIGIN, x: coordinates[160].x, y: coordinates[160].y },
+                { type: POINTER_UP, button: BUTTON }
+              ]
+            },
+          };
+          applyClientMethod(data);
           // }, 500);
           clearSwipeAction();
-          setCoordinates([])
+          setCoordinates([]);
           // selectScreenshotInteractionMode(SELECT);
-          setScratch(false)
+          setScratch(false);
         }
         
       }
@@ -501,8 +503,8 @@ const Screenshot = (props) => {
     console.log('Drop position:', { x: roundedDropX, y: roundedDropY });
     setX(roundedDropX);
     setY(roundedDropY);
-    setCoordinates([])
-    setScratch(false)
+    setCoordinates([]);
+    setScratch(false);
     setTimeout(async () => {
       await handleDoDragAndDrop({ x: roundedDropX, y: roundedDropY });
     }, 1000);
@@ -582,7 +584,7 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
-    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{display:"flex!important"}}>
+    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{display: "flex!important"}}>
       <div className={styles.innerScreenshotContainer}>
         <div ref={containerEl}
           style={screenshotStyle}
