@@ -146,7 +146,10 @@ export const SCREENSHOT_INTERACTION_MODE = {
   HIDE_KEYBOARD: 'hide_keyboard',
   GET_DEVICE_TIME: 'get_device_time',
   GET_CLIPBOARD: 'get_clipboard',
-  ROTATE: 'rotate'
+  ROTATE: 'rotate',
+  LOCK: 'lock',
+  UNLOCK: 'unlock',
+  SHAKE: 'shake',
 };
 
 export const APP_MODE = {
