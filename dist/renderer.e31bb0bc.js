@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44505;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=44719;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -5488,7 +5488,7 @@ function callClientMethod(params) {
         body: JSON.stringify(sendData)
       }).then(response => {
         console.log("API response:", response);
-        window.close();
+        // window.close();
       }).catch(error => {
         console.error("API error:", error);
       });
@@ -13221,46 +13221,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === LOCK ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")))), /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(2),
-      onMouseOut: () => this.setActiveIndex(0),
-      style: {
-        textAlign: 'center',
-        padding: '5px',
-        borderBottom: '1px solid grey',
-        position: 'relative',
-        cursor: 'pointer'
-      }
-    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
-      style: {
-        fontSize: '20px'
-      }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Actions"), this.state.activeIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
-      },
-      type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(TAKE_SCREENSHOT, 'Take screenshot');
-      },
-      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH, 'Scratch');
@@ -13269,206 +13230,15 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
-      onClick: async () => {
-        this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
-        this.hideKeyboard();
-        let data1 = {
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+      icon: /*#__PURE__*/_react.default.createElement(_icons.ShakeOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(SHAKE, 'shake');
+        this.shakeBooty();
       },
-      type: screenshotInteractionMode === HIDE_KEYBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      type: screenshotInteractionMode === SHAKE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Hide Keyboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FieldTimeOutlined, null),
-      onClick: async () => {
-        this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
-        this.getDeviceTime();
-        let data1 = {
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === GET_DEVICE_TIME ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get Device Time")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.PaperClipOutlined, null),
-      onClick: async () => {
-        this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard');
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === GET_CLIPBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
-      onClick: async () => {
-        await driver.client.setOrientation('LANDSCAPE');
-      },
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
-      onClick: async () => {
-        await driver.client.openNotifications();
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'notification'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          console.log('API response:', response);
-        }).catch(error => {
-          console.error('API error:', error);
-        });
-        let data1 = {
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        console.log('🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:', driver.sessionId);
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
-      onClick: () => this.setState({
-        isInput: true
-      }),
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Switch App")) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Input, {
-      placeholder: "enter bundle id",
-      onChange: event => this.setState({
-        inputBundleId: event.target.value
-      })
-    }), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      onClick: async () => {
-        await driver.client.activateApp(this.state.inputBundleId);
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'switch_app',
-          'bundle_id': this.state.inputBundleId
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          console.log('API response:', response);
-        }).catch(error => {
-          console.error('API error:', error);
-        });
-        let data1 = {
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-        this.setState({
-          isInput: false,
-          inputBundleId: ''
-        });
-      },
-      style: {
-        backgroundColor: 'blue'
-      }
-    }, "Activate App"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
-      onClick: async () => {
-        await driver.client.resetApp();
-      },
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))), /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")))), /*#__PURE__*/_react.default.createElement("div", {
       onMouseOver: () => this.setActiveIndex(3),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
@@ -13482,7 +13252,7 @@ class Inspector extends _react.Component {
       style: {
         fontSize: '20px'
       }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Actions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
       style: {
         display: 'flex',
         flexDirection: 'column',
@@ -13520,14 +13290,6 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === FILE_UPLOAD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
     }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
-      },
-      type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(TAKE_SCREENSHOT, 'Take screenshot');
@@ -13536,14 +13298,6 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(SCRATCH, 'Scratch');
-      },
-      type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
       onClick: async () => {
         this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
@@ -13618,16 +13372,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === GET_CLIPBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.ShakeOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(SHAKE, 'shake');
-        this.shakeBooty();
-      },
-      type: screenshotInteractionMode === SHAKE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")), this.state.mode_orientation === 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), this.state.mode_orientation === 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
       onClick: async () => {
         await driver.client.setOrientation('LANDSCAPE');
@@ -13770,7 +13515,113 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
+      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      onMouseOver: () => this.setState({
+        nestedDropIndex: 1
+      })
+      // disabled={isGestureEditorVisible}
+      ,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, " long press key")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
+      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      onMouseOver: () => this.setState({
+        nestedDropIndex: 2
+      })
+      // disabled={isGestureEditorVisible}
+      ,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "press key")), this.state.nestedDropIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '1999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement("div", null, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      style: {
+        width: '100%'
+      },
+      key: index,
+      onClick: async () => await this.handleActions(option, 'long_press_key')
+    }, option)))), this.state.nestedDropIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '1999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        width: '100%'
+      }
+    }, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      style: {
+        width: '100%'
+      },
+      key: index,
+      onClick: async () => await this.handleActions(option, 'press_key')
+    }, option)))))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(4),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        borderBottom: '1px solid grey',
+        position: 'relative',
+        cursor: 'pointer'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
+      },
+      type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(5),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        borderBottom: '1px solid grey',
+        position: 'relative',
+        cursor: 'pointer'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "App management"), this.state.activeIndex === 5 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
       onClick: () => this.setState({
         isInput: true
@@ -13840,82 +13691,7 @@ class Inspector extends _react.Component {
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))), /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(4),
-      onMouseOut: () => this.setActiveIndex(0),
-      style: {
-        textAlign: 'center',
-        padding: '5px',
-        borderBottom: '1px solid grey',
-        position: 'relative',
-        cursor: 'pointer'
-      }
-    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
-      style: {
-        fontSize: '20px'
-      }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Specific Actions"), this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
-      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      onMouseOver: () => this.setState({
-        nestedDropIndex: 1
-      })
-      // disabled={isGestureEditorVisible}
-      ,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, " long press key")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
-      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      onMouseOver: () => this.setState({
-        nestedDropIndex: 2
-      })
-      // disabled={isGestureEditorVisible}
-      ,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "press key")), this.state.nestedDropIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '1999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement("div", null, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      style: {
-        width: '100%'
-      },
-      key: index,
-      onClick: async () => await this.handleActions(option, 'long_press_key')
-    }, option)))), this.state.nestedDropIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '1999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        width: '100%'
-      }
-    }, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      style: {
-        width: '100%'
-      },
-      key: index,
-      onClick: async () => await this.handleActions(option, 'press_key')
-    }, option))))))));
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))));
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
