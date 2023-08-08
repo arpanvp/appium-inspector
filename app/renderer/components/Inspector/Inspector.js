@@ -918,7 +918,7 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Open Notifications</span></Button>
-              <Button icon={<FundProjectionScreenOutlined />}
+            <Button icon={<FundProjectionScreenOutlined />}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               onMouseOver={() => this.setState({ nestedDropIndex: 1 })}
               // disabled={isGestureEditorVisible}
@@ -962,10 +962,34 @@ export default class Inspector extends Component {
           <EditOutlined style={{ fontSize: '20px' }} />
           <div>Assertions</div>
           {this.state.activeIndex === 4 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
-            <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value'); }}
+            <Button icon={<CheckCircleOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value'); }}
               type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-            ><span>Expected value</span></Button>
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>Expected value</span></Button>
+             <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>text equals</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>text contains</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>attribute equals</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>attribute contains</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>Is Element Displayed</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>Is Element Selected</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>Is Element Enabled</span></Button>
+                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
+                <span>Is Element Disabled</span></Button>
           </div>}
         </div>
         <div onMouseOver={() => this.setActiveIndex(5)} onMouseOut={() => this.setActiveIndex(0)}

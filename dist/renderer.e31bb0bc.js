@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44719;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=46323;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -13591,14 +13591,54 @@ class Inspector extends _react.Component {
         top: '10%'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
       },
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")))), /*#__PURE__*/_react.default.createElement("div", {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "text equals")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "text contains")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "attribute equals")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "attribute contains")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Is Element Displayed")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Is Element Selected")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Is Element Enabled")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
+      onClick: () => {},
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Is Element Disabled")))), /*#__PURE__*/_react.default.createElement("div", {
       onMouseOver: () => this.setActiveIndex(5),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
