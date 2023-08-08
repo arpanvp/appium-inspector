@@ -103,7 +103,7 @@ export default class Inspector extends Component {
       total_array: [],
       isLongPress: false,
       action: '',
-      mode_orientation: ''
+      mode_orientation: 'PORTRAIT'
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -377,10 +377,6 @@ export default class Inspector extends Component {
       this.state.total_array = flow_steps.steps.steps;
     }
     console.log('driver for iddddddd', driver);
-    driver.client.getOrientation().then((res) => {
-      console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
-      this.setState({ mode_orientation: res });
-    });
     const showScreenshot = ((screenshot && !screenshotError) ||
       (mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream)));
 
@@ -813,9 +809,13 @@ export default class Inspector extends Component {
                 .catch((error) => {
                   console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
                 });
+
+                await driver.client.getOrientation().then((res) => {
+                console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+                this.setState({ mode_orientation: res });
+              });
             }}
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Rotate/Landscape</span></Button>) :
               (
@@ -863,6 +863,11 @@ export default class Inspector extends Component {
                     .catch((error) => {
                       console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
                     });
+
+                    driver.client.getOrientation().then((res) => {
+                      console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+                      this.setState({ mode_orientation: res });
+                  });
                   await applyClientMethod({ methodName: 'getPageSource' });
                 }}
                   type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}

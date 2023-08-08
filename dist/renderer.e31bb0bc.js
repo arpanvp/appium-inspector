@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=46323;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=42953;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -5771,46 +5775,46 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_46061",
-  "sessionContainer": "_sessionContainer_46061",
-  "cloudProviderModal": "_cloudProviderModal_46061",
-  "sessionFooter": "_sessionFooter_46061",
-  "desiredCapsLink": "_desiredCapsLink_46061",
-  "tabText": "_tabText_46061",
-  "serverTabs": "_serverTabs_46061",
-  "scrollingTabCont": "_scrollingTabCont_46061",
-  "scrollingTab": "_scrollingTab_46061",
-  "savedSessions": "_savedSessions_46061",
-  "newSessionForm": "_newSessionForm_46061",
-  "capsFormattedCol": "_capsFormattedCol_46061",
-  "formattedCaps": "_formattedCaps_46061",
-  "formattedCapsBody": "_formattedCapsBody_46061",
-  "start-session-button": "_start-session-button_46061",
-  "filepath-button": "_filepath-button_46061",
-  "capsFormCol": "_capsFormCol_46061",
-  "capsFormRow": "_capsFormRow_46061",
-  "capsBoxFont": "_capsBoxFont_46061",
-  "capsValueControl": "_capsValueControl_46061",
-  "fileControlWrapper": "_fileControlWrapper_46061",
-  "localDesc": "_localDesc_46061",
-  "selected": "_selected_46061",
-  "capsNameEditorButton": "_capsNameEditorButton_46061",
-  "capsEditorControls": "_capsEditorControls_46061",
-  "capsEditorButton": "_capsEditorButton_46061",
-  "capsEditor": "_capsEditor_46061",
-  "capsEditorTitle": "_capsEditorTitle_46061",
-  "capsEditorBody": "_capsEditorBody_46061",
-  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
-  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
-  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
-  "add-desired-capability-button": "_add-desired-capability-button_46061",
-  "editSession": "_editSession_46061",
-  "btnReload": "_btnReload_46061",
-  "btnDeleteCap": "_btnDeleteCap_46061",
-  "inputDataCenter": "_inputDataCenter_46061",
-  "addonDataCenter": "_addonDataCenter_46061",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
+  "active-session": "_active-session_8105c",
+  "sessionContainer": "_sessionContainer_8105c",
+  "cloudProviderModal": "_cloudProviderModal_8105c",
+  "sessionFooter": "_sessionFooter_8105c",
+  "desiredCapsLink": "_desiredCapsLink_8105c",
+  "tabText": "_tabText_8105c",
+  "serverTabs": "_serverTabs_8105c",
+  "scrollingTabCont": "_scrollingTabCont_8105c",
+  "scrollingTab": "_scrollingTab_8105c",
+  "savedSessions": "_savedSessions_8105c",
+  "newSessionForm": "_newSessionForm_8105c",
+  "capsFormattedCol": "_capsFormattedCol_8105c",
+  "formattedCaps": "_formattedCaps_8105c",
+  "formattedCapsBody": "_formattedCapsBody_8105c",
+  "start-session-button": "_start-session-button_8105c",
+  "filepath-button": "_filepath-button_8105c",
+  "capsFormCol": "_capsFormCol_8105c",
+  "capsFormRow": "_capsFormRow_8105c",
+  "capsBoxFont": "_capsBoxFont_8105c",
+  "capsValueControl": "_capsValueControl_8105c",
+  "fileControlWrapper": "_fileControlWrapper_8105c",
+  "localDesc": "_localDesc_8105c",
+  "selected": "_selected_8105c",
+  "capsNameEditorButton": "_capsNameEditorButton_8105c",
+  "capsEditorControls": "_capsEditorControls_8105c",
+  "capsEditorButton": "_capsEditorButton_8105c",
+  "capsEditor": "_capsEditor_8105c",
+  "capsEditorTitle": "_capsEditorTitle_8105c",
+  "capsEditorBody": "_capsEditorBody_8105c",
+  "capsEditorBodyFull": "_capsEditorBodyFull_8105c",
+  "capsEditorBodyResized": "_capsEditorBodyResized_8105c",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_8105c",
+  "advancedSettingsContainer": "_advancedSettingsContainer_8105c",
+  "add-desired-capability-button": "_add-desired-capability-button_8105c",
+  "editSession": "_editSession_8105c",
+  "btnReload": "_btnReload_8105c",
+  "btnDeleteCap": "_btnDeleteCap_8105c",
+  "inputDataCenter": "_inputDataCenter_8105c",
+  "addonDataCenter": "_addonDataCenter_8105c",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -8937,103 +8941,103 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "inspector-container": "_inspector-container_5407d",
-  "inspector-toolbar": "_inspector-toolbar_5407d",
-  "button_wrapper": "_button_wrapper_5407d",
-  "ant-btn": "_ant-btn_5407d",
-  "user_actions": "_user_actions_5407d",
-  "actionButton": "_actionButton_5407d",
-  "inspector-main": "_inspector-main_5407d",
-  "whole-btn": "_whole-btn_5407d",
-  "screenshot-container": "_screenshot-container_5407d",
-  "screenshot": "_screenshot_5407d",
-  "screenshot-controls": "_screenshot-controls_5407d",
-  "logoContainer": "_logoContainer_5407d",
-  "screenshotBox": "_screenshotBox_5407d",
-  "interaction-tab-container": "_interaction-tab-container_5407d",
-  "tree-container": "_tree-container_5407d",
-  "session-info-table": "_session-info-table_5407d",
-  "session-code-box": "_session-code-box_5407d",
-  "session-inner-table": "_session-inner-table_5407d",
-  "scroll-buttons": "_scroll-buttons_5407d",
-  "scroll-right": "_scroll-right_5407d",
-  "recorded-actions": "_recorded-actions_5407d",
-  "_inspector-main_0387c": "__inspector-main_0387c_5407d",
-  "ant-card-body": "_ant-card-body_5407d",
-  "interaction-tab-card": "_interaction-tab-card_5407d",
-  "highlighter-box": "_highlighter-box_5407d",
-  "inspected-element-box": "_inspected-element-box_5407d",
-  "hovered-element-box": "_hovered-element-box_5407d",
-  "centroid-box": "_centroid-box_5407d",
-  "centroid": "_centroid_5407d",
-  "overlap": "_overlap_5407d",
-  "expand": "_expand_5407d",
-  "plus-minus": "_plus-minus_5407d",
-  "phone-btn1": "_phone-btn1_5407d",
-  "phone-btn2": "_phone-btn2_5407d",
-  "phone-btn3": "_phone-btn3_5407d",
-  "custom-button-icon": "_custom-button-icon_5407d",
-  "elementActions": "_elementActions_5407d",
-  "elementKeyInputActions": "_elementKeyInputActions_5407d",
-  "selectedElementContainer": "_selectedElementContainer_5407d",
-  "selected-element-table-cells": "_selected-element-table-cells_5407d",
-  "element-cell-copy": "_element-cell-copy_5407d",
-  "selected-element-card": "_selected-element-card_5407d",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_5407d",
-  "context-selector": "_context-selector_5407d",
-  "sourceTag": "_sourceTag_5407d",
-  "sourceAttrName": "_sourceAttrName_5407d",
-  "no-recorded-actions": "_no-recorded-actions_5407d",
-  "recorded-code": "_recorded-code_5407d",
-  "framework-dropdown": "_framework-dropdown_5407d",
-  "searchResultsList": "_searchResultsList_5407d",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_5407d",
-  "searchResultsActions": "_searchResultsActions_5407d",
-  "searchResultsKeyInput": "_searchResultsKeyInput_5407d",
-  "elementKeyInput": "_elementKeyInput_5407d",
-  "element-count-container": "_element-count-container_5407d",
-  "locatorStrategyBtn": "_locatorStrategyBtn_5407d",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_5407d",
-  "coordinatesContainer": "_coordinatesContainer_5407d",
-  "swipeInstructions": "_swipeInstructions_5407d",
-  "swipeSvg": "_swipeSvg_5407d",
-  "tapDiv": "_tapDiv_5407d",
-  "iphone_x": "_iphone_x_5407d",
-  "custom_menu": "_custom_menu_5407d",
-  "ant-menu-submenu": "_ant-menu-submenu_5407d",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_5407d",
-  "gestureSvg": "_gestureSvg_5407d",
-  "filled": "_filled_5407d",
-  "dashed": "_dashed_5407d",
-  "whole": "_whole_5407d",
-  "newDashed": "_newDashed_5407d",
-  "circle-dashed": "_circle-dashed_5407d",
-  "circle-newDashed": "_circle-newDashed_5407d",
-  "screenimage": "_screenimage_5407d",
-  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
-  "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
-  "commands-container": "_commands-container_5407d",
-  "btn-container": "_btn-container_5407d",
-  "arg-row": "_arg-row_5407d",
-  "arg-container": "_arg-container_5407d",
-  "gesture-header": "_gesture-header_5407d",
-  "gesture-header-title": "_gesture-header-title_5407d",
-  "gesture-header-description": "_gesture-header-description_5407d",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_5407d",
-  "gesture-header-timeline": "_gesture-header-timeline_5407d",
-  "timeline-tick-title": "_timeline-tick-title_5407d",
-  "gesture-header-icon": "_gesture-header-icon_5407d",
-  "pointer-title": "_pointer-title_5407d",
-  "tick-card": "_tick-card_5407d",
-  "tick-plus-card": "_tick-plus-card_5407d",
-  "tick-plus-btn": "_tick-plus-btn_5407d",
-  "spaceContainer": "_spaceContainer_5407d",
-  "tick-pointer-input": "_tick-pointer-input_5407d",
-  "tick-button-group": "_tick-button-group_5407d",
-  "tick-button-input": "_tick-button-input_5407d",
-  "tick-input-box": "_tick-input-box_5407d",
-  "tick-coord-box": "_tick-coord-box_5407d",
-  "option-inpt": "_option-inpt_5407d"
+  "inspector-container": "_inspector-container_61591",
+  "inspector-toolbar": "_inspector-toolbar_61591",
+  "button_wrapper": "_button_wrapper_61591",
+  "ant-btn": "_ant-btn_61591",
+  "user_actions": "_user_actions_61591",
+  "actionButton": "_actionButton_61591",
+  "inspector-main": "_inspector-main_61591",
+  "whole-btn": "_whole-btn_61591",
+  "screenshot-container": "_screenshot-container_61591",
+  "screenshot": "_screenshot_61591",
+  "screenshot-controls": "_screenshot-controls_61591",
+  "logoContainer": "_logoContainer_61591",
+  "screenshotBox": "_screenshotBox_61591",
+  "interaction-tab-container": "_interaction-tab-container_61591",
+  "tree-container": "_tree-container_61591",
+  "session-info-table": "_session-info-table_61591",
+  "session-code-box": "_session-code-box_61591",
+  "session-inner-table": "_session-inner-table_61591",
+  "scroll-buttons": "_scroll-buttons_61591",
+  "scroll-right": "_scroll-right_61591",
+  "recorded-actions": "_recorded-actions_61591",
+  "_inspector-main_0387c": "__inspector-main_0387c_61591",
+  "ant-card-body": "_ant-card-body_61591",
+  "interaction-tab-card": "_interaction-tab-card_61591",
+  "highlighter-box": "_highlighter-box_61591",
+  "inspected-element-box": "_inspected-element-box_61591",
+  "hovered-element-box": "_hovered-element-box_61591",
+  "centroid-box": "_centroid-box_61591",
+  "centroid": "_centroid_61591",
+  "overlap": "_overlap_61591",
+  "expand": "_expand_61591",
+  "plus-minus": "_plus-minus_61591",
+  "phone-btn1": "_phone-btn1_61591",
+  "phone-btn2": "_phone-btn2_61591",
+  "phone-btn3": "_phone-btn3_61591",
+  "custom-button-icon": "_custom-button-icon_61591",
+  "elementActions": "_elementActions_61591",
+  "elementKeyInputActions": "_elementKeyInputActions_61591",
+  "selectedElementContainer": "_selectedElementContainer_61591",
+  "selected-element-table-cells": "_selected-element-table-cells_61591",
+  "element-cell-copy": "_element-cell-copy_61591",
+  "selected-element-card": "_selected-element-card_61591",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
+  "context-selector": "_context-selector_61591",
+  "sourceTag": "_sourceTag_61591",
+  "sourceAttrName": "_sourceAttrName_61591",
+  "no-recorded-actions": "_no-recorded-actions_61591",
+  "recorded-code": "_recorded-code_61591",
+  "framework-dropdown": "_framework-dropdown_61591",
+  "searchResultsList": "_searchResultsList_61591",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
+  "searchResultsActions": "_searchResultsActions_61591",
+  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
+  "elementKeyInput": "_elementKeyInput_61591",
+  "element-count-container": "_element-count-container_61591",
+  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
+  "coordinatesContainer": "_coordinatesContainer_61591",
+  "swipeInstructions": "_swipeInstructions_61591",
+  "swipeSvg": "_swipeSvg_61591",
+  "tapDiv": "_tapDiv_61591",
+  "iphone_x": "_iphone_x_61591",
+  "custom_menu": "_custom_menu_61591",
+  "ant-menu-submenu": "_ant-menu-submenu_61591",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_61591",
+  "gestureSvg": "_gestureSvg_61591",
+  "filled": "_filled_61591",
+  "dashed": "_dashed_61591",
+  "whole": "_whole_61591",
+  "newDashed": "_newDashed_61591",
+  "circle-dashed": "_circle-dashed_61591",
+  "circle-newDashed": "_circle-newDashed_61591",
+  "screenimage": "_screenimage_61591",
+  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
+  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
+  "commands-container": "_commands-container_61591",
+  "btn-container": "_btn-container_61591",
+  "arg-row": "_arg-row_61591",
+  "arg-container": "_arg-container_61591",
+  "gesture-header": "_gesture-header_61591",
+  "gesture-header-title": "_gesture-header-title_61591",
+  "gesture-header-description": "_gesture-header-description_61591",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
+  "gesture-header-timeline": "_gesture-header-timeline_61591",
+  "timeline-tick-title": "_timeline-tick-title_61591",
+  "gesture-header-icon": "_gesture-header-icon_61591",
+  "pointer-title": "_pointer-title_61591",
+  "tick-card": "_tick-card_61591",
+  "tick-plus-card": "_tick-plus-card_61591",
+  "tick-plus-btn": "_tick-plus-btn_61591",
+  "spaceContainer": "_spaceContainer_61591",
+  "tick-pointer-input": "_tick-pointer-input_61591",
+  "tick-button-group": "_tick-button-group_61591",
+  "tick-button-input": "_tick-button-input_61591",
+  "tick-input-box": "_tick-input-box_61591",
+  "tick-coord-box": "_tick-coord-box_61591",
+  "option-inpt": "_option-inpt_61591"
 };
 },{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9278,7 +9282,6 @@ const {
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = props => {
-  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props);
   const {
     source,
     containerEl,
@@ -12806,7 +12809,7 @@ class Inspector extends _react.Component {
       total_array: [],
       isLongPress: false,
       action: '',
-      mode_orientation: ''
+      mode_orientation: 'PORTRAIT'
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -13105,12 +13108,6 @@ class Inspector extends _react.Component {
       this.state.total_array = flow_steps.steps.steps;
     }
     console.log('driver for iddddddd', driver);
-    driver.client.getOrientation().then(res => {
-      console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
-      this.setState({
-        mode_orientation: res
-      });
-    });
     const showScreenshot = screenshot && !screenshotError || mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream);
     let screenShotControls = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['screenshot-controls']
@@ -13416,6 +13413,12 @@ class Inspector extends _react.Component {
         }).catch(error => {
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
         });
+        await driver.client.getOrientation().then(res => {
+          console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+          this.setState({
+            mode_orientation: res
+          });
+        });
       },
       type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
@@ -13460,6 +13463,12 @@ class Inspector extends _react.Component {
           });
         }).catch(error => {
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
+        });
+        driver.client.getOrientation().then(res => {
+          console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+          this.setState({
+            mode_orientation: res
+          });
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -13868,9 +13877,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_afc3f",
-  "loader": "_loader_afc3f",
-  "load1": "_load1_afc3f"
+  "container": "_container_9b1d1",
+  "loader": "_loader_9b1d1",
+  "load1": "_load1_9b1d1"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -13956,8 +13965,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_e36f2",
-  "copyTraceBtn": "_copyTraceBtn_e36f2"
+  "errorMessage": "_errorMessage_cd7c8",
+  "copyTraceBtn": "_copyTraceBtn_cd7c8"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
