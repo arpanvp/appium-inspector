@@ -996,11 +996,11 @@ export default class Inspector extends Component {
           </div>}
         </div>        
 
-        <div onMouseOver={() => this.setActiveIndex(3)} onMouseOut={() => this.setActiveIndex(0)}
+        <div onMouseOver={() => this.setActiveIndex(4)} onMouseOut={() => this.setActiveIndex(0)}
           style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
           <EditOutlined style={{ fontSize: '20px' }} />
           <div>Device Specific Actions</div>
-          {this.state.activeIndex === 3 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+          {this.state.activeIndex === 4 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
           <Button icon={<FundProjectionScreenOutlined />} 
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               onMouseOver={() => this.setState({nestedDropIndex:1})}

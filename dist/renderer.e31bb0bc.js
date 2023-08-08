@@ -1,40 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-process.env.HMR_PORT=35923;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-process.env.HMR_PORT=34513;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> dbd8aa8 (added changes)
-=======
-process.env.HMR_PORT=39369;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> e8fea86 (new categories added)
-=======
-=======
->>>>>>> 9af2ecc (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
-process.env.HMR_PORT=39369;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-process.env.HMR_PORT=42413;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> 24d4eea (changes have been pushed)
-<<<<<<< HEAD
->>>>>>> 1783371 (changes have been pushed)
-=======
-=======
-process.env.HMR_PORT=35923;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> 1bc2158 (changes have been pushed)
-<<<<<<< HEAD
->>>>>>> 9af2ecc (changes have been pushed)
-=======
-=======
-process.env.HMR_PORT=35923;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-process.env.HMR_PORT=34513;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> dbd8aa8 (added changes)
->>>>>>> 324aa7e (added changes)
->>>>>>> d733b97 (added changes)
+process.env.HMR_PORT=42877;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -870,29 +834,10 @@ const SCREENSHOT_INTERACTION_MODE = {
   HIDE_KEYBOARD: 'hide_keyboard',
   GET_DEVICE_TIME: 'get_device_time',
   GET_CLIPBOARD: 'get_clipboard',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
   ROTATE: 'rotate',
   LOCK: 'lock',
   UNLOCK: 'unlock',
   SHAKE: 'shake'
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  ROTATE: 'rotate'
->>>>>>> dbd8aa8 (added changes)
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
-=======
-  ROTATE: 'rotate'
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -5543,21 +5488,7 @@ function callClientMethod(params) {
         body: JSON.stringify(sendData)
       }).then(response => {
         console.log("API response:", response);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d733b97 (added changes)
         window.close();
-=======
-        // window.close();
->>>>>>> dbd8aa8 (added changes)
-<<<<<<< HEAD
-=======
-        window.close();
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
       }).catch(error => {
         console.error("API error:", error);
       });
@@ -5840,50 +5771,6 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "active-session": "_active-session_46061",
-  "sessionContainer": "_sessionContainer_46061",
-  "cloudProviderModal": "_cloudProviderModal_46061",
-  "sessionFooter": "_sessionFooter_46061",
-  "desiredCapsLink": "_desiredCapsLink_46061",
-  "tabText": "_tabText_46061",
-  "serverTabs": "_serverTabs_46061",
-  "scrollingTabCont": "_scrollingTabCont_46061",
-  "scrollingTab": "_scrollingTab_46061",
-  "savedSessions": "_savedSessions_46061",
-  "newSessionForm": "_newSessionForm_46061",
-  "capsFormattedCol": "_capsFormattedCol_46061",
-  "formattedCaps": "_formattedCaps_46061",
-  "formattedCapsBody": "_formattedCapsBody_46061",
-  "start-session-button": "_start-session-button_46061",
-  "filepath-button": "_filepath-button_46061",
-  "capsFormCol": "_capsFormCol_46061",
-  "capsFormRow": "_capsFormRow_46061",
-  "capsBoxFont": "_capsBoxFont_46061",
-  "capsValueControl": "_capsValueControl_46061",
-  "fileControlWrapper": "_fileControlWrapper_46061",
-  "localDesc": "_localDesc_46061",
-  "selected": "_selected_46061",
-  "capsNameEditorButton": "_capsNameEditorButton_46061",
-  "capsEditorControls": "_capsEditorControls_46061",
-  "capsEditorButton": "_capsEditorButton_46061",
-  "capsEditor": "_capsEditor_46061",
-  "capsEditorTitle": "_capsEditorTitle_46061",
-  "capsEditorBody": "_capsEditorBody_46061",
-  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
-  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
-  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
-  "add-desired-capability-button": "_add-desired-capability-button_46061",
-  "editSession": "_editSession_46061",
-  "btnReload": "_btnReload_46061",
-  "btnDeleteCap": "_btnDeleteCap_46061",
-  "inputDataCenter": "_inputDataCenter_46061",
-  "addonDataCenter": "_addonDataCenter_46061",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
-=======
   "active-session": "_active-session_8105c",
   "sessionContainer": "_sessionContainer_8105c",
   "cloudProviderModal": "_cloudProviderModal_8105c",
@@ -5924,139 +5811,6 @@ module.exports = {
   "inputDataCenter": "_inputDataCenter_8105c",
   "addonDataCenter": "_addonDataCenter_8105c",
   "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
->>>>>>> dbd8aa8 (added changes)
-=======
-=======
->>>>>>> d733b97 (added changes)
-  "active-session": "_active-session_5ede3",
-  "sessionContainer": "_sessionContainer_5ede3",
-  "cloudProviderModal": "_cloudProviderModal_5ede3",
-  "sessionFooter": "_sessionFooter_5ede3",
-  "desiredCapsLink": "_desiredCapsLink_5ede3",
-  "tabText": "_tabText_5ede3",
-  "serverTabs": "_serverTabs_5ede3",
-  "scrollingTabCont": "_scrollingTabCont_5ede3",
-  "scrollingTab": "_scrollingTab_5ede3",
-  "savedSessions": "_savedSessions_5ede3",
-  "newSessionForm": "_newSessionForm_5ede3",
-  "capsFormattedCol": "_capsFormattedCol_5ede3",
-  "formattedCaps": "_formattedCaps_5ede3",
-  "formattedCapsBody": "_formattedCapsBody_5ede3",
-  "start-session-button": "_start-session-button_5ede3",
-  "filepath-button": "_filepath-button_5ede3",
-  "capsFormCol": "_capsFormCol_5ede3",
-  "capsFormRow": "_capsFormRow_5ede3",
-  "capsBoxFont": "_capsBoxFont_5ede3",
-  "capsValueControl": "_capsValueControl_5ede3",
-  "fileControlWrapper": "_fileControlWrapper_5ede3",
-  "localDesc": "_localDesc_5ede3",
-  "selected": "_selected_5ede3",
-  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
-  "capsEditorControls": "_capsEditorControls_5ede3",
-  "capsEditorButton": "_capsEditorButton_5ede3",
-  "capsEditor": "_capsEditor_5ede3",
-  "capsEditorTitle": "_capsEditorTitle_5ede3",
-  "capsEditorBody": "_capsEditorBody_5ede3",
-  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
-  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
-  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
-  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
-  "editSession": "_editSession_5ede3",
-  "btnReload": "_btnReload_5ede3",
-  "btnDeleteCap": "_btnDeleteCap_5ede3",
-  "inputDataCenter": "_inputDataCenter_5ede3",
-  "addonDataCenter": "_addonDataCenter_5ede3",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
-<<<<<<< HEAD
->>>>>>> e8fea86 (new categories added)
-=======
-=======
-<<<<<<< HEAD
-  "active-session": "_active-session_46061",
-  "sessionContainer": "_sessionContainer_46061",
-  "cloudProviderModal": "_cloudProviderModal_46061",
-  "sessionFooter": "_sessionFooter_46061",
-  "desiredCapsLink": "_desiredCapsLink_46061",
-  "tabText": "_tabText_46061",
-  "serverTabs": "_serverTabs_46061",
-  "scrollingTabCont": "_scrollingTabCont_46061",
-  "scrollingTab": "_scrollingTab_46061",
-  "savedSessions": "_savedSessions_46061",
-  "newSessionForm": "_newSessionForm_46061",
-  "capsFormattedCol": "_capsFormattedCol_46061",
-  "formattedCaps": "_formattedCaps_46061",
-  "formattedCapsBody": "_formattedCapsBody_46061",
-  "start-session-button": "_start-session-button_46061",
-  "filepath-button": "_filepath-button_46061",
-  "capsFormCol": "_capsFormCol_46061",
-  "capsFormRow": "_capsFormRow_46061",
-  "capsBoxFont": "_capsBoxFont_46061",
-  "capsValueControl": "_capsValueControl_46061",
-  "fileControlWrapper": "_fileControlWrapper_46061",
-  "localDesc": "_localDesc_46061",
-  "selected": "_selected_46061",
-  "capsNameEditorButton": "_capsNameEditorButton_46061",
-  "capsEditorControls": "_capsEditorControls_46061",
-  "capsEditorButton": "_capsEditorButton_46061",
-  "capsEditor": "_capsEditor_46061",
-  "capsEditorTitle": "_capsEditorTitle_46061",
-  "capsEditorBody": "_capsEditorBody_46061",
-  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
-  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
-  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
-  "add-desired-capability-button": "_add-desired-capability-button_46061",
-  "editSession": "_editSession_46061",
-  "btnReload": "_btnReload_46061",
-  "btnDeleteCap": "_btnDeleteCap_46061",
-  "inputDataCenter": "_inputDataCenter_46061",
-  "addonDataCenter": "_addonDataCenter_46061",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
-=======
-  "active-session": "_active-session_8105c",
-  "sessionContainer": "_sessionContainer_8105c",
-  "cloudProviderModal": "_cloudProviderModal_8105c",
-  "sessionFooter": "_sessionFooter_8105c",
-  "desiredCapsLink": "_desiredCapsLink_8105c",
-  "tabText": "_tabText_8105c",
-  "serverTabs": "_serverTabs_8105c",
-  "scrollingTabCont": "_scrollingTabCont_8105c",
-  "scrollingTab": "_scrollingTab_8105c",
-  "savedSessions": "_savedSessions_8105c",
-  "newSessionForm": "_newSessionForm_8105c",
-  "capsFormattedCol": "_capsFormattedCol_8105c",
-  "formattedCaps": "_formattedCaps_8105c",
-  "formattedCapsBody": "_formattedCapsBody_8105c",
-  "start-session-button": "_start-session-button_8105c",
-  "filepath-button": "_filepath-button_8105c",
-  "capsFormCol": "_capsFormCol_8105c",
-  "capsFormRow": "_capsFormRow_8105c",
-  "capsBoxFont": "_capsBoxFont_8105c",
-  "capsValueControl": "_capsValueControl_8105c",
-  "fileControlWrapper": "_fileControlWrapper_8105c",
-  "localDesc": "_localDesc_8105c",
-  "selected": "_selected_8105c",
-  "capsNameEditorButton": "_capsNameEditorButton_8105c",
-  "capsEditorControls": "_capsEditorControls_8105c",
-  "capsEditorButton": "_capsEditorButton_8105c",
-  "capsEditor": "_capsEditor_8105c",
-  "capsEditorTitle": "_capsEditorTitle_8105c",
-  "capsEditorBody": "_capsEditorBody_8105c",
-  "capsEditorBodyFull": "_capsEditorBodyFull_8105c",
-  "capsEditorBodyResized": "_capsEditorBodyResized_8105c",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_8105c",
-  "advancedSettingsContainer": "_advancedSettingsContainer_8105c",
-  "add-desired-capability-button": "_add-desired-capability-button_8105c",
-  "editSession": "_editSession_8105c",
-  "btnReload": "_btnReload_8105c",
-  "btnDeleteCap": "_btnDeleteCap_8105c",
-  "inputDataCenter": "_inputDataCenter_8105c",
-  "addonDataCenter": "_addonDataCenter_8105c",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
->>>>>>> dbd8aa8 (added changes)
->>>>>>> 324aa7e (added changes)
->>>>>>> d733b97 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -8809,20 +8563,7 @@ const AttachToSession = ({
   className: _Session.default.btnReload
 }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
   onClick: getRunningSessions,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   id: "refreshButton",
-=======
->>>>>>> dbd8aa8 (added changes)
-=======
-  id: "refreshButton",
->>>>>>> 1783371 (changes have been pushed)
-=======
-  id: "refreshButton",
-=======
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
   icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null)
 }))))));
 var _default = AttachToSession;
@@ -9196,107 +8937,6 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "inspector-container": "_inspector-container_5407d",
-  "inspector-toolbar": "_inspector-toolbar_5407d",
-  "button_wrapper": "_button_wrapper_5407d",
-  "ant-btn": "_ant-btn_5407d",
-  "user_actions": "_user_actions_5407d",
-  "actionButton": "_actionButton_5407d",
-  "inspector-main": "_inspector-main_5407d",
-  "whole-btn": "_whole-btn_5407d",
-  "screenshot-container": "_screenshot-container_5407d",
-  "screenshot": "_screenshot_5407d",
-  "screenshot-controls": "_screenshot-controls_5407d",
-  "logoContainer": "_logoContainer_5407d",
-  "screenshotBox": "_screenshotBox_5407d",
-  "interaction-tab-container": "_interaction-tab-container_5407d",
-  "tree-container": "_tree-container_5407d",
-  "session-info-table": "_session-info-table_5407d",
-  "session-code-box": "_session-code-box_5407d",
-  "session-inner-table": "_session-inner-table_5407d",
-  "scroll-buttons": "_scroll-buttons_5407d",
-  "scroll-right": "_scroll-right_5407d",
-  "recorded-actions": "_recorded-actions_5407d",
-  "_inspector-main_0387c": "__inspector-main_0387c_5407d",
-  "ant-card-body": "_ant-card-body_5407d",
-  "interaction-tab-card": "_interaction-tab-card_5407d",
-  "highlighter-box": "_highlighter-box_5407d",
-  "inspected-element-box": "_inspected-element-box_5407d",
-  "hovered-element-box": "_hovered-element-box_5407d",
-  "centroid-box": "_centroid-box_5407d",
-  "centroid": "_centroid_5407d",
-  "overlap": "_overlap_5407d",
-  "expand": "_expand_5407d",
-  "plus-minus": "_plus-minus_5407d",
-  "phone-btn1": "_phone-btn1_5407d",
-  "phone-btn2": "_phone-btn2_5407d",
-  "phone-btn3": "_phone-btn3_5407d",
-  "custom-button-icon": "_custom-button-icon_5407d",
-  "elementActions": "_elementActions_5407d",
-  "elementKeyInputActions": "_elementKeyInputActions_5407d",
-  "selectedElementContainer": "_selectedElementContainer_5407d",
-  "selected-element-table-cells": "_selected-element-table-cells_5407d",
-  "element-cell-copy": "_element-cell-copy_5407d",
-  "selected-element-card": "_selected-element-card_5407d",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_5407d",
-  "context-selector": "_context-selector_5407d",
-  "sourceTag": "_sourceTag_5407d",
-  "sourceAttrName": "_sourceAttrName_5407d",
-  "no-recorded-actions": "_no-recorded-actions_5407d",
-  "recorded-code": "_recorded-code_5407d",
-  "framework-dropdown": "_framework-dropdown_5407d",
-  "searchResultsList": "_searchResultsList_5407d",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_5407d",
-  "searchResultsActions": "_searchResultsActions_5407d",
-  "searchResultsKeyInput": "_searchResultsKeyInput_5407d",
-  "elementKeyInput": "_elementKeyInput_5407d",
-  "element-count-container": "_element-count-container_5407d",
-  "locatorStrategyBtn": "_locatorStrategyBtn_5407d",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_5407d",
-  "coordinatesContainer": "_coordinatesContainer_5407d",
-  "swipeInstructions": "_swipeInstructions_5407d",
-  "swipeSvg": "_swipeSvg_5407d",
-  "tapDiv": "_tapDiv_5407d",
-  "iphone_x": "_iphone_x_5407d",
-  "custom_menu": "_custom_menu_5407d",
-  "ant-menu-submenu": "_ant-menu-submenu_5407d",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_5407d",
-  "gestureSvg": "_gestureSvg_5407d",
-  "filled": "_filled_5407d",
-  "dashed": "_dashed_5407d",
-  "whole": "_whole_5407d",
-  "newDashed": "_newDashed_5407d",
-  "circle-dashed": "_circle-dashed_5407d",
-  "circle-newDashed": "_circle-newDashed_5407d",
-  "screenimage": "_screenimage_5407d",
-  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
-  "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
-  "commands-container": "_commands-container_5407d",
-  "btn-container": "_btn-container_5407d",
-  "arg-row": "_arg-row_5407d",
-  "arg-container": "_arg-container_5407d",
-  "gesture-header": "_gesture-header_5407d",
-  "gesture-header-title": "_gesture-header-title_5407d",
-  "gesture-header-description": "_gesture-header-description_5407d",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_5407d",
-  "gesture-header-timeline": "_gesture-header-timeline_5407d",
-  "timeline-tick-title": "_timeline-tick-title_5407d",
-  "gesture-header-icon": "_gesture-header-icon_5407d",
-  "pointer-title": "_pointer-title_5407d",
-  "tick-card": "_tick-card_5407d",
-  "tick-plus-card": "_tick-plus-card_5407d",
-  "tick-plus-btn": "_tick-plus-btn_5407d",
-  "spaceContainer": "_spaceContainer_5407d",
-  "tick-pointer-input": "_tick-pointer-input_5407d",
-  "tick-button-group": "_tick-button-group_5407d",
-  "tick-button-input": "_tick-button-input_5407d",
-  "tick-input-box": "_tick-input-box_5407d",
-  "tick-coord-box": "_tick-coord-box_5407d",
-  "option-inpt": "_option-inpt_5407d"
-=======
   "inspector-container": "_inspector-container_61591",
   "inspector-toolbar": "_inspector-toolbar_61591",
   "button_wrapper": "_button_wrapper_61591",
@@ -9394,310 +9034,6 @@ module.exports = {
   "tick-input-box": "_tick-input-box_61591",
   "tick-coord-box": "_tick-coord-box_61591",
   "option-inpt": "_option-inpt_61591"
->>>>>>> dbd8aa8 (added changes)
-=======
-=======
->>>>>>> d733b97 (added changes)
-  "inspector-container": "_inspector-container_3421c",
-  "inspector-toolbar": "_inspector-toolbar_3421c",
-  "button_wrapper": "_button_wrapper_3421c",
-  "ant-btn": "_ant-btn_3421c",
-  "user_actions": "_user_actions_3421c",
-  "actionButton": "_actionButton_3421c",
-  "inspector-main": "_inspector-main_3421c",
-  "whole-btn": "_whole-btn_3421c",
-  "screenshot-container": "_screenshot-container_3421c",
-  "screenshot": "_screenshot_3421c",
-  "screenshot-controls": "_screenshot-controls_3421c",
-  "logoContainer": "_logoContainer_3421c",
-  "screenshotBox": "_screenshotBox_3421c",
-  "interaction-tab-container": "_interaction-tab-container_3421c",
-  "tree-container": "_tree-container_3421c",
-  "session-info-table": "_session-info-table_3421c",
-  "session-code-box": "_session-code-box_3421c",
-  "session-inner-table": "_session-inner-table_3421c",
-  "scroll-buttons": "_scroll-buttons_3421c",
-  "scroll-right": "_scroll-right_3421c",
-  "recorded-actions": "_recorded-actions_3421c",
-  "_inspector-main_0387c": "__inspector-main_0387c_3421c",
-  "ant-card-body": "_ant-card-body_3421c",
-  "interaction-tab-card": "_interaction-tab-card_3421c",
-  "highlighter-box": "_highlighter-box_3421c",
-  "inspected-element-box": "_inspected-element-box_3421c",
-  "hovered-element-box": "_hovered-element-box_3421c",
-  "centroid-box": "_centroid-box_3421c",
-  "centroid": "_centroid_3421c",
-  "overlap": "_overlap_3421c",
-  "expand": "_expand_3421c",
-  "plus-minus": "_plus-minus_3421c",
-  "phone-btn1": "_phone-btn1_3421c",
-  "phone-btn2": "_phone-btn2_3421c",
-  "phone-btn3": "_phone-btn3_3421c",
-  "custom-button-icon": "_custom-button-icon_3421c",
-  "elementActions": "_elementActions_3421c",
-  "elementKeyInputActions": "_elementKeyInputActions_3421c",
-  "selectedElementContainer": "_selectedElementContainer_3421c",
-  "selected-element-table-cells": "_selected-element-table-cells_3421c",
-  "element-cell-copy": "_element-cell-copy_3421c",
-  "selected-element-card": "_selected-element-card_3421c",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_3421c",
-  "context-selector": "_context-selector_3421c",
-  "sourceTag": "_sourceTag_3421c",
-  "sourceAttrName": "_sourceAttrName_3421c",
-  "no-recorded-actions": "_no-recorded-actions_3421c",
-  "recorded-code": "_recorded-code_3421c",
-  "framework-dropdown": "_framework-dropdown_3421c",
-  "searchResultsList": "_searchResultsList_3421c",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_3421c",
-  "searchResultsActions": "_searchResultsActions_3421c",
-  "searchResultsKeyInput": "_searchResultsKeyInput_3421c",
-  "elementKeyInput": "_elementKeyInput_3421c",
-  "element-count-container": "_element-count-container_3421c",
-  "locatorStrategyBtn": "_locatorStrategyBtn_3421c",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_3421c",
-  "coordinatesContainer": "_coordinatesContainer_3421c",
-  "swipeInstructions": "_swipeInstructions_3421c",
-  "swipeSvg": "_swipeSvg_3421c",
-  "tapDiv": "_tapDiv_3421c",
-  "iphone_x": "_iphone_x_3421c",
-  "custom_menu": "_custom_menu_3421c",
-  "ant-menu-submenu": "_ant-menu-submenu_3421c",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_3421c",
-  "gestureSvg": "_gestureSvg_3421c",
-  "filled": "_filled_3421c",
-  "dashed": "_dashed_3421c",
-  "whole": "_whole_3421c",
-  "newDashed": "_newDashed_3421c",
-  "circle-dashed": "_circle-dashed_3421c",
-  "circle-newDashed": "_circle-newDashed_3421c",
-  "screenimage": "_screenimage_3421c",
-  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
-  "screenshotActionsPanel": "_screenshotActionsPanel_3421c",
-  "commands-container": "_commands-container_3421c",
-  "btn-container": "_btn-container_3421c",
-  "arg-row": "_arg-row_3421c",
-  "arg-container": "_arg-container_3421c",
-  "gesture-header": "_gesture-header_3421c",
-  "gesture-header-title": "_gesture-header-title_3421c",
-  "gesture-header-description": "_gesture-header-description_3421c",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_3421c",
-  "gesture-header-timeline": "_gesture-header-timeline_3421c",
-  "timeline-tick-title": "_timeline-tick-title_3421c",
-  "gesture-header-icon": "_gesture-header-icon_3421c",
-  "pointer-title": "_pointer-title_3421c",
-  "tick-card": "_tick-card_3421c",
-  "tick-plus-card": "_tick-plus-card_3421c",
-  "tick-plus-btn": "_tick-plus-btn_3421c",
-  "spaceContainer": "_spaceContainer_3421c",
-  "tick-pointer-input": "_tick-pointer-input_3421c",
-  "tick-button-group": "_tick-button-group_3421c",
-  "tick-button-input": "_tick-button-input_3421c",
-  "tick-input-box": "_tick-input-box_3421c",
-  "tick-coord-box": "_tick-coord-box_3421c",
-  "option-inpt": "_option-inpt_3421c"
-<<<<<<< HEAD
->>>>>>> e8fea86 (new categories added)
-=======
-=======
-<<<<<<< HEAD
-  "inspector-container": "_inspector-container_5407d",
-  "inspector-toolbar": "_inspector-toolbar_5407d",
-  "button_wrapper": "_button_wrapper_5407d",
-  "ant-btn": "_ant-btn_5407d",
-  "user_actions": "_user_actions_5407d",
-  "actionButton": "_actionButton_5407d",
-  "inspector-main": "_inspector-main_5407d",
-  "whole-btn": "_whole-btn_5407d",
-  "screenshot-container": "_screenshot-container_5407d",
-  "screenshot": "_screenshot_5407d",
-  "screenshot-controls": "_screenshot-controls_5407d",
-  "logoContainer": "_logoContainer_5407d",
-  "screenshotBox": "_screenshotBox_5407d",
-  "interaction-tab-container": "_interaction-tab-container_5407d",
-  "tree-container": "_tree-container_5407d",
-  "session-info-table": "_session-info-table_5407d",
-  "session-code-box": "_session-code-box_5407d",
-  "session-inner-table": "_session-inner-table_5407d",
-  "scroll-buttons": "_scroll-buttons_5407d",
-  "scroll-right": "_scroll-right_5407d",
-  "recorded-actions": "_recorded-actions_5407d",
-  "_inspector-main_0387c": "__inspector-main_0387c_5407d",
-  "ant-card-body": "_ant-card-body_5407d",
-  "interaction-tab-card": "_interaction-tab-card_5407d",
-  "highlighter-box": "_highlighter-box_5407d",
-  "inspected-element-box": "_inspected-element-box_5407d",
-  "hovered-element-box": "_hovered-element-box_5407d",
-  "centroid-box": "_centroid-box_5407d",
-  "centroid": "_centroid_5407d",
-  "overlap": "_overlap_5407d",
-  "expand": "_expand_5407d",
-  "plus-minus": "_plus-minus_5407d",
-  "phone-btn1": "_phone-btn1_5407d",
-  "phone-btn2": "_phone-btn2_5407d",
-  "phone-btn3": "_phone-btn3_5407d",
-  "custom-button-icon": "_custom-button-icon_5407d",
-  "elementActions": "_elementActions_5407d",
-  "elementKeyInputActions": "_elementKeyInputActions_5407d",
-  "selectedElementContainer": "_selectedElementContainer_5407d",
-  "selected-element-table-cells": "_selected-element-table-cells_5407d",
-  "element-cell-copy": "_element-cell-copy_5407d",
-  "selected-element-card": "_selected-element-card_5407d",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_5407d",
-  "context-selector": "_context-selector_5407d",
-  "sourceTag": "_sourceTag_5407d",
-  "sourceAttrName": "_sourceAttrName_5407d",
-  "no-recorded-actions": "_no-recorded-actions_5407d",
-  "recorded-code": "_recorded-code_5407d",
-  "framework-dropdown": "_framework-dropdown_5407d",
-  "searchResultsList": "_searchResultsList_5407d",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_5407d",
-  "searchResultsActions": "_searchResultsActions_5407d",
-  "searchResultsKeyInput": "_searchResultsKeyInput_5407d",
-  "elementKeyInput": "_elementKeyInput_5407d",
-  "element-count-container": "_element-count-container_5407d",
-  "locatorStrategyBtn": "_locatorStrategyBtn_5407d",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_5407d",
-  "coordinatesContainer": "_coordinatesContainer_5407d",
-  "swipeInstructions": "_swipeInstructions_5407d",
-  "swipeSvg": "_swipeSvg_5407d",
-  "tapDiv": "_tapDiv_5407d",
-  "iphone_x": "_iphone_x_5407d",
-  "custom_menu": "_custom_menu_5407d",
-  "ant-menu-submenu": "_ant-menu-submenu_5407d",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_5407d",
-  "gestureSvg": "_gestureSvg_5407d",
-  "filled": "_filled_5407d",
-  "dashed": "_dashed_5407d",
-  "whole": "_whole_5407d",
-  "newDashed": "_newDashed_5407d",
-  "circle-dashed": "_circle-dashed_5407d",
-  "circle-newDashed": "_circle-newDashed_5407d",
-  "screenimage": "_screenimage_5407d",
-  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
-  "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
-  "commands-container": "_commands-container_5407d",
-  "btn-container": "_btn-container_5407d",
-  "arg-row": "_arg-row_5407d",
-  "arg-container": "_arg-container_5407d",
-  "gesture-header": "_gesture-header_5407d",
-  "gesture-header-title": "_gesture-header-title_5407d",
-  "gesture-header-description": "_gesture-header-description_5407d",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_5407d",
-  "gesture-header-timeline": "_gesture-header-timeline_5407d",
-  "timeline-tick-title": "_timeline-tick-title_5407d",
-  "gesture-header-icon": "_gesture-header-icon_5407d",
-  "pointer-title": "_pointer-title_5407d",
-  "tick-card": "_tick-card_5407d",
-  "tick-plus-card": "_tick-plus-card_5407d",
-  "tick-plus-btn": "_tick-plus-btn_5407d",
-  "spaceContainer": "_spaceContainer_5407d",
-  "tick-pointer-input": "_tick-pointer-input_5407d",
-  "tick-button-group": "_tick-button-group_5407d",
-  "tick-button-input": "_tick-button-input_5407d",
-  "tick-input-box": "_tick-input-box_5407d",
-  "tick-coord-box": "_tick-coord-box_5407d",
-  "option-inpt": "_option-inpt_5407d"
-=======
-  "inspector-container": "_inspector-container_61591",
-  "inspector-toolbar": "_inspector-toolbar_61591",
-  "button_wrapper": "_button_wrapper_61591",
-  "ant-btn": "_ant-btn_61591",
-  "user_actions": "_user_actions_61591",
-  "actionButton": "_actionButton_61591",
-  "inspector-main": "_inspector-main_61591",
-  "whole-btn": "_whole-btn_61591",
-  "screenshot-container": "_screenshot-container_61591",
-  "screenshot": "_screenshot_61591",
-  "screenshot-controls": "_screenshot-controls_61591",
-  "logoContainer": "_logoContainer_61591",
-  "screenshotBox": "_screenshotBox_61591",
-  "interaction-tab-container": "_interaction-tab-container_61591",
-  "tree-container": "_tree-container_61591",
-  "session-info-table": "_session-info-table_61591",
-  "session-code-box": "_session-code-box_61591",
-  "session-inner-table": "_session-inner-table_61591",
-  "scroll-buttons": "_scroll-buttons_61591",
-  "scroll-right": "_scroll-right_61591",
-  "recorded-actions": "_recorded-actions_61591",
-  "_inspector-main_0387c": "__inspector-main_0387c_61591",
-  "ant-card-body": "_ant-card-body_61591",
-  "interaction-tab-card": "_interaction-tab-card_61591",
-  "highlighter-box": "_highlighter-box_61591",
-  "inspected-element-box": "_inspected-element-box_61591",
-  "hovered-element-box": "_hovered-element-box_61591",
-  "centroid-box": "_centroid-box_61591",
-  "centroid": "_centroid_61591",
-  "overlap": "_overlap_61591",
-  "expand": "_expand_61591",
-  "plus-minus": "_plus-minus_61591",
-  "phone-btn1": "_phone-btn1_61591",
-  "phone-btn2": "_phone-btn2_61591",
-  "phone-btn3": "_phone-btn3_61591",
-  "custom-button-icon": "_custom-button-icon_61591",
-  "elementActions": "_elementActions_61591",
-  "elementKeyInputActions": "_elementKeyInputActions_61591",
-  "selectedElementContainer": "_selectedElementContainer_61591",
-  "selected-element-table-cells": "_selected-element-table-cells_61591",
-  "element-cell-copy": "_element-cell-copy_61591",
-  "selected-element-card": "_selected-element-card_61591",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
-  "context-selector": "_context-selector_61591",
-  "sourceTag": "_sourceTag_61591",
-  "sourceAttrName": "_sourceAttrName_61591",
-  "no-recorded-actions": "_no-recorded-actions_61591",
-  "recorded-code": "_recorded-code_61591",
-  "framework-dropdown": "_framework-dropdown_61591",
-  "searchResultsList": "_searchResultsList_61591",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
-  "searchResultsActions": "_searchResultsActions_61591",
-  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
-  "elementKeyInput": "_elementKeyInput_61591",
-  "element-count-container": "_element-count-container_61591",
-  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
-  "coordinatesContainer": "_coordinatesContainer_61591",
-  "swipeInstructions": "_swipeInstructions_61591",
-  "swipeSvg": "_swipeSvg_61591",
-  "tapDiv": "_tapDiv_61591",
-  "iphone_x": "_iphone_x_61591",
-  "custom_menu": "_custom_menu_61591",
-  "ant-menu-submenu": "_ant-menu-submenu_61591",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_61591",
-  "gestureSvg": "_gestureSvg_61591",
-  "filled": "_filled_61591",
-  "dashed": "_dashed_61591",
-  "whole": "_whole_61591",
-  "newDashed": "_newDashed_61591",
-  "circle-dashed": "_circle-dashed_61591",
-  "circle-newDashed": "_circle-newDashed_61591",
-  "screenimage": "_screenimage_61591",
-  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
-  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
-  "commands-container": "_commands-container_61591",
-  "btn-container": "_btn-container_61591",
-  "arg-row": "_arg-row_61591",
-  "arg-container": "_arg-container_61591",
-  "gesture-header": "_gesture-header_61591",
-  "gesture-header-title": "_gesture-header-title_61591",
-  "gesture-header-description": "_gesture-header-description_61591",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
-  "gesture-header-timeline": "_gesture-header-timeline_61591",
-  "timeline-tick-title": "_timeline-tick-title_61591",
-  "gesture-header-icon": "_gesture-header-icon_61591",
-  "pointer-title": "_pointer-title_61591",
-  "tick-card": "_tick-card_61591",
-  "tick-plus-card": "_tick-plus-card_61591",
-  "tick-plus-btn": "_tick-plus-btn_61591",
-  "spaceContainer": "_spaceContainer_61591",
-  "tick-pointer-input": "_tick-pointer-input_61591",
-  "tick-button-group": "_tick-button-group_61591",
-  "tick-button-input": "_tick-button-input_61591",
-  "tick-input-box": "_tick-input-box_61591",
-  "tick-coord-box": "_tick-coord-box_61591",
-  "option-inpt": "_option-inpt_61591"
->>>>>>> dbd8aa8 (added changes)
->>>>>>> 324aa7e (added changes)
->>>>>>> d733b97 (added changes)
 };
 },{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9942,10 +9278,6 @@ const {
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = props => {
-<<<<<<< HEAD
-  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props);
-=======
->>>>>>> dbd8aa8 (added changes)
   const {
     source,
     containerEl,
@@ -10445,21 +9777,7 @@ var _bi = require("react-icons/bi");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d733b97 (added changes)
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
-=======
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
->>>>>>> dbd8aa8 (added changes)
-<<<<<<< HEAD
-=======
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
 const {
   POINTER_UP,
   POINTER_DOWN,
@@ -10593,20 +9911,7 @@ const Screenshot = props => {
       BUTTON
     } = _shared.DEFAULT_TAP;
     if (screenshotInteractionMode === TAP) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
       console.log('inside the sreenshot page!!!!!! tap');
-=======
->>>>>>> dbd8aa8 (added changes)
-=======
-      console.log('inside the sreenshot page!!!!!! tap');
->>>>>>> 1783371 (changes have been pushed)
-=======
-      console.log('inside the sreenshot page!!!!!! tap');
-=======
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
       applyClientMethod({
         methodName: TAP,
         args: [{
@@ -10725,21 +10030,7 @@ const Screenshot = props => {
       if (props.selectedElement) {
         expected_value = props.selectedElement.attributes.text;
         data = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d733b97 (added changes)
           expectedValue: expected_value,
-=======
-          expected_value: expected_value,
->>>>>>> dbd8aa8 (added changes)
-<<<<<<< HEAD
-=======
-          expectedValue: expected_value,
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
           xpath: props.selectedElement.xpath
         };
       }
@@ -13446,21 +12737,7 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d733b97 (added changes)
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
-=======
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
->>>>>>> dbd8aa8 (added changes)
-<<<<<<< HEAD
-=======
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
 const {
   SELECT,
   SWIPE,
@@ -13477,40 +12754,18 @@ const {
   SCRATCH,
   HIDE_KEYBOARD,
   GET_DEVICE_TIME,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
   GET_CLIPBOARD,
   LOCK,
   UNLOCK,
   SHAKE
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  GET_CLIPBOARD
->>>>>>> dbd8aa8 (added changes)
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
-=======
-  GET_CLIPBOARD
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
 const MIN_HEIGHT = 610;
 const MAX_SCREENSHOT_WIDTH = 500;
-<<<<<<< HEAD
-=======
 const {
   Option
 } = _antd.Select;
->>>>>>> dbd8aa8 (added changes)
 const MJPEG_STREAM_CHECK_INTERVAL = 1000;
 function downloadXML(sourceXML) {
   let element = document.createElement('a');
@@ -13528,46 +12783,14 @@ class Inspector extends _react.Component {
     this.state = {
       scaleRatio: 1,
       activeIndex: 0,
-<<<<<<< HEAD
-      showPanel: false,
-<<<<<<< HEAD
-<<<<<<< HEAD
-      currentSelection: null,
-      step_array: [],
-      total_array: []
-=======
       nestedDropIndex: 0,
       showPanel: false,
-      currentSelection: null,
-      step_array: [],
-      total_array: [],
-      isLongPress: false,
-      action: '',
-      mode_orientation: ''
->>>>>>> dbd8aa8 (added changes)
-=======
-=======
->>>>>>> 1783371 (changes have been pushed)
       currentSelection: "Select Elements",
-=======
-      currentSelection: null,
->>>>>>> 24d4eea (changes have been pushed)
-      step_array: [],
-      total_array: []
-<<<<<<< HEAD
->>>>>>> e8fea86 (new categories added)
-=======
-=======
-      nestedDropIndex: 0,
-      showPanel: false,
-      currentSelection: null,
       step_array: [],
       total_array: [],
       isLongPress: false,
       action: '',
       mode_orientation: ''
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -13692,8 +12915,6 @@ class Inspector extends _react.Component {
       currentSelection: option
     });
   }
-<<<<<<< HEAD
-=======
   async handleActions(action, step) {
     const {
       driver
@@ -13743,7 +12964,6 @@ class Inspector extends _react.Component {
       console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
     });
   }
->>>>>>> dbd8aa8 (added changes)
   setActiveIndex(val) {
     this.setState({
       activeIndex: val
@@ -13811,13 +13031,6 @@ class Inspector extends _react.Component {
   //   console.log('🚀 ~ file: Inspector.js:228 ~ Inspector ~ getDeviceclipBoard ~ clipboard:', clipboard);
   //   alert(clipboard);
   // }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
   async isLocked() {
     const {
       driver
@@ -13836,18 +13049,6 @@ class Inspector extends _react.Component {
     const isShake = await driver.client.shake();
     console.log("🚀 ~ file: Inspector.js:295 ~ shakeBooty ~ isShake:", isShake);
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> dbd8aa8 (added changes)
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
-=======
-
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
   render() {
     const {
       screenshot,
@@ -13883,32 +13084,11 @@ class Inspector extends _react.Component {
     const {
       flow_steps
     } = this.props;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     const options = ['Return', 'Space', 'BackSpace', 'Enter', 'Back', 'Search', 'Call', 'Endcall'];
->>>>>>> dbd8aa8 (added changes)
-=======
->>>>>>> e8fea86 (new categories added)
-=======
-=======
-    const options = ['Return', 'Space', 'BackSpace', 'Enter', 'Back', 'Search', 'Call', 'Endcall'];
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
     if (flow_steps) {
       console.log('🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:', flow_steps);
       this.state.total_array = flow_steps.steps.steps;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> e8fea86 (new categories added)
-=======
->>>>>>> d733b97 (added changes)
-    console.log('driver for iddddddd', driver.sessionId);
-=======
     console.log('driver for iddddddd', driver);
     driver.client.getOrientation().then(res => {
       console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
@@ -13916,7 +13096,6 @@ class Inspector extends _react.Component {
         mode_orientation: res
       });
     });
->>>>>>> dbd8aa8 (added changes)
     const showScreenshot = screenshot && !screenshotError || mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream);
     let screenShotControls = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['screenshot-controls']
@@ -14018,13 +13197,6 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SLIDE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
->>>>>>> d733b97 (added changes)
     }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.LockOutlined, null),
       onClick: () => {
@@ -14035,18 +13207,6 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")))), /*#__PURE__*/_react.default.createElement("div", {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")))), /*#__PURE__*/_react.default.createElement("div", {
->>>>>>> dbd8aa8 (added changes)
-=======
->>>>>>> 1783371 (changes have been pushed)
-=======
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")))), /*#__PURE__*/_react.default.createElement("div", {
->>>>>>> dbd8aa8 (added changes)
->>>>>>> d733b97 (added changes)
       onMouseOver: () => this.setActiveIndex(2),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
@@ -14344,8 +13504,6 @@ class Inspector extends _react.Component {
       },
       type: screenshotInteractionMode === FILE_UPLOAD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
-<<<<<<< HEAD
-<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
@@ -14376,7 +13534,6 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
         this.hideKeyboard();
         let data1 = {
-<<<<<<< HEAD
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14390,31 +13547,11 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
-<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14429,7 +13566,6 @@ class Inspector extends _react.Component {
         this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
         this.getDeviceTime();
         let data1 = {
-<<<<<<< HEAD
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14443,31 +13579,11 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
-<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14487,7 +13603,6 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === GET_CLIPBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.ShakeOutlined, null),
       onClick: () => {
@@ -14497,12 +13612,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SHAKE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
-      onClick: async () => {
-        await driver.client.setOrientation('LANDSCAPE');
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), this.state.mode_orientation == 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")), this.state.mode_orientation == 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
       onClick: async () => {
         await driver.client.setOrientation('LANDSCAPE');
@@ -14547,14 +13657,10 @@ class Inspector extends _react.Component {
         }).catch(error => {
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
         });
->>>>>>> dbd8aa8 (added changes)
       },
       type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Landscape")) : /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
       onClick: async () => {
@@ -14605,7 +13711,6 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Potrait")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
->>>>>>> dbd8aa8 (added changes)
       icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
       onClick: async () => {
         await driver.client.openNotifications();
@@ -14625,7 +13730,6 @@ class Inspector extends _react.Component {
           console.error('API error:', error);
         });
         let data1 = {
-<<<<<<< HEAD
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14640,32 +13744,11 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
-<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14707,7 +13790,6 @@ class Inspector extends _react.Component {
           console.error('API error:', error);
         });
         let data1 = {
-<<<<<<< HEAD
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14721,31 +13803,11 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
-<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14758,22 +13820,15 @@ class Inspector extends _react.Component {
       style: {
         backgroundColor: 'blue'
       }
-<<<<<<< HEAD
-    }, "Activate App"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
     }, "Activate App")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
->>>>>>> dbd8aa8 (added changes)
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
       onClick: async () => {
         await driver.client.resetApp();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))))));
-=======
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))), /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(3),
+      onMouseOver: () => this.setActiveIndex(4),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
         textAlign: 'center',
@@ -14786,7 +13841,7 @@ class Inspector extends _react.Component {
       style: {
         fontSize: '20px'
       }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Specific Actions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Specific Actions"), this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("div", {
       style: {
         display: 'flex',
         flexDirection: 'column',
@@ -14848,524 +13903,6 @@ class Inspector extends _react.Component {
       key: index,
       onClick: async () => await this.handleActions(option, 'press_key')
     }, option))))))));
->>>>>>> dbd8aa8 (added changes)
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload"))))));
->>>>>>> e8fea86 (new categories added)
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload"))))));
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
-      },
-      type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(TAKE_SCREENSHOT, 'Take screenshot');
-      },
-      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(SCRATCH, 'Scratch');
-      },
-      type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
-      onClick: async () => {
-        this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
-        this.hideKeyboard();
-        let data1 = {
-<<<<<<< HEAD
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-<<<<<<< HEAD
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === HIDE_KEYBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Hide Keyboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FieldTimeOutlined, null),
-      onClick: async () => {
-        this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
-        this.getDeviceTime();
-        let data1 = {
-<<<<<<< HEAD
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-<<<<<<< HEAD
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === GET_DEVICE_TIME ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get Device Time")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.PaperClipOutlined, null),
-      onClick: async () => {
-        this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard');
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === GET_CLIPBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.ShakeOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(SHAKE, 'shake');
-        this.shakeBooty();
-      },
-      type: screenshotInteractionMode === SHAKE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
-      onClick: async () => {
-        await driver.client.setOrientation('LANDSCAPE');
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), this.state.mode_orientation == 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
-      onClick: async () => {
-        await driver.client.setOrientation('LANDSCAPE');
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'rotate',
-          'action': 'landscape'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          console.log('API response:', response);
-        }).catch(error => {
-          console.error('API error:', error);
-        });
-        let data1 = {
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
-        });
->>>>>>> dbd8aa8 (added changes)
-      },
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Landscape")) : /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
-      onClick: async () => {
-        await driver.client.setOrientation('PORTRAIT');
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'rotate',
-          'action': 'portrait'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          console.log('API response:', response);
-        }).catch(error => {
-          console.error('API error:', error);
-        });
-        let data1 = {
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Potrait")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
->>>>>>> dbd8aa8 (added changes)
-      icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
-      onClick: async () => {
-        await driver.client.openNotifications();
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'notification'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          console.log('API response:', response);
-        }).catch(error => {
-          console.error('API error:', error);
-        });
-        let data1 = {
-<<<<<<< HEAD
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        console.log('🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:', driver.sessionId);
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-<<<<<<< HEAD
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-      },
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
-      onClick: () => this.setState({
-        isInput: true
-      }),
-      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Switch App")) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Input, {
-      placeholder: "enter bundle id",
-      onChange: event => this.setState({
-        inputBundleId: event.target.value
-      })
-    }), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      onClick: async () => {
-        await driver.client.activateApp(this.state.inputBundleId);
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'switch_app',
-          'bundle_id': this.state.inputBundleId
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        }).then(response => {
-          console.log('API response:', response);
-        }).catch(error => {
-          console.error('API error:', error);
-        });
-        let data1 = {
-<<<<<<< HEAD
-          'session_id': driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch('https://apprecord.testing24x7.ai/appAction', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data1)
-        }).then(res =>
-        // Convert the response to JSON
-        res.json()).then(res => {
-          console.log('Response data:', res);
-=======
-          "session_id": driver.sessionId,
-          'step-name': 'steps'
-        };
-        await fetch("https://apprecord.testing24x7.ai/appAction", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(data1)
-        }).then(res => {
-          // Convert the response to JSON
-          return res.json();
-        }).then(res => {
-          console.log("Response data:", res);
->>>>>>> dbd8aa8 (added changes)
-          this.setState({
-            total_array: res.steps.steps
-          });
-        }).catch(error => {
-<<<<<<< HEAD
-          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-=======
-          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
->>>>>>> dbd8aa8 (added changes)
-        });
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
-        this.setState({
-          isInput: false,
-          inputBundleId: ''
-        });
-      },
-      style: {
-        backgroundColor: 'blue'
-      }
-<<<<<<< HEAD
-    }, "Activate App"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-=======
-    }, "Activate App")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
->>>>>>> dbd8aa8 (added changes)
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
-      onClick: async () => {
-        await driver.client.resetApp();
-      },
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-<<<<<<< HEAD
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))))));
-<<<<<<< HEAD
->>>>>>> 24d4eea (changes have been pushed)
-<<<<<<< HEAD
->>>>>>> 1783371 (changes have been pushed)
-=======
-=======
-=======
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))), /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(3),
-      onMouseOut: () => this.setActiveIndex(0),
-      style: {
-        textAlign: 'center',
-        padding: '5px',
-        borderBottom: '1px solid grey',
-        position: 'relative',
-        cursor: 'pointer'
-      }
-    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
-      style: {
-        fontSize: '20px'
-      }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Specific Actions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
-      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      onMouseOver: () => this.setState({
-        nestedDropIndex: 1
-      })
-      // disabled={isGestureEditorVisible}
-      ,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, " long press key")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
-      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      onMouseOver: () => this.setState({
-        nestedDropIndex: 2
-      })
-      // disabled={isGestureEditorVisible}
-      ,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "press key")), this.state.nestedDropIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '1999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement("div", null, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      style: {
-        width: '100%'
-      },
-      key: index,
-      onClick: async () => await this.handleActions(option, 'long_press_key')
-    }, option)))), this.state.nestedDropIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '1999',
-        left: '100%',
-        top: '10%'
-      }
-    }, /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        width: '100%'
-      }
-    }, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      style: {
-        width: '100%'
-      },
-      key: index,
-      onClick: async () => await this.handleActions(option, 'press_key')
-    }, option))))))));
->>>>>>> dbd8aa8 (added changes)
->>>>>>> 324aa7e (added changes)
->>>>>>> d733b97 (added changes)
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
@@ -15416,22 +13953,7 @@ class Inspector extends _react.Component {
           className: "action-row"
         }, /*#__PURE__*/_react.default.createElement("div", {
           style: {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            fontWeight: 'bold',
-<<<<<<< HEAD
-            width: '9%'
-=======
             fontWeight: 'bold'
->>>>>>> e8fea86 (new categories added)
-=======
-            fontWeight: 'bold'
-=======
-            fontWeight: 'bold',
-<<<<<<< HEAD
-            width: '9%'
->>>>>>> 24d4eea (changes have been pushed)
->>>>>>> 1783371 (changes have been pushed)
           }
         }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("div", {
           style: {
@@ -15441,66 +13963,12 @@ class Inspector extends _react.Component {
           }
         }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
           key: key
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value']))))), /*#__PURE__*/_react.default.createElement("div", {
-=======
-            width: "9%"
-          }
-        }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("div", {
-          style: {
-            width: "100%",
-            overflowX: "auto",
-            overflowY: "auto"
-          }
-        }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
-          key: key
         }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", {
           style: {
             maxWidth: '200px',
             wordWrap: 'break-word'
           }
-        }, item['search_by_value']))))), /*#__PURE__*/_react.default.createElement("div", {
->>>>>>> dbd8aa8 (added changes)
-          id: "selectedElementContainer",
-          className: `${_Inspector.default['interaction-tab-container']} ${_Inspector.default['element-detail-container']} action-col`
-        }, /*#__PURE__*/_react.default.createElement(_antd.Card, {
-          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.TagOutlined, null), " ", t('selectedElement')),
-          className: _Inspector.default['selected-element-card']
-        }, path && /*#__PURE__*/_react.default.createElement(_SelectedElement.default, this.props), !path && /*#__PURE__*/_react.default.createElement("i", null, t('selectElementInSource')))))
-=======
-        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value']))))))
->>>>>>> e8fea86 (new categories added)
-=======
-        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value']))))))
-=======
-        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value']))))), /*#__PURE__*/_react.default.createElement("div", {
-=======
-            width: "9%"
-          }
-        }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("div", {
-          style: {
-            width: "100%",
-            overflowX: "auto",
-            overflowY: "auto"
-          }
-        }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
-          key: key
-        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", {
-          style: {
-            maxWidth: '200px',
-            wordWrap: 'break-word'
-          }
-        }, item['search_by_value']))))), /*#__PURE__*/_react.default.createElement("div", {
->>>>>>> dbd8aa8 (added changes)
-          id: "selectedElementContainer",
-          className: `${_Inspector.default['interaction-tab-container']} ${_Inspector.default['element-detail-container']} action-col`
-        }, /*#__PURE__*/_react.default.createElement(_antd.Card, {
-          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.TagOutlined, null), " ", t('selectedElement')),
-          className: _Inspector.default['selected-element-card']
-        }, path && /*#__PURE__*/_react.default.createElement(_SelectedElement.default, this.props), !path && /*#__PURE__*/_react.default.createElement("i", null, t('selectElementInSource')))))
->>>>>>> 24d4eea (changes have been pushed)
->>>>>>> 1783371 (changes have been pushed)
+        }, item['search_by_value']))))))
       }, {
         label: t('Commands'),
         key: _shared.INTERACTION_MODE.COMMANDS,
@@ -15571,38 +14039,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "container": "_container_afc3f",
-  "loader": "_loader_afc3f",
-  "load1": "_load1_afc3f"
-=======
   "container": "_container_9b1d1",
   "loader": "_loader_9b1d1",
   "load1": "_load1_9b1d1"
->>>>>>> dbd8aa8 (added changes)
-=======
-  "container": "_container_70832",
-  "loader": "_loader_70832",
-  "load1": "_load1_70832"
->>>>>>> e8fea86 (new categories added)
-=======
-  "container": "_container_70832",
-  "loader": "_loader_70832",
-  "load1": "_load1_70832"
-=======
-<<<<<<< HEAD
-  "container": "_container_afc3f",
-  "loader": "_loader_afc3f",
-  "load1": "_load1_afc3f"
-=======
-  "container": "_container_9b1d1",
-  "loader": "_loader_9b1d1",
-  "load1": "_load1_9b1d1"
->>>>>>> dbd8aa8 (added changes)
->>>>>>> 324aa7e (added changes)
->>>>>>> d733b97 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -15688,32 +14127,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "errorMessage": "_errorMessage_e36f2",
-  "copyTraceBtn": "_copyTraceBtn_e36f2"
-=======
   "errorMessage": "_errorMessage_cd7c8",
   "copyTraceBtn": "_copyTraceBtn_cd7c8"
->>>>>>> dbd8aa8 (added changes)
-=======
-  "errorMessage": "_errorMessage_8d2a9",
-  "copyTraceBtn": "_copyTraceBtn_8d2a9"
->>>>>>> e8fea86 (new categories added)
-=======
-  "errorMessage": "_errorMessage_8d2a9",
-  "copyTraceBtn": "_copyTraceBtn_8d2a9"
-=======
-<<<<<<< HEAD
-  "errorMessage": "_errorMessage_e36f2",
-  "copyTraceBtn": "_copyTraceBtn_e36f2"
-=======
-  "errorMessage": "_errorMessage_cd7c8",
-  "copyTraceBtn": "_copyTraceBtn_cd7c8"
->>>>>>> dbd8aa8 (added changes)
->>>>>>> 324aa7e (added changes)
->>>>>>> d733b97 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
