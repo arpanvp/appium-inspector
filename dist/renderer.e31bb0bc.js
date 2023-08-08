@@ -1,4 +1,4 @@
-process.env.HMR_PORT=35923;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=46867;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -10702,6 +10702,9 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const NATIVE_APP = 'NATIVE_APP';
 const CLASS_CHAIN_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules';
 const PREDICATE_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules';
+const {
+  SELECT
+} = _shared.SCREENSHOT_INTERACTION_MODE;
 const selectedElementTableCell = (text, copyToClipBoard) => {
   if (copyToClipBoard) {
     return /*#__PURE__*/_react.default.createElement("div", {
@@ -10739,7 +10742,8 @@ const SelectedElement = props => {
     sourceXML,
     elementInteractionsNotAvailable,
     selectedElementSearchInProgress,
-    t
+    t,
+    screenshotInteractionMode
   } = props;
   console.log('selectedElementId inside the selected Element!!', selectedElementId);
   const sendKeys = (0, _react.useRef)();
@@ -10885,6 +10889,20 @@ const SelectedElement = props => {
   if (!(elementInteractionsNotAvailable || selectedElementId) || selectedElementSearchInProgress) {
     tapIcon = /*#__PURE__*/_react.default.createElement(_icons.LoadingOutlined, null);
   }
+  const handleTap = () => {
+    console.log('inside the handle tap !!!!!!!');
+    if (!isDisabled) {
+      applyClientMethod({
+        methodName: 'click',
+        elementId: selectedElementId
+      });
+    }
+  };
+  (0, _react.useEffect)(() => {
+    if (!isDisabled && screenshotInteractionMode === SELECT) {
+      handleTap();
+    }
+  }, [isDisabled, applyClientMethod, selectedElementId]);
   return /*#__PURE__*/_react.default.createElement("div", null, elementInteractionsNotAvailable && /*#__PURE__*/_react.default.createElement(_antd.Row, {
     type: _AntdTypes.ROW.FLEX,
     gutter: 10,
@@ -10904,10 +10922,7 @@ const SelectedElement = props => {
     disabled: isDisabled,
     icon: tapIcon,
     id: "btnTapElement",
-    onClick: () => applyClientMethod({
-      methodName: 'click',
-      elementId: selectedElementId
-    })
+    onClick: () => handleTap
   })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     className: _Inspector.default.elementKeyInputActions
   }, /*#__PURE__*/_react.default.createElement(_antd.Input, {

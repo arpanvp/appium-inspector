@@ -3,9 +3,9 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-unused-vars */
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import _ from 'lodash';
-import { getLocators } from './shared';
+import { getLocators, SCREENSHOT_INTERACTION_MODE} from './shared';
 import styles from './Inspector.css';
 import { Button, Row, Col, Input, Table, Alert, Tooltip, Select, Spin } from 'antd';
 import { clipboard, shell } from '../../polyfills';
@@ -13,9 +13,12 @@ import { LoadingOutlined, CopyOutlined, AimOutlined, SendOutlined,
          ClearOutlined, HourglassOutlined } from '@ant-design/icons';
 import { ROW, ALERT } from '../AntdTypes';
 
+
 const NATIVE_APP = 'NATIVE_APP';
 const CLASS_CHAIN_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules';
 const PREDICATE_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules';
+const { SELECT } = SCREENSHOT_INTERACTION_MODE;
+
 
 const selectedElementTableCell = (text, copyToClipBoard) => {
   if (copyToClipBoard) {
@@ -40,7 +43,7 @@ const SelectedElement = (props) => {
   console.log('props.hoveredElement$$$$$$$4!!', props.hoveredElement);
   const { applyClientMethod, contexts, currentContext, getFindElementsTimes, findElementsExecutionTimes,
           isFindingElementsTimes, selectedElement, selectedElementId, sourceXML,
-          elementInteractionsNotAvailable, selectedElementSearchInProgress, t } = props; 
+          elementInteractionsNotAvailable, selectedElementSearchInProgress, t, screenshotInteractionMode } = props; 
 
   console.log('selectedElementId inside the selected Element!!', selectedElementId);
 
@@ -183,6 +186,19 @@ const SelectedElement = (props) => {
     tapIcon = <LoadingOutlined/>;
   }
 
+  const handleTap = () => {
+    console.log('inside the handle tap !!!!!!!');
+    if (!isDisabled) {
+      applyClientMethod({ methodName: 'click', elementId: selectedElementId });
+    }
+  };
+  useEffect(() => {
+    if (!isDisabled && screenshotInteractionMode === SELECT) {
+      handleTap();
+    }
+  }, [isDisabled, applyClientMethod, selectedElementId]);
+
+
   return <div>
     {elementInteractionsNotAvailable &&
       <Row type={ROW.FLEX} gutter={10} className={styles.selectedElemNotInteractableAlertRow}>
@@ -197,7 +213,7 @@ const SelectedElement = (props) => {
           disabled={isDisabled}
           icon={tapIcon}
           id='btnTapElement'
-          onClick={() => applyClientMethod({methodName: 'click', elementId: selectedElementId})} />
+          onClick={() => handleTap} />
       </Tooltip>
       <Button.Group className={styles.elementKeyInputActions}>
         <Input className={styles.elementKeyInput}
