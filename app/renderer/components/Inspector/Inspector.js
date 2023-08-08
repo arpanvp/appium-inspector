@@ -36,6 +36,7 @@ import {
   CopyOutlined,
   DownloadOutlined,
   FileTextOutlined,
+  LikeOutlined,
   RotateRightOutlined,
   NotificationOutlined,
   AimOutlined,
@@ -96,12 +97,8 @@ export default class Inspector extends Component {
       activeIndex: 0,
       nestedDropIndex:0,
       showPanel: false,
-      currentSelection: null,
-      step_array:[],
-      total_array:[],
-      isLongPress:false,
-      action:'',
-      mode_orientation:''
+      step_array: [],
+      total_array: []
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -393,18 +390,22 @@ export default class Inspector extends Component {
           style={{ width: '40px' }}
         />
       </Tooltip>
-      <Button icon={<BarsOutlined />} onClick={() => this.handlePanel(this.state.showPanel)}></Button>
+      {/* <Button icon={<BarsOutlined />} onClick={() => this.handlePanel(this.state.showPanel)}></Button> */}
 
       {showScreenshot && <div>
-        <div onMouseOver={() => this.setActiveIndex(1)} onMouseOut={() => this.setActiveIndex(0)}
-          style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
-          <HeatMapOutlined style={{ fontSize: '20px' }} />
-          <div>Actions</div>
-          {this.state.activeIndex === 1 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
-            <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT, 'Select Elements'); }}
+        <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT, 'Select Elements'); }}
               type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Select Elements</span></Button>
+        <div onMouseOver={() => this.setActiveIndex(1)} onMouseOut={() => this.setActiveIndex(0)}
+          style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
+          <LikeOutlined style={{ fontSize: '20px' }} />
+          <div>Gestures</div>
+          {this.state.activeIndex === 1 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+            {/* <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT, 'Select Elements'); }}
+              type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Select Elements</span></Button> */}
             <Button icon={<SwapRightOutlined />} onClick={() => { this.screenshotInteractionChange(SWIPE, 'Swipe by coordinates'); }}
               type={screenshotInteractionMode === SWIPE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -446,8 +447,217 @@ export default class Inspector extends Component {
         <div onMouseOver={() => this.setActiveIndex(2)} onMouseOut={() => this.setActiveIndex(0)}
           style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
           <EditOutlined style={{ fontSize: '20px' }} />
-          <div>Assertions</div>
+          <div>Actions</div>
           {this.state.activeIndex === 2 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+            <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value'); }}
+              type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Expected value</span></Button>
+            <Button icon={<FundProjectionScreenOutlined />} onClick={() => { this.screenshotInteractionChange(TAKE_SCREENSHOT, 'Take screenshot'); }}
+              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Take Screenshot</span></Button>
+            <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(SCRATCH, 'Scratch'); }}
+              type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Scratch</span></Button>
+            <Button icon={<CaretDownOutlined />} onClick={async () => {
+              this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
+              this.hideKeyboard();
+              let data1 = {
+                'session_id': driver.sessionId,
+                'step-name': 'steps'
+              };
+
+              await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data1),
+              })
+                .then((res) =>
+                  // Convert the response to JSON
+                  res.json()
+                )
+                .then((res) => {
+                  console.log('Response data:', res);
+                  this.setState({ total_array: res.steps.steps });
+                })
+                .catch((error) => {
+                  console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+                });
+              await applyClientMethod({ methodName: 'getPageSource' });
+
+            }}
+              type={screenshotInteractionMode === HIDE_KEYBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Hide Keyboard</span></Button>
+            <Button icon={<FieldTimeOutlined />} onClick={async () => {
+              this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
+              this.getDeviceTime();
+              let data1 = {
+                'session_id': driver.sessionId,
+                'step-name': 'steps'
+              };
+
+              await fetch('https://apprecord.testing24x7.ai/appAction', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data1),
+              })
+                .then((res) =>
+                  // Convert the response to JSON
+                  res.json()
+                )
+                .then((res) => {
+                  console.log('Response data:', res);
+                  this.setState({ total_array: res.steps.steps });
+                })
+                .catch((error) => {
+                  console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+                });
+              await applyClientMethod({ methodName: 'getPageSource' });
+            }}
+              type={screenshotInteractionMode === GET_DEVICE_TIME ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Get Device Time</span></Button>
+            <Button icon={<PaperClipOutlined />} onClick={async () => {
+              this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard');
+              await applyClientMethod({ methodName: 'getPageSource' });
+            }}
+              type={screenshotInteractionMode === GET_CLIPBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Get clipboard</span></Button>
+            <Button icon={<RotateRightOutlined />} onClick={async () => { await driver.client.setOrientation('LANDSCAPE'); }}
+              type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Rotate</span></Button>
+            <Button icon={<NotificationOutlined />}
+              onClick={async () => {
+                await driver.client.openNotifications();
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'notification',
+                };
+                await fetch('https://apprecord.testing24x7.ai/appAction', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data),
+                })
+                  .then((response) => {
+                    console.log('API response:', response);
+                  })
+                  .catch((error) => {
+                    console.error('API error:', error);
+                  });
+
+                let data1 = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'steps'
+                };
+                console.log('🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:', driver.sessionId);
+                await fetch('https://apprecord.testing24x7.ai/appAction', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data1),
+                })
+                  .then((res) =>
+                    // Convert the response to JSON
+                    res.json()
+                  )
+                  .then((res) => {
+                    console.log('Response data:', res);
+                    this.setState({ total_array: res.steps.steps });
+                  })
+                  .catch((error) => {
+                    console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+                  });
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
+              type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Open Notifications</span></Button>
+            {!this.state.isInput ? (<Button icon={<SwitcherOutlined />} onClick={() => this.setState({ isInput: true })}
+              type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+            ><span>Switch App</span></Button>) : (
+              <div>
+                <Input
+                  placeholder="enter bundle id"
+                  onChange={(event) => this.setState({ inputBundleId: event.target.value })}
+                />
+                <Button
+                  onClick={async () => {
+                    await driver.client.activateApp(this.state.inputBundleId);
+
+                    let data = {
+                      'session_id': driver.sessionId,
+                      'step-name': 'switch_app',
+                      'bundle_id': this.state.inputBundleId
+                    };
+                    await fetch('https://apprecord.testing24x7.ai/appAction', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(data),
+                    })
+                      .then((response) => {
+                        console.log('API response:', response);
+                      })
+                      .catch((error) => {
+                        console.error('API error:', error);
+                      });
+
+                    let data1 = {
+                      'session_id': driver.sessionId,
+                      'step-name': 'steps'
+                    };
+                    await fetch('https://apprecord.testing24x7.ai/appAction', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(data1),
+                    })
+                      .then((res) =>
+                        // Convert the response to JSON
+                        res.json()
+                      )
+                      .then((res) => {
+                        console.log('Response data:', res);
+                        this.setState({ total_array: res.steps.steps });
+                      })
+                      .catch((error) => {
+                        console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+                      });
+
+                    await applyClientMethod({ methodName: 'getPageSource' });
+                    this.setState({ isInput: false, inputBundleId: '' });
+                  }}
+                  style={{ backgroundColor: 'blue' }}
+                >
+                  Activate App
+                </Button>
+                <Button icon={<AimOutlined />} onClick={async () => { await driver.client.resetApp(); }}
+                  disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+                > <span>Reset App</span></Button>
+              </div>
+            )}
+          </div>}
+        </div>
+        <div onMouseOver={() => this.setActiveIndex(3)} onMouseOut={() => this.setActiveIndex(0)}
+          style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
+          <HeatMapOutlined style={{ fontSize: '20px' }} />
+          <div>Assertions</div>
+          {this.state.activeIndex === 3 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
             <Button className={InspectorStyles['user_actions']} icon={<FileAddOutlined />} onClick={async () => {
               if (screenshotInteractionMode === FILE_UPLOAD) {
                 this.screenshotInteractionChange(null, null);
@@ -919,8 +1129,8 @@ export default class Inspector extends Component {
       <div id='screenshotContainer' className={InspectorStyles['screenshot-container']} ref={(el) => { this.screenshotEl = el; }}>
         {screenShotControls}
         {showScreenshot &&
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {this.state.currentSelection !== null && <div style={{ textAlign: 'center' }}>Current Selection : {this.state.currentSelection}</div>}
+          <div style={{ display: 'flex', flexDirection: 'column'}}>
+            {this.state.currentSelection !== null && <div style={{ textAlign: 'center', color:"white", fontWeight : "bold", background:'rgb(24, 119, 242)', width:'max-content', borderRadius:'5px', padding:"10px", margin:"auto"}}>Current Selection : {this.state.currentSelection}</div>}
             <Screenshot {...this.props} scaleRatio={this.state.scaleRatio} />
           </div>}
         {screenshotError && t('couldNotObtainScreenshot', { screenshotError })}
@@ -958,26 +1168,26 @@ export default class Inspector extends Component {
                   <Source {...this.props} />
                 </Card>
               </div> */}
-              <div style={{fontWeight: 'bold', width:"9%"}}>
-              FLOW TABLE:
-              </div>
-              <div style={{width:"100%", overflowX:"auto", overflowY:"auto"}}>
-              <table>
-                  <tr>
-                    <th>S No.</th>
-                    <th>Step</th>
-                    <th>Step Name</th>
-                    <th>Search By</th>
-                    <th>Search By Value</th>
-                  </tr>
-              {this.state.total_array && this.state.total_array.map((item, key) => (
-                  <tr key={key}>
-                    <td>{key + 1}</td>
-                    <td>{item['step']}</td>
-                    <td>{item['step_name']}</td>
-                    <td>{item['search_by']}</td>
-                    <td style={{ maxWidth: '200px', wordWrap: 'break-word' }}>{item['search_by_value']}</td>
-                    {/* {item.response.status === 200 ?
+                <div style={{ fontWeight: 'bold'}}>
+                  FLOW TABLE:
+                </div>
+                <div style={{ width: '100%', overflowX: 'auto', overflowY: 'auto' }}>
+                  <table>
+                    <tr>
+                      <th>S No.</th>
+                      <th>Step</th>
+                      <th>Step Name</th>
+                      <th>Search By</th>
+                      <th>Search By Value</th>
+                    </tr>
+                    {this.state.total_array && this.state.total_array.map((item, key) => (
+                      <tr key={key}>
+                        <td>{key + 1}</td>
+                        <td>{item['step']}</td>
+                        <td>{item['step_name']}</td>
+                        <td>{item['search_by']}</td>
+                        <td style={{ maxWidth: '200px', wordWrap: 'break-word' }}>{item['search_by_value']}</td>
+                        {/* {item.response.status === 200 ?
                      <td><span style={{color:'green'}}>Success</span></td> :
                     <td><span style={{color:'red'}}>Failed</span></td>
                     } */}
@@ -985,14 +1195,14 @@ export default class Inspector extends Component {
                     ))}
                   </table>
                 </div>
-                <div id='selectedElementContainer'
+                {/* <div id='selectedElementContainer'
                   className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
                   <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
                     className={InspectorStyles['selected-element-card']}>
                     {path && <SelectedElement {...this.props} />}
                     {!path && <i>{t('selectElementInSource')}</i>}
                   </Card>
-                </div>
+                </div> */}
               </div>
           }, {
             label: t('Commands'), key: INTERACTION_MODE.COMMANDS, children:
