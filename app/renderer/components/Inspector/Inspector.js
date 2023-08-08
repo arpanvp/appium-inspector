@@ -97,8 +97,12 @@ export default class Inspector extends Component {
       activeIndex: 0,
       nestedDropIndex:0,
       showPanel: false,
-      step_array: [],
-      total_array: []
+      currentSelection: "Select Elements",
+      step_array:[],
+      total_array:[],
+      isLongPress:false,
+      action:'',
+      mode_orientation:''
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._active-session_46061 {
 =======
 ._active-session_8105c {
@@ -9,15 +10,27 @@
 ._active-session_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._active-session_5ede3 {
 =======
 ._active-session_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._active-session_46061 {
+=======
+._active-session_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   background-color: #662d91;
   color: white;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -29,11 +42,22 @@
 ._sessionContainer_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._sessionContainer_5ede3 {
 =======
 ._sessionContainer_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._sessionContainer_46061 {
+=======
+._sessionContainer_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   width: 100%;
   height: 100%;
   padding: 1em;
@@ -45,6 +69,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._sessionContainer_46061 .ant-tabs-tab .anticon.anticon-close-square {
 =======
 ._sessionContainer_8105c .ant-tabs-tab .anticon.anticon-close-square {
@@ -53,15 +78,27 @@
 ._sessionContainer_5ede3 .ant-tabs-tab .anticon.anticon-close-square {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._sessionContainer_5ede3 .ant-tabs-tab .anticon.anticon-close-square {
 =======
 ._sessionContainer_46061 .ant-tabs-tab .anticon.anticon-close-square {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._sessionContainer_46061 .ant-tabs-tab .anticon.anticon-close-square {
+=======
+._sessionContainer_8105c .ant-tabs-tab .anticon.anticon-close-square {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   color: red;
   margin-left: 10px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -73,15 +110,27 @@
 ._sessionContainer_5ede3 .anticon:hover {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._sessionContainer_5ede3 .anticon:hover {
 =======
 ._sessionContainer_46061 .anticon:hover {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._sessionContainer_46061 .anticon:hover {
+=======
+._sessionContainer_8105c .anticon:hover {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   background-color: #F08080;
   color: white;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -100,6 +149,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._sessionContainer_5ede3 .addCloudProviderTab {
   font-style: italic;
 }
@@ -109,17 +160,33 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._sessionContainer_46061 .addCloudProviderTab {
   font-style: italic;
 }
 
 ._cloudProviderModal_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._sessionContainer_8105c .addCloudProviderTab {
+  font-style: italic;
+}
+
+._cloudProviderModal_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   min-width: 600px;
   max-width: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -138,6 +205,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._cloudProviderModal_5ede3 .ant-row {
   margin-bottom: 16px;
 }
@@ -147,17 +216,33 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._cloudProviderModal_46061 .ant-row {
   margin-bottom: 16px;
 }
 
 ._cloudProviderModal_46061 .ant-modal-body button {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._cloudProviderModal_8105c .ant-row {
+  margin-bottom: 16px;
+}
+
+._cloudProviderModal_8105c .ant-modal-body button {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   width: 100%;
   padding: 4px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,6 +259,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._cloudProviderModal_5ede3 .ant-modal-body button img {
   height: 100%;
 }
@@ -182,16 +269,31 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._cloudProviderModal_46061 .ant-modal-body button img {
   height: 100%;
 }
 ._sessionFooter_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._cloudProviderModal_8105c .ant-modal-body button img {
+  height: 100%;
+}
+._sessionFooter_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   text-align: right;
   height: 30px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,6 +312,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._sessionFooter_5ede3 ._desiredCapsLink_5ede3 {
   float: left;
 }
@@ -219,17 +323,33 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._sessionFooter_46061 ._desiredCapsLink_46061 {
   float: left;
 }
 
 ._tabText_46061 img {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._sessionFooter_8105c ._desiredCapsLink_8105c {
+  float: left;
+}
+
+._tabText_8105c img {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   height: 20px;
   filter: grayscale(100%);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -256,6 +376,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 .ant-tabs-tab-active ._tabText_5ede3 img {
   filter: none;
 }
@@ -269,6 +391,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 .ant-tabs-tab-active ._tabText_46061 img {
   filter: none;
 }
@@ -278,12 +402,30 @@
 }
 
 ._serverTabs_46061 .ant-tabs-bar {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+.ant-tabs-tab-active ._tabText_8105c img {
+  filter: none;
+}
+
+._serverTabs_8105c {
+  padding-bottom: 8px;
+}
+
+._serverTabs_8105c .ant-tabs-bar {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   padding-top: 2em;
   margin-top: -1em;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -318,6 +460,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._serverTabs_5ede3 .ant-tabs-nav-wrap {
   -webkit-app-region: drag;
 }
@@ -335,6 +479,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._serverTabs_46061 .ant-tabs-nav-wrap {
   -webkit-app-region: drag;
 }
@@ -348,8 +494,29 @@
 }
 
 ._scrollingTabCont_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._serverTabs_8105c .ant-tabs-nav-wrap {
+  -webkit-app-region: drag;
+}
+
+._serverTabs_8105c .ant-form > .ant-row > div {
+  padding-bottom: 12px;
+}
+
+._serverTabs_8105c .ant-form-item {
+  margin: 0;
+}
+
+._scrollingTabCont_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   border-bottom: 1px solid #d9d9d9;
   margin-bottom: 15px;
   margin-top: 15px;
@@ -359,6 +526,7 @@
   overflow: auto;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -385,6 +553,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._scrollingTabCont_5ede3 .ant-tabs-bar {
   margin-bottom: 0px;
 }
@@ -398,6 +568,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._scrollingTabCont_46061 .ant-tabs-bar {
   margin-bottom: 0px;
 }
@@ -407,13 +579,31 @@
 }
 
 ._scrollingTab_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._scrollingTabCont_8105c .ant-tabs-bar {
+  margin-bottom: 0px;
+}
+
+._scrollingTabCont_8105c .ant-tabs-content {
+  height: 100%;
+}
+
+._scrollingTab_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   scrollbar-width: none; /* -webkit-scrollbar for Firefox */
   overflow-y: scroll;
   height: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -425,11 +615,22 @@
 ._scrollingTab_5ede3::-webkit-scrollbar {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._scrollingTab_5ede3::-webkit-scrollbar {
 =======
 ._scrollingTab_46061::-webkit-scrollbar {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._scrollingTab_46061::-webkit-scrollbar {
+=======
+._scrollingTab_8105c::-webkit-scrollbar {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   width: 0px;
 }
 
@@ -437,6 +638,7 @@
   background-color: #1890ff;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -491,6 +693,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._savedSessions_5ede3,
 ._savedSessions_5ede3 .ant-table,
 ._savedSessions_5ede3 .ant-table-wrapper {
@@ -518,6 +722,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._savedSessions_46061,
 ._savedSessions_46061 .ant-table,
 ._savedSessions_46061 .ant-table-wrapper {
@@ -541,13 +747,45 @@
 }
 
 ._newSessionForm_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._savedSessions_8105c,
+._savedSessions_8105c .ant-table,
+._savedSessions_8105c .ant-table-wrapper {
+  height: 100%;
+}
+
+._savedSessions_8105c .ant-col {
+  height: calc(100% - 15px);
+}
+
+._savedSessions_8105c .ant-table {
+  overflow-y: auto;
+}
+
+._savedSessions_8105c .ant-table-body .ant-table-cell {
+  padding: 8px 16px;
+}
+
+._savedSessions_8105c .ant-table::-webkit-scrollbar {
+  width: 0px;
+}
+
+._newSessionForm_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -584,6 +822,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._newSessionForm_5ede3::-webkit-scrollbar {
   width: 0px;
 }
@@ -602,6 +842,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._newSessionForm_46061::-webkit-scrollbar {
   width: 0px;
 }
@@ -616,12 +858,35 @@
 }
 
 ._formattedCaps_46061 .ant-card-head-title {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._newSessionForm_8105c::-webkit-scrollbar {
+  width: 0px;
+}
+
+._capsFormattedCol_8105c {
+  padding-left: 12px;
+}
+
+._formattedCaps_8105c,
+._formattedCapsBody_8105c {
+  height: 100%;
+}
+
+._formattedCaps_8105c .ant-card-head-title {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   height: 54px;
   padding-right: 10px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -633,17 +898,29 @@
 ._formattedCaps_5ede3 .ant-card-body {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._formattedCaps_5ede3 .ant-card-body {
 =======
 ._formattedCaps_46061 .ant-card-body {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._formattedCaps_46061 .ant-card-body {
+=======
+._formattedCaps_8105c .ant-card-body {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   height: calc(100% - 54px);
   padding: 0 14px 0 24px;
   flex: 1;
   overflow-y: auto;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -662,6 +939,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._formattedCaps_5ede3 .ant-card-extra {
   padding: 15px 0;
 }
@@ -671,13 +950,28 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._formattedCaps_46061 .ant-card-extra {
   padding: 15px 0;
 }
 
 ._formattedCapsBody_46061 pre {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._formattedCaps_8105c .ant-card-extra {
+  padding: 15px 0;
+}
+
+._formattedCapsBody_8105c pre {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   height: 100%;
   margin: 0;
   padding: 24px 0;
@@ -686,6 +980,7 @@
 }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -712,6 +1007,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._start-session-button_5ede3 {
   margin-left: 1em;
 }
@@ -725,6 +1022,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._start-session-button_46061 {
   margin-left: 1em;
 }
@@ -734,12 +1033,30 @@
 }
 
 ._capsFormCol_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._start-session-button_8105c {
+  margin-left: 1em;
+}
+
+._filepath-button_8105c {
+  cursor: pointer;
+}
+
+._capsFormCol_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   min-width: 420px;
   height: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -751,15 +1068,27 @@
 ._capsFormRow_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._capsFormRow_5ede3 {
 =======
 ._capsFormRow_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._capsFormRow_46061 {
+=======
+._capsFormRow_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   font-size: 14px;
   height: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -812,6 +1141,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._capsFormRow_5ede3 .ant-col {
   height: calc(100% - 15px);
 }
@@ -838,6 +1169,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._capsFormRow_46061 .ant-col {
   height: calc(100% - 15px);
 }
@@ -860,14 +1193,45 @@
 }
 
 ._localDesc_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._capsFormRow_8105c .ant-col {
+  height: calc(100% - 15px);
+}
+
+._capsBoxFont_8105c {
+  font-family: monospace;
+}
+
+._capsFormRow_8105c .ant-form-item {
+  margin-bottom: 0.5em;
+}
+
+._capsValueControl_8105c {
+  width: 142px;
+}
+
+._fileControlWrapper_8105c .ant-input-group,
+._capsValueControl_8105c textarea {
+  max-width: 142px;
+}
+
+._localDesc_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   font-style: italic;
   color: #666;
   margin: 0;
   padding: 6px 8px 0 8px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -886,6 +1250,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._selected_5ede3 {
   background-color: #d6e8ff;
 }
@@ -895,17 +1261,33 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._selected_46061 {
   background-color: #d6e8ff;
 }
 
 ._capsNameEditorButton_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._selected_8105c {
+  background-color: #d6e8ff;
+}
+
+._capsNameEditorButton_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   margin: 0 8px 0 0;
   padding: 0;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -917,16 +1299,28 @@
 ._capsEditorControls_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._capsEditorControls_5ede3 {
 =======
 ._capsEditorControls_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._capsEditorControls_46061 {
+=======
+._capsEditorControls_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   position: absolute;
   right: 0;
   padding: 28px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -945,6 +1339,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._capsEditorButton_5ede3 {
   margin: 0 0 0 4px;
 }
@@ -954,18 +1350,34 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._capsEditorButton_46061 {
   margin: 0 0 0 4px;
 }
 
 ._capsEditor_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._capsEditorButton_8105c {
+  margin: 0 0 0 4px;
+}
+
+._capsEditor_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   width: 100%;
   height: 100%;
   padding: 24px 0;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -977,11 +1389,22 @@
 ._capsEditorTitle_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._capsEditorTitle_5ede3 {
 =======
 ._capsEditorTitle_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._capsEditorTitle_46061 {
+=======
+._capsEditorTitle_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   width: 100%;
   height: 22px;
   padding: 0;
@@ -989,6 +1412,7 @@
   resize: none;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1000,11 +1424,22 @@
 ._capsEditorBody_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._capsEditorBody_5ede3 {
 =======
 ._capsEditorBody_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._capsEditorBody_46061 {
+=======
+._capsEditorBody_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   width: 100%;
   padding: 0;
   margin: -1px;
@@ -1013,6 +1448,7 @@
   font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1071,6 +1507,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._capsEditorBodyFull_5ede3 {
   height: 100%;
 }
@@ -1100,6 +1538,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._capsEditorBodyFull_46061 {
   height: 100%;
 }
@@ -1125,12 +1565,46 @@
 }
 
 ._btnReload_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._capsEditorBodyFull_8105c {
+  height: 100%;
+}
+
+._capsEditorBodyResized_8105c {
+  height: calc(100% - 40px);
+}
+
+._advancedSettingsContainerCol_8105c {
+  width: 100%;
+}
+
+._advancedSettingsContainer_8105c .ant-form-item {
+  margin: 0;
+}
+
+._add-desired-capability-button_8105c {
+  float: right;
+}
+
+._editSession_8105c {
+  margin-right: 10px;
+}
+
+._btnReload_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   float: right;
   margin-left: 8px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1157,6 +1631,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._btnDeleteCap_5ede3 {
   float: right;
 }
@@ -1170,6 +1646,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._btnDeleteCap_46061 {
   float: right;
 }
@@ -1179,12 +1657,30 @@
 }
 
 ._addonDataCenter_46061 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._btnDeleteCap_8105c {
+  float: right;
+}
+
+._inputDataCenter_8105c {
+  margin-left: 8px;
+}
+
+._addonDataCenter_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   height: 32px;
   border-right: 1px solid #d9d9d9 !important;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1196,16 +1692,28 @@
 ._addonDataCenterRadioContainer_5ede3 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._addonDataCenterRadioContainer_5ede3 {
 =======
 ._addonDataCenterRadioContainer_46061 {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._addonDataCenterRadioContainer_46061 {
+=======
+._addonDataCenterRadioContainer_8105c {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   display: table-cell;
   padding-top: 4px;
   padding-left: 11px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1217,16 +1725,28 @@
 ._inspector-container_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-container_3421c {
 =======
 ._inspector-container_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-container_5407d {
+=======
+._inspector-container_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1238,11 +1758,22 @@
 ._inspector-toolbar_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-toolbar_3421c {
 =======
 ._inspector-toolbar_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-toolbar_5407d {
+=======
+._inspector-toolbar_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1261,6 +1792,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._button_wrapper_5407d{
 =======
 ._button_wrapper_61591{
@@ -1269,15 +1801,27 @@
 ._button_wrapper_3421c{
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._button_wrapper_3421c{
 =======
 ._button_wrapper_5407d{
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._button_wrapper_5407d{
+=======
+._button_wrapper_61591{
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width:100%!important;
     justify-content:space-between!important;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1289,15 +1833,27 @@
 ._inspector-toolbar_3421c ._ant-btn_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-toolbar_3421c ._ant-btn_3421c {
 =======
 ._inspector-toolbar_5407d ._ant-btn_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-toolbar_5407d ._ant-btn_5407d {
+=======
+._inspector-toolbar_61591 ._ant-btn_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     height: auto !important;
     width: auto !important;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1309,11 +1865,22 @@
 ._user_actions_3421c{
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._user_actions_3421c{
 =======
 ._user_actions_5407d{
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._user_actions_5407d{
+=======
+._user_actions_61591{
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color:#ffffff;
     /* border-radius:10px!important; */
     color:black;
@@ -1328,6 +1895,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._actionButton_5407d{
 =======
 ._actionButton_61591{
@@ -1336,11 +1904,22 @@
 ._actionButton_3421c{
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._actionButton_3421c{
 =======
 ._actionButton_5407d{
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._actionButton_5407d{
+=======
+._actionButton_61591{
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color:transparent!important;
     border-radius:5px!important;
     color:black;
@@ -1356,6 +1935,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._actionButton_5407d:hover, ._actionButton_5407d:focus {
 =======
 ._actionButton_61591:hover, ._actionButton_61591:focus {
@@ -1364,17 +1944,29 @@
 ._actionButton_3421c:hover, ._actionButton_3421c:focus {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._actionButton_3421c:hover, ._actionButton_3421c:focus {
 =======
 ._actionButton_5407d:hover, ._actionButton_5407d:focus {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._actionButton_5407d:hover, ._actionButton_5407d:focus {
+=======
+._actionButton_61591:hover, ._actionButton_61591:focus {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     color:white!important;
     background-color:#1877f2!important;
     border:1px solid #1877f2;
     transform:scale(1.1);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1386,16 +1978,28 @@
 ._user_actions_3421c:hover, ._user_actions_3421c:focus {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._user_actions_3421c:hover, ._user_actions_3421c:focus {
 =======
 ._user_actions_5407d:hover, ._user_actions_5407d:focus {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._user_actions_5407d:hover, ._user_actions_5407d:focus {
+=======
+._user_actions_61591:hover, ._user_actions_61591:focus {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     color:white!important;
     background-color:#1877f2!important;
     border:1px solid #1877f2;
     /* transform:scale(1.1); */
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1407,15 +2011,27 @@
 ._inspector-toolbar_3421c button {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-toolbar_3421c button {
 =======
 ._inspector-toolbar_5407d button {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-toolbar_5407d button {
+=======
+._inspector-toolbar_61591 button {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     border-color: #cacaca;
     -webkit-app-region: no-drag;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1430,11 +2046,18 @@
     gap:20px;
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c {
     display: flex;
     gap:20px;
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d {
+=======
+._inspector-main_61591 {
+>>>>>>> dbd8aa8 (added changes)
     display: flex;
 >>>>>>> 24d4eea (changes have been pushed)
 >>>>>>> 1783371 (changes have been pushed)
@@ -1444,6 +2067,7 @@
     max-width: 100%;
     height: calc(100% - 50px);
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1459,11 +2083,18 @@
     margin-top: 4%;
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._whole-btn_3421c{
     margin-left: 4%;
     margin-top: 4%;
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._whole-btn_5407d{
+=======
+._whole-btn_61591{
+>>>>>>> dbd8aa8 (added changes)
     margin-left: 4%;
     margin-top: -29%;
 >>>>>>> 24d4eea (changes have been pushed)
@@ -1475,6 +2106,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._inspector-main_5407d ._screenshot-container_5407d {
 =======
 ._inspector-main_61591 ._screenshot-container_61591 {
@@ -1483,11 +2115,22 @@
 ._inspector-main_3421c ._screenshot-container_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._screenshot-container_3421c {
 =======
 ._inspector-main_5407d ._screenshot-container_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-main_5407d ._screenshot-container_5407d {
+=======
+._inspector-main_61591 ._screenshot-container_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     display: flex;
     max-width: 500px!important;
     max-height: calc(100% - 50px);
@@ -1495,6 +2138,7 @@
     flex-shrink: 2;
     flex-basis: 328px!important;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1511,6 +2155,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 #_screenshot_3421c{
     width: 100%;
 }
@@ -1519,12 +2165,26 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 #_screenshot_5407d{
     width: 100%;
 }
 ._screenshot-controls_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+#_screenshot_61591{
+    width: 100%;
+}
+._screenshot-controls_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     display: flex;
     flex-direction: column;
     gap:16px;
@@ -1539,6 +2199,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._logoContainer_5407d{
 =======
 ._logoContainer_61591{
@@ -1547,15 +2208,27 @@
 ._logoContainer_3421c{
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._logoContainer_3421c{
 =======
 ._logoContainer_5407d{
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._logoContainer_5407d{
+=======
+._logoContainer_61591{
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     display:flex;
     gap:5px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1574,6 +2247,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._logoContainer_3421c div{
     cursor:pointer;
 }
@@ -1583,13 +2258,28 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._logoContainer_5407d div{
     cursor:pointer;
 }
 
 ._inspector-main_5407d ._screenshot-container_5407d img {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._logoContainer_61591 div{
+    cursor:pointer;
+}
+
+._inspector-main_61591 ._screenshot-container_61591 img {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     max-width: 330px;
     border-radius:26px;
     max-height: 89%;
@@ -1604,6 +2294,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  ._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
 =======
  ._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
@@ -1613,6 +2304,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
  ._inspector-main_3421c ._screenshot-container_3421c ._screenshotBox_3421c {
     width: 100%;
     height: 95%;
@@ -1621,7 +2314,12 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
  ._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
+=======
+ ._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
+>>>>>>> dbd8aa8 (added changes)
     width: 100%;
     height: 95%;
 >>>>>>> 24d4eea (changes have been pushed)
@@ -1635,6 +2333,7 @@
     display:flex;
 } 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1668,6 +2367,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._interaction-tab-container_3421c .ant-tabs-tabpane {
     height: 100%;
 }
@@ -1688,11 +2389,20 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._interaction-tab-container_5407d .ant-tabs-tabpane {
     height: 100%;
 }
 
 ._inspector-main_5407d ._interaction-tab-container_5407d {
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 .ant-tabs-tabpane {
+    height: 100%;
+}
+
+._inspector-main_61591 ._interaction-tab-container_61591 {
+>>>>>>> dbd8aa8 (added changes)
     position: relative;
     flex-grow: 3;
     flex-basis: 550px;
@@ -1703,13 +2413,24 @@
     height: 100%;
 }
 
+<<<<<<< HEAD
 ._inspector-main_5407d .ant-card-head {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 .ant-card-head {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     max-height: 48px;
     padding: 0px 12px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1728,6 +2449,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c .ant-card-head-wrapper {
     max-height: 48px;
 }
@@ -1737,18 +2460,34 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d .ant-card-head-wrapper {
     max-height: 48px;
 }
 
 ._inspector-main_5407d .ant-card-body {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 .ant-card-head-wrapper {
+    max-height: 48px;
+}
+
+._inspector-main_61591 .ant-card-body {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     height: calc(100% - 48px);
     padding: 12px;
     scrollbar-width: none;  /* -webkit-scrollbar for Firefox */
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1784,6 +2523,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._interaction-tab-container_3421c .ant-tabs {
     height: 100%;
 }
@@ -1803,6 +2544,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._interaction-tab-container_5407d .ant-tabs {
     height: 100%;
 }
@@ -1812,17 +2555,39 @@
 }
 
 ._inspector-main_5407d ._interaction-tab-container_5407d .action-row {
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 .ant-tabs {
+    height: 100%;
+}
+
+._inspector-main_61591 ._interaction-tab-container_61591 .ant-tabs-content {
+    height: 100%;
+}
+
+._inspector-main_61591 ._interaction-tab-container_61591 .action-row {
+>>>>>>> dbd8aa8 (added changes)
     display: flex;
     height: 100%;
 }
 
+<<<<<<< HEAD
 ._inspector-main_5407d ._interaction-tab-container_5407d .action-col {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 .action-col {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     /* min-width: 50%; */
     /* max-width: 50%; */
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1841,6 +2606,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 /* .inspector-main .interaction-tab-container :global(.ant-card) {
     height: 100%;
 } */
@@ -1850,17 +2617,33 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._interaction-tab-container_5407d .ant-card {
     height: 100%;
 }
 
 ._inspector-main_5407d ._tree-container_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 .ant-card {
+    height: 100%;
+}
+
+._inspector-main_61591 ._tree-container_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     height: 100%;
     overflow: auto;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1889,6 +2672,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._session-info-table_3421c {
     margin-right: -1em;
 }
@@ -1903,6 +2688,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._session-info-table_5407d {
     margin-right: -1em;
 }
@@ -1913,12 +2700,31 @@
 
 ._session-inner-table_5407d,
 ._session-inner-table_5407d .ant-table {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._session-info-table_61591 {
+    margin-right: -1em;
+}
+
+._session-code-box_61591 {
+    margin-top: 1em;
+}
+
+._session-inner-table_61591,
+._session-inner-table_61591 .ant-table {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 102%;
     margin-left: -32px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1930,15 +2736,27 @@
 ._session-inner-table_3421c .ant-table-body::-webkit-scrollbar {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._session-inner-table_3421c .ant-table-body::-webkit-scrollbar {
 =======
 ._session-inner-table_5407d .ant-table-body::-webkit-scrollbar {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._session-inner-table_5407d .ant-table-body::-webkit-scrollbar {
+=======
+._session-inner-table_61591 .ant-table-body::-webkit-scrollbar {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     -webkit-appearance: none;
     width: 7px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1950,16 +2768,28 @@
 ._session-inner-table_3421c .ant-table-body::-webkit-scrollbar-thumb {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._session-inner-table_3421c .ant-table-body::-webkit-scrollbar-thumb {
 =======
 ._session-inner-table_5407d .ant-table-body::-webkit-scrollbar-thumb {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._session-inner-table_5407d .ant-table-body::-webkit-scrollbar-thumb {
+=======
+._session-inner-table_61591 .ant-table-body::-webkit-scrollbar-thumb {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     border-radius: 4px;
     background-color: rgba(0, 0, 0, .5);
     box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1971,11 +2801,22 @@
 ._inspector-main_3421c ._interaction-tab-container_3421c ._scroll-buttons_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._interaction-tab-container_3421c ._scroll-buttons_3421c {
 =======
 ._inspector-main_5407d ._interaction-tab-container_5407d ._scroll-buttons_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-main_5407d ._interaction-tab-container_5407d ._scroll-buttons_5407d {
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 ._scroll-buttons_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1984,6 +2825,7 @@
     padding-bottom: 1em;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2010,6 +2852,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._interaction-tab-container_3421c ._scroll-buttons_3421c button {
     margin: 1em;
 }
@@ -2023,6 +2867,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._interaction-tab-container_5407d ._scroll-buttons_5407d button {
     margin: 1em;
 }
@@ -2032,14 +2878,32 @@
 }
 
 ._inspector-main_5407d ._recorded-actions_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 ._scroll-buttons_61591 button {
+    margin: 1em;
+}
+
+._inspector-main_61591 ._interaction-tab-container_61591 ._scroll-buttons_61591 ._scroll-right_61591 {
+    float: right;
+}
+
+._inspector-main_61591 ._recorded-actions_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-bottom: 12px;
     max-height: 40%;
     min-height: 30%;
     flex: 1;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2051,15 +2915,27 @@
 .__inspector-main_0387c_3421c ._ant-card-body_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 .__inspector-main_0387c_3421c ._ant-card-body_3421c {
 =======
 .__inspector-main_0387c_5407d ._ant-card-body_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+.__inspector-main_0387c_5407d ._ant-card-body_5407d {
+=======
+.__inspector-main_0387c_61591 ._ant-card-body_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     height: 100%;
     padding: 12px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2096,6 +2972,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._recorded-actions_3421c .ant-btn-group {
     margin-left: 10px;
 }
@@ -2114,6 +2992,8 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._recorded-actions_5407d .ant-btn-group {
     margin-left: 10px;
 }
@@ -2128,12 +3008,35 @@
 }
 
 ._inspector-main_5407d .ant-card-body::-webkit-scrollbar {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 ._recorded-actions_61591 .ant-btn-group {
+    margin-left: 10px;
+}
+
+._inspector-main_61591 ._recorded-actions_61591 .ant-card-body,
+._inspector-main_61591 ._interaction-tab-card_61591 .ant-card-body {
+    overflow: scroll;
+}
+
+._inspector-main_61591 ._interaction-tab-card_61591 {
+    flex: 2;
+}
+
+._inspector-main_61591 .ant-card-body::-webkit-scrollbar {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background: transparent;
     width: 14px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2152,6 +3055,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._interaction-tab-container_3421c ._interaction-tab-card_3421c {
     height: 100%;
 }
@@ -2161,18 +3066,34 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._interaction-tab-container_5407d ._interaction-tab-card_5407d {
     height: 100%;
 }
 
 ._highlighter-box_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 ._interaction-tab-container_61591 ._interaction-tab-card_61591 {
+    height: 100%;
+}
+
+._highlighter-box_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     opacity: 0.5;
     cursor: pointer;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2184,16 +3105,28 @@
 ._highlighter-box_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._highlighter-box_3421c._inspected-element-box_3421c div {
 =======
 ._highlighter-box_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._highlighter-box_5407d._inspected-element-box_5407d div {
+=======
+._highlighter-box_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: rgb(90, 90, 178);
     visibility: hidden;
     transition: background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2205,16 +3138,28 @@
 ._highlighter-box_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._highlighter-box_3421c._hovered-element-box_3421c div {
 =======
 ._highlighter-box_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._highlighter-box_5407d._hovered-element-box_5407d div {
+=======
+._highlighter-box_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: yellow;
     visibility: hidden;
     transition: background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2226,15 +3171,27 @@
 ._highlighter-box_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._highlighter-box_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 =======
 ._highlighter-box_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._highlighter-box_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
+=======
+._highlighter-box_61591._inspected-element-box_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: rgb(100, 255, 100);
     transition: background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2249,19 +3206,33 @@
 ._highlighter-box_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._highlighter-box_3421c._hovered-element-box_3421c div,
 ._highlighter-box_3421c._inspected-element-box_3421c div {
 =======
 ._highlighter-box_5407d._hovered-element-box_5407d div,
 ._highlighter-box_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._highlighter-box_5407d._hovered-element-box_5407d div,
+._highlighter-box_5407d._inspected-element-box_5407d div {
+=======
+._highlighter-box_61591._hovered-element-box_61591 div,
+._highlighter-box_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     height: 100%;
     width: 100%;
     visibility: visible;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2273,11 +3244,22 @@
 ._centroid-box_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c {
 =======
 ._centroid-box_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d {
+=======
+._centroid-box_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 2.2vh;
     height: 2.2vh;
     border-style: solid;
@@ -2293,6 +3275,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._centroid-box_5407d._centroid_5407d {
 =======
 ._centroid-box_61591._centroid_61591 {
@@ -2301,15 +3284,27 @@
 ._centroid-box_3421c._centroid_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._centroid_3421c {
 =======
 ._centroid-box_5407d._centroid_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._centroid_5407d {
+=======
+._centroid-box_61591._centroid_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2321,17 +3316,29 @@
 ._centroid-box_3421c._centroid_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._centroid_3421c._inspected-element-box_3421c div {
 =======
 ._centroid-box_5407d._centroid_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._centroid_5407d._inspected-element-box_5407d div {
+=======
+._centroid-box_61591._centroid_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: blue;
     opacity: 0.5;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2343,17 +3350,29 @@
 ._centroid-box_3421c._centroid_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._centroid_3421c._hovered-element-box_3421c div {
 =======
 ._centroid-box_5407d._centroid_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._centroid_5407d._hovered-element-box_5407d div {
+=======
+._centroid-box_61591._centroid_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: #ff0000;
     opacity: 0.5;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2365,16 +3384,28 @@
 ._centroid-box_3421c._centroid_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._centroid_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 =======
 ._centroid-box_5407d._centroid_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._centroid_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
+=======
+._centroid-box_61591._centroid_61591._inspected-element-box_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: green;
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2389,19 +3420,33 @@
 ._centroid-box_3421c._centroid_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._centroid_3421c._hovered-element-box_3421c div,
 ._centroid-box_3421c._centroid_3421c._inspected-element-box_3421c div {
 =======
 ._centroid-box_5407d._centroid_5407d._hovered-element-box_5407d div,
 ._centroid-box_5407d._centroid_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._centroid_5407d._hovered-element-box_5407d div,
+._centroid-box_5407d._centroid_5407d._inspected-element-box_5407d div {
+=======
+._centroid-box_61591._centroid_61591._hovered-element-box_61591 div,
+._centroid-box_61591._centroid_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     height: 100%;
     width: 100%;
     visibility: visible;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2413,11 +3458,22 @@
 ._centroid-box_3421c._overlap_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._overlap_3421c {
 =======
 ._centroid-box_5407d._overlap_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._overlap_5407d {
+=======
+._centroid-box_61591._overlap_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     border-style: dashed;
     border-color: #178b00;
     z-index: 4;
@@ -2425,6 +3481,7 @@
     transition: opacity 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2436,17 +3493,29 @@
 ._centroid-box_3421c._overlap_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._overlap_3421c._inspected-element-box_3421c div {
 =======
 ._centroid-box_5407d._overlap_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._overlap_5407d._inspected-element-box_5407d div {
+=======
+._centroid-box_61591._overlap_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: blue;
     opacity: 0.5;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2458,17 +3527,29 @@
 ._centroid-box_3421c._overlap_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._overlap_3421c._hovered-element-box_3421c div {
 =======
 ._centroid-box_5407d._overlap_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._overlap_5407d._hovered-element-box_5407d div {
+=======
+._centroid-box_61591._overlap_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: #178b00;
     opacity: 0.5;
     visibility: hidden;
     transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2480,16 +3561,28 @@
 ._centroid-box_3421c._overlap_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._overlap_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 =======
 ._centroid-box_5407d._overlap_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._overlap_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
+=======
+._centroid-box_61591._overlap_61591._inspected-element-box_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: rgb(113, 253, 113);
     opacity: 0.5;
     transition: opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2504,19 +3597,33 @@
 ._centroid-box_3421c._overlap_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._overlap_3421c._hovered-element-box_3421c div,
 ._centroid-box_3421c._overlap_3421c._inspected-element-box_3421c div {
 =======
 ._centroid-box_5407d._overlap_5407d._hovered-element-box_5407d div,
 ._centroid-box_5407d._overlap_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._overlap_5407d._hovered-element-box_5407d div,
+._centroid-box_5407d._overlap_5407d._inspected-element-box_5407d div {
+=======
+._centroid-box_61591._overlap_61591._hovered-element-box_61591 div,
+._centroid-box_61591._overlap_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     height: 100%;
     width: 100%;
     visibility: visible;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2528,17 +3635,29 @@
 ._centroid-box_3421c._expand_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._expand_3421c {
 =======
 ._centroid-box_5407d._expand_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._expand_5407d {
+=======
+._centroid-box_61591._expand_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     z-index: 3;
     background-color: #ffffff;
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2550,11 +3669,22 @@
 ._plus-minus_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._plus-minus_3421c {
 =======
 ._plus-minus_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._plus-minus_5407d {
+=======
+._plus-minus_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     top: -0.8vh;
     text-align: center;
@@ -2568,6 +3698,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._centroid-box_5407d._expand_5407d._inspected-element-box_5407d div {
 =======
 ._centroid-box_61591._expand_61591._inspected-element-box_61591 div {
@@ -2576,16 +3707,28 @@
 ._centroid-box_3421c._expand_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._expand_3421c._inspected-element-box_3421c div {
 =======
 ._centroid-box_5407d._expand_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._expand_5407d._inspected-element-box_5407d div {
+=======
+._centroid-box_61591._expand_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: rgb(62, 57, 57);
     transition: background-color 0.2s ease-in-out;
     visibility: hidden;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2597,16 +3740,28 @@
 ._centroid-box_3421c._expand_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._expand_3421c._hovered-element-box_3421c div {
 =======
 ._centroid-box_5407d._expand_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._expand_5407d._hovered-element-box_5407d div {
+=======
+._centroid-box_61591._expand_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: #2f2f2f;
     transition: background-color 0.2s ease-in-out;
     visibility: hidden;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2618,16 +3773,28 @@
 ._centroid-box_3421c._expand_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._expand_3421c._inspected-element-box_3421c._hovered-element-box_3421c div {
 =======
 ._centroid-box_5407d._expand_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._expand_5407d._inspected-element-box_5407d._hovered-element-box_5407d div {
+=======
+._centroid-box_61591._expand_61591._inspected-element-box_61591._hovered-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     background-color: rgb(255, 133, 133);
     transition: background-color 0.2s ease-in-out;
 
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2642,19 +3809,33 @@
 ._centroid-box_3421c._expand_3421c._inspected-element-box_3421c div {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._centroid-box_3421c._expand_3421c._hovered-element-box_3421c div,
 ._centroid-box_3421c._expand_3421c._inspected-element-box_3421c div {
 =======
 ._centroid-box_5407d._expand_5407d._hovered-element-box_5407d div,
 ._centroid-box_5407d._expand_5407d._inspected-element-box_5407d div {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._centroid-box_5407d._expand_5407d._hovered-element-box_5407d div,
+._centroid-box_5407d._expand_5407d._inspected-element-box_5407d div {
+=======
+._centroid-box_61591._expand_61591._hovered-element-box_61591 div,
+._centroid-box_61591._expand_61591._inspected-element-box_61591 div {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     height: 150%;
     width: 100%;
     visibility: visible;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2666,11 +3847,22 @@
 ._phone-btn1_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._phone-btn1_3421c {
 =======
 ._phone-btn1_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._phone-btn1_5407d {
+=======
+._phone-btn1_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 44px;
     height: 40px;
     padding: 4px 0;
@@ -2683,6 +3875,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._phone-btn2_5407d {
 =======
 ._phone-btn2_61591 {
@@ -2691,11 +3884,22 @@
 ._phone-btn2_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._phone-btn2_3421c {
 =======
 ._phone-btn2_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._phone-btn2_5407d {
+=======
+._phone-btn2_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 44px;
     height: 40px;
     padding: 4px 0;
@@ -2707,6 +3911,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._phone-btn3_5407d {
 =======
 ._phone-btn3_61591 {
@@ -2715,11 +3920,22 @@
 ._phone-btn3_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._phone-btn3_3421c {
 =======
 ._phone-btn3_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._phone-btn3_5407d {
+=======
+._phone-btn3_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 44px;
     height: 40px;
     padding: 4px 0;
@@ -2732,6 +3948,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._custom-button-icon_5407d {
 =======
 ._custom-button-icon_61591 {
@@ -2740,15 +3957,27 @@
 ._custom-button-icon_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._custom-button-icon_3421c {
 =======
 ._custom-button-icon_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._custom-button-icon_5407d {
+=======
+._custom-button-icon_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     font-size: 16px;
     vertical-align: middle;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2760,15 +3989,27 @@
 ._elementActions_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._elementActions_3421c {
 =======
 ._elementActions_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._elementActions_5407d {
+=======
+._elementActions_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-bottom: 20px;
     gap: 8px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2780,15 +4021,27 @@
 ._elementKeyInputActions_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._elementKeyInputActions_3421c {
 =======
 ._elementKeyInputActions_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._elementKeyInputActions_5407d {
+=======
+._elementKeyInputActions_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     max-width: 300px;
     flex: 1;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2807,6 +4060,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c #_selectedElementContainer_3421c {
     padding-bottom: 0px;
 }
@@ -2816,17 +4071,33 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d #_selectedElementContainer_5407d {
     padding-bottom: 0px;
 }
 
 ._selected-element-table-cells_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._inspector-main_61591 #_selectedElementContainer_61591 {
+    padding-bottom: 0px;
+}
+
+._selected-element-table-cells_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     word-wrap: break-all;
     word-break: break-all;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2854,6 +4125,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._element-cell-copy_3421c {
     cursor: pointer;
 }
@@ -2870,23 +4143,43 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._element-cell-copy_5407d {
     cursor: pointer;
 }
 
 ._selected-element-card_5407d {
+=======
+._element-cell-copy_61591 {
+    cursor: pointer;
+}
+
+._selected-element-card_61591 {
+>>>>>>> dbd8aa8 (added changes)
     display: flex;
     flex-direction: column;
 }
 
+<<<<<<< HEAD
 ._selected-element-card_5407d .ant-card-body {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._selected-element-card_61591 .ant-card-body {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     flex: 1;
     overflow: auto;
     margin-right: -12px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2905,6 +4198,8 @@
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._selectedElemNotInteractableAlertRow_3421c {
     justify-content: center;
 }
@@ -2914,13 +4209,28 @@
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._selectedElemNotInteractableAlertRow_5407d {
     justify-content: center;
 }
 
 ._context-selector_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._selectedElemNotInteractableAlertRow_61591 {
+    justify-content: center;
+}
+
+._context-selector_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 100%;
     margin-bottom: 1em;
 }
@@ -2942,6 +4252,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._sourceTag_5407d {
 =======
 ._sourceTag_61591 {
@@ -2950,15 +4261,27 @@ table {
 ._sourceTag_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._sourceTag_3421c {
 =======
 ._sourceTag_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._sourceTag_5407d {
+=======
+._sourceTag_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     color: #7d2020;
     font-weight: normal
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2970,15 +4293,27 @@ table {
 ._sourceAttrName_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._sourceAttrName_3421c {
 =======
 ._sourceAttrName_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._sourceAttrName_5407d {
+=======
+._sourceAttrName_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     color: #864da1;
     font-style: italic;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2990,15 +4325,27 @@ table {
 ._no-recorded-actions_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._no-recorded-actions_3421c {
 =======
 ._no-recorded-actions_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._no-recorded-actions_5407d {
+=======
+._no-recorded-actions_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     font-style: italic;
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3010,17 +4357,29 @@ table {
 ._recorded-code_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._recorded-code_3421c {
 =======
 ._recorded-code_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._recorded-code_5407d {
+=======
+._recorded-code_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     font-family: monospace;
     white-space: pre-wrap;
     word-break: break-all;
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3039,6 +4398,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._framework-dropdown_3421c {
     width: 150px;
 }
@@ -3048,13 +4409,28 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._framework-dropdown_5407d {
     width: 150px;
 }
 
 ._searchResultsList_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._framework-dropdown_61591 {
+    width: 150px;
+}
+
+._searchResultsList_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 100%;
     flex: 1;
     min-height: 24px;
@@ -3067,6 +4443,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._searchResultsList_5407d .ant-list-item {
 =======
 ._searchResultsList_61591 .ant-list-item {
@@ -3075,16 +4452,28 @@ table {
 ._searchResultsList_3421c .ant-list-item {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._searchResultsList_3421c .ant-list-item {
 =======
 ._searchResultsList_5407d .ant-list-item {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._searchResultsList_5407d .ant-list-item {
+=======
+._searchResultsList_61591 .ant-list-item {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     padding: 4px 6px !important;
     height: 25px;
     text-align: left;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3113,6 +4502,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._searchResultsSelectedItem_3421c {
     background-color: #bae7ff;
 }
@@ -3127,6 +4518,8 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._searchResultsSelectedItem_5407d {
     background-color: #bae7ff;
 }
@@ -3137,12 +4530,31 @@ table {
 
 ._searchResultsKeyInput_5407d,
 ._elementKeyInput_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._searchResultsSelectedItem_61591 {
+    background-color: #bae7ff;
+}
+
+._searchResultsActions_61591 {
+    width: 350px;
+}
+
+._searchResultsKeyInput_61591,
+._elementKeyInput_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     height: 32px;
     width: calc(100% - 64px);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3154,15 +4566,27 @@ table {
 ._element-count-container_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._element-count-container_3421c {
 =======
 ._element-count-container_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._element-count-container_5407d {
+=======
+._element-count-container_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-top: 0.5em;
     margin-left: 0.5em;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3174,16 +4598,28 @@ table {
 ._locatorStrategyBtn_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._locatorStrategyBtn_3421c {
 =======
 ._locatorStrategyBtn_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._locatorStrategyBtn_5407d {
+=======
+._locatorStrategyBtn_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-top: -1px;
     min-width: 25%;
     text-align: center;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3202,6 +4638,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._locatorSelectorTextArea_3421c {
     width: 100%;
 }
@@ -3211,19 +4649,35 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._locatorSelectorTextArea_5407d {
     width: 100%;
 }
 
 ._coordinatesContainer_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._locatorSelectorTextArea_61591 {
+    width: 100%;
+}
+
+._coordinatesContainer_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     background: rgba(255, 250, 205, 0.8);
     z-index: 10000000;
     padding: 2px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3235,11 +4689,22 @@ table {
 ._swipeInstructions_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._swipeInstructions_3421c {
 =======
 ._swipeInstructions_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._swipeInstructions_5407d {
+=======
+._swipeInstructions_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     top: 0;
     right: 0;
@@ -3252,6 +4717,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._swipeSvg_5407d {
 =======
 ._swipeSvg_61591 {
@@ -3260,11 +4726,22 @@ table {
 ._swipeSvg_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._swipeSvg_3421c {
 =======
 ._swipeSvg_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._swipeSvg_5407d {
+=======
+._swipeSvg_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     z-index: 10;
     top: 0;
@@ -3273,6 +4750,7 @@ table {
     width: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3284,16 +4762,28 @@ table {
 ._swipeSvg_3421c line {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._swipeSvg_3421c line {
 =======
 ._swipeSvg_5407d line {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._swipeSvg_5407d line {
+=======
+._swipeSvg_61591 line {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     stroke-width: 15;
     stroke: rgba(255, 153, 153, 0.8);
     stroke-linecap: round;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3305,15 +4795,27 @@ table {
 ._swipeSvg_3421c circle {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._swipeSvg_3421c circle {
 =======
 ._swipeSvg_5407d circle {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._swipeSvg_5407d circle {
+=======
+._swipeSvg_61591 circle {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     r: 10;
     fill: rgba(255, 153, 153, 0.8);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3325,11 +4827,22 @@ table {
 ._tapDiv_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._tapDiv_3421c {
 =======
 ._tapDiv_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._tapDiv_5407d {
+=======
+._tapDiv_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     z-index: 10;
     top: 0;
@@ -3341,6 +4854,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._iphone_x_5407d {
 =======
 ._iphone_x_61591 {
@@ -3349,11 +4863,22 @@ table {
 ._iphone_x_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._iphone_x_3421c {
 =======
 ._iphone_x_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._iphone_x_5407d {
+=======
+._iphone_x_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     margin: 40px auto;
     width: 360px;
@@ -3391,6 +4916,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._custom_menu_5407d ._ant-menu-submenu_5407d ._ant-menu-submenu-title_5407d{
 =======
 ._custom_menu_61591 ._ant-menu-submenu_61591 ._ant-menu-submenu-title_61591{
@@ -3399,15 +4925,27 @@ table {
 ._custom_menu_3421c ._ant-menu-submenu_3421c ._ant-menu-submenu-title_3421c{
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._custom_menu_3421c ._ant-menu-submenu_3421c ._ant-menu-submenu-title_3421c{
 =======
 ._custom_menu_5407d ._ant-menu-submenu_5407d ._ant-menu-submenu-title_5407d{
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._custom_menu_5407d ._ant-menu-submenu_5407d ._ant-menu-submenu-title_5407d{
+=======
+._custom_menu_61591 ._ant-menu-submenu_61591 ._ant-menu-submenu-title_61591{
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     display:flex!important;
     flex-direction:column!important;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3419,11 +4957,22 @@ table {
 ._gestureSvg_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gestureSvg_3421c {
 =======
 ._gestureSvg_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gestureSvg_5407d {
+=======
+._gestureSvg_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     z-index: 100000000;
     top: 0;
@@ -3432,6 +4981,7 @@ table {
     width: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3450,6 +5000,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._gestureSvg_3421c line {
     opacity: 0.35;
 }
@@ -3459,17 +5011,33 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._gestureSvg_5407d line {
     opacity: 0.35;
 }
 
 ._gestureSvg_5407d ._filled_5407d, ._dashed_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._gestureSvg_61591 line {
+    opacity: 0.35;
+}
+
+._gestureSvg_61591 ._filled_61591, ._dashed_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     stroke-dasharray: 10;
     stroke-width: 5;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3481,15 +5049,27 @@ table {
 ._gestureSvg_3421c ._whole_3421c, ._newDashed_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gestureSvg_3421c ._whole_3421c, ._newDashed_3421c {
 =======
 ._gestureSvg_5407d ._whole_5407d, ._newDashed_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gestureSvg_5407d ._whole_5407d, ._newDashed_5407d {
+=======
+._gestureSvg_61591 ._whole_61591, ._newDashed_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     stroke-linecap: round;
     stroke-width: 15;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3501,16 +5081,28 @@ table {
 ._gestureSvg_3421c circle {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gestureSvg_3421c circle {
 =======
 ._gestureSvg_5407d circle {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gestureSvg_5407d circle {
+=======
+._gestureSvg_61591 circle {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     r: 8;
     fill: none;
     stroke-width: 0.4%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3522,15 +5114,27 @@ table {
 ._gestureSvg_3421c ._circle-dashed_3421c, ._circle-newDashed_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gestureSvg_3421c ._circle-dashed_3421c, ._circle-newDashed_3421c {
 =======
 ._gestureSvg_5407d ._circle-dashed_5407d, ._circle-newDashed_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gestureSvg_5407d ._circle-dashed_5407d, ._circle-newDashed_5407d {
+=======
+._gestureSvg_61591 ._circle-dashed_61591, ._circle-newDashed_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     stroke-dasharray: 0.9%;
     border-style: dashed;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3542,11 +5146,22 @@ table {
 ._screenimage_3421c{
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._screenimage_3421c{
 =======
 ._screenimage_5407d{
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._screenimage_5407d{
+=======
+._screenimage_61591{
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 100%;
 }
 /* The device with borders */
@@ -3563,6 +5178,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ._innerScreenshotContainer_5407d {
 =======
   ._innerScreenshotContainer_61591 {
@@ -3571,11 +5187,22 @@ table {
   ._innerScreenshotContainer_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
   ._innerScreenshotContainer_3421c {
 =======
   ._innerScreenshotContainer_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+  ._innerScreenshotContainer_5407d {
+=======
+  ._innerScreenshotContainer_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: relative;
     display: flex;
     flex-direction: column;
@@ -3591,6 +5218,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
 =======
 ._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
@@ -3599,11 +5227,22 @@ table {
 ._inspector-main_3421c ._screenshot-container_3421c ._screenshotBox_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._screenshot-container_3421c ._screenshotBox_3421c {
 =======
 ._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
+=======
+._inspector-main_61591 ._screenshot-container_61591 ._screenshotBox_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 100%;
     height: 97%;
     /* text-align: left; */
@@ -3618,6 +5257,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._inspector-main_5407d ._screenshot-container_5407d img {
 =======
 ._inspector-main_61591 ._screenshot-container_61591 img {
@@ -3628,6 +5268,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._inspector-main_3421c ._screenshot-container_3421c img {
     max-width: 338px;
     border-radius:26px;
@@ -3636,7 +5278,12 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._inspector-main_5407d ._screenshot-container_5407d img {
+=======
+._inspector-main_61591 ._screenshot-container_61591 img {
+>>>>>>> dbd8aa8 (added changes)
     max-width: 338px;
     border-radius:26px;
     max-height: 95%;
@@ -3689,6 +5336,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._innerScreenshotContainer_5407d ._screenshotActionsPanel_5407d {
 =======
 ._innerScreenshotContainer_61591 ._screenshotActionsPanel_61591 {
@@ -3697,15 +5345,27 @@ table {
 ._innerScreenshotContainer_3421c ._screenshotActionsPanel_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._innerScreenshotContainer_3421c ._screenshotActionsPanel_3421c {
 =======
 ._innerScreenshotContainer_5407d ._screenshotActionsPanel_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._innerScreenshotContainer_5407d ._screenshotActionsPanel_5407d {
+=======
+._innerScreenshotContainer_61591 ._screenshotActionsPanel_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-bottom: 2px;
     margin: 0 auto 2px auto;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3756,6 +5416,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._commands-container_3421c ._btn-container_3421c {
     padding: 16px;
 }
@@ -3781,6 +5443,8 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._commands-container_5407d ._btn-container_5407d {
     padding: 16px;
 }
@@ -3802,12 +5466,42 @@ table {
 }
 
 ._gesture-header_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._commands-container_61591 ._btn-container_61591 {
+    padding: 16px;
+}
+
+._commands-container_61591 ._arg-row_61591 {
+    margin-bottom: 8px;
+}
+
+._arg-container_61591 {
+    padding: 4px 4px 0 0
+}
+
+._commands-container_61591 .ant-select {
+    width: 100%;
+}
+
+._commands-container_61591 .ant-btn {
+    width: 100%;
+}
+
+._gesture-header_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     padding: 0 0 0 0;
     margin-right: -12px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3819,15 +5513,27 @@ table {
 ._gesture-header_3421c .ant-page-header-footer {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gesture-header_3421c .ant-page-header-footer {
 =======
 ._gesture-header_5407d .ant-page-header-footer {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gesture-header_5407d .ant-page-header-footer {
+=======
+._gesture-header_61591 .ant-page-header-footer {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-top: 0px;
     padding-bottom: 5px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3846,6 +5552,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._gesture-header_3421c .ant-typography {
     margin-bottom: 0px;
 }
@@ -3855,17 +5563,33 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._gesture-header_5407d .ant-typography {
     margin-bottom: 0px;
 }
 
 ._gesture-header_5407d .ant-input {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._gesture-header_61591 .ant-typography {
+    margin-bottom: 0px;
+}
+
+._gesture-header_61591 .ant-input {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     box-shadow: none;
     border-width: 0px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3877,15 +5601,27 @@ table {
 ._gesture-header-title_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gesture-header-title_3421c {
 =======
 ._gesture-header-title_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gesture-header-title_5407d {
+=======
+._gesture-header-title_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     font-size: 20px;
     font-weight: 500;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3897,11 +5633,22 @@ table {
 ._gesture-header-description_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gesture-header-description_3421c {
 =======
 ._gesture-header-description_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gesture-header-description_5407d {
+=======
+._gesture-header-description_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     font-size: 15px;
     font-weight: 400;
     color: #636363;
@@ -3909,6 +5656,7 @@ table {
     margin-top: 5px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3920,15 +5668,27 @@ table {
 ._gesture-header-coord-btn_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gesture-header-coord-btn_3421c {
 =======
 ._gesture-header-coord-btn_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gesture-header-coord-btn_5407d {
+=======
+._gesture-header-coord-btn_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 30px;
     height: 32px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3940,16 +5700,28 @@ table {
 ._gesture-header-timeline_3421c {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._gesture-header-timeline_3421c {
 =======
 ._gesture-header-timeline_5407d {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._gesture-header-timeline_5407d {
+=======
+._gesture-header-timeline_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 90%;
     margin-top: -15px;
     min-height: 36px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3992,6 +5764,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._timeline-tick-title_3421c {
     text-align: center;
 }
@@ -4013,6 +5787,8 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._timeline-tick-title_5407d {
     text-align: center;
 }
@@ -4030,8 +5806,33 @@ table {
 }
 
 ._pointer-title_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._timeline-tick-title_61591 {
+    text-align: center;
+}
+
+._gesture-header-timeline_61591 .ant-steps-item-wait > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+    background-color: #fffefe;
+}
+
+._gesture-header-timeline_61591 .ant-steps-item-finish .ant-steps-item-container .ant-steps-item-content .ant-steps-item-title::after {
+    background-color: var(--timelineColor);
+}
+
+._gesture-header-icon_61591 {
+    font-size: 20px;
+}
+
+._pointer-title_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     max-width: 65px;
     padding: 0 0 0 0;
     text-align: center;
@@ -4039,6 +5840,7 @@ table {
     text-decoration-thickness: 20%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4057,6 +5859,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._tick-card_3421c {
     overflow: hidden;
 }
@@ -4066,18 +5870,34 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._tick-card_5407d {
     overflow: hidden;
 }
 
 ._tick-card_5407d .ant-card-head {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._tick-card_61591 {
+    overflow: hidden;
+}
+
+._tick-card_61591 .ant-card-head {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-top: -16px;
     padding-right: 0px;
     border-bottom: none;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4089,16 +5909,28 @@ table {
 ._tick-card_3421c .ant-card-body {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._tick-card_3421c .ant-card-body {
 =======
 ._tick-card_5407d .ant-card-body {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._tick-card_5407d .ant-card-body {
+=======
+._tick-card_61591 .ant-card-body {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     margin-top: -12px;
     min-height: 167px;
     margin-right: -12px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4117,6 +5949,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._tick-plus-card_3421c {
     min-height: 220px;
 }
@@ -4126,17 +5960,33 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._tick-plus-card_5407d {
     min-height: 220px;
 }
 
 ._tick-plus-btn_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._tick-plus-card_61591 {
+    min-height: 220px;
+}
+
+._tick-plus-btn_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: absolute;
     top: 40%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4187,6 +6037,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._spaceContainer_3421c {
     display: flex;
 }
@@ -4212,6 +6064,8 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._spaceContainer_5407d {
     display: flex;
 }
@@ -4233,12 +6087,42 @@ table {
 }
 
 ._tick-coord-box_5407d {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._spaceContainer_61591 {
+    display: flex;
+}
+
+._tick-pointer-input_61591 {
+    width: 145px;
+}
+
+._tick-button-group_61591 {
+    display: block;
+}
+
+._tick-button-input_61591 {
+    width: 73px;
+}
+
+._tick-input-box_61591 {
+    width: 145px;
+}
+
+._tick-coord-box_61591 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     width: 72px;
     text-align: center;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4250,15 +6134,27 @@ table {
 ._tick-input-box_3421c .ant-input-group-addon {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._tick-input-box_3421c .ant-input-group-addon {
 =======
 ._tick-input-box_5407d .ant-input-group-addon {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._tick-input-box_5407d .ant-input-group-addon {
+=======
+._tick-input-box_61591 .ant-input-group-addon {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
     position: sticky;
     width: 50px;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4277,6 +6173,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._option-inpt_3421c {
     text-align: center;
 }
@@ -4286,18 +6184,34 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._option-inpt_5407d {
     text-align: center;
 }
 
 ._container_afc3f {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._option-inpt_61591 {
+    text-align: center;
+}
+
+._container_9b1d1 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4326,6 +6240,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._loader_70832,
 ._loader_70832:before,
 ._loader_70832:after {
@@ -4340,6 +6256,8 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._loader_afc3f,
 ._loader_afc3f:before,
 ._loader_afc3f:after {
@@ -4350,8 +6268,26 @@ table {
   height: 4em;
 }
 ._loader_afc3f {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._loader_9b1d1,
+._loader_9b1d1:before,
+._loader_9b1d1:after {
+  background: #555;
+  -webkit-animation: _load1_9b1d1 1s infinite ease-in-out;
+  animation: _load1_9b1d1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+._loader_9b1d1 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   color: #555;
   text-indent: -9999em;
   top: 45%;
@@ -4367,6 +6303,7 @@ table {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ._loader_afc3f:before,
 ._loader_afc3f:after {
 =======
@@ -4378,17 +6315,31 @@ table {
 ._loader_70832:after {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._loader_70832:before,
 ._loader_70832:after {
 =======
 ._loader_afc3f:before,
 ._loader_afc3f:after {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._loader_afc3f:before,
+._loader_afc3f:after {
+=======
+._loader_9b1d1:before,
+._loader_9b1d1:after {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   position: absolute;
   top: 0;
   content: '';
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4400,15 +6351,27 @@ table {
 ._loader_70832:before {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 ._loader_70832:before {
 =======
 ._loader_afc3f:before {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+._loader_afc3f:before {
+=======
+._loader_9b1d1:before {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   left: -1.5em;
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4425,6 +6388,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._loader_70832:after {
   left: 1.5em;
 }
@@ -4433,12 +6398,26 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._loader_afc3f:after {
   left: 1.5em;
 }
 @-webkit-keyframes _load1_afc3f {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._loader_9b1d1:after {
+  left: 1.5em;
+}
+@-webkit-keyframes _load1_9b1d1 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   0%,
   80%,
   100% {
@@ -4450,6 +6429,7 @@ table {
     height: 5em;
   }
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4461,11 +6441,22 @@ table {
 @keyframes _load1_70832 {
 >>>>>>> e8fea86 (new categories added)
 =======
+=======
+>>>>>>> d733b97 (added changes)
 @keyframes _load1_70832 {
 =======
 @keyframes _load1_afc3f {
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+@keyframes _load1_afc3f {
+=======
+@keyframes _load1_9b1d1 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   0%,
   80%,
   100% {
@@ -4477,6 +6468,7 @@ table {
     height: 5em;
   }
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4495,6 +6487,8 @@ table {
 =======
 =======
 >>>>>>> 1783371 (changes have been pushed)
+=======
+>>>>>>> d733b97 (added changes)
 ._errorMessage_8d2a9 {
   padding: 3em;
 }
@@ -4504,13 +6498,28 @@ table {
 >>>>>>> e8fea86 (new categories added)
 =======
 =======
+=======
+>>>>>>> 324aa7e (added changes)
 ._errorMessage_e36f2 {
   padding: 3em;
 }
 
 ._copyTraceBtn_e36f2 {
+<<<<<<< HEAD
 >>>>>>> 24d4eea (changes have been pushed)
+<<<<<<< HEAD
 >>>>>>> 1783371 (changes have been pushed)
+=======
+=======
+=======
+._errorMessage_cd7c8 {
+  padding: 3em;
+}
+
+._copyTraceBtn_cd7c8 {
+>>>>>>> dbd8aa8 (added changes)
+>>>>>>> 324aa7e (added changes)
+>>>>>>> d733b97 (added changes)
   position: absolute;
   left: 24px;
 }
