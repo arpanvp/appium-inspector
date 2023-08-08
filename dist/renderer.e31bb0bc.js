@@ -1,4 +1,4 @@
-process.env.HMR_PORT=46867;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=44505;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9481,7 +9481,299 @@ const HighlighterRects = props => {
 };
 var _default = HighlighterRects;
 exports.default = _default;
-},{"./HighlighterRect":"components/Inspector/HighlighterRect.js","./HighlighterCentroid":"components/Inspector/HighlighterCentroid.js","./shared":"components/Inspector/shared.js"}],"components/Inspector/Screenshot.js":[function(require,module,exports) {
+},{"./HighlighterRect":"components/Inspector/HighlighterRect.js","./HighlighterCentroid":"components/Inspector/HighlighterCentroid.js","./shared":"components/Inspector/shared.js"}],"components/Inspector/SelectedElement.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _lodash = _interopRequireDefault(require("lodash"));
+var _shared = require("./shared");
+var _Inspector = _interopRequireDefault(require("./Inspector.css"));
+var _antd = require("antd");
+var _polyfills = require("../../polyfills");
+var _icons = require("@ant-design/icons");
+var _AntdTypes = require("../AntdTypes");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+/* eslint-disable no-console */
+/* eslint-disable quotes */
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-unused-vars */
+
+const NATIVE_APP = 'NATIVE_APP';
+const CLASS_CHAIN_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules';
+const PREDICATE_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules';
+const {
+  SELECT
+} = _shared.SCREENSHOT_INTERACTION_MODE;
+const selectedElementTableCell = (text, copyToClipBoard) => {
+  if (copyToClipBoard) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: _Inspector.default['selected-element-table-cells']
+    }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+      title: "Copied!",
+      trigger: "click"
+    }, /*#__PURE__*/_react.default.createElement("span", {
+      className: _Inspector.default['element-cell-copy'],
+      onClick: () => _polyfills.clipboard.writeText(text)
+    }, text)));
+  } else {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      className: _Inspector.default['selected-element-table-cells']
+    }, text);
+  }
+};
+
+/**
+ * Shows details of the currently selected element and shows methods that can
+ * be called on the elements (tap, sendKeys)
+ */
+const SelectedElement = props => {
+  console.log('props inside the selected Element!!', props);
+  console.log('props.hoveredElement$$$$$$$4!!', props.hoveredElement);
+  const {
+    applyClientMethod,
+    contexts,
+    currentContext,
+    getFindElementsTimes,
+    findElementsExecutionTimes,
+    isFindingElementsTimes,
+    selectedElement,
+    selectedElementId,
+    sourceXML,
+    elementInteractionsNotAvailable,
+    selectedElementSearchInProgress,
+    t,
+    screenshotInteractionMode
+  } = props;
+  console.log('selectedElementId inside the selected Element!!', selectedElementId);
+  const sendKeys = (0, _react.useRef)();
+  const contextSelect = () => {
+    const {
+      setContext
+    } = props;
+    return /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+      title: t('contextSwitcher')
+    }, /*#__PURE__*/_react.default.createElement(_antd.Select, {
+      value: currentContext,
+      onChange: value => {
+        setContext(value);
+        applyClientMethod({
+          methodName: 'switchContext',
+          args: [value]
+        });
+      },
+      className: _Inspector.default['context-selector']
+    }, contexts.map(({
+      id,
+      title
+    }) => /*#__PURE__*/_react.default.createElement(_antd.Select.Option, {
+      key: id,
+      value: id
+    }, title ? `${title} (${id})` : id))));
+  };
+  const {
+    attributes,
+    classChain,
+    predicateString,
+    xpath
+  } = selectedElement;
+  const isDisabled = selectedElementSearchInProgress || isFindingElementsTimes;
+
+  // Get the columns for the attributes table
+  let attributeColumns = [{
+    title: t('Attribute'),
+    dataIndex: 'name',
+    key: 'name',
+    width: 100,
+    render: text => selectedElementTableCell(text, false)
+  }, {
+    title: t('Value'),
+    dataIndex: 'value',
+    key: 'value',
+    render: text => selectedElementTableCell(text, true)
+  }];
+
+  // Get the data for the attributes table
+  let attrArray = _lodash.default.toPairs(attributes).filter(([key]) => key !== 'path');
+  let dataSource = attrArray.map(([key, value]) => ({
+    key,
+    value,
+    name: key
+  }));
+  dataSource.unshift({
+    key: 'elementId',
+    value: selectedElementId,
+    name: 'elementId'
+  });
+  // console.log('dataSource in the dataSource', dataSource);
+
+  // Get the columns for the strategies table
+  let findColumns = [{
+    title: t('Find By'),
+    dataIndex: 'find',
+    key: 'find',
+    width: 100,
+    render: text => selectedElementTableCell(text, false)
+  }, {
+    title: t('Selector'),
+    dataIndex: 'selector',
+    key: 'selector',
+    render: text => selectedElementTableCell(text, true)
+  }];
+  if (findElementsExecutionTimes.length > 0) {
+    findColumns.push({
+      title: t('Time'),
+      dataIndex: 'time',
+      key: 'time',
+      align: 'right',
+      width: 100,
+      render: text => selectedElementTableCell(text, false)
+    });
+  }
+
+  // Get the data for the strategies table
+  let findDataSource = _lodash.default.toPairs((0, _shared.getLocators)(attributes, sourceXML)).map(([key, selector]) => ({
+    key,
+    selector,
+    find: key
+  }));
+
+  // If XPath is the only provided data source, warn the user about it's brittleness
+  let showXpathWarning = false;
+  if (findDataSource.length === 0) {
+    showXpathWarning = true;
+  }
+
+  // Add class chain to the data source as well
+  if (classChain && currentContext === NATIVE_APP) {
+    const classChainText = /*#__PURE__*/_react.default.createElement("span", null, "-ios class chain", /*#__PURE__*/_react.default.createElement("strong", null, /*#__PURE__*/_react.default.createElement("a", {
+      onClick: e => e.preventDefault() || _polyfills.shell.openExternal(CLASS_CHAIN_DOCS_URL)
+    }, "\xA0(docs)")));
+    findDataSource.push({
+      key: '-ios class chain',
+      find: classChainText,
+      selector: classChain
+    });
+  }
+
+  // Add predicate string to the data source as well
+  if (predicateString && currentContext === NATIVE_APP) {
+    const predicateStringText = /*#__PURE__*/_react.default.createElement("span", null, "-ios predicate string", /*#__PURE__*/_react.default.createElement("strong", null, /*#__PURE__*/_react.default.createElement("a", {
+      onClick: e => e.preventDefault() || _polyfills.shell.openExternal(PREDICATE_DOCS_URL)
+    }, "\xA0(docs)")));
+    findDataSource.push({
+      key: '-ios predicate string',
+      find: predicateStringText,
+      selector: predicateString
+    });
+  }
+
+  // Add XPath to the data source as well
+  if (xpath) {
+    findDataSource.push({
+      key: 'xpath',
+      find: 'xpath',
+      selector: xpath
+    });
+    // console.log('findDataSource in the Xpath condition####', findDataSource);
+    //add the datasource to the findDataSource
+    let sendData = findDataSource.concat(dataSource);
+    console.log("🚀 ~ file: SelectedElement.js:169 ~ SelectedElement ~ sendData:", sendData);
+  }
+
+  // Replace table data with table data that has the times
+  if (findElementsExecutionTimes.length > 0) {
+    findDataSource = findElementsExecutionTimes;
+  }
+  let tapIcon = /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null);
+  if (!(elementInteractionsNotAvailable || selectedElementId) || selectedElementSearchInProgress) {
+    tapIcon = /*#__PURE__*/_react.default.createElement(_icons.LoadingOutlined, null);
+  }
+  const handleTap = () => {
+    console.log('inside the handle tap !!!!!!!');
+    if (!isDisabled) {
+      applyClientMethod({
+        methodName: 'click',
+        elementId: selectedElementId
+      });
+    }
+  };
+  (0, _react.useEffect)(() => {
+    if (!isDisabled && screenshotInteractionMode === SELECT) {
+      handleTap();
+    }
+  }, [isDisabled, applyClientMethod, selectedElementId]);
+  return /*#__PURE__*/_react.default.createElement("div", null, elementInteractionsNotAvailable && /*#__PURE__*/_react.default.createElement(_antd.Row, {
+    type: _AntdTypes.ROW.FLEX,
+    gutter: 10,
+    className: _Inspector.default.selectedElemNotInteractableAlertRow
+  }, /*#__PURE__*/_react.default.createElement(_antd.Col, null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
+    type: _AntdTypes.ALERT.INFO,
+    message: t('interactionsNotAvailable'),
+    showIcon: true
+  }))), /*#__PURE__*/_react.default.createElement(_antd.Row, {
+    justify: "center",
+    type: _AntdTypes.ROW.FLEX,
+    align: "middle",
+    className: _Inspector.default.elementActions
+  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Tap')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: isDisabled,
+    icon: tapIcon,
+    id: "btnTapElement",
+    onClick: () => handleTap
+  })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
+    className: _Inspector.default.elementKeyInputActions
+  }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+    className: _Inspector.default.elementKeyInput,
+    disabled: isDisabled,
+    placeholder: t('Enter Keys to Send'),
+    allowClear: true,
+    onChange: e => sendKeys.current = e.target.value
+  }), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Send Keys')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: isDisabled,
+    id: "btnSendKeysToElement",
+    icon: /*#__PURE__*/_react.default.createElement(_icons.SendOutlined, null),
+    onClick: () => applyClientMethod({
+      methodName: 'sendKeys',
+      elementId: selectedElementId,
+      args: [sendKeys.current || '']
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Clear')
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: isDisabled,
+    id: "btnClearElement",
+    icon: /*#__PURE__*/_react.default.createElement(_icons.ClearOutlined, null),
+    onClick: () => applyClientMethod({
+      methodName: 'clear',
+      elementId: selectedElementId
+    })
+  })))), /*#__PURE__*/_react.default.createElement("br", null), currentContext === NATIVE_APP && showXpathWarning && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
+    message: t('usingXPathNotRecommended'),
+    type: _AntdTypes.ALERT.WARNING,
+    showIcon: true
+  }), /*#__PURE__*/_react.default.createElement("br", null)), currentContext === NATIVE_APP && contexts && contexts.length > 1 && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
+    message: t('usingSwitchContextRecommended'),
+    type: _AntdTypes.ALERT.WARNING,
+    showIcon: true
+  }), /*#__PURE__*/_react.default.createElement("br", null)), currentContext !== NATIVE_APP && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
+    message: t('usingWebviewContext'),
+    type: _AntdTypes.ALERT.WARNING,
+    showIcon: true
+  }), /*#__PURE__*/_react.default.createElement("br", null)), contexts && contexts.length > 1 && /*#__PURE__*/_react.default.createElement("div", null, contextSelect(), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)));
+};
+var _default = SelectedElement;
+exports.default = _default;
+},{"./shared":"components/Inspector/shared.js","./Inspector.css":"components/Inspector/Inspector.css","../../polyfills":"polyfills/index.js","../AntdTypes":"components/AntdTypes.js"}],"components/Inspector/Screenshot.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9491,15 +9783,17 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 var _HighlighterRects = _interopRequireDefault(require("./HighlighterRects"));
 var _antd = require("antd");
-var _bluebird = _interopRequireDefault(require("bluebird"));
 var _Inspector = _interopRequireDefault(require("./Inspector.css"));
+var _SelectedElement = _interopRequireDefault(require("./SelectedElement"));
+var _bluebird = _interopRequireDefault(require("bluebird"));
+var _icons = require("@ant-design/icons");
 var _shared = require("./shared");
 var _io = require("react-icons/io5");
 var _bi = require("react-icons/bi");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-duplicates */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
 const {
   POINTER_UP,
   POINTER_DOWN,
@@ -9539,6 +9833,7 @@ const TYPES = {
 const Screenshot = props => {
   const {
     screenshot,
+    selectedElement = {},
     mjpegScreenshotUrl,
     methodCallInProgress,
     driver,
@@ -10326,6 +10621,17 @@ const Screenshot = props => {
     className: _Inspector.default.screenimage
   });
   const points = getGestureCoordinates();
+  // const { screenshotError,
+  //     quitSession, showRecord,
+  //     visibleCommandMethod,
+  //     selectInteractionMode, setVisibleCommandResult,
+  //     showKeepAlivePrompt, keepSessionAlive, sourceXML, visibleCommandResult,
+  //     isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
+  //     isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn,
+  //   } = this.props;
+  const {
+    path
+  } = selectedElement;
 
   // const screenshotStyle1 = {
   //   transform: `scale(${2})`, // Apply the zoom level to the transform style
@@ -10341,6 +10647,12 @@ const Screenshot = props => {
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default.innerScreenshotContainer
   }, /*#__PURE__*/_react.default.createElement("div", {
+    id: "selectedElementContainer",
+    className: `${_Inspector.default['interaction-tab-container']} ${_Inspector.default['element-detail-container']} action-col`
+  }, /*#__PURE__*/_react.default.createElement(_antd.Card, {
+    title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.TagOutlined, null), " ", t('selectedElement')),
+    className: _Inspector.default['selected-element-card']
+  }, path && /*#__PURE__*/_react.default.createElement(_SelectedElement.default, props), !path && /*#__PURE__*/_react.default.createElement("i", null, t('selectElementInSource')))), /*#__PURE__*/_react.default.createElement("div", {
     ref: containerEl,
     style: screenshotStyle,
     onMouseDown: handleScreenshotClick,
@@ -10494,7 +10806,7 @@ const Screenshot = props => {
 };
 var _default = Screenshot;
 exports.default = _default;
-},{"./HighlighterRects":"components/Inspector/HighlighterRects.js","./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js"}],"../../assets/images/testinglogo.png":[function(require,module,exports) {
+},{"./HighlighterRects":"components/Inspector/HighlighterRects.js","./Inspector.css":"components/Inspector/Inspector.css","./SelectedElement":"components/Inspector/SelectedElement.js","./shared":"components/Inspector/shared.js"}],"../../assets/images/testinglogo.png":[function(require,module,exports) {
 module.exports = "testinglogo.3ef8e341.png";
 },{}],"../../assets/images/hamburger.jpg":[function(require,module,exports) {
 module.exports = "hamburger.8977aadd.jpg";
@@ -10676,326 +10988,7 @@ const HeaderButtons = props => {
 };
 var _default = HeaderButtons;
 exports.default = _default;
-},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/SelectedElement.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _lodash = _interopRequireDefault(require("lodash"));
-var _shared = require("./shared");
-var _Inspector = _interopRequireDefault(require("./Inspector.css"));
-var _antd = require("antd");
-var _polyfills = require("../../polyfills");
-var _icons = require("@ant-design/icons");
-var _AntdTypes = require("../AntdTypes");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-/* eslint-disable no-console */
-/* eslint-disable quotes */
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable no-unused-vars */
-
-const NATIVE_APP = 'NATIVE_APP';
-const CLASS_CHAIN_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules';
-const PREDICATE_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules';
-const {
-  SELECT
-} = _shared.SCREENSHOT_INTERACTION_MODE;
-const selectedElementTableCell = (text, copyToClipBoard) => {
-  if (copyToClipBoard) {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      className: _Inspector.default['selected-element-table-cells']
-    }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: "Copied!",
-      trigger: "click"
-    }, /*#__PURE__*/_react.default.createElement("span", {
-      className: _Inspector.default['element-cell-copy'],
-      onClick: () => _polyfills.clipboard.writeText(text)
-    }, text)));
-  } else {
-    return /*#__PURE__*/_react.default.createElement("div", {
-      className: _Inspector.default['selected-element-table-cells']
-    }, text);
-  }
-};
-
-/**
- * Shows details of the currently selected element and shows methods that can
- * be called on the elements (tap, sendKeys)
- */
-const SelectedElement = props => {
-  console.log('props inside the selected Element!!', props);
-  console.log('props.hoveredElement$$$$$$$4!!', props.hoveredElement);
-  const {
-    applyClientMethod,
-    contexts,
-    currentContext,
-    getFindElementsTimes,
-    findElementsExecutionTimes,
-    isFindingElementsTimes,
-    selectedElement,
-    selectedElementId,
-    sourceXML,
-    elementInteractionsNotAvailable,
-    selectedElementSearchInProgress,
-    t,
-    screenshotInteractionMode
-  } = props;
-  console.log('selectedElementId inside the selected Element!!', selectedElementId);
-  const sendKeys = (0, _react.useRef)();
-  const contextSelect = () => {
-    const {
-      setContext
-    } = props;
-    return /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-      title: t('contextSwitcher')
-    }, /*#__PURE__*/_react.default.createElement(_antd.Select, {
-      value: currentContext,
-      onChange: value => {
-        setContext(value);
-        applyClientMethod({
-          methodName: 'switchContext',
-          args: [value]
-        });
-      },
-      className: _Inspector.default['context-selector']
-    }, contexts.map(({
-      id,
-      title
-    }) => /*#__PURE__*/_react.default.createElement(_antd.Select.Option, {
-      key: id,
-      value: id
-    }, title ? `${title} (${id})` : id))));
-  };
-  const {
-    attributes,
-    classChain,
-    predicateString,
-    xpath
-  } = selectedElement;
-  const isDisabled = selectedElementSearchInProgress || isFindingElementsTimes;
-
-  // Get the columns for the attributes table
-  let attributeColumns = [{
-    title: t('Attribute'),
-    dataIndex: 'name',
-    key: 'name',
-    width: 100,
-    render: text => selectedElementTableCell(text, false)
-  }, {
-    title: t('Value'),
-    dataIndex: 'value',
-    key: 'value',
-    render: text => selectedElementTableCell(text, true)
-  }];
-
-  // Get the data for the attributes table
-  let attrArray = _lodash.default.toPairs(attributes).filter(([key]) => key !== 'path');
-  let dataSource = attrArray.map(([key, value]) => ({
-    key,
-    value,
-    name: key
-  }));
-  dataSource.unshift({
-    key: 'elementId',
-    value: selectedElementId,
-    name: 'elementId'
-  });
-  // console.log('dataSource in the dataSource', dataSource);
-
-  // Get the columns for the strategies table
-  let findColumns = [{
-    title: t('Find By'),
-    dataIndex: 'find',
-    key: 'find',
-    width: 100,
-    render: text => selectedElementTableCell(text, false)
-  }, {
-    title: t('Selector'),
-    dataIndex: 'selector',
-    key: 'selector',
-    render: text => selectedElementTableCell(text, true)
-  }];
-  if (findElementsExecutionTimes.length > 0) {
-    findColumns.push({
-      title: t('Time'),
-      dataIndex: 'time',
-      key: 'time',
-      align: 'right',
-      width: 100,
-      render: text => selectedElementTableCell(text, false)
-    });
-  }
-
-  // Get the data for the strategies table
-  let findDataSource = _lodash.default.toPairs((0, _shared.getLocators)(attributes, sourceXML)).map(([key, selector]) => ({
-    key,
-    selector,
-    find: key
-  }));
-
-  // If XPath is the only provided data source, warn the user about it's brittleness
-  let showXpathWarning = false;
-  if (findDataSource.length === 0) {
-    showXpathWarning = true;
-  }
-
-  // Add class chain to the data source as well
-  if (classChain && currentContext === NATIVE_APP) {
-    const classChainText = /*#__PURE__*/_react.default.createElement("span", null, "-ios class chain", /*#__PURE__*/_react.default.createElement("strong", null, /*#__PURE__*/_react.default.createElement("a", {
-      onClick: e => e.preventDefault() || _polyfills.shell.openExternal(CLASS_CHAIN_DOCS_URL)
-    }, "\xA0(docs)")));
-    findDataSource.push({
-      key: '-ios class chain',
-      find: classChainText,
-      selector: classChain
-    });
-  }
-
-  // Add predicate string to the data source as well
-  if (predicateString && currentContext === NATIVE_APP) {
-    const predicateStringText = /*#__PURE__*/_react.default.createElement("span", null, "-ios predicate string", /*#__PURE__*/_react.default.createElement("strong", null, /*#__PURE__*/_react.default.createElement("a", {
-      onClick: e => e.preventDefault() || _polyfills.shell.openExternal(PREDICATE_DOCS_URL)
-    }, "\xA0(docs)")));
-    findDataSource.push({
-      key: '-ios predicate string',
-      find: predicateStringText,
-      selector: predicateString
-    });
-  }
-
-  // Add XPath to the data source as well
-  if (xpath) {
-    findDataSource.push({
-      key: 'xpath',
-      find: 'xpath',
-      selector: xpath
-    });
-    // console.log('findDataSource in the Xpath condition####', findDataSource);
-    //add the datasource to the findDataSource
-    let sendData = findDataSource.concat(dataSource);
-    console.log("🚀 ~ file: SelectedElement.js:169 ~ SelectedElement ~ sendData:", sendData);
-  }
-
-  // Replace table data with table data that has the times
-  if (findElementsExecutionTimes.length > 0) {
-    findDataSource = findElementsExecutionTimes;
-  }
-  let tapIcon = /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null);
-  if (!(elementInteractionsNotAvailable || selectedElementId) || selectedElementSearchInProgress) {
-    tapIcon = /*#__PURE__*/_react.default.createElement(_icons.LoadingOutlined, null);
-  }
-  const handleTap = () => {
-    console.log('inside the handle tap !!!!!!!');
-    if (!isDisabled) {
-      applyClientMethod({
-        methodName: 'click',
-        elementId: selectedElementId
-      });
-    }
-  };
-  (0, _react.useEffect)(() => {
-    if (!isDisabled && screenshotInteractionMode === SELECT) {
-      handleTap();
-    }
-  }, [isDisabled, applyClientMethod, selectedElementId]);
-  return /*#__PURE__*/_react.default.createElement("div", null, elementInteractionsNotAvailable && /*#__PURE__*/_react.default.createElement(_antd.Row, {
-    type: _AntdTypes.ROW.FLEX,
-    gutter: 10,
-    className: _Inspector.default.selectedElemNotInteractableAlertRow
-  }, /*#__PURE__*/_react.default.createElement(_antd.Col, null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
-    type: _AntdTypes.ALERT.INFO,
-    message: t('interactionsNotAvailable'),
-    showIcon: true
-  }))), /*#__PURE__*/_react.default.createElement(_antd.Row, {
-    justify: "center",
-    type: _AntdTypes.ROW.FLEX,
-    align: "middle",
-    className: _Inspector.default.elementActions
-  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Tap')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: isDisabled,
-    icon: tapIcon,
-    id: "btnTapElement",
-    onClick: () => handleTap
-  })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
-    className: _Inspector.default.elementKeyInputActions
-  }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
-    className: _Inspector.default.elementKeyInput,
-    disabled: isDisabled,
-    placeholder: t('Enter Keys to Send'),
-    allowClear: true,
-    onChange: e => sendKeys.current = e.target.value
-  }), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Send Keys')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: isDisabled,
-    id: "btnSendKeysToElement",
-    icon: /*#__PURE__*/_react.default.createElement(_icons.SendOutlined, null),
-    onClick: () => applyClientMethod({
-      methodName: 'sendKeys',
-      elementId: selectedElementId,
-      args: [sendKeys.current || '']
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Clear')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: isDisabled,
-    id: "btnClearElement",
-    icon: /*#__PURE__*/_react.default.createElement(_icons.ClearOutlined, null),
-    onClick: () => applyClientMethod({
-      methodName: 'clear',
-      elementId: selectedElementId
-    })
-  }))), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Copy Attributes to Clipboard')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: isDisabled,
-    id: "btnCopyAttributes",
-    icon: /*#__PURE__*/_react.default.createElement(_icons.CopyOutlined, null),
-    onClick: () => _polyfills.clipboard.writeText(JSON.stringify(dataSource))
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Get Timing')
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: isDisabled,
-    id: "btnGetTiming",
-    icon: /*#__PURE__*/_react.default.createElement(_icons.HourglassOutlined, null),
-    onClick: () => getFindElementsTimes(findDataSource)
-  })))), findDataSource.length > 0 && /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.Spin, {
-    spinning: isFindingElementsTimes
-  }, /*#__PURE__*/_react.default.createElement(_antd.Table, {
-    columns: findColumns,
-    dataSource: findDataSource,
-    size: "small",
-    tableLayout: "fixed",
-    pagination: false
-  }))), /*#__PURE__*/_react.default.createElement("br", null), currentContext === NATIVE_APP && showXpathWarning && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
-    message: t('usingXPathNotRecommended'),
-    type: _AntdTypes.ALERT.WARNING,
-    showIcon: true
-  }), /*#__PURE__*/_react.default.createElement("br", null)), currentContext === NATIVE_APP && contexts && contexts.length > 1 && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
-    message: t('usingSwitchContextRecommended'),
-    type: _AntdTypes.ALERT.WARNING,
-    showIcon: true
-  }), /*#__PURE__*/_react.default.createElement("br", null)), currentContext !== NATIVE_APP && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
-    message: t('usingWebviewContext'),
-    type: _AntdTypes.ALERT.WARNING,
-    showIcon: true
-  }), /*#__PURE__*/_react.default.createElement("br", null)), contexts && contexts.length > 1 && /*#__PURE__*/_react.default.createElement("div", null, contextSelect(), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null)), dataSource.length > 0 && /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.Table, {
-    columns: attributeColumns,
-    dataSource: dataSource,
-    size: "small",
-    pagination: false
-  })));
-};
-var _default = SelectedElement;
-exports.default = _default;
-},{"./shared":"components/Inspector/shared.js","./Inspector.css":"components/Inspector/Inspector.css","../../polyfills":"polyfills/index.js","../AntdTypes":"components/AntdTypes.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
+},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12786,6 +12779,9 @@ const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
 const MIN_HEIGHT = 610;
 const MAX_SCREENSHOT_WIDTH = 500;
+const {
+  Option
+} = _antd.Select;
 const MJPEG_STREAM_CHECK_INTERVAL = 1000;
 function downloadXML(sourceXML) {
   let element = document.createElement('a');
@@ -12803,10 +12799,14 @@ class Inspector extends _react.Component {
     this.state = {
       scaleRatio: 1,
       activeIndex: 0,
+      nestedDropIndex: 0,
       showPanel: false,
-      currentSelection: null,
+      currentSelection: "Select Elements",
       step_array: [],
-      total_array: []
+      total_array: [],
+      isLongPress: false,
+      action: '',
+      mode_orientation: ''
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -12931,6 +12931,54 @@ class Inspector extends _react.Component {
       currentSelection: option
     });
   }
+  async handleActions(action, step) {
+    const {
+      driver
+    } = this.props;
+    console.log("🚀 ~ file: Inspector.js:223 ~ handleActions ~ action:", action);
+    let postdata = {
+      'session_id': driver.sessionId,
+      'step-name': step,
+      action
+    };
+    this.setState({
+      nestedDropIndex: 0
+    });
+    this.setActiveIndex(0);
+    console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ handleActions ~ postdata:', postdata);
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postdata)
+    }).then(response => {
+      console.log('API response:', response);
+      postdata.response = response;
+    }).catch(error => {
+      console.error('API error:', error);
+    });
+    let data1 = {
+      "session_id": driver.sessionId,
+      'step-name': 'steps'
+    };
+    await fetch("https://apprecord.testing24x7.ai/appAction", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data1)
+    }).then(res =>
+    // Convert the response to JSON
+    res.json()).then(res => {
+      console.log("Response data:", res);
+      this.setState({
+        total_array: res.steps.steps
+      });
+    }).catch(error => {
+      console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
+    });
+  }
   setActiveIndex(val) {
     this.setState({
       activeIndex: val
@@ -13051,11 +13099,18 @@ class Inspector extends _react.Component {
     const {
       flow_steps
     } = this.props;
+    const options = ['Return', 'Space', 'BackSpace', 'Enter', 'Back', 'Search', 'Call', 'Endcall'];
     if (flow_steps) {
       console.log('🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:', flow_steps);
       this.state.total_array = flow_steps.steps.steps;
     }
-    console.log('driver for iddddddd', driver.sessionId);
+    console.log('driver for iddddddd', driver);
+    driver.client.getOrientation().then(res => {
+      console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+      this.setState({
+        mode_orientation: res
+      });
+    });
     const showScreenshot = screenshot && !screenshotError || mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream);
     let screenShotControls = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['screenshot-controls']
@@ -13071,10 +13126,15 @@ class Inspector extends _react.Component {
       style: {
         width: '40px'
       }
-    })), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.BarsOutlined, null),
-      onClick: () => this.handlePanel(this.state.showPanel)
-    }), showScreenshot && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    })), showScreenshot && /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.SelectOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(SELECT, 'Select Elements');
+      },
+      type: screenshotInteractionMode === SELECT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Select Elements")), /*#__PURE__*/_react.default.createElement("div", {
       onMouseOver: () => this.setActiveIndex(1),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
@@ -13084,11 +13144,11 @@ class Inspector extends _react.Component {
         position: 'relative',
         cursor: 'pointer'
       }
-    }, /*#__PURE__*/_react.default.createElement(_icons.HeatMapOutlined, {
+    }, /*#__PURE__*/_react.default.createElement(_icons.LikeOutlined, {
       style: {
         fontSize: '20px'
       }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Actions"), this.state.activeIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Gestures"), this.state.activeIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
       style: {
         display: 'flex',
         flexDirection: 'column',
@@ -13098,14 +13158,6 @@ class Inspector extends _react.Component {
         top: '10%'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.SelectOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(SELECT, 'Select Elements');
-      },
-      type: screenshotInteractionMode === SELECT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Select Elements")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwapRightOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SWIPE, 'Swipe by coordinates');
@@ -13183,7 +13235,254 @@ class Inspector extends _react.Component {
       style: {
         fontSize: '20px'
       }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Actions"), this.state.activeIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
+      },
+      type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(TAKE_SCREENSHOT, 'Take screenshot');
+      },
+      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(SCRATCH, 'Scratch');
+      },
+      type: screenshotInteractionMode === SCRATCH ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
+      onClick: async () => {
+        this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
+        this.hideKeyboard();
+        let data1 = {
+          'session_id': driver.sessionId,
+          'step-name': 'steps'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data1)
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+          console.log('Response data:', res);
+          this.setState({
+            total_array: res.steps.steps
+          });
+        }).catch(error => {
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+      },
+      type: screenshotInteractionMode === HIDE_KEYBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Hide Keyboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FieldTimeOutlined, null),
+      onClick: async () => {
+        this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
+        this.getDeviceTime();
+        let data1 = {
+          'session_id': driver.sessionId,
+          'step-name': 'steps'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data1)
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+          console.log('Response data:', res);
+          this.setState({
+            total_array: res.steps.steps
+          });
+        }).catch(error => {
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+      },
+      type: screenshotInteractionMode === GET_DEVICE_TIME ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Get Device Time")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.PaperClipOutlined, null),
+      onClick: async () => {
+        this.screenshotInteractionChange(GET_CLIPBOARD, 'Get clipboard');
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+      },
+      type: screenshotInteractionMode === GET_CLIPBOARD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
+      onClick: async () => {
+        await driver.client.setOrientation('LANDSCAPE');
+      },
+      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
+      onClick: async () => {
+        await driver.client.openNotifications();
+        let data = {
+          'session_id': driver.sessionId,
+          'step-name': 'notification'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          console.log('API response:', response);
+        }).catch(error => {
+          console.error('API error:', error);
+        });
+        let data1 = {
+          'session_id': driver.sessionId,
+          'step-name': 'steps'
+        };
+        console.log('🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:', driver.sessionId);
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data1)
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+          console.log('Response data:', res);
+          this.setState({
+            total_array: res.steps.steps
+          });
+        }).catch(error => {
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+      },
+      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
+      onClick: () => this.setState({
+        isInput: true
+      }),
+      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Switch App")) : /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+      placeholder: "enter bundle id",
+      onChange: event => this.setState({
+        inputBundleId: event.target.value
+      })
+    }), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      onClick: async () => {
+        await driver.client.activateApp(this.state.inputBundleId);
+        let data = {
+          'session_id': driver.sessionId,
+          'step-name': 'switch_app',
+          'bundle_id': this.state.inputBundleId
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          console.log('API response:', response);
+        }).catch(error => {
+          console.error('API error:', error);
+        });
+        let data1 = {
+          'session_id': driver.sessionId,
+          'step-name': 'steps'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data1)
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+          console.log('Response data:', res);
+          this.setState({
+            total_array: res.steps.steps
+          });
+        }).catch(error => {
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+        this.setState({
+          isInput: false,
+          inputBundleId: ''
+        });
+      },
+      style: {
+        backgroundColor: 'blue'
+      }
+    }, "Activate App"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      onClick: async () => {
+        await driver.client.resetApp();
+      },
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(3),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        borderBottom: '1px solid grey',
+        position: 'relative',
+        cursor: 'pointer'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_icons.HeatMapOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
       style: {
         display: 'flex',
         flexDirection: 'column',
@@ -13328,15 +13627,103 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === SHAKE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")), this.state.mode_orientation === 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
       onClick: async () => {
         await driver.client.setOrientation('LANDSCAPE');
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+        let data = {
+          'session_id': driver.sessionId,
+          'step-name': 'rotate',
+          'action': 'landscape'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          console.log('API response:', response);
+        }).catch(error => {
+          console.error('API error:', error);
+        });
+        let data1 = {
+          "session_id": driver.sessionId,
+          'step-name': 'steps'
+        };
+        console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data1)
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+          console.log("Response data:", res);
+          this.setState({
+            total_array: res.steps.steps
+          });
+        }).catch(error => {
+          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
+        });
       },
       type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Landscape")) : /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
+      onClick: async () => {
+        await driver.client.setOrientation('PORTRAIT');
+        let data = {
+          'session_id': driver.sessionId,
+          'step-name': 'rotate',
+          'action': 'portrait'
+        };
+        await fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        }).then(response => {
+          console.log('API response:', response);
+        }).catch(error => {
+          console.error('API error:', error);
+        });
+        let data1 = {
+          "session_id": driver.sessionId,
+          'step-name': 'steps'
+        };
+        console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
+        await fetch("https://apprecord.testing24x7.ai/appAction", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data1)
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+          console.log("Response data:", res);
+          this.setState({
+            total_array: res.steps.steps
+          });
+        }).catch(error => {
+          console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
+        });
+        await applyClientMethod({
+          methodName: 'getPageSource'
+        });
+      },
+      type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Potrait")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
       onClick: async () => {
         await driver.client.openNotifications();
@@ -13446,14 +13833,89 @@ class Inspector extends _react.Component {
       style: {
         backgroundColor: 'blue'
       }
-    }, "Activate App"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    }, "Activate App")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
       onClick: async () => {
         await driver.client.resetApp();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))))));
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(4),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        borderBottom: '1px solid grey',
+        position: 'relative',
+        cursor: 'pointer'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Specific Actions"), this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
+      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      onMouseOver: () => this.setState({
+        nestedDropIndex: 1
+      })
+      // disabled={isGestureEditorVisible}
+      ,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, " long press key")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
+      type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      onMouseOver: () => this.setState({
+        nestedDropIndex: 2
+      })
+      // disabled={isGestureEditorVisible}
+      ,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "press key")), this.state.nestedDropIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '1999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement("div", null, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      style: {
+        width: '100%'
+      },
+      key: index,
+      onClick: async () => await this.handleActions(option, 'long_press_key')
+    }, option)))), this.state.nestedDropIndex === 2 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '1999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        width: '100%'
+      }
+    }, options.map((option, index) => /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      style: {
+        width: '100%'
+      },
+      key: index,
+      onClick: async () => await this.handleActions(option, 'press_key')
+    }, option))))))));
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
@@ -13472,7 +13934,14 @@ class Inspector extends _react.Component {
       }
     }, this.state.currentSelection !== null && /*#__PURE__*/_react.default.createElement("div", {
       style: {
-        textAlign: 'center'
+        textAlign: 'center',
+        color: "white",
+        fontWeight: "bold",
+        background: 'rgb(24, 119, 242)',
+        width: 'max-content',
+        borderRadius: '5px',
+        padding: "10px",
+        margin: "auto"
       }
     }, "Current Selection : ", this.state.currentSelection), /*#__PURE__*/_react.default.createElement(_Screenshot.default, _extends({}, this.props, {
       scaleRatio: this.state.scaleRatio
@@ -13497,8 +13966,7 @@ class Inspector extends _react.Component {
           className: "action-row"
         }, /*#__PURE__*/_react.default.createElement("div", {
           style: {
-            fontWeight: 'bold',
-            width: '9%'
+            fontWeight: 'bold'
           }
         }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("div", {
           style: {
@@ -13508,13 +13976,12 @@ class Inspector extends _react.Component {
           }
         }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
           key: key
-        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value']))))), /*#__PURE__*/_react.default.createElement("div", {
-          id: "selectedElementContainer",
-          className: `${_Inspector.default['interaction-tab-container']} ${_Inspector.default['element-detail-container']} action-col`
-        }, /*#__PURE__*/_react.default.createElement(_antd.Card, {
-          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.TagOutlined, null), " ", t('selectedElement')),
-          className: _Inspector.default['selected-element-card']
-        }, path && /*#__PURE__*/_react.default.createElement(_SelectedElement.default, this.props), !path && /*#__PURE__*/_react.default.createElement("i", null, t('selectElementInSource')))))
+        }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", {
+          style: {
+            maxWidth: '200px',
+            wordWrap: 'break-word'
+          }
+        }, item['search_by_value']))))))
       }, {
         label: t('Commands'),
         key: _shared.INTERACTION_MODE.COMMANDS,

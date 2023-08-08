@@ -393,6 +393,7 @@
 
 ._inspector-main_5407d {
     display: flex;
+    gap:20px;
     flex: 1;
     flex-direction: row;
     padding: 1em;
@@ -401,7 +402,7 @@
 }
 ._whole-btn_5407d{
     margin-left: 4%;
-    margin-top: -29%;
+    margin-top: 4%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -453,6 +454,7 @@
  ._inspector-main_5407d ._screenshot-container_5407d ._screenshotBox_5407d {
     width: 100%;
     height: 95%;
+    top:14%;
     /* text-align: left; */
     /* position: absolute; */
     overflow: hidden;
@@ -470,11 +472,11 @@
     position: relative;
     flex-grow: 3;
     flex-basis: 550px;
-    min-width: 380px;
-    padding-left: 1em;
+    /* min-width: 380px; */
+    /* padding-left: 1em; */
     display: flex;
     flex-flow: column;
-    height: 100%;
+    height: max-content;
 }
 
 ._inspector-main_5407d .ant-card-head {
@@ -502,6 +504,7 @@
 
 ._inspector-main_5407d ._interaction-tab-container_5407d .action-row {
     display: flex;
+    flex-direction:column;
     height: 100%;
 }
 
@@ -510,9 +513,9 @@
     /* max-width: 50%; */
 }
 
-._inspector-main_5407d ._interaction-tab-container_5407d .ant-card {
+/* .inspector-main .interaction-tab-container :global(.ant-card) {
     height: 100%;
-}
+} */
 
 ._inspector-main_5407d ._tree-container_5407d {
     height: 100%;
@@ -812,6 +815,8 @@
 ._selected-element-card_5407d {
     display: flex;
     flex-direction: column;
+    height:100px;
+    background:transparent;
 }
 
 ._selected-element-card_5407d .ant-card-body {
@@ -1076,7 +1081,7 @@ table {
 ._inspector-main_5407d ._screenshot-container_5407d img {
     max-width: 338px;
     border-radius:26px;
-    max-height: 95%;
+    max-height: 92%;
     position: absolute;
     top:30px;
     left: 10px;

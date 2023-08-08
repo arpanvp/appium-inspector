@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable space-before-blocks */
@@ -9,9 +10,12 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import HighlighterRects from './HighlighterRects';
-import { Spin, Tooltip, Button } from 'antd';
+import { Card, Spin, Tooltip, Button } from 'antd';
+import InspectorStyles from './Inspector.css';
+import SelectedElement from './SelectedElement';
 import B from 'bluebird';
 import styles from './Inspector.css';
+import {TagOutlined} from '@ant-design/icons';
 import {
   SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
   DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP, DEFAULT_ZOOM
@@ -28,8 +32,7 @@ const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHE
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const Screenshot = (props) => {
-  const { screenshot, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode, step_object, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement, locatorTestElement } = props;
-  const [xLongPress, setXLongPress] = useState(null);
+  const { screenshot, selectedElement = {}, mjpegScreenshotUrl, methodCallInProgress, driver, selectScreenshotInteractionMode, screenshotInteractionMode, step_object, swipeStart, swipeEnd1, swipeStart1, swipeEnd, scaleRatio, selectedTick, selectedInteractionMode, applyClientMethod, t, hoveredElement, locatorTestElement } = props; const [xLongPress, setXLongPress] = useState(null);
   const [yLongPress, setYLongPress] = useState(null);
   const [element, setElement] = useState({});
   const [coordinates, setCoordinates] = useState([]);
@@ -508,7 +511,6 @@ const Screenshot = (props) => {
     setTimeout(async () => {
       await handleDoDragAndDrop({ x: roundedDropX, y: roundedDropY });
     }, 1000);
-
   };
 
   const handleDragOver = (event) => {
@@ -576,7 +578,16 @@ const Screenshot = (props) => {
   const screenSrc = mjpegScreenshotUrl || `data:image/gif;base64,${screenshot}`;
   const screenImg = <img src={screenSrc} id="screenshot" className={styles.screenimage} />;
   const points = getGestureCoordinates();
-  
+  // const { screenshotError,
+  //     quitSession, showRecord,
+  //     visibleCommandMethod,
+  //     selectInteractionMode, setVisibleCommandResult,
+  //     showKeepAlivePrompt, keepSessionAlive, sourceXML, visibleCommandResult,
+  //     isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
+  //     isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn,
+  //   } = this.props;
+  const { path } = selectedElement;
+
 
   // const screenshotStyle1 = {
   //   transform: `scale(${2})`, // Apply the zoom level to the transform style
@@ -586,6 +597,14 @@ const Screenshot = (props) => {
   return (
     <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{display: "flex!important"}}>
       <div className={styles.innerScreenshotContainer}>
+        <div id='selectedElementContainer'
+          className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
+          <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
+            className={InspectorStyles['selected-element-card']}>
+            {path && <SelectedElement {...props} />}
+            {!path && <i>{t('selectElementInSource')}</i>}
+          </Card>
+        </div>
         <div ref={containerEl}
           style={screenshotStyle}
           onMouseDown={handleScreenshotClick}

@@ -236,7 +236,7 @@ const SelectedElement = (props) => {
             onClick={() => applyClientMethod({methodName: 'clear', elementId: selectedElementId})} />
         </Tooltip>
       </Button.Group>
-      <Button.Group>
+      {/* <Button.Group>
         <Tooltip title={t('Copy Attributes to Clipboard')}>
           <Button
             disabled={isDisabled}
@@ -251,9 +251,9 @@ const SelectedElement = (props) => {
             icon={<HourglassOutlined/>}
             onClick={() => getFindElementsTimes(findDataSource)} />
         </Tooltip>
-      </Button.Group>
+      </Button.Group> */}
     </Row>
-    {findDataSource.length > 0 &&
+    {/* {findDataSource.length > 0 &&
       <Row>
         <Spin spinning={isFindingElementsTimes}>
           <Table
@@ -264,7 +264,7 @@ const SelectedElement = (props) => {
             pagination={false} />
         </Spin>
       </Row>
-    }
+    } */}
     <br />
     {currentContext === NATIVE_APP && showXpathWarning &&
       <div>
@@ -299,7 +299,7 @@ const SelectedElement = (props) => {
         <br /><br />
       </div>
     }
-    {dataSource.length > 0 &&
+    {/* {dataSource.length > 0 &&
       <Row>
         <Table
           columns={attributeColumns}
@@ -307,7 +307,7 @@ const SelectedElement = (props) => {
           size="small"
           pagination={false} />
       </Row>
-    }
+    } */}
   </div>;
 };
 
