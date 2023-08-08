@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 process.env.HMR_PORT=39369;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 =======
 <<<<<<< HEAD
@@ -40,6 +41,9 @@ process.env.HMR_PORT=34513;process.env.HMR_HOSTNAME="localhost";// modules are d
 >>>>>>> 324aa7e (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+process.env.HMR_PORT=42953;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -878,16 +882,20 @@ const SCREENSHOT_INTERACTION_MODE = {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   ROTATE: 'rotate',
   LOCK: 'lock',
   UNLOCK: 'unlock',
   SHAKE: 'shake'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   ROTATE: 'rotate'
 >>>>>>> dbd8aa8 (added changes)
@@ -898,6 +906,8 @@ const SCREENSHOT_INTERACTION_MODE = {
   ROTATE: 'rotate'
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -5551,6 +5561,7 @@ function callClientMethod(params) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d733b97 (added changes)
         window.close();
@@ -5563,6 +5574,9 @@ function callClientMethod(params) {
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+        // window.close();
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       }).catch(error => {
         console.error("API error:", error);
       });
@@ -5846,6 +5860,7 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5891,6 +5906,8 @@ module.exports = {
   "addonDataCenter": "_addonDataCenter_46061",
   "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
 =======
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   "active-session": "_active-session_8105c",
   "sessionContainer": "_sessionContainer_8105c",
   "cloudProviderModal": "_cloudProviderModal_8105c",
@@ -5931,6 +5948,7 @@ module.exports = {
   "inputDataCenter": "_inputDataCenter_8105c",
   "addonDataCenter": "_addonDataCenter_8105c",
   "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
+<<<<<<< HEAD
 >>>>>>> dbd8aa8 (added changes)
 =======
 =======
@@ -6068,6 +6086,8 @@ module.exports = {
 >>>>>>> 324aa7e (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -8823,6 +8843,7 @@ const AttachToSession = ({
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   id: "refreshButton",
 =======
 >>>>>>> dbd8aa8 (added changes)
@@ -8834,6 +8855,9 @@ const AttachToSession = ({
 =======
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
+=======
+  id: "refreshButton",
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null)
 }))))));
 var _default = AttachToSession;
@@ -9208,6 +9232,7 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9310,6 +9335,8 @@ module.exports = {
   "tick-coord-box": "_tick-coord-box_5407d",
   "option-inpt": "_option-inpt_5407d"
 =======
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   "inspector-container": "_inspector-container_61591",
   "inspector-toolbar": "_inspector-toolbar_61591",
   "button_wrapper": "_button_wrapper_61591",
@@ -9407,6 +9434,7 @@ module.exports = {
   "tick-input-box": "_tick-input-box_61591",
   "tick-coord-box": "_tick-coord-box_61591",
   "option-inpt": "_option-inpt_61591"
+<<<<<<< HEAD
 >>>>>>> dbd8aa8 (added changes)
 =======
 =======
@@ -9715,6 +9743,8 @@ module.exports = {
 >>>>>>> 324aa7e (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 };
 },{"./../../../../assets/images/mobile.png":[["mobile.85cb68fa.png","../../assets/images/mobile.png"],"../../assets/images/mobile.png"],"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9960,9 +9990,12 @@ const {
  */
 const HighlighterRects = props => {
 <<<<<<< HEAD
+<<<<<<< HEAD
   console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props);
 =======
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   const {
     source,
     containerEl,
@@ -10191,6 +10224,12 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const NATIVE_APP = 'NATIVE_APP';
 const CLASS_CHAIN_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Class-Chain-Queries-Construction-Rules';
 const PREDICATE_DOCS_URL = 'https://github.com/facebookarchive/WebDriverAgent/wiki/Predicate-Queries-Construction-Rules';
+<<<<<<< HEAD
+=======
+const {
+  SELECT
+} = _shared.SCREENSHOT_INTERACTION_MODE;
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 const selectedElementTableCell = (text, copyToClipBoard) => {
   if (copyToClipBoard) {
     return /*#__PURE__*/_react.default.createElement("div", {
@@ -10228,7 +10267,12 @@ const SelectedElement = props => {
     sourceXML,
     elementInteractionsNotAvailable,
     selectedElementSearchInProgress,
+<<<<<<< HEAD
     t
+=======
+    t,
+    screenshotInteractionMode
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   } = props;
   console.log('selectedElementId inside the selected Element!!', selectedElementId);
   const sendKeys = (0, _react.useRef)();
@@ -10374,6 +10418,23 @@ const SelectedElement = props => {
   if (!(elementInteractionsNotAvailable || selectedElementId) || selectedElementSearchInProgress) {
     tapIcon = /*#__PURE__*/_react.default.createElement(_icons.LoadingOutlined, null);
   }
+<<<<<<< HEAD
+=======
+  const handleTap = () => {
+    console.log('inside the handle tap !!!!!!!');
+    if (!isDisabled) {
+      applyClientMethod({
+        methodName: 'click',
+        elementId: selectedElementId
+      });
+    }
+  };
+  (0, _react.useEffect)(() => {
+    if (!isDisabled && screenshotInteractionMode === SELECT) {
+      handleTap();
+    }
+  }, [isDisabled, applyClientMethod, selectedElementId]);
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   return /*#__PURE__*/_react.default.createElement("div", null, elementInteractionsNotAvailable && /*#__PURE__*/_react.default.createElement(_antd.Row, {
     type: _AntdTypes.ROW.FLEX,
     gutter: 10,
@@ -10393,10 +10454,14 @@ const SelectedElement = props => {
     disabled: isDisabled,
     icon: tapIcon,
     id: "btnTapElement",
+<<<<<<< HEAD
     onClick: () => applyClientMethod({
       methodName: 'click',
       elementId: selectedElementId
     })
+=======
+    onClick: () => handleTap
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     className: _Inspector.default.elementKeyInputActions
   }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
@@ -10465,6 +10530,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d733b97 (added changes)
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
@@ -10477,6 +10543,9 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-duplicates */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 const {
   POINTER_UP,
   POINTER_DOWN,
@@ -10613,6 +10682,7 @@ const Screenshot = props => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       console.log('inside the sreenshot page!!!!!! tap');
 =======
 >>>>>>> dbd8aa8 (added changes)
@@ -10624,6 +10694,9 @@ const Screenshot = props => {
 =======
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
+=======
+      console.log('inside the sreenshot page!!!!!! tap');
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       applyClientMethod({
         methodName: TAP,
         args: [{
@@ -10745,6 +10818,7 @@ const Screenshot = props => {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d733b97 (added changes)
           expectedValue: expected_value,
@@ -10757,6 +10831,9 @@ const Screenshot = props => {
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+          expectedValue: expected_value,
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           xpath: props.selectedElement.xpath
         };
       }
@@ -13466,6 +13543,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d733b97 (added changes)
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
@@ -13478,6 +13556,9 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 const {
   SELECT,
   SWIPE,
@@ -13497,16 +13578,20 @@ const {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   GET_CLIPBOARD,
   LOCK,
   UNLOCK,
   SHAKE
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   GET_CLIPBOARD
 >>>>>>> dbd8aa8 (added changes)
@@ -13517,17 +13602,25 @@ const {
   GET_CLIPBOARD
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
 const MIN_HEIGHT = 610;
 const MAX_SCREENSHOT_WIDTH = 500;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 const {
   Option
 } = _antd.Select;
 >>>>>>> dbd8aa8 (added changes)
+=======
+const {
+  Option
+} = _antd.Select;
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 const MJPEG_STREAM_CHECK_INTERVAL = 1000;
 function downloadXML(sourceXML) {
   let element = document.createElement('a');
@@ -13546,6 +13639,7 @@ class Inspector extends _react.Component {
       scaleRatio: 1,
       activeIndex: 0,
 <<<<<<< HEAD
+<<<<<<< HEAD
       showPanel: false,
 <<<<<<< HEAD
       currentSelection: "Select Elements",
@@ -13561,10 +13655,16 @@ class Inspector extends _react.Component {
       nestedDropIndex: 0,
       showPanel: false,
       currentSelection: null,
+=======
+      nestedDropIndex: 0,
+      showPanel: false,
+      currentSelection: "Select Elements",
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       step_array: [],
       total_array: [],
       isLongPress: false,
       action: '',
+<<<<<<< HEAD
       mode_orientation: ''
 >>>>>>> dbd8aa8 (added changes)
 =======
@@ -13591,6 +13691,9 @@ class Inspector extends _react.Component {
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+      mode_orientation: 'PORTRAIT'
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -13716,7 +13819,10 @@ class Inspector extends _react.Component {
     });
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   async handleActions(action, step) {
     const {
       driver
@@ -13725,7 +13831,11 @@ class Inspector extends _react.Component {
     let postdata = {
       'session_id': driver.sessionId,
       'step-name': step,
+<<<<<<< HEAD
       'action': action
+=======
+      action
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     };
     this.setState({
       nestedDropIndex: 0
@@ -13754,10 +13864,16 @@ class Inspector extends _react.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data1)
+<<<<<<< HEAD
     }).then(res => {
       // Convert the response to JSON
       return res.json();
     }).then(res => {
+=======
+    }).then(res =>
+    // Convert the response to JSON
+    res.json()).then(res => {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       console.log("Response data:", res);
       this.setState({
         total_array: res.steps.steps
@@ -13766,7 +13882,10 @@ class Inspector extends _react.Component {
       console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
     });
   }
+<<<<<<< HEAD
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   setActiveIndex(val) {
     this.setState({
       activeIndex: val
@@ -13837,10 +13956,13 @@ class Inspector extends _react.Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   async isLocked() {
     const {
       driver
@@ -13861,6 +13983,7 @@ class Inspector extends _react.Component {
   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> dbd8aa8 (added changes)
@@ -13871,6 +13994,8 @@ class Inspector extends _react.Component {
 
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
   render() {
     const {
       screenshot,
@@ -13907,6 +14032,7 @@ class Inspector extends _react.Component {
       flow_steps
     } = this.props;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -13922,10 +14048,14 @@ class Inspector extends _react.Component {
 >>>>>>> dbd8aa8 (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+    const options = ['Return', 'Space', 'BackSpace', 'Enter', 'Back', 'Search', 'Call', 'Endcall'];
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     if (flow_steps) {
       console.log('🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:', flow_steps);
       this.state.total_array = flow_steps.steps.steps;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
@@ -13946,6 +14076,9 @@ class Inspector extends _react.Component {
       });
     });
 >>>>>>> dbd8aa8 (added changes)
+=======
+    console.log('driver for iddddddd', driver);
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     const showScreenshot = screenshot && !screenshotError || mjpegScreenshotUrl && (!isSourceRefreshOn || !isAwaitingMjpegStream);
     let screenShotControls = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['screenshot-controls']
@@ -14050,10 +14183,13 @@ class Inspector extends _react.Component {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 1783371 (changes have been pushed)
 =======
 >>>>>>> d733b97 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.LockOutlined, null),
       onClick: () => {
@@ -14063,6 +14199,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === LOCK ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")))), /*#__PURE__*/_react.default.createElement("div", {
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -14115,6 +14252,9 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH, 'Scratch');
@@ -14123,6 +14263,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
       icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
       onClick: async () => {
         this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
@@ -14323,6 +14464,17 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))), /*#__PURE__*/_react.default.createElement("div", {
+=======
+      icon: /*#__PURE__*/_react.default.createElement(_icons.ShakeOutlined, null),
+      onClick: () => {
+        this.screenshotInteractionChange(SHAKE, 'shake');
+        this.shakeBooty();
+      },
+      type: screenshotInteractionMode === SHAKE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Shake")))), /*#__PURE__*/_react.default.createElement("div", {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       onMouseOver: () => this.setActiveIndex(3),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
@@ -14336,7 +14488,11 @@ class Inspector extends _react.Component {
       style: {
         fontSize: '20px'
       }
+<<<<<<< HEAD
     }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
+=======
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Device Actions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       style: {
         display: 'flex',
         flexDirection: 'column',
@@ -14374,6 +14530,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === FILE_UPLOAD ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible
 <<<<<<< HEAD
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload"))))));
 =======
 <<<<<<< HEAD
@@ -14387,6 +14544,9 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(TAKE_SCREENSHOT, 'Take screenshot');
@@ -14395,6 +14555,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Take Screenshot")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH, 'Scratch');
@@ -14403,12 +14564,17 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Scratch")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.CaretDownOutlined, null),
       onClick: async () => {
         this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
         this.hideKeyboard();
         let data1 = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14422,6 +14588,7 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
+<<<<<<< HEAD
 =======
           "session_id": driver.sessionId,
           'step-name': 'steps'
@@ -14438,15 +14605,21 @@ class Inspector extends _react.Component {
         }).then(res => {
           console.log("Response data:", res);
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
 <<<<<<< HEAD
+<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
 =======
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
 >>>>>>> dbd8aa8 (added changes)
+=======
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14462,6 +14635,9 @@ class Inspector extends _react.Component {
         this.getDeviceTime();
         let data1 = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14475,6 +14651,7 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
+<<<<<<< HEAD
 =======
           "session_id": driver.sessionId,
           'step-name': 'steps'
@@ -14491,15 +14668,21 @@ class Inspector extends _react.Component {
         }).then(res => {
           console.log("Response data:", res);
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
 <<<<<<< HEAD
+<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
 =======
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
 >>>>>>> dbd8aa8 (added changes)
+=======
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14520,6 +14703,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
 <<<<<<< HEAD
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.ShakeOutlined, null),
       onClick: () => {
@@ -14535,6 +14719,9 @@ class Inspector extends _react.Component {
         await driver.client.setOrientation('LANDSCAPE');
 =======
     }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), this.state.mode_orientation == 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Get clipboard")), this.state.mode_orientation === 'PORTRAIT' ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
       onClick: async () => {
         await driver.client.setOrientation('LANDSCAPE');
@@ -14568,10 +14755,16 @@ class Inspector extends _react.Component {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(data1)
+<<<<<<< HEAD
         }).then(res => {
           // Convert the response to JSON
           return res.json();
         }).then(res => {
+=======
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           console.log("Response data:", res);
           this.setState({
             total_array: res.steps.steps
@@ -14579,14 +14772,26 @@ class Inspector extends _react.Component {
         }).catch(error => {
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
         });
+<<<<<<< HEAD
 >>>>>>> dbd8aa8 (added changes)
+=======
+        await driver.client.getOrientation().then(res => {
+          console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+          this.setState({
+            mode_orientation: res
+          });
+        });
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       },
       type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
 <<<<<<< HEAD
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
 =======
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Landscape")) : /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.RotateRightOutlined, null),
       onClick: async () => {
@@ -14618,10 +14823,16 @@ class Inspector extends _react.Component {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(data1)
+<<<<<<< HEAD
         }).then(res => {
           // Convert the response to JSON
           return res.json();
         }).then(res => {
+=======
+        }).then(res =>
+        // Convert the response to JSON
+        res.json()).then(res => {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           console.log("Response data:", res);
           this.setState({
             total_array: res.steps.steps
@@ -14629,6 +14840,15 @@ class Inspector extends _react.Component {
         }).catch(error => {
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
         });
+<<<<<<< HEAD
+=======
+        driver.client.getOrientation().then(res => {
+          console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+          this.setState({
+            mode_orientation: res
+          });
+        });
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
         await applyClientMethod({
           methodName: 'getPageSource'
         });
@@ -14637,7 +14857,10 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Rotate/Potrait")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.NotificationOutlined, null),
       onClick: async () => {
         await driver.client.openNotifications();
@@ -14658,6 +14881,9 @@ class Inspector extends _react.Component {
         });
         let data1 = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -14672,6 +14898,7 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
+<<<<<<< HEAD
 =======
           "session_id": driver.sessionId,
           'step-name': 'steps'
@@ -14689,15 +14916,21 @@ class Inspector extends _react.Component {
         }).then(res => {
           console.log("Response data:", res);
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
 <<<<<<< HEAD
+<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
 =======
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
 >>>>>>> dbd8aa8 (added changes)
+=======
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -14706,6 +14939,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === ROTATE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
       onClick: () => this.setState({
@@ -14828,6 +15062,9 @@ class Inspector extends _react.Component {
         top: '10%'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       onMouseOver: () => this.setState({
@@ -14879,6 +15116,7 @@ class Inspector extends _react.Component {
       },
       key: index,
       onClick: async () => await this.handleActions(option, 'press_key')
+<<<<<<< HEAD
     }, option))))))));
 >>>>>>> dbd8aa8 (added changes)
 =======
@@ -14888,6 +15126,32 @@ class Inspector extends _react.Component {
     }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload"))))));
 =======
     }, /*#__PURE__*/_react.default.createElement("span", null, "File Upload")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, option)))))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(4),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        borderBottom: '1px solid grey',
+        position: 'relative',
+        cursor: 'pointer'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value');
@@ -14895,6 +15159,7 @@ class Inspector extends _react.Component {
       type: screenshotInteractionMode === EXPECTED_VALUE ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       onClick: () => {
@@ -15216,6 +15481,32 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications")), !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+=======
+    }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(5),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        borderBottom: '1px solid grey',
+        position: 'relative',
+        cursor: 'pointer'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "App management"), this.state.activeIndex === 5 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
       onClick: () => this.setState({
         isInput: true
@@ -15249,6 +15540,9 @@ class Inspector extends _react.Component {
         });
         let data1 = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           'session_id': driver.sessionId,
           'step-name': 'steps'
         };
@@ -15262,6 +15556,7 @@ class Inspector extends _react.Component {
         // Convert the response to JSON
         res.json()).then(res => {
           console.log('Response data:', res);
+<<<<<<< HEAD
 =======
           "session_id": driver.sessionId,
           'step-name': 'steps'
@@ -15278,15 +15573,21 @@ class Inspector extends _react.Component {
         }).then(res => {
           console.log("Response data:", res);
 >>>>>>> dbd8aa8 (added changes)
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           this.setState({
             total_array: res.steps.steps
           });
         }).catch(error => {
 <<<<<<< HEAD
+<<<<<<< HEAD
           console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
 =======
           console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
 >>>>>>> dbd8aa8 (added changes)
+=======
+          console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
         });
         await applyClientMethod({
           methodName: 'getPageSource'
@@ -15300,16 +15601,21 @@ class Inspector extends _react.Component {
         backgroundColor: 'blue'
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
     }, "Activate App"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
 =======
     }, "Activate App")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
 >>>>>>> dbd8aa8 (added changes)
+=======
+    }, "Activate App")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
       onClick: async () => {
         await driver.client.resetApp();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
+<<<<<<< HEAD
 <<<<<<< HEAD
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))))));
 <<<<<<< HEAD
@@ -15399,6 +15705,9 @@ class Inspector extends _react.Component {
 >>>>>>> 324aa7e (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))));
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
     let main = /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['inspector-main'],
       ref: el => {
@@ -15450,6 +15759,7 @@ class Inspector extends _react.Component {
         }, /*#__PURE__*/_react.default.createElement("div", {
           style: {
 <<<<<<< HEAD
+<<<<<<< HEAD
             fontWeight: 'bold'
 =======
 <<<<<<< HEAD
@@ -15469,6 +15779,9 @@ class Inspector extends _react.Component {
 >>>>>>> 24d4eea (changes have been pushed)
 >>>>>>> 1783371 (changes have been pushed)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+            fontWeight: 'bold'
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
           }
         }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("div", {
           style: {
@@ -15479,6 +15792,7 @@ class Inspector extends _react.Component {
         }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
           key: key
 <<<<<<< HEAD
+<<<<<<< HEAD
         }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by_value']))))))
 =======
 <<<<<<< HEAD
@@ -15495,11 +15809,14 @@ class Inspector extends _react.Component {
           }
         }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
           key: key
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
         }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", {
           style: {
             maxWidth: '200px',
             wordWrap: 'break-word'
           }
+<<<<<<< HEAD
         }, item['search_by_value']))))), /*#__PURE__*/_react.default.createElement("div", {
 >>>>>>> dbd8aa8 (added changes)
           id: "selectedElementContainer",
@@ -15542,6 +15859,9 @@ class Inspector extends _react.Component {
 >>>>>>> 24d4eea (changes have been pushed)
 >>>>>>> 1783371 (changes have been pushed)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+        }, item['search_by_value']))))))
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
       }, {
         label: t('Commands'),
         key: _shared.INTERACTION_MODE.COMMANDS,
@@ -15613,6 +15933,7 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "container": "_container_70832",
   "loader": "_loader_70832",
   "load1": "_load1_70832"
@@ -15650,6 +15971,11 @@ module.exports = {
 >>>>>>> 324aa7e (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+  "container": "_container_9b1d1",
+  "loader": "_loader_9b1d1",
+  "load1": "_load1_9b1d1"
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -15736,6 +16062,7 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "errorMessage": "_errorMessage_8d2a9",
   "copyTraceBtn": "_copyTraceBtn_8d2a9"
 =======
@@ -15766,6 +16093,10 @@ module.exports = {
 >>>>>>> 324aa7e (added changes)
 >>>>>>> d733b97 (added changes)
 >>>>>>> a26bb550d35df045b9d44bac8a05452d171986a8
+=======
+  "errorMessage": "_errorMessage_cd7c8",
+  "copyTraceBtn": "_copyTraceBtn_cd7c8"
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
@@ -17121,6 +17452,7 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}]},{},["../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+<<<<<<< HEAD
 =======
 process.env.HMR_PORT=0;process.env.HMR_HOSTNAME="localhost";parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcelRequire,u="function"==typeof require&&require;function f(t,n){if(!r[t]){if(!e[t]){var i="function"==typeof parcelRequire&&parcelRequire;if(!n&&i)return i(t,!0);if(o)return o(t,!0);if(u&&"string"==typeof t)return u(t);var c=new Error("Cannot find module '"+t+"'");throw c.code="MODULE_NOT_FOUND",c}p.resolve=function(r){return e[t][1][r]||r},p.cache={};var l=r[t]=new f.Module(t);e[t][0].call(l.exports,p,l,l.exports,this)}return r[t].exports;function p(e){return f(p.resolve(e))}}f.isParcelRequire=!0,f.Module=function(e){this.id=e,this.bundle=f,this.exports={}},f.modules=e,f.cache=r,f.parent=o,f.register=function(r,t){e[r]=[function(e,r){r.exports=t},{}]};for(var c=0;c<t.length;c++)try{f(t[c])}catch(e){i||(i=e)}if(t.length){var l=f(t[t.length-1]);"object"==typeof exports&&"undefined"!=typeof module?module.exports=l:"function"==typeof define&&define.amd?define(function(){return l}):n&&(this[n]=l)}if(parcelRequire=f,i)throw i;return f}({"Suti":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.shell=exports.settings=exports.remote=exports.log=exports.ipcRenderer=exports.i18NextBackendOptions=exports.i18NextBackend=exports.clipboard=void 0;const e={clipboard:{writeText:e=>navigator.clipboard.writeText(e)},shell:{openExternal:e=>window.open(e,"")},remote:{getCurrentWindow:()=>({getSize:()=>[window.innerWidth,window.innerHeight]})},ipcRenderer:{on:e=>{console.warn(`Cannot listen for IPC event ${e} in browser context`)}},fs:null,util:null};class t{has(e){return null!==this.get(e)}set(e,t){return localStorage.setItem(e,JSON.stringify(t))}get(e){return JSON.parse(localStorage.getItem(e))}getSync(e){return this.get(e)}}const r=console;exports.log=r;const n=new t;exports.settings=n;const{clipboard:o,shell:s,remote:i,ipcRenderer:l}=e;exports.ipcRenderer=l,exports.remote=i,exports.shell=s,exports.clipboard=o;const a=require("i18next-chained-backend").default;exports.i18NextBackend=a;const c={backends:[require("i18next-localstorage-backend").default,require("i18next-http-backend").default],backendOptions:[{},{loadPath:"./locales/{{lng}}/{{ns}}.json"}]};exports.i18NextBackendOptions=c;
@@ -17318,4 +17650,6 @@ module.exports={errorMessage:"_errorMessage_cd7c8",copyTraceBtn:"_copyTraceBtn_c
 "use strict";var e=u(require("react")),t=require("react-dom/client"),r=u(require("./containers/Root")),o=u(require("./components/ErrorBoundary/ErrorBoundary")),n=require("./store");function u(e){return e&&e.__esModule?e:{default:e}}const a=document.getElementById("root"),l=(0,t.createRoot)(a);l.render(e.default.createElement(o.default,null,e.default.createElement(r.default,{store:n.store,history:n.history}))),module.hot&&module.hot.accept("./containers/Root",()=>{const t=require("./containers/Root").default;l.render(e.default.createElement(AppContainer,null,e.default.createElement(t,{store:n.store,history:n.history})))});
 },{"./containers/Root":"j8ta","./components/ErrorBoundary/ErrorBoundary":"SZdX","./store":"iz0v"}]},{},["Focm"], null)
 >>>>>>> 7a0d04b052d3cabd4344c3e5695d1473d3beeb42
+=======
+>>>>>>> e5077277840eee7ca0e177f1032e1943d0133aeb
 //# sourceMappingURL=renderer.e31bb0bc.js.map

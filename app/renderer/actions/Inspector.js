@@ -1106,7 +1106,7 @@ export function callClientMethod(params) {
       })
       .then((response) => {
         console.log("API response:", response);
-        window.close();
+        // window.close();
       })
       .catch((error) => {
         console.error("API error:", error);

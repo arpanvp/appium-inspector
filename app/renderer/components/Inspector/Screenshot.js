@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable space-before-blocks */
@@ -597,14 +598,14 @@ const Screenshot = (props) => {
   return (
     <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{display: "flex!important"}}>
       <div className={styles.innerScreenshotContainer}>
-      <div id='selectedElementContainer'
-                  className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
-                  <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
-                    className={InspectorStyles['selected-element-card']}>
-                    {path && <SelectedElement {...props} />}
-                    {!path && <i>{t('selectElementInSource')}</i>}
-                  </Card>
-                </div>
+        <div id='selectedElementContainer'
+          className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
+          <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
+            className={InspectorStyles['selected-element-card']}>
+            {path && <SelectedElement {...props} />}
+            {!path && <i>{t('selectElementInSource')}</i>}
+          </Card>
+        </div>
         <div ref={containerEl}
           style={screenshotStyle}
           onMouseDown={handleScreenshotClick}
