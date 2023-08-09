@@ -658,7 +658,7 @@ export default class Inspector extends Component {
             )}
           </div>}
         </div> */}
-        <div onMouseOver={() =>  this.setState({activeIndex:3,nestedDropIndex:0}) }
+        <div onMouseOver={() =>  this.setState({activeIndex:3}) }
          onMouseOut={() => this.setState({activeIndex:0})}
           style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
           <HeatMapOutlined style={{ fontSize: '20px' }} />
