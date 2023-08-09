@@ -1221,7 +1221,7 @@ export default class Inspector extends Component {
                       <th>Search By</th>
                       <th>Search By Value</th>
                     </tr>
-                    {this.state.total_array && this.state.total_array.map((item, key) => (
+                    {this.state.total_array.length > 0 && this.state.total_array.map((item, key) => (
                       <tr key={key}>
                         <td>{key + 1}</td>
                         <td>{item['step']}</td>
