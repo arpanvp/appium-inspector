@@ -271,7 +271,7 @@ export default class Inspector extends Component {
       )
       .then((res) => {
         console.log("Response data:", res);
-        this.setState({ total_array: res.steps.steps });
+        this.setState({ total_array: res.steps });
       })
       .catch((error) => {
         console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
@@ -374,7 +374,7 @@ export default class Inspector extends Component {
 
     if (flow_steps) {
       console.log('🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:', flow_steps);
-      this.state.total_array = flow_steps.steps.steps;
+      this.state.total_array = flow_steps.steps;
     }
     console.log('driver for iddddddd', driver);
     const showScreenshot = ((screenshot && !screenshotError) ||
@@ -658,11 +658,51 @@ export default class Inspector extends Component {
             )}
           </div>}
         </div> */}
-        <div onMouseOver={() => this.setActiveIndex(3)} onMouseOut={() => this.setActiveIndex(0)}
+        <div onMouseOver={() =>  this.setState({activeIndex:3,nestedDropIndex:0}) }
+         onMouseOut={() => this.setState({activeIndex:0})}
           style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
           <HeatMapOutlined style={{ fontSize: '20px' }} />
           <div>Device Actions</div>
           {this.state.activeIndex === 3 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+          <Button icon={<FundProjectionScreenOutlined />}
+              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              onMouseOver={() => this.setState({ nestedDropIndex: 1 })}
+              // disabled={isGestureEditorVisible}
+              className={InspectorStyles['user_actions']}
+            ><span> long press key</span></Button>
+
+            <Button icon={<FundProjectionScreenOutlined />}
+              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              onMouseOver={() => this.setState({ nestedDropIndex: 2 })}
+              // disabled={isGestureEditorVisible}
+              className={InspectorStyles['user_actions']}
+            ><span>press key</span></Button>
+            {this.state.nestedDropIndex === 1 &&
+              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
+                <div>
+                  {options.map((option, index) => (
+                    <Button style={{ width: '100%' }} key={index}
+                     onClick={async () => await this.handleActions(option, 'long_press_key')}>
+                      {option}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            }
+
+            {this.state.nestedDropIndex === 2 &&
+              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
+                <div style={{ width: '100%' }}>
+                  {options.map((option, index) => (
+                    <Button style={{ width: '100%' }} key={index} 
+                    onClick={async () => await this.handleActions(option, 'press_key')}>
+                      {option}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            }
+            
             <Button className={InspectorStyles['user_actions']} icon={<FileAddOutlined />} onClick={async () => {
               if (screenshotInteractionMode === FILE_UPLOAD) {
                 this.screenshotInteractionChange(null, null);
@@ -715,7 +755,7 @@ export default class Inspector extends Component {
                 )
                 .then((res) => {
                   console.log('Response data:', res);
-                  this.setState({ total_array: res.steps.steps });
+                  this.setState({ total_array: res.steps });
                 })
                 .catch((error) => {
                   console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
@@ -747,7 +787,7 @@ export default class Inspector extends Component {
                 )
                 .then((res) => {
                   console.log('Response data:', res);
-                  this.setState({ total_array: res.steps.steps });
+                  this.setState({ total_array: res.steps });
                 })
                 .catch((error) => {
                   console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
@@ -804,7 +844,7 @@ export default class Inspector extends Component {
                 )
                 .then((res) => {
                   console.log("Response data:", res);
-                  this.setState({ total_array: res.steps.steps });
+                  this.setState({ total_array: res.steps });
                 })
                 .catch((error) => {
                   console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
@@ -858,7 +898,7 @@ export default class Inspector extends Component {
                     )
                     .then((res) => {
                       console.log("Response data:", res);
-                      this.setState({ total_array: res.steps.steps });
+                      this.setState({ total_array: res.steps });
                     })
                     .catch((error) => {
                       console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
@@ -913,7 +953,7 @@ export default class Inspector extends Component {
                   )
                   .then((res) => {
                     console.log('Response data:', res);
-                    this.setState({ total_array: res.steps.steps });
+                    this.setState({ total_array: res.steps });
                   })
                   .catch((error) => {
                     console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
@@ -923,42 +963,6 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Open Notifications</span></Button>
-            <Button icon={<FundProjectionScreenOutlined />}
-              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onMouseOver={() => this.setState({ nestedDropIndex: 1 })}
-              // disabled={isGestureEditorVisible}
-              className={InspectorStyles['user_actions']}
-            ><span> long press key</span></Button>
-
-            <Button icon={<FundProjectionScreenOutlined />}
-              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onMouseOver={() => this.setState({ nestedDropIndex: 2 })}
-              // disabled={isGestureEditorVisible}
-              className={InspectorStyles['user_actions']}
-            ><span>press key</span></Button>
-            {this.state.nestedDropIndex === 1 &&
-              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
-                <div>
-                  {options.map((option, index) => (
-                    <Button style={{ width: '100%' }} key={index} onClick={async () => await this.handleActions(option, 'long_press_key')}>
-                      {option}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            }
-
-            {this.state.nestedDropIndex === 2 &&
-              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
-                <div style={{ width: '100%' }}>
-                  {options.map((option, index) => (
-                    <Button style={{ width: '100%' }} key={index} onClick={async () => await this.handleActions(option, 'press_key')}>
-                      {option}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            }
           </div>}
         </div>
 
@@ -1052,7 +1056,7 @@ export default class Inspector extends Component {
                       )
                       .then((res) => {
                         console.log('Response data:', res);
-                        this.setState({ total_array: res.steps.steps });
+                        this.setState({ total_array: res.steps });
                       })
                       .catch((error) => {
                         console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
