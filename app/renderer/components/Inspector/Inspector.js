@@ -393,7 +393,7 @@ export default class Inspector extends Component {
       </Tooltip>
       {/* <Button icon={<BarsOutlined />} onClick={() => this.handlePanel(this.state.showPanel)}></Button> */}
 
-      {showScreenshot && <div>
+      {showScreenshot && <div style={{display:"flex", flexDirection:"column", width:"fit-content"}}>
         <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT, 'Select Elements'); }}
           type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
           disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1145,7 +1145,7 @@ export default class Inspector extends Component {
         {screenShotControls}
         {showScreenshot &&
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {this.state.currentSelection !== null && <div style={{ textAlign: 'center', color: "white", fontWeight: "bold", background: 'rgb(24, 119, 242)', width: 'max-content', borderRadius: '5px', padding: "10px", margin: "auto" }}>Current Selection : {this.state.currentSelection}</div>}
+            {this.state.currentSelection !== null && <div style={{ textAlign: 'center', color: "white", fontWeight: "bold", background: 'rgb(24, 119, 242)', width: '89%', borderRadius: '5px', padding: "10px", marginLeft: "18px" }}>Current Selection : {this.state.currentSelection}</div>}
             <Screenshot {...this.props} scaleRatio={this.state.scaleRatio} />
           </div>}
         {screenshotError && t('couldNotObtainScreenshot', { screenshotError })}

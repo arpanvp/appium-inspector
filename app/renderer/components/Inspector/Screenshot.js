@@ -597,15 +597,16 @@ const Screenshot = (props) => {
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
     <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{display: "flex!important"}}>
-      <div className={styles.innerScreenshotContainer}>
-        <div id='selectedElementContainer'
+      <div id='selectedElementContainer'
           className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
-          <Card title={<span><TagOutlined /> {t('selectedElement')}</span>}
+          <Card
             className={InspectorStyles['selected-element-card']}>
+            {/* {!path && <SelectedElement/>} */}
             {path && <SelectedElement {...props} />}
-            {!path && <i>{t('selectElementInSource')}</i>}
+            {/* {!path && <i>{t('selectElementInSource')}</i>} */}
           </Card>
-        </div>
+      </div>
+      <div className={styles.innerScreenshotContainer}>
         <div ref={containerEl}
           style={screenshotStyle}
           onMouseDown={handleScreenshotClick}
@@ -746,7 +747,7 @@ const Screenshot = (props) => {
           }
         </div>
       </div>
-      {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
+      {/* {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
         <Tooltip title={t('Press Back Button')}>
           <Button id='btnPressHomeButton' className={styles['phone-btn1']}
             icon={<IoChevronBackOutline className={styles['custom-button-icon']}/>}
@@ -762,7 +763,7 @@ const Screenshot = (props) => {
             icon={<BiSquare className={styles['custom-button-icon']}/>}
             onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187]})} />
         </Tooltip>
-      </div>}
+      </div>} */}
     </Spin>
   );
 };

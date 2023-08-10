@@ -10,7 +10,7 @@ const HighlighterRect = (props) => {
           selectElement, unselectElement, element, scaleRatio, xOffset, elLocation, elSize, dimensions } = props;
   const { path: hoveredPath } = hoveredElement;
   const { path: selectedPath } = selectedElement;
-
+  // console.log("props", props);
   let width, height, left, top, highlighterClasses, key;
   highlighterClasses = [InspectorCSS['highlighter-box']];
 
@@ -40,7 +40,7 @@ const HighlighterRect = (props) => {
     onMouseOut={unselectHoveredElement}
     onClick={() => key === selectedPath ? unselectElement() : selectElement(key)}
     key={key}
-    style={{left: (left || 0), top: (top || 0), width: (width || 0), height: (height || 0)}}>
+    style={{left: (left || 0), top: (top|| 0), width: (width || 0), height: (height || 0)}}>
     <div></div>
   </div>;
 };

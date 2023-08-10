@@ -90,12 +90,12 @@
     justify-content: space-around;
 }
 .inspector-main .screenshot-container {
-    display: flex;
     max-width: 500px!important;
     max-height: calc(100% - 50px);
     flex-grow: 1;
     flex-shrink: 2;
-    flex-basis: 328px!important;
+    flex-basis: 400px!important;
+    display:flex!important;
 }
 #screenshot{
     width: 100%;
@@ -122,28 +122,14 @@
 }
 
 .inspector-main .screenshot-container img {
-    max-width: 330px;
-    border-radius:26px;
-    max-height: 89%;
-    position: absolute;
+    max-width: 100%;
+    max-height:100%;
+    /* position: absolute;
     top:34px;
-    left: 16px;
+    left: 16px; */
     /* border: 1px solid #eee; */
-    margin:auto;
+    /* margin:auto; */
     box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
-} 
-
- .inspector-main .screenshot-container .screenshotBox {
-    width: 100%;
-    height: 95%;
-    top:14%;
-    /* text-align: left; */
-    /* position: absolute; */
-    overflow: hidden;
-    background-image: url("../../../../assets/images/mobile.png");
-    background-size:360px 100%;
-    background-repeat:no-repeat;
-    display:flex;
 } 
 
 .inspector-main .interaction-tab-container :global(.ant-tabs-tabpane) {
@@ -154,11 +140,11 @@
     position: relative;
     flex-grow: 3;
     flex-basis: 550px;
-    /* min-width: 380px; */
-    /* padding-left: 1em; */
+    min-width: 380px;
+    padding-left: 1em;
     display: flex;
     flex-flow: column;
-    height: max-content;
+    height: 20px;
 }
 
 .inspector-main :global(.ant-card-head) {
@@ -499,11 +485,12 @@
     flex-direction: column;
     height:100px;
     background:transparent;
+    margin-left:-8%;
 }
 
 .selected-element-card :global(.ant-card-body) {
     flex: 1;
-    overflow: auto;
+    /* overflow: auto; */
     margin-right: -12px;
 }
 
@@ -736,12 +723,12 @@ table {
   } */
 
   .innerScreenshotContainer {
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
-    width: 360px;   
-    height: 95%;
-    margin: auto;
+    /* width: 360px;    */
+    height: 100%;
+    /* margin: auto; */
     /* border: 16px rgb(30, 30, 39) solid;
     border-top-width: 60px;
     border-bottom-width: 60px;
@@ -750,26 +737,27 @@ table {
 
 .inspector-main .screenshot-container .screenshotBox {
     width: 100%;
-    height: 97%;
-    /* text-align: left; */
+    height: 100%;
+    text-align: left;
     position: absolute;
     overflow: hidden;
-    background-image: url("../../../../assets/images/mobile.png");
+    transform:scale(0.9);
+    /* background-image: url("../../../../assets/images/mobile.png");
     background-size:360px 100%;
     background-repeat:no-repeat;
-    display:flex;
+    display:flex; */
 }
 
-.inspector-main .screenshot-container img {
+/* .inspector-main .screenshot-container img {
     max-width: 338px;
     border-radius:26px;
     max-height: 92%;
     position: absolute;
     top:30px;
     left: 10px;
-    /* border: 1px solid #eee; */
+    border: 1px solid #eee;
     box-shadow: 0px 0px 1px 2px rgba(0, 0, 0, 0.05);
-}
+} */
 
 
   
