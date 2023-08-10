@@ -271,7 +271,7 @@ export default class Inspector extends Component {
       )
       .then((res) => {
         console.log("Response data:", res);
-        this.setState({ total_array: res.steps.steps });
+        this.setState({ total_array: res.steps });
       })
       .catch((error) => {
         console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
@@ -355,6 +355,48 @@ export default class Inspector extends Component {
     console.log("🚀 ~ file: Inspector.js:295 ~ shakeBooty ~ isShake:", isShake);
   }
 
+  async callParticularSteps(data){
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        console.log('API response:', response);
+      })
+      .catch((error) => {
+        console.error('API error:', error);
+      });
+  }
+
+  async fetchAllSteps(){
+    const { driver } = this.props;
+    let data1 = {
+      'session_id': driver.sessionId,
+      'step-name': 'steps'
+    };
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data1),
+    })
+      .then((res) =>
+        // Convert the response to JSON
+        res.json()
+      )
+      .then((res) => {
+        console.log('Response data:', res);
+        this.setState({ total_array: res.steps });
+      })
+      .catch((error) => {
+        console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+      });
+  }
+
   render() {
     const { screenshot, screenshotError, selectedElement = {},
       quitSession, showRecord,
@@ -374,7 +416,7 @@ export default class Inspector extends Component {
 
     if (flow_steps) {
       console.log('🚀 ~ file: Inspector.js:210 ~ Inspector ~ render ~ flow_steps:', flow_steps);
-      this.state.total_array = flow_steps.steps.steps;
+      this.state.total_array = flow_steps.steps;
     }
     console.log('driver for iddddddd', driver);
     const showScreenshot = ((screenshot && !screenshotError) ||
@@ -658,11 +700,51 @@ export default class Inspector extends Component {
             )}
           </div>}
         </div> */}
-        <div onMouseOver={() => this.setActiveIndex(3)} onMouseOut={() => this.setActiveIndex(0)}
+        <div onMouseOver={() =>  this.setState({activeIndex:3}) }
+         onMouseOut={() => this.setState({activeIndex:0})}
           style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
           <HeatMapOutlined style={{ fontSize: '20px' }} />
           <div>Device Actions</div>
           {this.state.activeIndex === 3 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+          <Button icon={<FundProjectionScreenOutlined />}
+              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              onMouseOver={() => this.setState({ nestedDropIndex: 1 })}
+              // disabled={isGestureEditorVisible}
+              className={InspectorStyles['user_actions']}
+            ><span> long press key</span></Button>
+
+            <Button icon={<FundProjectionScreenOutlined />}
+              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+              onMouseOver={() => this.setState({ nestedDropIndex: 2 })}
+              // disabled={isGestureEditorVisible}
+              className={InspectorStyles['user_actions']}
+            ><span>press key</span></Button>
+            {this.state.nestedDropIndex === 1 &&
+              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
+                <div>
+                  {options.map((option, index) => (
+                    <Button style={{ width: '100%' }} key={index}
+                     onClick={async () => await this.handleActions(option, 'long_press_key')}>
+                      {option}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            }
+
+            {this.state.nestedDropIndex === 2 &&
+              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
+                <div style={{ width: '100%' }}>
+                  {options.map((option, index) => (
+                    <Button style={{ width: '100%' }} key={index} 
+                    onClick={async () => await this.handleActions(option, 'press_key')}>
+                      {option}
+                    </Button>
+                  ))}
+                </div>
+              </div>
+            }
+            
             <Button className={InspectorStyles['user_actions']} icon={<FileAddOutlined />} onClick={async () => {
               if (screenshotInteractionMode === FILE_UPLOAD) {
                 this.screenshotInteractionChange(null, null);
@@ -671,19 +753,7 @@ export default class Inspector extends Component {
                   'step-name': 'select_file',
                   'status': 'done',
                 };
-                await fetch('https://apprecord.testing24x7.ai/appAction', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(data),
-                })
-                  .then((response) => {
-                    console.log('API response:', response);
-                  })
-                  .catch((error) => {
-                    console.error('API error:', error);
-                  });
+                this.callParticularSteps(data)
               } else {
                 this.screenshotInteractionChange(FILE_UPLOAD, 'File Upload');
               }
@@ -697,31 +767,8 @@ export default class Inspector extends Component {
             <Button icon={<CaretDownOutlined />} onClick={async () => {
               this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
               this.hideKeyboard();
-              let data1 = {
-                'session_id': driver.sessionId,
-                'step-name': 'steps'
-              };
-
-              await fetch('https://apprecord.testing24x7.ai/appAction', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data1),
-              })
-                .then((res) =>
-                  // Convert the response to JSON
-                  res.json()
-                )
-                .then((res) => {
-                  console.log('Response data:', res);
-                  this.setState({ total_array: res.steps.steps });
-                })
-                .catch((error) => {
-                  console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-                });
+              this.fetchAllSteps()
               await applyClientMethod({ methodName: 'getPageSource' });
-
             }}
               type={screenshotInteractionMode === HIDE_KEYBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -729,29 +776,7 @@ export default class Inspector extends Component {
             <Button icon={<FieldTimeOutlined />} onClick={async () => {
               this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
               this.getDeviceTime();
-              let data1 = {
-                'session_id': driver.sessionId,
-                'step-name': 'steps'
-              };
-
-              await fetch('https://apprecord.testing24x7.ai/appAction', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data1),
-              })
-                .then((res) =>
-                  // Convert the response to JSON
-                  res.json()
-                )
-                .then((res) => {
-                  console.log('Response data:', res);
-                  this.setState({ total_array: res.steps.steps });
-                })
-                .catch((error) => {
-                  console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-                });
+              this.fetchAllSteps()
               await applyClientMethod({ methodName: 'getPageSource' });
             }}
               type={screenshotInteractionMode === GET_DEVICE_TIME ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -772,44 +797,8 @@ export default class Inspector extends Component {
                 'step-name': 'rotate',
                 'action': 'landscape'
               };
-              await fetch('https://apprecord.testing24x7.ai/appAction', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-              })
-                .then((response) => {
-                  console.log('API response:', response);
-                })
-                .catch((error) => {
-                  console.error('API error:', error);
-                });
-
-              let data1 = {
-                "session_id": driver.sessionId,
-                'step-name': 'steps'
-              };
-              console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
-              await fetch("https://apprecord.testing24x7.ai/appAction", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data1),
-              })
-                .then((res) =>
-                  // Convert the response to JSON
-                  res.json()
-                )
-                .then((res) => {
-                  console.log("Response data:", res);
-                  this.setState({ total_array: res.steps.steps });
-                })
-                .catch((error) => {
-                  console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
-                });
-
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
                 await driver.client.getOrientation().then((res) => {
                 console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
                 this.setState({ mode_orientation: res });
@@ -826,47 +815,11 @@ export default class Inspector extends Component {
                     'step-name': 'rotate',
                     'action': 'portrait'
                   };
-                  await fetch('https://apprecord.testing24x7.ai/appAction', {
-                    method: 'POST',
-                    headers: {
-                      'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data),
-                  })
-                    .then((response) => {
-                      console.log('API response:', response);
-                    })
-                    .catch((error) => {
-                      console.error('API error:', error);
-                    });
-
-                  let data1 = {
-                    "session_id": driver.sessionId,
-                    'step-name': 'steps'
-                  };
-                  console.log("🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:", driver.sessionId);
-                  await fetch("https://apprecord.testing24x7.ai/appAction", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(data1),
-                  })
-                    .then((res) =>
-                      // Convert the response to JSON
-                      res.json()
-                    )
-                    .then((res) => {
-                      console.log("Response data:", res);
-                      this.setState({ total_array: res.steps.steps });
-                    })
-                    .catch((error) => {
-                      console.log("🚀 ~ file: Inspector.js:901 ~ return ~ error:", error);
-                    });
-
-                    driver.client.getOrientation().then((res) => {
-                      console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
-                      this.setState({ mode_orientation: res });
+                  this.callParticularSteps(data)
+                  this.fetchAllSteps()
+                  driver.client.getOrientation().then((res) => {
+                  console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
+                  this.setState({ mode_orientation: res });
                   });
                   await applyClientMethod({ methodName: 'getPageSource' });
                 }}
@@ -881,84 +834,13 @@ export default class Inspector extends Component {
                   'session_id': driver.sessionId,
                   'step-name': 'notification',
                 };
-                await fetch('https://apprecord.testing24x7.ai/appAction', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(data),
-                })
-                  .then((response) => {
-                    console.log('API response:', response);
-                  })
-                  .catch((error) => {
-                    console.error('API error:', error);
-                  });
-
-                let data1 = {
-                  'session_id': driver.sessionId,
-                  'step-name': 'steps'
-                };
-                console.log('🚀 ~ file: Inspector.js:440 ~ Inspector ~ onClick={async ~ driver.sessionId:', driver.sessionId);
-                await fetch('https://apprecord.testing24x7.ai/appAction', {
-                  method: 'POST',
-                  headers: {
-                    'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(data1),
-                })
-                  .then((res) =>
-                    // Convert the response to JSON
-                    res.json()
-                  )
-                  .then((res) => {
-                    console.log('Response data:', res);
-                    this.setState({ total_array: res.steps.steps });
-                  })
-                  .catch((error) => {
-                    console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-                  });
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Open Notifications</span></Button>
-            <Button icon={<FundProjectionScreenOutlined />}
-              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onMouseOver={() => this.setState({ nestedDropIndex: 1 })}
-              // disabled={isGestureEditorVisible}
-              className={InspectorStyles['user_actions']}
-            ><span> long press key</span></Button>
-
-            <Button icon={<FundProjectionScreenOutlined />}
-              type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onMouseOver={() => this.setState({ nestedDropIndex: 2 })}
-              // disabled={isGestureEditorVisible}
-              className={InspectorStyles['user_actions']}
-            ><span>press key</span></Button>
-            {this.state.nestedDropIndex === 1 &&
-              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
-                <div>
-                  {options.map((option, index) => (
-                    <Button style={{ width: '100%' }} key={index} onClick={async () => await this.handleActions(option, 'long_press_key')}>
-                      {option}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            }
-
-            {this.state.nestedDropIndex === 2 &&
-              <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
-                <div style={{ width: '100%' }}>
-                  {options.map((option, index) => (
-                    <Button style={{ width: '100%' }} key={index} onClick={async () => await this.handleActions(option, 'press_key')}>
-                      {option}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            }
           </div>}
         </div>
 
@@ -971,28 +853,100 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Expected value</span></Button>
-             <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+             <Button icon={<CheckCircleOutlined />}
+              onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'text_equal',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>text equals</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />} 
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'text_contains',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>text contains</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />} 
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'attribute_equals',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>attribute equals</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />}
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'attribute_contains',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>attribute contains</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />} 
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'is_element_displayed',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Displayed</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />} 
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'is_element_selected',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Selected</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />} 
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'is_element_enabled',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Enabled</span></Button>
-                <Button icon={<CheckCircleOutlined />} onClick={() => {}}
+                <Button icon={<CheckCircleOutlined />} 
+                onClick={async () => {
+                let data = {
+                  'session_id': driver.sessionId,
+                  'step-name': 'is_element_disabled',
+                };
+                this.callParticularSteps(data)
+                this.fetchAllSteps()
+                await applyClientMethod({ methodName: 'getPageSource' });
+              }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Disabled</span></Button>
           </div>}
@@ -1014,50 +968,13 @@ export default class Inspector extends Component {
                 <Button
                   onClick={async () => {
                     await driver.client.activateApp(this.state.inputBundleId);
-
                     let data = {
                       'session_id': driver.sessionId,
                       'step-name': 'switch_app',
                       'bundle_id': this.state.inputBundleId
                     };
-                    await fetch('https://apprecord.testing24x7.ai/appAction', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify(data),
-                    })
-                      .then((response) => {
-                        console.log('API response:', response);
-                      })
-                      .catch((error) => {
-                        console.error('API error:', error);
-                      });
-
-
-                    let data1 = {
-                      'session_id': driver.sessionId,
-                      'step-name': 'steps'
-                    };
-                    await fetch('https://apprecord.testing24x7.ai/appAction', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                      body: JSON.stringify(data1),
-                    })
-                      .then((res) =>
-                        // Convert the response to JSON
-                        res.json()
-                      )
-                      .then((res) => {
-                        console.log('Response data:', res);
-                        this.setState({ total_array: res.steps.steps });
-                      })
-                      .catch((error) => {
-                        console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-                      });
-
+                    this.callParticularSteps(data)
+                    this.fetchAllSteps()
                     await applyClientMethod({ methodName: 'getPageSource' });
                     this.setState({ isInput: false, inputBundleId: '' });
                   }}
@@ -1217,13 +1134,13 @@ export default class Inspector extends Component {
                       <th>Search By</th>
                       <th>Search By Value</th>
                     </tr>
-                    {this.state.total_array && this.state.total_array.map((item, key) => (
+                    {this.state.total_array.length > 0 && this.state.total_array.map((item, key) => (
                       <tr key={key}>
                         <td>{key + 1}</td>
                         <td>{item['step']}</td>
                         <td>{item['step_name']}</td>
                         <td>{item['search_by']}</td>
-                        <td style={{ maxWidth: '200px', wordWrap: 'break-word' }}>{item['search_by_value']}</td>
+                        {/* <td style={{ maxWidth: '200px', wordWrap: 'break-word' }}>{item['search_by_value']}</td> */}
                         {/* {item.response.status === 200 ?
                      <td><span style={{color:'green'}}>Success</span></td> :
                     <td><span style={{color:'red'}}>Failed</span></td>
