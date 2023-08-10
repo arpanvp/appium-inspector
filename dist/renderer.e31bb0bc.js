@@ -1,4 +1,4 @@
-process.env.HMR_PORT=42297;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=37565;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9104,8 +9104,8 @@ const HighlighterRect = props => {
     onClick: () => key === selectedPath ? unselectElement() : selectElement(key),
     key: key,
     style: {
-      left: left || 0,
-      top: top || 0,
+      left: left + 11 || 0,
+      top: top + 13 || 0,
       width: width || 0,
       height: height || 0
     }
@@ -10829,6 +10829,7 @@ var _icons = require("@ant-design/icons");
 var _testinglogo = _interopRequireDefault(require("../../../../assets/images/testinglogo.png"));
 var _hamburger = _interopRequireDefault(require("../../../../assets/images/hamburger.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-unused-vars */
 
 const HeaderButtons = props => {
@@ -10849,18 +10850,18 @@ const HeaderButtons = props => {
     t
   } = props;
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
-    className: _Inspector.default['logoContainer']
+    className: _Inspector.default.logoContainer
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _hamburger.default,
     alt: "toggleButton",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })));
   const deviceControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, driver && driver.client.isIOS && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
@@ -10888,18 +10889,18 @@ const HeaderButtons = props => {
   const appModeControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     value: appMode,
     style: {
-      display: "flex",
-      gap: "10px"
+      display: 'flex',
+      gap: '10px'
     }
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     icon: /*#__PURE__*/_react.default.createElement(_icons.AppstoreOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.NATIVE);
     }
     // type={appMode === APP_MODE.NATIVE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
   }, "Native Mode"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     icon: /*#__PURE__*/_react.default.createElement(_icons.GlobalOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.WEB_HYBRID);
@@ -10908,32 +10909,32 @@ const HeaderButtons = props => {
   }, "Hybrid Mode"));
   const generalControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     style: {
-      display: "flex",
-      gap: "10px"
+      display: 'flex',
+      gap: '10px'
     }
   }, mjpegScreenshotUrl && !isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Start Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnStartRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PlayCircleOutlined, null),
     onClick: toggleRefreshingState
   })), mjpegScreenshotUrl && isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Pause Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnPauseRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseCircleOutlined, null),
     onClick: toggleRefreshingState
   }, "Pause Recording")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnReload",
     icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null),
     onClick: () => applyClientMethod({
       methodName: 'getPageSource'
     })
   }, "Refresh"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "searchForElement",
     icon: /*#__PURE__*/_react.default.createElement(_icons.SearchOutlined, null),
     onClick: showLocatorTestModal
@@ -10941,7 +10942,7 @@ const HeaderButtons = props => {
   /*#__PURE__*/
   // <Tooltip title={t('Start Recording')}>
   _react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnStartRecording",
     icon: /*#__PURE__*/_react.default.createElement(_icons.EyeOutlined, null),
     onClick: startRecording
@@ -10951,7 +10952,7 @@ const HeaderButtons = props => {
   /*#__PURE__*/
   // <Tooltip title={t('Pause Recording')}>
   _react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnPause",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseOutlined, null),
     type: _AntdTypes.BUTTON.DANGER,
@@ -10965,9 +10966,9 @@ const HeaderButtons = props => {
   // <Tooltip title={t('Close')}>
   _react.default.createElement(_antd.Button, {
     style: {
-      borderRadius: "50%"
+      borderRadius: '50%',
+      backgroundColor: 'red'
     },
-    className: _Inspector.default['actionButton'],
     id: "btnClose",
     icon: /*#__PURE__*/_react.default.createElement(_icons.CloseOutlined, null),
     onClick: () => quitSession()
@@ -10977,12 +10978,12 @@ const HeaderButtons = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['inspector-toolbar']
   }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    className: _Inspector.default['button_wrapper']
+    className: _Inspector.default.button_wrapper
   }, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      display: "flex",
-      gap: "10px",
-      alignItems: "center"
+      display: 'flex',
+      gap: '10px',
+      alignItems: 'center'
     }
   }, headerLogo, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
 };
