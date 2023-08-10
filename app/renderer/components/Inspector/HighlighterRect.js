@@ -10,7 +10,7 @@ const HighlighterRect = (props) => {
           selectElement, unselectElement, element, scaleRatio, xOffset, elLocation, elSize, dimensions } = props;
   const { path: hoveredPath } = hoveredElement;
   const { path: selectedPath } = selectedElement;
-
+  // console.log("props", props);
   let width, height, left, top, highlighterClasses, key;
   highlighterClasses = [InspectorCSS['highlighter-box']];
 

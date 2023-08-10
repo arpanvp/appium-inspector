@@ -71,7 +71,7 @@ const HighlighterRects = (props) => {
       element: source,
       parent: prevElement,
       properties: {
-        left: x1 / scaleRatio + xOffset,
+        left: x1 / scaleRatio,
         top: y1 / scaleRatio,
         width: (x2 - x1) / scaleRatio,
         height: (y2 - y1) / scaleRatio,

@@ -17,6 +17,7 @@ export function parseCoordinates (element) {
   let {bounds, x, y, width, height} = element.attributes || {};
 
   if (bounds) {
+    // console.log("bounds", bounds);
     let boundsArray = bounds.split(/\[|\]|,/).filter((str) => str !== '');
     const x1 = parseInt(boundsArray[0], 10);
     const x2 = parseInt(boundsArray[2], 10);

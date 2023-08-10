@@ -127,9 +127,9 @@ const SelectedElement = (props) => {
 
   // If XPath is the only provided data source, warn the user about it's brittleness
   let showXpathWarning = false;
-  if (findDataSource.length === 0) {
-    showXpathWarning = true;
-  }
+  // if (findDataSource.length === 0) {
+  //   showXpathWarning = true;
+  // }
 
   // Add class chain to the data source as well
   if (classChain && currentContext === NATIVE_APP) {
