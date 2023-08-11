@@ -1,3 +1,4 @@
+/* eslint-disable require-await */
 /* eslint-disable quotes */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable dot-notation */
@@ -355,7 +356,7 @@ export default class Inspector extends Component {
     console.log("🚀 ~ file: Inspector.js:295 ~ shakeBooty ~ isShake:", isShake);
   }
 
-  async callParticularSteps(data){
+  async callParticularSteps(data) {
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
@@ -371,7 +372,7 @@ export default class Inspector extends Component {
       });
   }
 
-  async fetchAllSteps(){
+  async fetchAllSteps() {
     const { driver } = this.props;
     let data1 = {
       'session_id': driver.sessionId,
@@ -435,7 +436,7 @@ export default class Inspector extends Component {
       </Tooltip>
       {/* <Button icon={<BarsOutlined />} onClick={() => this.handlePanel(this.state.showPanel)}></Button> */}
 
-      {showScreenshot && <div style={{display:"flex", flexDirection:"column", width:"fit-content"}}>
+      {showScreenshot && <div style={{display: "flex", flexDirection: "column", width: "fit-content"}}>
         <Button icon={<SelectOutlined />} onClick={() => { this.screenshotInteractionChange(SELECT, 'Select Elements'); }}
           type={screenshotInteractionMode === SELECT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
           disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -700,8 +701,8 @@ export default class Inspector extends Component {
             )}
           </div>}
         </div> */}
-        <div onMouseOver={() =>  this.setState({activeIndex:3}) }
-         onMouseOut={() => this.setState({activeIndex:0})}
+        <div onMouseOver={() => this.setState({activeIndex: 3}) }
+         onMouseOut={() => this.setState({activeIndex: 0})}
           style={{ textAlign: 'center', padding: '5px', borderBottom: '1px solid grey', position: 'relative', cursor: 'pointer' }}>
           <HeatMapOutlined style={{ fontSize: '20px' }} />
           <div>Device Actions</div>
@@ -736,7 +737,7 @@ export default class Inspector extends Component {
               <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '1999', left: '100%', top: '10%' }}>
                 <div style={{ width: '100%' }}>
                   {options.map((option, index) => (
-                    <Button style={{ width: '100%' }} key={index} 
+                    <Button style={{ width: '100%' }} key={index}
                     onClick={async () => await this.handleActions(option, 'press_key')}>
                       {option}
                     </Button>
@@ -744,7 +745,7 @@ export default class Inspector extends Component {
                 </div>
               </div>
             }
-            
+
             <Button className={InspectorStyles['user_actions']} icon={<FileAddOutlined />} onClick={async () => {
               if (screenshotInteractionMode === FILE_UPLOAD) {
                 this.screenshotInteractionChange(null, null);
@@ -753,7 +754,7 @@ export default class Inspector extends Component {
                   'step-name': 'select_file',
                   'status': 'done',
                 };
-                this.callParticularSteps(data)
+                this.callParticularSteps(data);
               } else {
                 this.screenshotInteractionChange(FILE_UPLOAD, 'File Upload');
               }
@@ -767,7 +768,7 @@ export default class Inspector extends Component {
             <Button icon={<CaretDownOutlined />} onClick={async () => {
               this.screenshotInteractionChange(HIDE_KEYBOARD, 'Hide keyword');
               this.hideKeyboard();
-              this.fetchAllSteps()
+              this.fetchAllSteps();
               await applyClientMethod({ methodName: 'getPageSource' });
             }}
               type={screenshotInteractionMode === HIDE_KEYBOARD ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -776,7 +777,7 @@ export default class Inspector extends Component {
             <Button icon={<FieldTimeOutlined />} onClick={async () => {
               this.screenshotInteractionChange(GET_DEVICE_TIME, 'Get Device Time');
               this.getDeviceTime();
-              this.fetchAllSteps()
+              this.fetchAllSteps();
               await applyClientMethod({ methodName: 'getPageSource' });
             }}
               type={screenshotInteractionMode === GET_DEVICE_TIME ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -797,8 +798,8 @@ export default class Inspector extends Component {
                 'step-name': 'rotate',
                 'action': 'landscape'
               };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await driver.client.getOrientation().then((res) => {
                 console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
                 this.setState({ mode_orientation: res });
@@ -815,8 +816,8 @@ export default class Inspector extends Component {
                     'step-name': 'rotate',
                     'action': 'portrait'
                   };
-                  this.callParticularSteps(data)
-                  this.fetchAllSteps()
+                  this.callParticularSteps(data);
+                  this.fetchAllSteps();
                   driver.client.getOrientation().then((res) => {
                   console.log("🚀 ~ file: Inspector.js:363 ~ driver.client.getOrientation ~ res:", res);
                   this.setState({ mode_orientation: res });
@@ -834,8 +835,8 @@ export default class Inspector extends Component {
                   'session_id': driver.sessionId,
                   'step-name': 'notification',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
@@ -859,32 +860,32 @@ export default class Inspector extends Component {
                   'session_id': driver.sessionId,
                   'step-name': 'text_equal',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>text equals</span></Button>
-                <Button icon={<CheckCircleOutlined />} 
+                <Button icon={<CheckCircleOutlined />}
                 onClick={async () => {
                 let data = {
                   'session_id': driver.sessionId,
                   'step-name': 'text_contains',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>text contains</span></Button>
-                <Button icon={<CheckCircleOutlined />} 
+                <Button icon={<CheckCircleOutlined />}
                 onClick={async () => {
                 let data = {
                   'session_id': driver.sessionId,
                   'step-name': 'attribute_equals',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
@@ -895,56 +896,56 @@ export default class Inspector extends Component {
                   'session_id': driver.sessionId,
                   'step-name': 'attribute_contains',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>attribute contains</span></Button>
-                <Button icon={<CheckCircleOutlined />} 
+                <Button icon={<CheckCircleOutlined />}
                 onClick={async () => {
                 let data = {
                   'session_id': driver.sessionId,
                   'step-name': 'is_element_displayed',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Displayed</span></Button>
-                <Button icon={<CheckCircleOutlined />} 
+                <Button icon={<CheckCircleOutlined />}
                 onClick={async () => {
                 let data = {
                   'session_id': driver.sessionId,
                   'step-name': 'is_element_selected',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Selected</span></Button>
-                <Button icon={<CheckCircleOutlined />} 
+                <Button icon={<CheckCircleOutlined />}
                 onClick={async () => {
                 let data = {
                   'session_id': driver.sessionId,
                   'step-name': 'is_element_enabled',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                 <span>Is Element Enabled</span></Button>
-                <Button icon={<CheckCircleOutlined />} 
+                <Button icon={<CheckCircleOutlined />}
                 onClick={async () => {
                 let data = {
                   'session_id': driver.sessionId,
                   'step-name': 'is_element_disabled',
                 };
-                this.callParticularSteps(data)
-                this.fetchAllSteps()
+                this.callParticularSteps(data);
+                this.fetchAllSteps();
                 await applyClientMethod({ methodName: 'getPageSource' });
               }}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
@@ -973,8 +974,8 @@ export default class Inspector extends Component {
                       'step-name': 'switch_app',
                       'bundle_id': this.state.inputBundleId
                     };
-                    this.callParticularSteps(data)
-                    this.fetchAllSteps()
+                    this.callParticularSteps(data);
+                    this.fetchAllSteps();
                     await applyClientMethod({ methodName: 'getPageSource' });
                     this.setState({ isInput: false, inputBundleId: '' });
                   }}
@@ -1125,7 +1126,7 @@ export default class Inspector extends Component {
                 <div style={{ fontWeight: 'bold' }}>
                   FLOW TABLE:
                 </div>
-                <div style={{ width: '100%', overflowX: 'auto', overflowY: 'auto' }}>
+                <div style={{ width: '100%'}}>
                   <table>
                     <tr>
                       <th>S No.</th>
@@ -1140,7 +1141,7 @@ export default class Inspector extends Component {
                         <td>{item['step']}</td>
                         <td>{item['step_name']}</td>
                         <td>{item['search_by']}</td>
-                        {/* <td style={{ maxWidth: '200px', wordWrap: 'break-word' }}>{item['search_by_value']}</td> */}
+                        <td style={{ maxWidth: '200px', wordWrap: 'break-word' }}>{item['search_by_value']}</td>
                         {/* {item.response.status === 200 ?
                      <td><span style={{color:'green'}}>Success</span></td> :
                     <td><span style={{color:'red'}}>Failed</span></td>
