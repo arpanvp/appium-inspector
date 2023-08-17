@@ -9,6 +9,7 @@ const { createReduxHistory, routerMiddleware, routerReducer } = createReduxHisto
 });
 
 const rootReducer = createRootReducer(routerReducer);
+console.log("rootReducer", rootReducer);
 
 export const store = configureStore({
   reducer: rootReducer,
