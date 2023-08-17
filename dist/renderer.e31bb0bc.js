@@ -1,4 +1,4 @@
-process.env.HMR_PORT=40765;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=42017;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -13074,7 +13074,7 @@ class Inspector extends _react.Component {
     const {
       driver
     } = this.props;
-    const islocked = await driver.client.lock();
+    const islocked = await driver.client.pressKeyCode(26);
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
     let postdata = {
       'session_id': driver.sessionId,

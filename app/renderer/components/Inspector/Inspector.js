@@ -346,28 +346,28 @@ export default class Inspector extends Component {
   // }
   async isLocked() {
     const { driver } = this.props;
-    const islocked = await driver.client.lock();
+    const islocked = await driver.client.pressKeyCode(26);
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
     let postdata = {
       'session_id': driver.sessionId,
       'step-name': 'lock',
     };
     console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ lock ~ postdata:', postdata);
-
-    await fetch('https://apprecord.testing24x7.ai/appAction', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(postdata),
-    })
-      .then((response) => {
-        console.log('API response:', response);
-        postdata.response = response;
-      })
-      .catch((error) => {
-        console.error('API error:', error);
-      });
+    this.callParticularSteps(postdata);
+    // await fetch('https://apprecord.testing24x7.ai/appAction', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(postdata),
+    // })
+    //   .then((response) => {
+    //     console.log('API response:', response);
+    //     postdata.response = response;
+    //   })
+    //   .catch((error) => {
+    //     console.error('API error:', error);
+    //   });
     this.fetchAllSteps();
     await this.props.applyClientMethod({ methodName: 'getPageSource' });
   }
