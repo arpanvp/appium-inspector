@@ -7,6 +7,8 @@ import { BiSquare, BiCircle } from 'react-icons/bi';
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { APP_MODE } from './shared';
 import { BUTTON } from '../AntdTypes';
+import { useSelector, useDispatch } from 'react-redux'
+import { setShowPanel } from '../../slices/panelSlice';
 import {
   ReloadOutlined,
   PlayCircleOutlined,
@@ -23,14 +25,16 @@ import menuButton from '../../../../assets/images/hamburger.jpg';
 const HeaderButtons = (props) => {
   const { selectAppMode, appMode, mjpegScreenshotUrl, isSourceRefreshOn, toggleRefreshingState,
     isRecording, startRecording, pauseRecording, showLocatorTestModal, showSiriCommandModal,
-    applyClientMethod, quitSession, driver, t } = props;
+    applyClientMethod, quitSession, driver, t, handlePanel } = props;
+
+
 
   const headerLogo =
     <div className={InspectorStyles['logoContainer']}>
-      <div>
+      <div onClick={handlePanel}>
         <img src={menuButton} alt="toggleButton" style={{height:"45px"}}></img>
       </div>
-      <div>
+      <div> 
         <img src={logo} alt="testingLogo" style={{height:"45px"}}></img>
       </div>
     </div>

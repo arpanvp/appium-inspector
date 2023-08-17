@@ -75,6 +75,7 @@
 
 .inspector-main {
     display: flex;
+    background:#ffffff;
     gap:20px;
     flex: 1;
     flex-direction: row;
@@ -92,7 +93,7 @@
     justify-content: space-around;
 }
 .inspector-main .screenshot-container {
-    max-width: 500px!important;
+    max-width: 650px!important;
     max-height: calc(100% - 50px);
     flex-grow: 1;
     flex-shrink: 2;
@@ -491,6 +492,7 @@
     height:100px;
     background:transparent;
     margin-left:-8%;
+    border:0px solid red;
 }
 
 .selected-element-card :global(.ant-card-body) {
@@ -950,4 +952,11 @@ table {
 
 .option-inpt {
     text-align: center;
+}
+
+.activeCategory {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color:#f0f0f0;
+    border-radius:10px;
+    border:0px solid red;
 }

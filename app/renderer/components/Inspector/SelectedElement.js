@@ -9,8 +9,7 @@ import { getLocators, SCREENSHOT_INTERACTION_MODE} from './shared';
 import styles from './Inspector.css';
 import { Button, Row, Col, Input, Table, Alert, Tooltip, Select, Spin } from 'antd';
 import { clipboard, shell } from '../../polyfills';
-import { LoadingOutlined, CopyOutlined, AimOutlined, SendOutlined,
-         ClearOutlined, HourglassOutlined } from '@ant-design/icons';
+import { LoadingOutlined, CopyOutlined, AimOutlined, SendOutlined, tapIcon, ClearOutlined, HourglassOutlined } from '@ant-design/icons';
 import { ROW, ALERT } from '../AntdTypes';
 
 
@@ -200,13 +199,13 @@ const SelectedElement = (props) => {
 
 
   return <div>
-    {elementInteractionsNotAvailable &&
+    {/* {elementInteractionsNotAvailable &&
       <Row type={ROW.FLEX} gutter={10} className={styles.selectedElemNotInteractableAlertRow}>
         <Col>
           <Alert type={ALERT.INFO} message={t('interactionsNotAvailable')} showIcon />
         </Col>
       </Row>
-    }
+    } */}
     <Row justify="center" type={ROW.FLEX} align="middle" className={styles.elementActions}>
       <Tooltip title={t('Tap')}>
         <Button

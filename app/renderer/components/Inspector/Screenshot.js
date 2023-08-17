@@ -15,7 +15,9 @@ import InspectorStyles from './Inspector.css';
 import SelectedElement from './SelectedElement';
 import B from 'bluebird';
 import styles from './Inspector.css';
-import {TagOutlined} from '@ant-design/icons';
+import { Row, Col, Input, Table, Alert, Select } from 'antd';
+import { ROW, ALERT } from '../AntdTypes';
+import { TagOutlined, AimOutlined, SendOutlined, ClearOutlined } from '@ant-design/icons';
 import {
   SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE, POINTER_TYPES,
   DEFAULT_TAP, DEFAULT_SWIPE, DEFAULT_LONGPRESS, DEFAULT_DRAG_AND_DROP, DEFAULT_ZOOM
@@ -38,7 +40,7 @@ const Screenshot = (props) => {
   const [element, setElement] = useState({});
   const [coordinates, setCoordinates] = useState([]);
   const [scratch, setScratch] = useState(false);
-
+  const [isDisabled] = useState(true);
 
 
   useEffect(() => {
@@ -131,7 +133,7 @@ const Screenshot = (props) => {
       setTimeout(() => {
         selectScreenshotInteractionMode(SELECT_DOUBLE);
       }, 1000);
-    } else if (screenshotInteractionMode === SELECT_DOUBLE) { 
+    } else if (screenshotInteractionMode === SELECT_DOUBLE) {
       await useDoubleTap();
     } else if (screenshotInteractionMode === DRAG_AND_DROP) {
       console.log("inside the drage and drop condition value!!!!!!");
@@ -199,7 +201,7 @@ const Screenshot = (props) => {
     } else if (screenshotInteractionMode === EXPECTED_VALUE) {
       let expected_value = '';
       let data = {};
-      if (props.selectedElement){
+      if (props.selectedElement) {
         expected_value = props.selectedElement.attributes.text;
         data = {
           expectedValue: expected_value,
@@ -209,27 +211,27 @@ const Screenshot = (props) => {
       await fetchExpectedValue(data);
     } else if (screenshotInteractionMode === TAKE_SCREENSHOT) {
       const image = await driver.client.takeScreenshot();
-    //   console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
-    //   let sendData = {
-    //     "session_id": driver.sessionId,
-    //     "step-name": "take_screenshot",
-    //   };
-    //   await fetch("https://apprecord.testing24x7.ai/appAction", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(sendData),
-    //   })
-    //   .then((response) => {*
-    //     console.log("API response:", response);
-    //   })
-    //   .catch((error) => {
-    //     console.error("API error:", error);
-    //   });
-    } else if (screenshotInteractionMode === SCRATCH){
+      //   console.log("🚀 ~ file: Screenshot.js:203 ~ handleScreenshotClick ~ image:", image);
+      //   let sendData = {
+      //     "session_id": driver.sessionId,
+      //     "step-name": "take_screenshot",
+      //   };
+      //   await fetch("https://apprecord.testing24x7.ai/appAction", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json"
+      //     },
+      //     body: JSON.stringify(sendData),
+      //   })
+      //   .then((response) => {*
+      //     console.log("API response:", response);
+      //   })
+      //   .catch((error) => {
+      //     console.error("API error:", error);
+      //   });
+    } else if (screenshotInteractionMode === SCRATCH) {
       console.log("🚀 ~ file: Screenshot.js:201 ~ handleScreenshotClick ~ e:", e);
-      if (!swipeStart){
+      if (!swipeStart) {
         setScratch(true);
         setCoordinates([]);
         await scratchCard(e);
@@ -320,7 +322,7 @@ const Screenshot = (props) => {
   const scratchCard = async (e) => {
     console.log("🚀 ~ file: Screenshot.js:293 ~ scratchCard ~ e:", e);
     console.log('scratching');
-    if (scratch === true){
+    if (scratch === true) {
       await handleMouseMove(e);
     }
   };
@@ -341,7 +343,7 @@ const Screenshot = (props) => {
       },
     });
     clearSwipeAction();
-    if (step_object){
+    if (step_object) {
       console.log("🚀 ~ file: Screenshot.js:97 ~ Screenshot ~ step_object:", step_object);
     }
   };
@@ -444,15 +446,15 @@ const Screenshot = (props) => {
       const newY = offsetY * scaleRatio;
       setX(Math.round(newX));
       setY(Math.round(newY));
-  
+
       if (screenshotInteractionMode === SCRATCH) {
-      // console.log("🚀 ~ file: Screenshot.js:299 ~ scratchCard ~ coordinates.length:", coordinates.length)
+        // console.log("🚀 ~ file: Screenshot.js:299 ~ scratchCard ~ coordinates.length:", coordinates.length)
         setCoordinates((prevCoordinates) => [
           ...prevCoordinates,
           { x: Math.round(newX), y: Math.round(newY) },
         ]);
 
-        if (coordinates.length > 250){
+        if (coordinates.length > 250) {
           console.log("🚀 ~ file: Screenshot.js:440 ~ handleMouseMove ~ coordinates.length:", coordinates);
           // setTimeout(() => {
           let data = {
@@ -479,12 +481,12 @@ const Screenshot = (props) => {
           // selectScreenshotInteractionMode(SELECT);
           setScratch(false);
         }
-        
+
       }
     }
     console.log("🚀 ~ file: Screenshot.js:406 ~ handleMouseMove ~ e:", e);
   };
-  
+
 
 
   const handleMouseOut = () => {
@@ -596,12 +598,42 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
-    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{display: "flex!important"}}>
+    <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{ display: "flex!important" }}>
       <div id='selectedElementContainer'
         className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
         <Card
           className={InspectorStyles['selected-element-card']}>
           {/* {!path && <SelectedElement/>} */}
+          {!path && <Row justify="center" type={ROW.FLEX} align="middle" className={styles.elementActions}>
+            <Tooltip title={t('Tap')}>
+              <Button
+                disabled={isDisabled}
+                icon={<AimOutlined/> }
+                id='btnTapElement'
+                onClick={() => handleTap} />
+            </Tooltip>
+            <Button.Group className={styles.elementKeyInputActions}>
+              <Input className={styles.elementKeyInput}
+                disabled={isDisabled}
+                placeholder={t('Enter Keys to Send')}
+                allowClear={true}
+                onChange={(e) => sendKeys.current = e.target.value} />
+              <Tooltip title={t('Send Keys')}>
+                <Button
+                  disabled={isDisabled}
+                  id='btnSendKeysToElement'
+                  icon={<SendOutlined />}
+                  onClick={() => applyClientMethod({ methodName: 'sendKeys', elementId: selectedElementId, args: [sendKeys.current || ''] })} />
+              </Tooltip>
+              <Tooltip title={t('Clear')}>
+                <Button
+                  disabled={isDisabled}
+                  id='btnClearElement'
+                  icon={<ClearOutlined />}
+                  onClick={() => applyClientMethod({ methodName: 'clear', elementId: selectedElementId })} />
+              </Tooltip>
+            </Button.Group>
+          </Row>}
           {path && <SelectedElement {...props} />}
           {/* {!path && <i>{t('selectElementInSource')}</i>} */}
         </Card>
@@ -750,18 +782,18 @@ const Screenshot = (props) => {
       {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
         <Tooltip title={t('Press Back Button')}>
           <Button id='btnPressHomeButton' className={styles['phone-btn1']}
-            icon={<IoChevronBackOutline className={styles['custom-button-icon']}/>}
-            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4]})} />
+            icon={<IoChevronBackOutline className={styles['custom-button-icon']} />}
+            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4] })} />
         </Tooltip>
         <Tooltip title={t('Press Home Button')}>
           <Button id='btnPressHomeButton' className={styles['phone-btn2']}
-            icon={<BiCircle className={styles['custom-button-icon']}/>}
-            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3]})} />
+            icon={<BiCircle className={styles['custom-button-icon']} />}
+            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3] })} />
         </Tooltip>
         <Tooltip title={t('Press App Switch Button')}>
           <Button id='btnPressHomeButton' className={styles['phone-btn3']}
-            icon={<BiSquare className={styles['custom-button-icon']}/>}
-            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187]})} />
+            icon={<BiSquare className={styles['custom-button-icon']} />}
+            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187] })} />
         </Tooltip>
       </div>}
     </Spin>
