@@ -151,6 +151,7 @@ export const SCREENSHOT_INTERACTION_MODE = {
   LOCK: 'lock',
   UNLOCK: 'unlock',
   SHAKE: 'shake',
+  OTP: 'otp',
 };
 
 export const APP_MODE = {

@@ -25,7 +25,7 @@ import {
 import { IoChevronBackOutline } from 'react-icons/io5';
 import { BiSquare, BiCircle } from 'react-icons/bi';
 const { POINTER_UP, POINTER_DOWN, PAUSE, POINTER_MOVE } = POINTER_TYPES;
-const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, ROTATE } = SCREENSHOT_INTERACTION_MODE;
+const { TAP, SELECT, SLIDE, SWIPE, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, SLIDE_SWIPE, ZOOMIN, SELECT_LONG, SELECT_DOUBLE, FILE_UPLOAD, SELECT_FILE, EXPECTED_VALUE, TAKE_SCREENSHOT, SCRATCH, ROTATE, OTP } = SCREENSHOT_INTERACTION_MODE;
 const TYPES = { FILLED: 'filled', NEW_DASHED: 'newDashed', WHOLE: 'whole', DASHED: 'dashed', DRAG: 'drag' };
 
 
@@ -654,6 +654,9 @@ const Screenshot = (props) => {
           {swipeInstructions && <Tooltip open={true} title={swipeInstructions} placement="topLeft">{screenImg}</Tooltip>}
           {!swipeInstructions && screenImg}
           {screenshotInteractionMode === SELECT && containerEl.current &&
+            <HighlighterRects {...props} containerEl={containerEl.current} />
+          }
+          {screenshotInteractionMode === OTP && containerEl.current &&
             <HighlighterRects {...props} containerEl={containerEl.current} />
           }
           {screenshotInteractionMode === SLIDE && containerEl.current &&

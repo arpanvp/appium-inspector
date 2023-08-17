@@ -63,10 +63,11 @@ import {
   UnlockOutlined,
   ShakeOutlined,
   AppstoreAddOutlined,
+  DatabaseOutlined,
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
-const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, ROTATE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD, LOCK, UNLOCK, SHAKE } = SCREENSHOT_INTERACTION_MODE;
+const { SELECT, SWIPE, TAP, LONGPRESS, DRAG_AND_DROP, DOUBLE_TAP, ZOOMIN, SLIDE, FILE_UPLOAD, EXPECTED_VALUE, ROTATE, TAKE_SCREENSHOT, SCRATCH, HIDE_KEYBOARD, GET_DEVICE_TIME, GET_CLIPBOARD, LOCK, UNLOCK, SHAKE, OTP } = SCREENSHOT_INTERACTION_MODE;
 
 const ButtonGroup = Button.Group;
 
@@ -350,6 +351,27 @@ export default class Inspector extends Component {
     const { driver } = this.props;
     const islocked = await driver.client.lock();
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
+    let postdata = {
+      'session_id': driver.sessionId,
+      'step-name': 'lock',
+    };
+    console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ lock ~ postdata:', postdata);
+
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postdata),
+    })
+      .then((response) => {
+        console.log('API response:', response);
+        postdata.response = response;
+      })
+      .catch((error) => {
+        console.error('API error:', error);
+      });
+    this.fetchAllSteps();
     await this.props.applyClientMethod({ methodName: 'getPageSource' });
   }
   async shakeBooty() {
@@ -381,6 +403,7 @@ export default class Inspector extends Component {
       'session_id': driver.sessionId,
       'step-name': 'steps'
     };
+    console.log("🚀 ~ file: Inspector.js:378 ~ fetchAllSteps ~ data1:", data1);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {

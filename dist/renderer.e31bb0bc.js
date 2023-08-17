@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=35667;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=40765;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> e084233dc51f19478bb026699916c62933a4c8d5
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -838,7 +842,8 @@ const SCREENSHOT_INTERACTION_MODE = {
   ROTATE: 'rotate',
   LOCK: 'lock',
   UNLOCK: 'unlock',
-  SHAKE: 'shake'
+  SHAKE: 'shake',
+  OTP: 'otp'
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -5772,46 +5777,46 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_5ede3",
-  "sessionContainer": "_sessionContainer_5ede3",
-  "cloudProviderModal": "_cloudProviderModal_5ede3",
-  "sessionFooter": "_sessionFooter_5ede3",
-  "desiredCapsLink": "_desiredCapsLink_5ede3",
-  "tabText": "_tabText_5ede3",
-  "serverTabs": "_serverTabs_5ede3",
-  "scrollingTabCont": "_scrollingTabCont_5ede3",
-  "scrollingTab": "_scrollingTab_5ede3",
-  "savedSessions": "_savedSessions_5ede3",
-  "newSessionForm": "_newSessionForm_5ede3",
-  "capsFormattedCol": "_capsFormattedCol_5ede3",
-  "formattedCaps": "_formattedCaps_5ede3",
-  "formattedCapsBody": "_formattedCapsBody_5ede3",
-  "start-session-button": "_start-session-button_5ede3",
-  "filepath-button": "_filepath-button_5ede3",
-  "capsFormCol": "_capsFormCol_5ede3",
-  "capsFormRow": "_capsFormRow_5ede3",
-  "capsBoxFont": "_capsBoxFont_5ede3",
-  "capsValueControl": "_capsValueControl_5ede3",
-  "fileControlWrapper": "_fileControlWrapper_5ede3",
-  "localDesc": "_localDesc_5ede3",
-  "selected": "_selected_5ede3",
-  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
-  "capsEditorControls": "_capsEditorControls_5ede3",
-  "capsEditorButton": "_capsEditorButton_5ede3",
-  "capsEditor": "_capsEditor_5ede3",
-  "capsEditorTitle": "_capsEditorTitle_5ede3",
-  "capsEditorBody": "_capsEditorBody_5ede3",
-  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
-  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
-  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
-  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
-  "editSession": "_editSession_5ede3",
-  "btnReload": "_btnReload_5ede3",
-  "btnDeleteCap": "_btnDeleteCap_5ede3",
-  "inputDataCenter": "_inputDataCenter_5ede3",
-  "addonDataCenter": "_addonDataCenter_5ede3",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
+  "active-session": "_active-session_46061",
+  "sessionContainer": "_sessionContainer_46061",
+  "cloudProviderModal": "_cloudProviderModal_46061",
+  "sessionFooter": "_sessionFooter_46061",
+  "desiredCapsLink": "_desiredCapsLink_46061",
+  "tabText": "_tabText_46061",
+  "serverTabs": "_serverTabs_46061",
+  "scrollingTabCont": "_scrollingTabCont_46061",
+  "scrollingTab": "_scrollingTab_46061",
+  "savedSessions": "_savedSessions_46061",
+  "newSessionForm": "_newSessionForm_46061",
+  "capsFormattedCol": "_capsFormattedCol_46061",
+  "formattedCaps": "_formattedCaps_46061",
+  "formattedCapsBody": "_formattedCapsBody_46061",
+  "start-session-button": "_start-session-button_46061",
+  "filepath-button": "_filepath-button_46061",
+  "capsFormCol": "_capsFormCol_46061",
+  "capsFormRow": "_capsFormRow_46061",
+  "capsBoxFont": "_capsBoxFont_46061",
+  "capsValueControl": "_capsValueControl_46061",
+  "fileControlWrapper": "_fileControlWrapper_46061",
+  "localDesc": "_localDesc_46061",
+  "selected": "_selected_46061",
+  "capsNameEditorButton": "_capsNameEditorButton_46061",
+  "capsEditorControls": "_capsEditorControls_46061",
+  "capsEditorButton": "_capsEditorButton_46061",
+  "capsEditor": "_capsEditor_46061",
+  "capsEditorTitle": "_capsEditorTitle_46061",
+  "capsEditorBody": "_capsEditorBody_46061",
+  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
+  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
+  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
+  "add-desired-capability-button": "_add-desired-capability-button_46061",
+  "editSession": "_editSession_46061",
+  "btnReload": "_btnReload_46061",
+  "btnDeleteCap": "_btnDeleteCap_46061",
+  "inputDataCenter": "_inputDataCenter_46061",
+  "addonDataCenter": "_addonDataCenter_46061",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -8938,6 +8943,7 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "inspector-container": "_inspector-container_3421c",
   "inspector-toolbar": "_inspector-toolbar_3421c",
   "button_wrapper": "_button_wrapper_3421c",
@@ -9036,6 +9042,105 @@ module.exports = {
   "tick-coord-box": "_tick-coord-box_3421c",
   "option-inpt": "_option-inpt_3421c",
   "activeCategory": "_activeCategory_3421c"
+=======
+  "inspector-container": "_inspector-container_5407d",
+  "inspector-toolbar": "_inspector-toolbar_5407d",
+  "button_wrapper": "_button_wrapper_5407d",
+  "ant-btn": "_ant-btn_5407d",
+  "user_actions": "_user_actions_5407d",
+  "actionButton": "_actionButton_5407d",
+  "inspector-main": "_inspector-main_5407d",
+  "whole-btn": "_whole-btn_5407d",
+  "screenshot-container": "_screenshot-container_5407d",
+  "screenshot": "_screenshot_5407d",
+  "screenshot-controls": "_screenshot-controls_5407d",
+  "logoContainer": "_logoContainer_5407d",
+  "interaction-tab-container": "_interaction-tab-container_5407d",
+  "tree-container": "_tree-container_5407d",
+  "session-info-table": "_session-info-table_5407d",
+  "session-code-box": "_session-code-box_5407d",
+  "session-inner-table": "_session-inner-table_5407d",
+  "scroll-buttons": "_scroll-buttons_5407d",
+  "scroll-right": "_scroll-right_5407d",
+  "recorded-actions": "_recorded-actions_5407d",
+  "_inspector-main_0387c": "__inspector-main_0387c_5407d",
+  "ant-card-body": "_ant-card-body_5407d",
+  "interaction-tab-card": "_interaction-tab-card_5407d",
+  "highlighter-box": "_highlighter-box_5407d",
+  "inspected-element-box": "_inspected-element-box_5407d",
+  "hovered-element-box": "_hovered-element-box_5407d",
+  "centroid-box": "_centroid-box_5407d",
+  "centroid": "_centroid_5407d",
+  "overlap": "_overlap_5407d",
+  "expand": "_expand_5407d",
+  "plus-minus": "_plus-minus_5407d",
+  "phone-btn1": "_phone-btn1_5407d",
+  "phone-btn2": "_phone-btn2_5407d",
+  "phone-btn3": "_phone-btn3_5407d",
+  "custom-button-icon": "_custom-button-icon_5407d",
+  "elementActions": "_elementActions_5407d",
+  "elementKeyInputActions": "_elementKeyInputActions_5407d",
+  "selectedElementContainer": "_selectedElementContainer_5407d",
+  "selected-element-table-cells": "_selected-element-table-cells_5407d",
+  "element-cell-copy": "_element-cell-copy_5407d",
+  "selected-element-card": "_selected-element-card_5407d",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_5407d",
+  "context-selector": "_context-selector_5407d",
+  "sourceTag": "_sourceTag_5407d",
+  "sourceAttrName": "_sourceAttrName_5407d",
+  "no-recorded-actions": "_no-recorded-actions_5407d",
+  "recorded-code": "_recorded-code_5407d",
+  "framework-dropdown": "_framework-dropdown_5407d",
+  "searchResultsList": "_searchResultsList_5407d",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_5407d",
+  "searchResultsActions": "_searchResultsActions_5407d",
+  "searchResultsKeyInput": "_searchResultsKeyInput_5407d",
+  "elementKeyInput": "_elementKeyInput_5407d",
+  "element-count-container": "_element-count-container_5407d",
+  "locatorStrategyBtn": "_locatorStrategyBtn_5407d",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_5407d",
+  "coordinatesContainer": "_coordinatesContainer_5407d",
+  "swipeInstructions": "_swipeInstructions_5407d",
+  "swipeSvg": "_swipeSvg_5407d",
+  "tapDiv": "_tapDiv_5407d",
+  "iphone_x": "_iphone_x_5407d",
+  "custom_menu": "_custom_menu_5407d",
+  "ant-menu-submenu": "_ant-menu-submenu_5407d",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_5407d",
+  "gestureSvg": "_gestureSvg_5407d",
+  "filled": "_filled_5407d",
+  "dashed": "_dashed_5407d",
+  "whole": "_whole_5407d",
+  "newDashed": "_newDashed_5407d",
+  "circle-dashed": "_circle-dashed_5407d",
+  "circle-newDashed": "_circle-newDashed_5407d",
+  "screenimage": "_screenimage_5407d",
+  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
+  "screenshotBox": "_screenshotBox_5407d",
+  "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
+  "commands-container": "_commands-container_5407d",
+  "btn-container": "_btn-container_5407d",
+  "arg-row": "_arg-row_5407d",
+  "arg-container": "_arg-container_5407d",
+  "gesture-header": "_gesture-header_5407d",
+  "gesture-header-title": "_gesture-header-title_5407d",
+  "gesture-header-description": "_gesture-header-description_5407d",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_5407d",
+  "gesture-header-timeline": "_gesture-header-timeline_5407d",
+  "timeline-tick-title": "_timeline-tick-title_5407d",
+  "gesture-header-icon": "_gesture-header-icon_5407d",
+  "pointer-title": "_pointer-title_5407d",
+  "tick-card": "_tick-card_5407d",
+  "tick-plus-card": "_tick-plus-card_5407d",
+  "tick-plus-btn": "_tick-plus-btn_5407d",
+  "spaceContainer": "_spaceContainer_5407d",
+  "tick-pointer-input": "_tick-pointer-input_5407d",
+  "tick-button-group": "_tick-button-group_5407d",
+  "tick-button-input": "_tick-button-input_5407d",
+  "tick-input-box": "_tick-input-box_5407d",
+  "tick-coord-box": "_tick-coord-box_5407d",
+  "option-inpt": "_option-inpt_5407d"
+>>>>>>> e084233dc51f19478bb026699916c62933a4c8d5
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
@@ -9813,7 +9918,8 @@ const {
   EXPECTED_VALUE,
   TAKE_SCREENSHOT,
   SCRATCH,
-  ROTATE
+  ROTATE,
+  OTP
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
@@ -10710,6 +10816,8 @@ const Screenshot = props => {
     placement: "topLeft"
   }, screenImg), !swipeInstructions && screenImg, screenshotInteractionMode === SELECT && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
+  })), screenshotInteractionMode === OTP && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
+    containerEl: containerEl.current
   })), screenshotInteractionMode === SLIDE && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
   })), screenshotInteractionMode === DOUBLE_TAP && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
@@ -10893,6 +11001,7 @@ var _icons = require("@ant-design/icons");
 var _testinglogo = _interopRequireDefault(require("../../../../assets/images/testinglogo.png"));
 var _hamburger = _interopRequireDefault(require("../../../../assets/images/hamburger.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-unused-vars */
 
 const HeaderButtons = props => {
@@ -10914,20 +11023,25 @@ const HeaderButtons = props => {
     handlePanel
   } = props;
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
+<<<<<<< HEAD
     className: _Inspector.default['logoContainer']
   }, /*#__PURE__*/_react.default.createElement("div", {
     onClick: handlePanel
   }, /*#__PURE__*/_react.default.createElement("img", {
+=======
+    className: _Inspector.default.logoContainer
+  }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
+>>>>>>> e084233dc51f19478bb026699916c62933a4c8d5
     src: _hamburger.default,
     alt: "toggleButton",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })));
   const deviceControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, driver && driver.client.isIOS && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
@@ -10955,18 +11069,18 @@ const HeaderButtons = props => {
   const appModeControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     value: appMode,
     style: {
-      display: "flex",
-      gap: "10px"
+      display: 'flex',
+      gap: '10px'
     }
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     icon: /*#__PURE__*/_react.default.createElement(_icons.AppstoreOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.NATIVE);
     }
     // type={appMode === APP_MODE.NATIVE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
   }, "Native Mode"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     icon: /*#__PURE__*/_react.default.createElement(_icons.GlobalOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.WEB_HYBRID);
@@ -10975,32 +11089,32 @@ const HeaderButtons = props => {
   }, "Hybrid Mode"));
   const generalControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     style: {
-      display: "flex",
-      gap: "10px"
+      display: 'flex',
+      gap: '10px'
     }
   }, mjpegScreenshotUrl && !isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Start Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnStartRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PlayCircleOutlined, null),
     onClick: toggleRefreshingState
   })), mjpegScreenshotUrl && isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Pause Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnPauseRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseCircleOutlined, null),
     onClick: toggleRefreshingState
   }, "Pause Recording")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnReload",
     icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null),
     onClick: () => applyClientMethod({
       methodName: 'getPageSource'
     })
   }, "Refresh"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "searchForElement",
     icon: /*#__PURE__*/_react.default.createElement(_icons.SearchOutlined, null),
     onClick: showLocatorTestModal
@@ -11008,7 +11122,7 @@ const HeaderButtons = props => {
   /*#__PURE__*/
   // <Tooltip title={t('Start Recording')}>
   _react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnStartRecording",
     icon: /*#__PURE__*/_react.default.createElement(_icons.EyeOutlined, null),
     onClick: startRecording
@@ -11018,7 +11132,7 @@ const HeaderButtons = props => {
   /*#__PURE__*/
   // <Tooltip title={t('Pause Recording')}>
   _react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnPause",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseOutlined, null),
     type: _AntdTypes.BUTTON.DANGER,
@@ -11027,14 +11141,31 @@ const HeaderButtons = props => {
   // </Tooltip>
   );
 
+  const sessionIdShow = /*#__PURE__*/_react.default.createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    style: {
+      marginRight: '10px',
+      fontSize: '18px',
+      fontFamily: 'cursive'
+    }
+  }, "session id :"), /*#__PURE__*/_react.default.createElement("h4", {
+    style: {
+      color: 'red',
+      margin: '0'
+    }
+  }, driver.sessionId));
   const quitSessionButton =
   /*#__PURE__*/
   // <Tooltip title={t('Close')}>
   _react.default.createElement(_antd.Button, {
     style: {
-      borderRadius: "50%"
+      borderRadius: '50%'
     },
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnClose",
     icon: /*#__PURE__*/_react.default.createElement(_icons.CloseOutlined, null),
     onClick: () => quitSession()
@@ -11044,14 +11175,14 @@ const HeaderButtons = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['inspector-toolbar']
   }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    className: _Inspector.default['button_wrapper']
+    className: _Inspector.default.button_wrapper
   }, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      display: "flex",
-      gap: "10px",
-      alignItems: "center"
+      display: 'flex',
+      gap: '10px',
+      alignItems: 'center'
     }
-  }, headerLogo, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
+  }, headerLogo, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, sessionIdShow), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
 };
 var _default = HeaderButtons;
 exports.default = _default;
@@ -12841,7 +12972,8 @@ const {
   GET_CLIPBOARD,
   LOCK,
   UNLOCK,
-  SHAKE
+  SHAKE,
+  OTP
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -13122,6 +13254,24 @@ class Inspector extends _react.Component {
     } = this.props;
     const islocked = await driver.client.lock();
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
+    let postdata = {
+      'session_id': driver.sessionId,
+      'step-name': 'lock'
+    };
+    console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ lock ~ postdata:', postdata);
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postdata)
+    }).then(response => {
+      console.log('API response:', response);
+      postdata.response = response;
+    }).catch(error => {
+      console.error('API error:', error);
+    });
+    this.fetchAllSteps();
     await this.props.applyClientMethod({
       methodName: 'getPageSource'
     });
@@ -13155,6 +13305,7 @@ class Inspector extends _react.Component {
       'session_id': driver.sessionId,
       'step-name': 'steps'
     };
+    console.log("🚀 ~ file: Inspector.js:378 ~ fetchAllSteps ~ data1:", data1);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
@@ -14379,9 +14530,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_70832",
-  "loader": "_loader_70832",
-  "load1": "_load1_70832"
+  "container": "_container_afc3f",
+  "loader": "_loader_afc3f",
+  "load1": "_load1_afc3f"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -14467,8 +14618,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_8d2a9",
-  "copyTraceBtn": "_copyTraceBtn_8d2a9"
+  "errorMessage": "_errorMessage_e36f2",
+  "copyTraceBtn": "_copyTraceBtn_e36f2"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
