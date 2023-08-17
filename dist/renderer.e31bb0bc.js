@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44427;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=40765;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -838,7 +838,8 @@ const SCREENSHOT_INTERACTION_MODE = {
   ROTATE: 'rotate',
   LOCK: 'lock',
   UNLOCK: 'unlock',
-  SHAKE: 'shake'
+  SHAKE: 'shake',
+  OTP: 'otp'
 };
 exports.SCREENSHOT_INTERACTION_MODE = SCREENSHOT_INTERACTION_MODE;
 const APP_MODE = {
@@ -9819,7 +9820,8 @@ const {
   EXPECTED_VALUE,
   TAKE_SCREENSHOT,
   SCRATCH,
-  ROTATE
+  ROTATE,
+  OTP
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const TYPES = {
   FILLED: 'filled',
@@ -10674,6 +10676,8 @@ const Screenshot = props => {
     placement: "topLeft"
   }, screenImg), !swipeInstructions && screenImg, screenshotInteractionMode === SELECT && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
+  })), screenshotInteractionMode === OTP && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
+    containerEl: containerEl.current
   })), screenshotInteractionMode === SLIDE && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
     containerEl: containerEl.current
   })), screenshotInteractionMode === DOUBLE_TAP && containerEl.current && /*#__PURE__*/_react.default.createElement(_HighlighterRects.default, _extends({}, props, {
@@ -10830,6 +10834,7 @@ var _icons = require("@ant-design/icons");
 var _testinglogo = _interopRequireDefault(require("../../../../assets/images/testinglogo.png"));
 var _hamburger = _interopRequireDefault(require("../../../../assets/images/hamburger.jpg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-unused-vars */
 
 const HeaderButtons = props => {
@@ -10850,18 +10855,18 @@ const HeaderButtons = props => {
     t
   } = props;
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
-    className: _Inspector.default['logoContainer']
+    className: _Inspector.default.logoContainer
   }, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _hamburger.default,
     alt: "toggleButton",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })));
   const deviceControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, driver && driver.client.isIOS && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
@@ -10889,18 +10894,18 @@ const HeaderButtons = props => {
   const appModeControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     value: appMode,
     style: {
-      display: "flex",
-      gap: "10px"
+      display: 'flex',
+      gap: '10px'
     }
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     icon: /*#__PURE__*/_react.default.createElement(_icons.AppstoreOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.NATIVE);
     }
     // type={appMode === APP_MODE.NATIVE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
   }, "Native Mode"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     icon: /*#__PURE__*/_react.default.createElement(_icons.GlobalOutlined, null),
     onClick: () => {
       selectAppMode(_shared.APP_MODE.WEB_HYBRID);
@@ -10909,32 +10914,32 @@ const HeaderButtons = props => {
   }, "Hybrid Mode"));
   const generalControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     style: {
-      display: "flex",
-      gap: "10px"
+      display: 'flex',
+      gap: '10px'
     }
   }, mjpegScreenshotUrl && !isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Start Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnStartRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PlayCircleOutlined, null),
     onClick: toggleRefreshingState
   })), mjpegScreenshotUrl && isSourceRefreshOn && /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Pause Refreshing Source')
   }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnPauseRefreshing",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseCircleOutlined, null),
     onClick: toggleRefreshingState
   }, "Pause Recording")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnReload",
     icon: /*#__PURE__*/_react.default.createElement(_icons.ReloadOutlined, null),
     onClick: () => applyClientMethod({
       methodName: 'getPageSource'
     })
   }, "Refresh"), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "searchForElement",
     icon: /*#__PURE__*/_react.default.createElement(_icons.SearchOutlined, null),
     onClick: showLocatorTestModal
@@ -10942,7 +10947,7 @@ const HeaderButtons = props => {
   /*#__PURE__*/
   // <Tooltip title={t('Start Recording')}>
   _react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnStartRecording",
     icon: /*#__PURE__*/_react.default.createElement(_icons.EyeOutlined, null),
     onClick: startRecording
@@ -10952,7 +10957,7 @@ const HeaderButtons = props => {
   /*#__PURE__*/
   // <Tooltip title={t('Pause Recording')}>
   _react.default.createElement(_antd.Button, {
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnPause",
     icon: /*#__PURE__*/_react.default.createElement(_icons.PauseOutlined, null),
     type: _AntdTypes.BUTTON.DANGER,
@@ -10961,14 +10966,31 @@ const HeaderButtons = props => {
   // </Tooltip>
   );
 
+  const sessionIdShow = /*#__PURE__*/_react.default.createElement("span", {
+    style: {
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    style: {
+      marginRight: '10px',
+      fontSize: '18px',
+      fontFamily: 'cursive'
+    }
+  }, "session id :"), /*#__PURE__*/_react.default.createElement("h4", {
+    style: {
+      color: 'red',
+      margin: '0'
+    }
+  }, driver.sessionId));
   const quitSessionButton =
   /*#__PURE__*/
   // <Tooltip title={t('Close')}>
   _react.default.createElement(_antd.Button, {
     style: {
-      borderRadius: "50%"
+      borderRadius: '50%'
     },
-    className: _Inspector.default['actionButton'],
+    className: _Inspector.default.actionButton,
     id: "btnClose",
     icon: /*#__PURE__*/_react.default.createElement(_icons.CloseOutlined, null),
     onClick: () => quitSession()
@@ -10978,14 +11000,14 @@ const HeaderButtons = props => {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['inspector-toolbar']
   }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    className: _Inspector.default['button_wrapper']
+    className: _Inspector.default.button_wrapper
   }, /*#__PURE__*/_react.default.createElement("div", {
     style: {
-      display: "flex",
-      gap: "10px",
-      alignItems: "center"
+      display: 'flex',
+      gap: '10px',
+      alignItems: 'center'
     }
-  }, headerLogo, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
+  }, headerLogo, deviceControls, appModeControls, generalControls), /*#__PURE__*/_react.default.createElement("div", null, sessionIdShow), /*#__PURE__*/_react.default.createElement("div", null, quitSessionButton)));
 };
 var _default = HeaderButtons;
 exports.default = _default;
@@ -12774,7 +12796,8 @@ const {
   GET_CLIPBOARD,
   LOCK,
   UNLOCK,
-  SHAKE
+  SHAKE,
+  OTP
 } = _shared.SCREENSHOT_INTERACTION_MODE;
 const ButtonGroup = _antd.Button.Group;
 const MIN_WIDTH = 870;
@@ -13053,6 +13076,24 @@ class Inspector extends _react.Component {
     } = this.props;
     const islocked = await driver.client.lock();
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
+    let postdata = {
+      'session_id': driver.sessionId,
+      'step-name': 'lock'
+    };
+    console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ lock ~ postdata:', postdata);
+    await fetch('https://apprecord.testing24x7.ai/appAction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postdata)
+    }).then(response => {
+      console.log('API response:', response);
+      postdata.response = response;
+    }).catch(error => {
+      console.error('API error:', error);
+    });
+    this.fetchAllSteps();
     await this.props.applyClientMethod({
       methodName: 'getPageSource'
     });
@@ -13086,6 +13127,7 @@ class Inspector extends _react.Component {
       'session_id': driver.sessionId,
       'step-name': 'steps'
     };
+    console.log("🚀 ~ file: Inspector.js:378 ~ fetchAllSteps ~ data1:", data1);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
