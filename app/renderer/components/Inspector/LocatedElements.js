@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useRef } from 'react';
 import { Alert, Input, Row, Button, Badge, List, Space, Spin, Tooltip } from 'antd';
 import { AimOutlined, ClearOutlined, SendOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
@@ -6,12 +7,12 @@ import InspectorStyles from './Inspector.css';
 
 const LocatedElements = (props) => {
   const { locatedElements, locatedElementsExecutionTime, applyClientMethod, setLocatorTestElement, locatorTestElement,
-          isFindingLocatedElementInSource, searchedForElementBounds, selectLocatedElement, source, driver, t } = props;
+          isFindingLocatedElementInSource, searchedForElementBounds, selectLocatedElement, source, driver, t ,elements} = props;
 
   const sendKeys = useRef(null);
 
-  if(locatorTestElement){
-    console.log("🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:", locatorTestElement)
+  if (locatorTestElement) {
+    console.log('🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:', locatorTestElement);
   }
   const showIdAutocompleteInfo = () => {
     const { locatorTestStrategy, locatorTestValue } = props;
@@ -51,7 +52,7 @@ const LocatedElements = (props) => {
         <Row justify='center'>
           <Space direction='horizontal' size='small'>
             <Tooltip title={t('Find and Select in Source')} placement='bottom'>
-              <Button
+              <ButtonapplyClientMethod
                 disabled={!locatorTestElement}
                 icon={<MenuUnfoldOutlined/>}
                 onClick={() => selectLocatedElement(source, searchedForElementBounds, locatorTestElement)}
@@ -69,12 +70,15 @@ const LocatedElements = (props) => {
                 disabled={!locatorTestElement}
                 placeholder={t('Enter Keys to Send')}
                 allowClear={true}
-                onChange={(e) => sendKeys.current = e.target.value}/>
+                onChange={(e) =>
+                 sendKeys.current = e.target.value}/>
               <Tooltip title={t('Send Keys')} placement='bottom'>
                 <Button
                   disabled={!locatorTestElement}
                   icon={<SendOutlined/>}
-                  onClick={() => applyClientMethod({methodName: 'sendKeys', elementId: locatorTestElement, args: [sendKeys.current || '']})}
+                  onClick={() =>{
+                  applyClientMethod({methodName: 'sendKeys', elementId: locatorTestElement, args: [sendKeys.current || '']})
+                  }}
                 />
               </Tooltip>
               <Tooltip title={t('Clear')} placement='bottom'>

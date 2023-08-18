@@ -349,28 +349,28 @@ export default class Inspector extends Component {
   // }
   async isLocked() {
     const { driver } = this.props;
-    const islocked = await driver.client.lock();
+    const islocked = await driver.client.pressKeyCode(26);
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
     let postdata = {
       'session_id': driver.sessionId,
       'step-name': 'lock',
     };
     console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ lock ~ postdata:', postdata);
-
-    await fetch('https://apprecord.testing24x7.ai/appAction', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(postdata),
-    })
-      .then((response) => {
-        console.log('API response:', response);
-        postdata.response = response;
-      })
-      .catch((error) => {
-        console.error('API error:', error);
-      });
+    this.callParticularSteps(postdata);
+    // await fetch('https://apprecord.testing24x7.ai/appAction', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(postdata),
+    // })
+    //   .then((response) => {
+    //     console.log('API response:', response);
+    //     postdata.response = response;
+    //   })
+    //   .catch((error) => {
+    //     console.error('API error:', error);
+    //   });
     this.fetchAllSteps();
     await this.props.applyClientMethod({ methodName: 'getPageSource' });
   }
@@ -743,26 +743,26 @@ export default class Inspector extends Component {
                 <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
                   <Button icon={<FundProjectionScreenOutlined />}
                     type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-                    onClick={() => this.state.nestedDropIndex!==1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0})}
+                    onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0})}
                     // disabled={isGestureEditorVisible}
                     className={InspectorStyles['user_actions']}
                   >long press key</Button>
                   {this.state.nestedDropIndex === 1 &&
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                     
+
                         {options.map((option, index) => (
                           <Button key={index}
                             onClick={async () => await this.handleActions(option, 'long_press_key')}>
                             {option}
                           </Button>
                         ))}
-                  
+
                     </div>
                   }
 
                   <Button icon={<FundProjectionScreenOutlined />}
                     type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-                    onClick={() => this.state.nestedDropIndex!==2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({nestedDropIndex: 0})}
+                    onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({nestedDropIndex: 0})}
                     // disabled={isGestureEditorVisible}
                     className={InspectorStyles['user_actions']}
                   >press key</Button>
@@ -1114,12 +1114,12 @@ export default class Inspector extends Component {
             disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
           >{this.state.activeIndex===12 && <span>Scratch</span>}</Button>
       </ButtonGroup> */}
-      </div>
+      </div>;
 
     let sideMenu =
       <>
         {this.state.activeCategory === 1 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth:"180px", minWidth:"180px" }}>
+          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
             <Button icon={<SwapRightOutlined />} onClick={() => { this.screenshotInteractionChange(SWIPE, 'Swipe by coordinates'); }}
               type={screenshotInteractionMode === SWIPE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1167,10 +1167,10 @@ export default class Inspector extends Component {
           </div>}
         {
           this.state.activeCategory === 3 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth:"180px", minWidth:"180px" }}>
+          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
             <Button icon={<FundProjectionScreenOutlined />}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }): this.setState({ nestedDropIndex:0 })}
+              onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0 })}
               // disabled={isGestureEditorVisible}
               className={InspectorStyles['user_actions']}
             ><span> long press key</span></Button>
@@ -1189,7 +1189,7 @@ export default class Inspector extends Component {
 
             <Button icon={<FundProjectionScreenOutlined />}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({ nestedDropIndex : 0})}
+              onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({ nestedDropIndex: 0})}
               // disabled={isGestureEditorVisible}
               className={InspectorStyles['user_actions']}
             ><span>press key</span></Button>
@@ -1306,7 +1306,7 @@ export default class Inspector extends Component {
         }
         {
           this.state.activeCategory === 4 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth:"180px", minWidth:"180px" }}>
+          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
             <Button icon={<CheckCircleOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value'); }}
               type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
@@ -1411,7 +1411,7 @@ export default class Inspector extends Component {
         }
         {
           this.state.activeCategory === 5 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth:"180px", minWidth:"180px" }}>
+          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
             {!this.state.isInput ? (<Button icon={<SwitcherOutlined />} onClick={() => this.setState({ isInput: true })}
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1445,7 +1445,7 @@ export default class Inspector extends Component {
             > <span>Reset App</span></Button>
           </div>
         }
-      </>
+      </>;
 
     let main = <div className={InspectorStyles['inspector-main']} ref={(el) => { this.screenAndSourceEl = el; }}>
       <div id='screenshotContainer' className={InspectorStyles['screenshot-container']} ref={(el) => { this.screenshotEl = el; }}>
@@ -1564,7 +1564,7 @@ export default class Inspector extends Component {
       <HeaderButtons {...this.props} handlePanel={() => {
         this.setState({ showPane: !this.state.showPane });
         // this.state.activeIndex !== 1 ? this.setActiveIndex(1) : this.setActiveIndex(0);
-        console.log("showPane", this.state.showPane)
+        console.log("showPane", this.state.showPane);
       }} />
       {main}
       <Modal

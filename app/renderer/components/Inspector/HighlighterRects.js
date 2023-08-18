@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import HighlighterRect from './HighlighterRect';
 import HighlighterCentroid from './HighlighterCentroid';
@@ -9,7 +10,7 @@ const { CENTROID, OVERLAP, EXPAND } = RENDER_CENTROID_AS;
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = (props) => {
-  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props)
+  console.log('🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:', props);
   const { source, containerEl, searchedForElementBounds, scaleRatio, showCentroids,
           isLocatorTestModalVisible, isSiriCommandModalVisible } = props;
 

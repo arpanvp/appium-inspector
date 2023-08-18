@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable import/no-duplicates */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable import/no-unresolved */

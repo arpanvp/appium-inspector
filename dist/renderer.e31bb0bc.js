@@ -3976,13 +3976,348 @@ AppiumClient.instance = driver => {
   }
   return _instance;
 };
-},{"./webview-helpers":"lib/webview-helpers.js","../components/Inspector/shared":"components/Inspector/shared.js"}],"actions/Inspector.js":[function(require,module,exports) {
+},{"./webview-helpers":"lib/webview-helpers.js","../components/Inspector/shared":"components/Inspector/shared.js"}],"components/AntdTypes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.UNSELECT_TICK_ELEMENT = exports.UNSELECT_HOVERED_ELEMENT = exports.UNSELECT_HOVERED_CENTROID = exports.UNSELECT_ELEMENT = exports.UNSELECT_CENTROID = exports.TOGGLE_SHOW_ATTRIBUTES = exports.TOGGLE_REFRESHING_STATE = exports.STEPS_ARRAY = exports.START_RECORDING = exports.SHOW_SIRI_COMMAND_MODAL = exports.SHOW_LOCATOR_TEST_MODAL = exports.SHOW_GESTURE_EDITOR = exports.SHOW_GESTURE_ACTION = exports.SET_VISIBLE_COMMAND_RESULT = exports.SET_USER_WAIT_TIMEOUT = exports.SET_SWIPE_START1 = exports.SET_SWIPE_START = exports.SET_SWIPE_END1 = exports.SET_SWIPE_END = exports.SET_SOURCE_AND_SCREENSHOT = exports.SET_SIRI_COMMAND_VALUE = exports.SET_SHOW_CENTROIDS = exports.SET_SHOW_BOILERPLATE = exports.SET_SESSION_TIME = exports.SET_SESSION_DETAILS = exports.SET_SERVER_STATUS = exports.SET_SELECTED_ELEMENT_ID = exports.SET_SEARCHED_FOR_ELEMENT_BOUNDS = exports.SET_SCREENSHOT_INTERACTION_MODE = exports.SET_LOCATOR_TEST_VALUE = exports.SET_LOCATOR_TEST_STRATEGY = exports.SET_LOCATOR_TEST_ELEMENT = exports.SET_LOADED_GESTURE = exports.SET_LAST_ACTIVE_MOMENT = exports.SET_KEEP_ALIVE_INTERVAL = exports.SET_INTERACTIONS_NOT_AVAILABLE = exports.SET_GESTURE_TAP_COORDS_MODE = exports.SET_EXPANDED_PATHS = exports.SET_CONTEXT = exports.SET_COMMAND_ARG = exports.SET_AWAITING_MJPEG_STREAM = exports.SET_APP_MODE = exports.SET_APP_ID = exports.SET_ACTION_FRAMEWORK = exports.SESSION_DONE = exports.SELECT_TICK_ELEMENT = exports.SELECT_INTERACTION_MODE = exports.SELECT_HOVERED_ELEMENT = exports.SELECT_HOVERED_CENTROID = exports.SELECT_ELEMENT = exports.SELECT_COMMAND_SUB_GROUP = exports.SELECT_COMMAND_GROUP = exports.SELECT_CENTROID = exports.SEARCHING_FOR_ELEMENTS_COMPLETED = exports.SEARCHING_FOR_ELEMENTS = exports.REMOVE_LOADED_GESTURE = exports.RECORD_ACTION = exports.QUIT_SESSION_REQUESTED = exports.QUIT_SESSION_DONE = exports.PROMPT_KEEP_ALIVE = exports.PAUSE_RECORDING = exports.METHOD_CALL_REQUESTED = exports.METHOD_CALL_DONE = exports.HIDE_SIRI_COMMAND_MODAL = exports.HIDE_PROMPT_KEEP_ALIVE = exports.HIDE_LOCATOR_TEST_MODAL = exports.HIDE_GESTURE_EDITOR = exports.HIDE_GESTURE_ACTION = exports.GET_SAVED_GESTURES_REQUESTED = exports.GET_SAVED_GESTURES_DONE = exports.GET_FIND_ELEMENTS_TIMES_COMPLETED = exports.GET_FIND_ELEMENTS_TIMES = exports.FINDING_ELEMENT_IN_SOURCE_COMPLETED = exports.FINDING_ELEMENT_IN_SOURCE = exports.ENTERING_COMMAND_ARGS = exports.DELETE_SAVED_GESTURES_REQUESTED = exports.DELETE_SAVED_GESTURES_DONE = exports.CLOSE_RECORDER = exports.CLEAR_TAP_COORDINATES = exports.CLEAR_SWIPE_ACTION = exports.CLEAR_SEARCH_RESULTS = exports.CLEAR_SEARCHED_FOR_ELEMENT_BOUNDS = exports.CLEAR_RECORDING = exports.CLEAR_ASSIGNED_VAR_CACHE = exports.CANCEL_PENDING_COMMAND = exports.ADD_ASSIGNED_VAR_CACHE = void 0;
+exports.ROW = exports.INPUT = exports.BUTTON = exports.ALERT = void 0;
+const BUTTON = {
+  DEFAULT: 'default',
+  PRIMARY: 'primary',
+  DISABLED: 'disabled',
+  DANGER: 'danger'
+};
+exports.BUTTON = BUTTON;
+const ALERT = {
+  ERROR: 'error',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+exports.ALERT = ALERT;
+const INPUT = {
+  NUMBER: 'number',
+  TEXT: 'text',
+  TEXTAREA: 'textarea',
+  PASSWORD: 'password',
+  SUBMIT: 'submit'
+};
+exports.INPUT = INPUT;
+const ROW = {
+  FLEX: 'flex'
+};
+exports.ROW = ROW;
+},{}],"../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error;
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+
+},{}],"../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+
+},{"./bundle-url":"../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/Inspector/Inspector.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "inspector-container": "_inspector-container_3421c",
+  "inspector-toolbar": "_inspector-toolbar_3421c",
+  "button_wrapper": "_button_wrapper_3421c",
+  "ant-btn": "_ant-btn_3421c",
+  "user_actions": "_user_actions_3421c",
+  "actionButton": "_actionButton_3421c",
+  "inspector-main": "_inspector-main_3421c",
+  "whole-btn": "_whole-btn_3421c",
+  "screenshot-container": "_screenshot-container_3421c",
+  "screenshot": "_screenshot_3421c",
+  "screenshot-controls": "_screenshot-controls_3421c",
+  "logoContainer": "_logoContainer_3421c",
+  "interaction-tab-container": "_interaction-tab-container_3421c",
+  "tree-container": "_tree-container_3421c",
+  "session-info-table": "_session-info-table_3421c",
+  "session-code-box": "_session-code-box_3421c",
+  "session-inner-table": "_session-inner-table_3421c",
+  "scroll-buttons": "_scroll-buttons_3421c",
+  "scroll-right": "_scroll-right_3421c",
+  "recorded-actions": "_recorded-actions_3421c",
+  "_inspector-main_0387c": "__inspector-main_0387c_3421c",
+  "ant-card-body": "_ant-card-body_3421c",
+  "interaction-tab-card": "_interaction-tab-card_3421c",
+  "highlighter-box": "_highlighter-box_3421c",
+  "inspected-element-box": "_inspected-element-box_3421c",
+  "hovered-element-box": "_hovered-element-box_3421c",
+  "centroid-box": "_centroid-box_3421c",
+  "centroid": "_centroid_3421c",
+  "overlap": "_overlap_3421c",
+  "expand": "_expand_3421c",
+  "plus-minus": "_plus-minus_3421c",
+  "phone-btn1": "_phone-btn1_3421c",
+  "phone-btn2": "_phone-btn2_3421c",
+  "phone-btn3": "_phone-btn3_3421c",
+  "custom-button-icon": "_custom-button-icon_3421c",
+  "elementActions": "_elementActions_3421c",
+  "elementKeyInputActions": "_elementKeyInputActions_3421c",
+  "selectedElementContainer": "_selectedElementContainer_3421c",
+  "selected-element-table-cells": "_selected-element-table-cells_3421c",
+  "element-cell-copy": "_element-cell-copy_3421c",
+  "selected-element-card": "_selected-element-card_3421c",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_3421c",
+  "context-selector": "_context-selector_3421c",
+  "sourceTag": "_sourceTag_3421c",
+  "sourceAttrName": "_sourceAttrName_3421c",
+  "no-recorded-actions": "_no-recorded-actions_3421c",
+  "recorded-code": "_recorded-code_3421c",
+  "framework-dropdown": "_framework-dropdown_3421c",
+  "searchResultsList": "_searchResultsList_3421c",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_3421c",
+  "searchResultsActions": "_searchResultsActions_3421c",
+  "searchResultsKeyInput": "_searchResultsKeyInput_3421c",
+  "elementKeyInput": "_elementKeyInput_3421c",
+  "element-count-container": "_element-count-container_3421c",
+  "locatorStrategyBtn": "_locatorStrategyBtn_3421c",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_3421c",
+  "coordinatesContainer": "_coordinatesContainer_3421c",
+  "swipeInstructions": "_swipeInstructions_3421c",
+  "swipeSvg": "_swipeSvg_3421c",
+  "tapDiv": "_tapDiv_3421c",
+  "iphone_x": "_iphone_x_3421c",
+  "custom_menu": "_custom_menu_3421c",
+  "ant-menu-submenu": "_ant-menu-submenu_3421c",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_3421c",
+  "gestureSvg": "_gestureSvg_3421c",
+  "filled": "_filled_3421c",
+  "dashed": "_dashed_3421c",
+  "whole": "_whole_3421c",
+  "newDashed": "_newDashed_3421c",
+  "circle-dashed": "_circle-dashed_3421c",
+  "circle-newDashed": "_circle-newDashed_3421c",
+  "screenimage": "_screenimage_3421c",
+  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
+  "screenshotBox": "_screenshotBox_3421c",
+  "screenshotActionsPanel": "_screenshotActionsPanel_3421c",
+  "commands-container": "_commands-container_3421c",
+  "btn-container": "_btn-container_3421c",
+  "arg-row": "_arg-row_3421c",
+  "arg-container": "_arg-container_3421c",
+  "gesture-header": "_gesture-header_3421c",
+  "gesture-header-title": "_gesture-header-title_3421c",
+  "gesture-header-description": "_gesture-header-description_3421c",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_3421c",
+  "gesture-header-timeline": "_gesture-header-timeline_3421c",
+  "timeline-tick-title": "_timeline-tick-title_3421c",
+  "gesture-header-icon": "_gesture-header-icon_3421c",
+  "pointer-title": "_pointer-title_3421c",
+  "tick-card": "_tick-card_3421c",
+  "tick-plus-card": "_tick-plus-card_3421c",
+  "tick-plus-btn": "_tick-plus-btn_3421c",
+  "spaceContainer": "_spaceContainer_3421c",
+  "tick-pointer-input": "_tick-pointer-input_3421c",
+  "tick-button-group": "_tick-button-group_3421c",
+  "tick-button-input": "_tick-button-input_3421c",
+  "tick-input-box": "_tick-input-box_3421c",
+  "tick-coord-box": "_tick-coord-box_3421c",
+  "option-inpt": "_option-inpt_3421c",
+  "activeCategory": "_activeCategory_3421c"
+};
+},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _antd = require("antd");
+var _icons = require("@ant-design/icons");
+var _AntdTypes = require("../AntdTypes");
+var _Inspector = _interopRequireDefault(require("./Inspector.css"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-console */
+const LocatedElements = props => {
+  const {
+    locatedElements,
+    locatedElementsExecutionTime,
+    applyClientMethod,
+    setLocatorTestElement,
+    locatorTestElement,
+    isFindingLocatedElementInSource,
+    searchedForElementBounds,
+    selectLocatedElement,
+    source,
+    driver,
+    t,
+    elements
+  } = props;
+  const sendKeys = (0, _react.useRef)(null);
+  if (locatorTestElement) {
+    console.log('🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:', locatorTestElement);
+  }
+  const showIdAutocompleteInfo = () => {
+    const {
+      locatorTestStrategy,
+      locatorTestValue
+    } = props;
+    const automationName = driver.client.capabilities.automationName;
+    const idLocatorAutocompletionDisabled = driver.client.capabilities.disableIdLocatorAutocompletion;
+    if (automationName && automationName.toLowerCase() === 'uiautomator2' && locatorTestStrategy === 'id' && !locatorTestValue.includes(':id/') && !idLocatorAutocompletionDisabled) {
+      return /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
+        message: t('idAutocompletionCanBeDisabled'),
+        type: _AntdTypes.ALERT.INFO,
+        showIcon: true
+      }));
+    }
+  };
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, locatedElements.length === 0 && /*#__PURE__*/_react.default.createElement(_antd.Space, {
+    className: _Inspector.default.spaceContainer,
+    direction: "vertical",
+    size: "small"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement("i", null, t('couldNotFindAnyElements'))), showIdAutocompleteInfo()), locatedElements.length > 0 && /*#__PURE__*/_react.default.createElement(_antd.Spin, {
+    spinning: isFindingLocatedElementInSource
+  }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
+    className: _Inspector.default.spaceContainer,
+    direction: "vertical",
+    size: "small"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Row, {
+    justify: "space-between"
+  }, /*#__PURE__*/_react.default.createElement("span", null, t('elementsCount'), " ", /*#__PURE__*/_react.default.createElement(_antd.Badge, {
+    count: locatedElements.length,
+    offset: [0, -2]
+  })), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, t('Time'), ": ", locatedElementsExecutionTime)), /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.List, {
+    className: _Inspector.default.searchResultsList,
+    size: "small",
+    dataSource: locatedElements,
+    renderItem: elementId => /*#__PURE__*/_react.default.createElement(_antd.List.Item, _extends({
+      type: "text"
+    }, locatorTestElement === elementId ? {
+      className: _Inspector.default.searchResultsSelectedItem
+    } : {}, locatorTestElement !== elementId ? {
+      onClick: () => {
+        setLocatorTestElement(elementId);
+      }
+    } : {}), elementId)
+  })), /*#__PURE__*/_react.default.createElement(_antd.Row, {
+    justify: "center"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
+    direction: "horizontal",
+    size: "small"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Find and Select in Source'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(ButtonapplyClientMethod, {
+    disabled: !locatorTestElement,
+    icon: /*#__PURE__*/_react.default.createElement(_icons.MenuUnfoldOutlined, null),
+    onClick: () => selectLocatedElement(source, searchedForElementBounds, locatorTestElement)
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Tap'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+    onClick: () => applyClientMethod({
+      methodName: 'click',
+      elementId: locatorTestElement
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
+    className: _Inspector.default.searchResultsActions
+  }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+    className: _Inspector.default.searchResultsKeyInput,
+    disabled: !locatorTestElement,
+    placeholder: t('Enter Keys to Send'),
+    allowClear: true,
+    onChange: e => sendKeys.current = e.target.value
+  }), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Send Keys'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    icon: /*#__PURE__*/_react.default.createElement(_icons.SendOutlined, null),
+    onClick: () => {
+      applyClientMethod({
+        methodName: 'sendKeys',
+        elementId: locatorTestElement,
+        args: [sendKeys.current || '']
+      });
+    }
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Clear'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    id: "btnClearElement",
+    icon: /*#__PURE__*/_react.default.createElement(_icons.ClearOutlined, null),
+    onClick: () => applyClientMethod({
+      methodName: 'clear',
+      elementId: locatorTestElement
+    })
+  }))))))));
+};
+var _default = LocatedElements;
+exports.default = _default;
+},{"../AntdTypes":"components/AntdTypes.js","./Inspector.css":"components/Inspector/Inspector.css"}],"actions/Inspector.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.UNSELECT_TICK_ELEMENT = exports.UNSELECT_HOVERED_ELEMENT = exports.UNSELECT_HOVERED_CENTROID = exports.UNSELECT_ELEMENT = exports.UNSELECT_CENTROID = exports.TOGGLE_SHOW_ATTRIBUTES = exports.TOGGLE_REFRESHING_STATE = exports.STEPS_ARRAY = exports.START_RECORDING = exports.SHOW_SIRI_COMMAND_MODAL = exports.SHOW_LOCATOR_TEST_MODAL = exports.SHOW_GESTURE_EDITOR = exports.SHOW_GESTURE_ACTION = exports.SET_VISIBLE_COMMAND_RESULT = exports.SET_USER_WAIT_TIMEOUT = exports.SET_SWIPE_START1 = exports.SET_SWIPE_START = exports.SET_SWIPE_END1 = exports.SET_SWIPE_END = exports.SET_SOURCE_AND_SCREENSHOT = exports.SET_SIRI_COMMAND_VALUE = exports.SET_SHOW_CENTROIDS = exports.SET_SHOW_BOILERPLATE = exports.SET_SESSION_TIME = exports.SET_SESSION_DETAILS = exports.SET_SERVER_STATUS = exports.SET_SELECTED_ELEMENT_ID = exports.SET_SEARCHED_FOR_ELEMENT_BOUNDS = exports.SET_SCREENSHOT_INTERACTION_MODE = exports.SET_LOCATOR_TEST_VALUE = exports.SET_LOCATOR_TEST_STRATEGY = exports.SET_LOCATOR_TEST_ELEMENT = exports.SET_LOADED_GESTURE = exports.SET_LAST_ACTIVE_MOMENT = exports.SET_KEEP_ALIVE_INTERVAL = exports.SET_INTERACTIONS_NOT_AVAILABLE = exports.SET_GESTURE_TAP_COORDS_MODE = exports.SET_EXPANDED_PATHS = exports.SET_CONTEXT = exports.SET_COMMAND_ARG = exports.SET_AWAITING_MJPEG_STREAM = exports.SET_APP_MODE = exports.SET_APP_ID = exports.SET_ACTION_FRAMEWORK = exports.SESSION_DONE = exports.SELECT_TICK_ELEMENT = exports.SELECT_INTERACTION_MODE = exports.SELECT_HOVERED_ELEMENT = exports.SELECT_HOVERED_CENTROID = exports.SELECT_ELEMENT = exports.SELECT_COMMAND_SUB_GROUP = exports.SELECT_COMMAND_GROUP = exports.SELECT_CENTROID = exports.SEARCHING_FOR_ELEMENTS_COMPLETED = exports.SEARCHING_FOR_ELEMENTS = exports.REMOVE_LOADED_GESTURE = exports.RECORD_ACTION = exports.QUIT_SESSION_REQUESTED = exports.QUIT_SESSION_DONE = exports.PROMPT_KEEP_ALIVE = exports.PAUSE_RECORDING = exports.METHOD_CALL_REQUESTED = exports.METHOD_CALL_DONE = exports.HIDE_SIRI_COMMAND_MODAL = exports.HIDE_PROMPT_KEEP_ALIVE = exports.HIDE_LOCATOR_TEST_MODAL = exports.HIDE_GESTURE_EDITOR = exports.HIDE_GESTURE_ACTION = exports.GET_SAVED_GESTURES_REQUESTED = exports.GET_SAVED_GESTURES_DONE = exports.GET_FIND_ELEMENTS_TIMES_COMPLETED = exports.GET_FIND_ELEMENTS_TIMES = exports.FINDING_ELEMENT_IN_SOURCE_COMPLETED = exports.FINDING_ELEMENT_IN_SOURCE = exports.ENTERING_COMMAND_ARGS = exports.ELEMENT_KEYS = exports.DELETE_SAVED_GESTURES_REQUESTED = exports.DELETE_SAVED_GESTURES_DONE = exports.CLOSE_RECORDER = exports.CLEAR_TAP_COORDINATES = exports.CLEAR_SWIPE_ACTION = exports.CLEAR_SEARCH_RESULTS = exports.CLEAR_SEARCHED_FOR_ELEMENT_BOUNDS = exports.CLEAR_RECORDING = exports.CLEAR_ASSIGNED_VAR_CACHE = exports.CANCEL_PENDING_COMMAND = exports.ADD_ASSIGNED_VAR_CACHE = void 0;
 exports.addAssignedVarCache = addAssignedVarCache;
 exports.applyClientMethod = applyClientMethod;
 exports.callClientMethod = callClientMethod;
@@ -4068,6 +4403,7 @@ var _settings = require("../../shared/settings");
 var _i18nextConfig = _interopRequireDefault(require("../../configs/i18next.config.renderer"));
 var _appiumClient = _interopRequireWildcard(require("../lib/appium-client"));
 var _antd = require("antd");
+var _LocatedElements = _interopRequireDefault(require("../components/Inspector/LocatedElements"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -4123,6 +4459,8 @@ const SET_SESSION_TIME = 'SET_SESSION_TIME';
 exports.SET_SESSION_TIME = SET_SESSION_TIME;
 const START_RECORDING = 'START_RECORDING';
 exports.START_RECORDING = START_RECORDING;
+const ELEMENT_KEYS = 'ELEMENT_KEYS';
+exports.ELEMENT_KEYS = ELEMENT_KEYS;
 const PAUSE_RECORDING = 'PAUSE_RECORDING';
 exports.PAUSE_RECORDING = PAUSE_RECORDING;
 const CLEAR_RECORDING = 'CLEAR_RECORDING';
@@ -4381,10 +4719,39 @@ function unselectHoveredElement(path) {
 /**
  * Requests a method call on appium
  */
+let elemArr = [];
+let digitsArray = [];
 function applyClientMethod(params) {
+  console.log("🚀 ~ file: Inspector.js:223 ~ applyClientMethod ~ params:", params);
   return async (dispatch, getState) => {
     const isRecording = params.methodName !== 'quit' && params.methodName !== 'getPageSource' && params.methodName !== 'gesture' && params.methodName !== 'status' && getState().inspector.isRecording;
     try {
+      if (params.methodName === 'click') {
+        elemArr.push(params.elementId);
+        console.log("🚀 ~ file: Inspector.js:227 ~ applyClientMethod ~ elemArr:", elemArr);
+      }
+      if (params.methodName === 'sendKeys') {
+        await applyClientMethod({
+          appMode: 'native',
+          methodName: 'click',
+          elementId: elemArr[0]
+        });
+        const digitsArray = params.args[0].split('').map(digit => digit.toString());
+        console.log('Digits Array:', digitsArray);
+        if (elemArr.length > 1) {
+          elemArr.forEach(async (elementId, i) => {
+            const clonedParams = {
+              ...params
+            };
+            clonedParams.args = [digitsArray[i]];
+            clonedParams.elementId = elementId;
+            console.log("🚀 ~ clonedParams:", clonedParams); // Verify the cloned params
+            // Call the method for each element
+            await applyClientMethod(clonedParams);
+          });
+          elemArr = [];
+        }
+      }
       dispatch({
         type: METHOD_CALL_REQUESTED
       });
@@ -5705,70 +6072,7 @@ function toggleShowAttributes() {
     });
   };
 }
-},{"../components/Inspector/shared":"components/Inspector/shared.js","./Session":"actions/Session.js","../util":"util.js","../lib/client-frameworks":"lib/client-frameworks/index.js","../../shared/settings":"../shared/settings.js","../../configs/i18next.config.renderer":"../configs/i18next.config.renderer.js","../lib/appium-client":"lib/appium-client.js"}],"../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error;
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-
-},{}],"../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-
-},{"./bundle-url":"../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/Session/Session.css":[function(require,module,exports) {
+},{"../components/Inspector/shared":"components/Inspector/shared.js","./Session":"actions/Session.js","../util":"util.js","../lib/client-frameworks":"lib/client-frameworks/index.js","../../shared/settings":"../shared/settings.js","../../configs/i18next.config.renderer":"../configs/i18next.config.renderer.js","../lib/appium-client":"lib/appium-client.js","../components/Inspector/LocatedElements":"components/Inspector/LocatedElements.js"}],"components/Session/Session.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
@@ -5846,39 +6150,7 @@ const ServerTabHeadspin = ({
 }, t('sessionHeadspinWebDriverURLDescription'))))));
 var _default = ServerTabHeadspin;
 exports.default = _default;
-},{"./Session.css":"components/Session/Session.css"}],"components/AntdTypes.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ROW = exports.INPUT = exports.BUTTON = exports.ALERT = void 0;
-const BUTTON = {
-  DEFAULT: 'default',
-  PRIMARY: 'primary',
-  DISABLED: 'disabled',
-  DANGER: 'danger'
-};
-exports.BUTTON = BUTTON;
-const ALERT = {
-  ERROR: 'error',
-  WARNING: 'warning',
-  INFO: 'info'
-};
-exports.ALERT = ALERT;
-const INPUT = {
-  NUMBER: 'number',
-  TEXT: 'text',
-  TEXTAREA: 'textarea',
-  PASSWORD: 'password',
-  SUBMIT: 'submit'
-};
-exports.INPUT = INPUT;
-const ROW = {
-  FLEX: 'flex'
-};
-exports.ROW = ROW;
-},{}],"components/Session/ServerTabBrowserstack.js":[function(require,module,exports) {
+},{"./Session.css":"components/Session/Session.css"}],"components/Session/ServerTabBrowserstack.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8934,111 +9206,7 @@ function mapStateToProps(state) {
 }
 var _default = (0, _util.withTranslation)(_Session2.default, (0, _reactRedux.connect)(mapStateToProps, SessionActions));
 exports.default = _default;
-},{"../util":"util.js","../actions/Session":"actions/Session.js","../components/Session/Session":"components/Session/Session.js"}],"components/Inspector/Inspector.css":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-module.exports = {
-  "inspector-container": "_inspector-container_3421c",
-  "inspector-toolbar": "_inspector-toolbar_3421c",
-  "button_wrapper": "_button_wrapper_3421c",
-  "ant-btn": "_ant-btn_3421c",
-  "user_actions": "_user_actions_3421c",
-  "actionButton": "_actionButton_3421c",
-  "inspector-main": "_inspector-main_3421c",
-  "whole-btn": "_whole-btn_3421c",
-  "screenshot-container": "_screenshot-container_3421c",
-  "screenshot": "_screenshot_3421c",
-  "screenshot-controls": "_screenshot-controls_3421c",
-  "logoContainer": "_logoContainer_3421c",
-  "interaction-tab-container": "_interaction-tab-container_3421c",
-  "tree-container": "_tree-container_3421c",
-  "session-info-table": "_session-info-table_3421c",
-  "session-code-box": "_session-code-box_3421c",
-  "session-inner-table": "_session-inner-table_3421c",
-  "scroll-buttons": "_scroll-buttons_3421c",
-  "scroll-right": "_scroll-right_3421c",
-  "recorded-actions": "_recorded-actions_3421c",
-  "_inspector-main_0387c": "__inspector-main_0387c_3421c",
-  "ant-card-body": "_ant-card-body_3421c",
-  "interaction-tab-card": "_interaction-tab-card_3421c",
-  "highlighter-box": "_highlighter-box_3421c",
-  "inspected-element-box": "_inspected-element-box_3421c",
-  "hovered-element-box": "_hovered-element-box_3421c",
-  "centroid-box": "_centroid-box_3421c",
-  "centroid": "_centroid_3421c",
-  "overlap": "_overlap_3421c",
-  "expand": "_expand_3421c",
-  "plus-minus": "_plus-minus_3421c",
-  "phone-btn1": "_phone-btn1_3421c",
-  "phone-btn2": "_phone-btn2_3421c",
-  "phone-btn3": "_phone-btn3_3421c",
-  "custom-button-icon": "_custom-button-icon_3421c",
-  "elementActions": "_elementActions_3421c",
-  "elementKeyInputActions": "_elementKeyInputActions_3421c",
-  "selectedElementContainer": "_selectedElementContainer_3421c",
-  "selected-element-table-cells": "_selected-element-table-cells_3421c",
-  "element-cell-copy": "_element-cell-copy_3421c",
-  "selected-element-card": "_selected-element-card_3421c",
-  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_3421c",
-  "context-selector": "_context-selector_3421c",
-  "sourceTag": "_sourceTag_3421c",
-  "sourceAttrName": "_sourceAttrName_3421c",
-  "no-recorded-actions": "_no-recorded-actions_3421c",
-  "recorded-code": "_recorded-code_3421c",
-  "framework-dropdown": "_framework-dropdown_3421c",
-  "searchResultsList": "_searchResultsList_3421c",
-  "searchResultsSelectedItem": "_searchResultsSelectedItem_3421c",
-  "searchResultsActions": "_searchResultsActions_3421c",
-  "searchResultsKeyInput": "_searchResultsKeyInput_3421c",
-  "elementKeyInput": "_elementKeyInput_3421c",
-  "element-count-container": "_element-count-container_3421c",
-  "locatorStrategyBtn": "_locatorStrategyBtn_3421c",
-  "locatorSelectorTextArea": "_locatorSelectorTextArea_3421c",
-  "coordinatesContainer": "_coordinatesContainer_3421c",
-  "swipeInstructions": "_swipeInstructions_3421c",
-  "swipeSvg": "_swipeSvg_3421c",
-  "tapDiv": "_tapDiv_3421c",
-  "iphone_x": "_iphone_x_3421c",
-  "custom_menu": "_custom_menu_3421c",
-  "ant-menu-submenu": "_ant-menu-submenu_3421c",
-  "ant-menu-submenu-title": "_ant-menu-submenu-title_3421c",
-  "gestureSvg": "_gestureSvg_3421c",
-  "filled": "_filled_3421c",
-  "dashed": "_dashed_3421c",
-  "whole": "_whole_3421c",
-  "newDashed": "_newDashed_3421c",
-  "circle-dashed": "_circle-dashed_3421c",
-  "circle-newDashed": "_circle-newDashed_3421c",
-  "screenimage": "_screenimage_3421c",
-  "innerScreenshotContainer": "_innerScreenshotContainer_3421c",
-  "screenshotBox": "_screenshotBox_3421c",
-  "screenshotActionsPanel": "_screenshotActionsPanel_3421c",
-  "commands-container": "_commands-container_3421c",
-  "btn-container": "_btn-container_3421c",
-  "arg-row": "_arg-row_3421c",
-  "arg-container": "_arg-container_3421c",
-  "gesture-header": "_gesture-header_3421c",
-  "gesture-header-title": "_gesture-header-title_3421c",
-  "gesture-header-description": "_gesture-header-description_3421c",
-  "gesture-header-coord-btn": "_gesture-header-coord-btn_3421c",
-  "gesture-header-timeline": "_gesture-header-timeline_3421c",
-  "timeline-tick-title": "_timeline-tick-title_3421c",
-  "gesture-header-icon": "_gesture-header-icon_3421c",
-  "pointer-title": "_pointer-title_3421c",
-  "tick-card": "_tick-card_3421c",
-  "tick-plus-card": "_tick-plus-card_3421c",
-  "tick-plus-btn": "_tick-plus-btn_3421c",
-  "spaceContainer": "_spaceContainer_3421c",
-  "tick-pointer-input": "_tick-pointer-input_3421c",
-  "tick-button-group": "_tick-button-group_3421c",
-  "tick-button-input": "_tick-button-input_3421c",
-  "tick-input-box": "_tick-input-box_3421c",
-  "tick-coord-box": "_tick-coord-box_3421c",
-  "option-inpt": "_option-inpt_3421c",
-  "activeCategory": "_activeCategory_3421c"
-};
-},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
+},{"../util":"util.js","../actions/Session":"actions/Session.js","../components/Session/Session":"components/Session/Session.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9053,6 +9221,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * boxes of the elements in the app
  */
 const HighlighterRect = props => {
+  console.log("🚀 ~ file: HighlighterRect.js:9 ~ HighlighterRect ~ props:", props);
   const {
     selectedElement = {},
     selectHoveredElement,
@@ -9271,7 +9440,7 @@ var _HighlighterRect = _interopRequireDefault(require("./HighlighterRect"));
 var _HighlighterCentroid = _interopRequireDefault(require("./HighlighterCentroid"));
 var _shared = require("./shared");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-console */
 const {
   CENTROID,
   OVERLAP,
@@ -9282,7 +9451,7 @@ const {
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = props => {
-  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props);
+  console.log('🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:', props);
   const {
     source,
     containerEl,
@@ -9698,20 +9867,19 @@ const SelectedElement = props => {
   if (!(elementInteractionsNotAvailable || selectedElementId) || selectedElementSearchInProgress) {
     tapIcon = /*#__PURE__*/_react.default.createElement(_icons.LoadingOutlined, null);
   }
-  const handleTap = () => {
-    console.log('inside the handle tap !!!!!!!');
-    if (!isDisabled) {
-      applyClientMethod({
-        methodName: 'click',
-        elementId: selectedElementId
-      });
-    }
-  };
-  (0, _react.useEffect)(() => {
-    if (!isDisabled && screenshotInteractionMode === SELECT) {
-      handleTap();
-    }
-  }, [isDisabled, applyClientMethod, selectedElementId]);
+
+  // const handleTap = () => {
+  //   console.log('inside the handle tap !!!!!!!');
+  //   if (!isDisabled) {
+  //     applyClientMethod({ methodName: 'click', elementId: selectedElementId });
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (!isDisabled && screenshotInteractionMode === SELECT) {
+  //     handleTap();
+  //   }
+  // }, [isDisabled, applyClientMethod, selectedElementId]);
+
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Row, {
     justify: "center",
     type: _AntdTypes.ROW.FLEX,
@@ -9723,7 +9891,10 @@ const SelectedElement = props => {
     disabled: isDisabled,
     icon: tapIcon,
     id: "btnTapElement",
-    onClick: () => handleTap
+    onClick: () => applyClientMethod({
+      methodName: 'click',
+      elementId: selectedElementId
+    })
   })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     className: _Inspector.default.elementKeyInputActions
   }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
@@ -9790,7 +9961,7 @@ var _bi = require("react-icons/bi");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-duplicates */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-undef */ /* eslint-disable import/no-duplicates */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable import/no-unresolved */ /* eslint-disable space-before-blocks */ /* eslint-disable space-in-parens */ /* eslint-disable no-console */ /* eslint-disable quotes */ /* eslint-disable no-trailing-spaces */ /* eslint-disable no-unused-vars */
 const {
   POINTER_UP,
   POINTER_DOWN,
@@ -10919,20 +11090,20 @@ const HeaderButtons = props => {
     handlePanel
   } = props;
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
-    className: _Inspector.default['logoContainer']
+    className: _Inspector.default.logoContainer
   }, /*#__PURE__*/_react.default.createElement("div", {
     onClick: handlePanel
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _hamburger.default,
     alt: "toggleButton",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })));
   const deviceControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, driver && driver.client.isIOS && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
@@ -11077,140 +11248,7 @@ const HeaderButtons = props => {
 };
 var _default = HeaderButtons;
 exports.default = _default;
-},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../slices/panelSlice":"slices/panelSlice.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _antd = require("antd");
-var _icons = require("@ant-design/icons");
-var _AntdTypes = require("../AntdTypes");
-var _Inspector = _interopRequireDefault(require("./Inspector.css"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
-function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-const LocatedElements = props => {
-  const {
-    locatedElements,
-    locatedElementsExecutionTime,
-    applyClientMethod,
-    setLocatorTestElement,
-    locatorTestElement,
-    isFindingLocatedElementInSource,
-    searchedForElementBounds,
-    selectLocatedElement,
-    source,
-    driver,
-    t
-  } = props;
-  const sendKeys = (0, _react.useRef)(null);
-  if (locatorTestElement) {
-    console.log("🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:", locatorTestElement);
-  }
-  const showIdAutocompleteInfo = () => {
-    const {
-      locatorTestStrategy,
-      locatorTestValue
-    } = props;
-    const automationName = driver.client.capabilities.automationName;
-    const idLocatorAutocompletionDisabled = driver.client.capabilities.disableIdLocatorAutocompletion;
-    if (automationName && automationName.toLowerCase() === 'uiautomator2' && locatorTestStrategy === 'id' && !locatorTestValue.includes(':id/') && !idLocatorAutocompletionDisabled) {
-      return /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
-        message: t('idAutocompletionCanBeDisabled'),
-        type: _AntdTypes.ALERT.INFO,
-        showIcon: true
-      }));
-    }
-  };
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, locatedElements.length === 0 && /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    className: _Inspector.default.spaceContainer,
-    direction: "vertical",
-    size: "small"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement("i", null, t('couldNotFindAnyElements'))), showIdAutocompleteInfo()), locatedElements.length > 0 && /*#__PURE__*/_react.default.createElement(_antd.Spin, {
-    spinning: isFindingLocatedElementInSource
-  }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    className: _Inspector.default.spaceContainer,
-    direction: "vertical",
-    size: "small"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Row, {
-    justify: "space-between"
-  }, /*#__PURE__*/_react.default.createElement("span", null, t('elementsCount'), " ", /*#__PURE__*/_react.default.createElement(_antd.Badge, {
-    count: locatedElements.length,
-    offset: [0, -2]
-  })), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, t('Time'), ": ", locatedElementsExecutionTime)), /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.List, {
-    className: _Inspector.default.searchResultsList,
-    size: "small",
-    dataSource: locatedElements,
-    renderItem: elementId => /*#__PURE__*/_react.default.createElement(_antd.List.Item, _extends({
-      type: "text"
-    }, locatorTestElement === elementId ? {
-      className: _Inspector.default.searchResultsSelectedItem
-    } : {}, locatorTestElement !== elementId ? {
-      onClick: () => {
-        setLocatorTestElement(elementId);
-      }
-    } : {}), elementId)
-  })), /*#__PURE__*/_react.default.createElement(_antd.Row, {
-    justify: "center"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
-    direction: "horizontal",
-    size: "small"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Find and Select in Source'),
-    placement: "bottom"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: !locatorTestElement,
-    icon: /*#__PURE__*/_react.default.createElement(_icons.MenuUnfoldOutlined, null),
-    onClick: () => selectLocatedElement(source, searchedForElementBounds, locatorTestElement)
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Tap'),
-    placement: "bottom"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: !locatorTestElement,
-    icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
-    onClick: () => applyClientMethod({
-      methodName: 'click',
-      elementId: locatorTestElement
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
-    className: _Inspector.default.searchResultsActions
-  }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
-    className: _Inspector.default.searchResultsKeyInput,
-    disabled: !locatorTestElement,
-    placeholder: t('Enter Keys to Send'),
-    allowClear: true,
-    onChange: e => sendKeys.current = e.target.value
-  }), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Send Keys'),
-    placement: "bottom"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: !locatorTestElement,
-    icon: /*#__PURE__*/_react.default.createElement(_icons.SendOutlined, null),
-    onClick: () => applyClientMethod({
-      methodName: 'sendKeys',
-      elementId: locatorTestElement,
-      args: [sendKeys.current || '']
-    })
-  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
-    title: t('Clear'),
-    placement: "bottom"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-    disabled: !locatorTestElement,
-    id: "btnClearElement",
-    icon: /*#__PURE__*/_react.default.createElement(_icons.ClearOutlined, null),
-    onClick: () => applyClientMethod({
-      methodName: 'clear',
-      elementId: locatorTestElement
-    })
-  }))))))));
-};
-var _default = LocatedElements;
-exports.default = _default;
-},{"../AntdTypes":"components/AntdTypes.js","./Inspector.css":"components/Inspector/Inspector.css"}],"components/Inspector/ElementLocator.js":[function(require,module,exports) {
+},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../slices/panelSlice":"slices/panelSlice.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/ElementLocator.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13143,25 +13181,28 @@ class Inspector extends _react.Component {
     const {
       driver
     } = this.props;
-    const islocked = await driver.client.lock();
+    const islocked = await driver.client.pressKeyCode(26);
     console.log("🚀 ~ file: Inspector.js:286 ~ isLocked ~ islocked:", islocked);
     let postdata = {
       'session_id': driver.sessionId,
       'step-name': 'lock'
     };
     console.log('🚀 ~ file: Inspector.js:219 ~ Inspector ~ lock ~ postdata:', postdata);
-    await fetch('https://apprecord.testing24x7.ai/appAction', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(postdata)
-    }).then(response => {
-      console.log('API response:', response);
-      postdata.response = response;
-    }).catch(error => {
-      console.error('API error:', error);
-    });
+    this.callParticularSteps(postdata);
+    // await fetch('https://apprecord.testing24x7.ai/appAction', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(postdata),
+    // })
+    //   .then((response) => {
+    //     console.log('API response:', response);
+    //     postdata.response = response;
+    //   })
+    //   .catch((error) => {
+    //     console.error('API error:', error);
+    //   });
     this.fetchAllSteps();
     await this.props.applyClientMethod({
       methodName: 'getPageSource'
@@ -15177,6 +15218,11 @@ function inspector(state = INITIAL_STATE, action) {
       return {
         ...state,
         flow_steps: action.res
+      };
+    case _Inspector.ELEMENT_KEYS:
+      return {
+        ...state,
+        element: action.elements
       };
     case _Inspector.ADD_ASSIGNED_VAR_CACHE:
       return {
