@@ -509,10 +509,10 @@ export default class Inspector extends Component {
                     type={screenshotInteractionMode === SLIDE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                     disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
                   ><span>Slider</span></Button>
-                  <Button icon={<LockOutlined />} onClick={() => { this.screenshotInteractionChange(LOCK, 'Lock'); this.isLocked(); }}
+                  {/* <Button icon={<LockOutlined />} onClick={() => { this.screenshotInteractionChange(LOCK, 'Lock'); this.isLocked(); }}
                     type={screenshotInteractionMode === LOCK ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                     disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-                  ><span>Lock</span></Button>
+                  ><span>Lock</span></Button> */}
                   <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(SCRATCH, 'Scratch'); }}
                     type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                     disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1148,10 +1148,10 @@ export default class Inspector extends Component {
               type={screenshotInteractionMode === SLIDE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Slider</span></Button>
-            <Button icon={<LockOutlined />} onClick={() => { this.screenshotInteractionChange(LOCK, 'Lock'); this.isLocked(); }}
+            {/* <Button icon={<LockOutlined />} onClick={() => { this.screenshotInteractionChange(LOCK, 'Lock'); this.isLocked(); }}
               type={screenshotInteractionMode === LOCK ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-            ><span>Lock</span></Button>
+            ><span>Lock</span></Button> */}
             <Button icon={<DollarOutlined />} onClick={() => { this.screenshotInteractionChange(SCRATCH, 'Scratch'); }}
               type={screenshotInteractionMode === SCRATCH ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}

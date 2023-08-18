@@ -1,4 +1,4 @@
-process.env.HMR_PORT=45739;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=43511;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -13375,15 +13375,6 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.LockOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(LOCK, 'Lock');
-        this.isLocked();
-      },
-      type: screenshotInteractionMode === LOCK ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH, 'Scratch');
@@ -13889,15 +13880,6 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Slider")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.LockOutlined, null),
-      onClick: () => {
-        this.screenshotInteractionChange(LOCK, 'Lock');
-        this.isLocked();
-      },
-      type: screenshotInteractionMode === LOCK ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
-      disabled: isGestureEditorVisible,
-      className: _Inspector.default['user_actions']
-    }, /*#__PURE__*/_react.default.createElement("span", null, "Lock")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.DollarOutlined, null),
       onClick: () => {
         this.screenshotInteractionChange(SCRATCH, 'Scratch');
