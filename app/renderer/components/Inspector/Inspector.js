@@ -476,7 +476,7 @@ export default class Inspector extends Component {
               onMouseOut={() => this.setState({ activeIndex: 0 })}
               onClick={() => this.setState({ activeCategory: 1 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 1 ? InspectorStyles['activeCategory'] : ""}>
+              className={this.state.activeCategory === 1 ? InspectorStyles['activeCategory'] : InspectorStyles['category']}>
               <LikeOutlined style={{ fontSize: '20px' }} />
               <div>Gestures</div>
               {this.state.activeIndex === 1 &&
@@ -736,7 +736,7 @@ export default class Inspector extends Component {
               onMouseOut={() => this.setState({ activeIndex: 0 })}
               onClick={() => this.setState({ activeCategory: 3 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 3 ? InspectorStyles['activeCategory'] : ""}>
+              className={this.state.activeCategory === 3 ? InspectorStyles['activeCategory'] : InspectorStyles['category']}>
               <HeatMapOutlined style={{ fontSize: '20px' }} />
               <div>Device Actions</div>
               {this.state.activeIndex === 3 &&
@@ -880,7 +880,7 @@ export default class Inspector extends Component {
             <div onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 4 }) : this.setActiveIndex(4)} onMouseOut={() => this.setActiveIndex(0)}
               onClick={() => this.setState({ activeCategory: 4 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 4 ? InspectorStyles['activeCategory'] : ""}>
+              className={this.state.activeCategory === 4 ? InspectorStyles['activeCategory'] : InspectorStyles['category']}>
               <EditOutlined style={{ fontSize: '20px' }} />
               <div>Assertions</div>
               {this.state.activeIndex === 4 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
@@ -989,7 +989,7 @@ export default class Inspector extends Component {
             <div onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 5 }) : this.setActiveIndex(5)} onMouseOut={() => this.setActiveIndex(0)}
               onClick={() => this.setState({ activeCategory: 5 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : ""}>
+              className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : InspectorStyles['category']}>
               <AppstoreAddOutlined style={{ fontSize: '20px' }} />
               <div>App management</div>
               {this.state.activeIndex === 5 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
