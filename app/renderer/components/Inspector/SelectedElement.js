@@ -185,17 +185,17 @@ const SelectedElement = (props) => {
     tapIcon = <LoadingOutlined/>;
   }
 
-  const handleTap = () => {
-    console.log('inside the handle tap !!!!!!!');
-    if (!isDisabled) {
-      applyClientMethod({ methodName: 'click', elementId: selectedElementId });
-    }
-  };
-  useEffect(() => {
-    if (!isDisabled && screenshotInteractionMode === SELECT) {
-      handleTap();
-    }
-  }, [isDisabled, applyClientMethod, selectedElementId]);
+  // const handleTap = () => {
+  //   console.log('inside the handle tap !!!!!!!');
+  //   if (!isDisabled) {
+  //     applyClientMethod({ methodName: 'click', elementId: selectedElementId });
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (!isDisabled && screenshotInteractionMode === SELECT) {
+  //     handleTap();
+  //   }
+  // }, [isDisabled, applyClientMethod, selectedElementId]);
 
 
   return <div>
@@ -212,7 +212,7 @@ const SelectedElement = (props) => {
           disabled={isDisabled}
           icon={tapIcon}
           id='btnTapElement'
-          onClick={() => handleTap} />
+          onClick={() => applyClientMethod({ methodName: 'click', elementId: selectedElementId })} />
       </Tooltip>
       <Button.Group className={styles.elementKeyInputActions}>
         <Input className={styles.elementKeyInput}

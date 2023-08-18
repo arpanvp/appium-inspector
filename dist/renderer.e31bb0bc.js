@@ -1,4 +1,4 @@
-process.env.HMR_PORT=45511;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=45739;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -9271,7 +9271,7 @@ var _HighlighterRect = _interopRequireDefault(require("./HighlighterRect"));
 var _HighlighterCentroid = _interopRequireDefault(require("./HighlighterCentroid"));
 var _shared = require("./shared");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-console */
 const {
   CENTROID,
   OVERLAP,
@@ -9282,7 +9282,7 @@ const {
  * Shows screenshot of running application and divs that highlight the elements' bounding boxes
  */
 const HighlighterRects = props => {
-  console.log("🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:", props);
+  console.log('🚀 ~ file: HighlighterRects.js:12 ~ HighlighterRects ~ props:', props);
   const {
     source,
     containerEl,
@@ -9698,20 +9698,19 @@ const SelectedElement = props => {
   if (!(elementInteractionsNotAvailable || selectedElementId) || selectedElementSearchInProgress) {
     tapIcon = /*#__PURE__*/_react.default.createElement(_icons.LoadingOutlined, null);
   }
-  const handleTap = () => {
-    console.log('inside the handle tap !!!!!!!');
-    if (!isDisabled) {
-      applyClientMethod({
-        methodName: 'click',
-        elementId: selectedElementId
-      });
-    }
-  };
-  (0, _react.useEffect)(() => {
-    if (!isDisabled && screenshotInteractionMode === SELECT) {
-      handleTap();
-    }
-  }, [isDisabled, applyClientMethod, selectedElementId]);
+
+  // const handleTap = () => {
+  //   console.log('inside the handle tap !!!!!!!');
+  //   if (!isDisabled) {
+  //     applyClientMethod({ methodName: 'click', elementId: selectedElementId });
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (!isDisabled && screenshotInteractionMode === SELECT) {
+  //     handleTap();
+  //   }
+  // }, [isDisabled, applyClientMethod, selectedElementId]);
+
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement(_antd.Row, {
     justify: "center",
     type: _AntdTypes.ROW.FLEX,
@@ -9723,7 +9722,10 @@ const SelectedElement = props => {
     disabled: isDisabled,
     icon: tapIcon,
     id: "btnTapElement",
-    onClick: () => handleTap
+    onClick: () => applyClientMethod({
+      methodName: 'click',
+      elementId: selectedElementId
+    })
   })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
     className: _Inspector.default.elementKeyInputActions
   }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
@@ -10919,20 +10921,20 @@ const HeaderButtons = props => {
     handlePanel
   } = props;
   const headerLogo = /*#__PURE__*/_react.default.createElement("div", {
-    className: _Inspector.default['logoContainer']
+    className: _Inspector.default.logoContainer
   }, /*#__PURE__*/_react.default.createElement("div", {
     onClick: handlePanel
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _hamburger.default,
     alt: "toggleButton",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _testinglogo.default,
     alt: "testingLogo",
     style: {
-      height: "45px"
+      height: '45px'
     }
   })));
   const deviceControls = /*#__PURE__*/_react.default.createElement(_antd.Button.Group, null, driver && driver.client.isIOS && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
@@ -11092,7 +11094,7 @@ var _Inspector = _interopRequireDefault(require("./Inspector.css"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable no-console */
 const LocatedElements = props => {
   const {
     locatedElements,
@@ -11109,7 +11111,7 @@ const LocatedElements = props => {
   } = props;
   const sendKeys = (0, _react.useRef)(null);
   if (locatorTestElement) {
-    console.log("🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:", locatorTestElement);
+    console.log('🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:', locatorTestElement);
   }
   const showIdAutocompleteInfo = () => {
     const {
@@ -11162,7 +11164,7 @@ const LocatedElements = props => {
   }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Find and Select in Source'),
     placement: "bottom"
-  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+  }, /*#__PURE__*/_react.default.createElement(ButtonapplyClientMethod, {
     disabled: !locatorTestElement,
     icon: /*#__PURE__*/_react.default.createElement(_icons.MenuUnfoldOutlined, null),
     onClick: () => selectLocatedElement(source, searchedForElementBounds, locatorTestElement)
