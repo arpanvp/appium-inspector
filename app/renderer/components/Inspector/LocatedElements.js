@@ -7,7 +7,7 @@ import InspectorStyles from './Inspector.css';
 
 const LocatedElements = (props) => {
   const { locatedElements, locatedElementsExecutionTime, applyClientMethod, setLocatorTestElement, locatorTestElement,
-          isFindingLocatedElementInSource, searchedForElementBounds, selectLocatedElement, source, driver, t } = props;
+          isFindingLocatedElementInSource, searchedForElementBounds, selectLocatedElement, source, driver, t ,elements} = props;
 
   const sendKeys = useRef(null);
 
@@ -70,12 +70,15 @@ const LocatedElements = (props) => {
                 disabled={!locatorTestElement}
                 placeholder={t('Enter Keys to Send')}
                 allowClear={true}
-                onChange={(e) => sendKeys.current = e.target.value}/>
+                onChange={(e) =>
+                 sendKeys.current = e.target.value}/>
               <Tooltip title={t('Send Keys')} placement='bottom'>
                 <Button
                   disabled={!locatorTestElement}
                   icon={<SendOutlined/>}
-                  onClick={() => applyClientMethod({methodName: 'sendKeys', elementId: locatorTestElement, args: [sendKeys.current || '']})}
+                  onClick={() =>{
+                  applyClientMethod({methodName: 'sendKeys', elementId: locatorTestElement, args: [sendKeys.current || '']})
+                  }}
                 />
               </Tooltip>
               <Tooltip title={t('Clear')} placement='bottom'>
