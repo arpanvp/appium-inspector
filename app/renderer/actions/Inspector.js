@@ -16,6 +16,7 @@ import { getSetting, setSetting, SAVED_FRAMEWORK, SET_SAVED_GESTURES } from '../
 import i18n from '../../configs/i18next.config.renderer';
 import AppiumClient, { NATIVE_APP } from '../lib/appium-client';
 import { notification } from 'antd';
+import LocatedElements from '../components/Inspector/LocatedElements';
 // import { useState } from 'react';
 
 export const SET_SESSION_DETAILS = 'SET_SESSION_DETAILS';
@@ -42,6 +43,7 @@ export const QUIT_SESSION_DONE = 'QUIT_SESSION_DONE';
 export const SET_SESSION_TIME = 'SET_SESSION_TIME';
 
 export const START_RECORDING = 'START_RECORDING';
+export const ELEMENT_KEYS = 'ELEMENT_KEYS'
 export const PAUSE_RECORDING = 'PAUSE_RECORDING';
 export const CLEAR_RECORDING = 'CLEAR_RECORDING';
 export const CLOSE_RECORDER = 'CLOSE_RECORDER';
@@ -219,7 +221,11 @@ export function unselectHoveredElement(path) {
 /**
  * Requests a method call on appium
  */
+let elemArr = []
+let digitsArray = []
 export function applyClientMethod(params) {
+  console.log("🚀 ~ file: Inspector.js:223 ~ applyClientMethod ~ params:", params)
+ 
   return async (dispatch, getState) => {
     const isRecording = params.methodName !== 'quit' &&
       params.methodName !== 'getPageSource' &&
@@ -227,6 +233,29 @@ export function applyClientMethod(params) {
       params.methodName !== 'status' &&
       getState().inspector.isRecording;
     try {
+      if (params.methodName === 'click') {
+        elemArr.push(params.elementId);
+        console.log("🚀 ~ file: Inspector.js:227 ~ applyClientMethod ~ elemArr:", elemArr);
+      }
+
+      if (params.methodName === 'sendKeys') {
+        await applyClientMethod({ appMode: 'native', methodName: 'click', elementId: elemArr[0] });
+
+        const digitsArray = params.args[0].split('').map(digit => digit.toString());
+        console.log('Digits Array:', digitsArray);
+
+        if (elemArr.length > 1) {
+          elemArr.forEach(async (elementId, i) => {
+            const clonedParams = { ...params };
+            clonedParams.args = [digitsArray[i]];
+            clonedParams.elementId = elementId;
+            console.log("🚀 ~ clonedParams:", clonedParams); // Verify the cloned params
+            // Call the method for each element
+            await applyClientMethod(clonedParams);
+          });
+          elemArr = [];
+        }
+      }
       dispatch({ type: METHOD_CALL_REQUESTED });
       const callAction = callClientMethod(params);
       const { contexts, contextsError, commandRes, currentContext, currentContextError,

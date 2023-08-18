@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=45739;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=39231;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 985d1ad (added changes of send key)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require

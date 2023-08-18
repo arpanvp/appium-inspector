@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=45739;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=39231;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 985d1ad (added changes of send key)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -3976,13 +3980,347 @@ AppiumClient.instance = driver => {
   }
   return _instance;
 };
-},{"./webview-helpers":"lib/webview-helpers.js","../components/Inspector/shared":"components/Inspector/shared.js"}],"actions/Inspector.js":[function(require,module,exports) {
+},{"./webview-helpers":"lib/webview-helpers.js","../components/Inspector/shared":"components/Inspector/shared.js"}],"components/AntdTypes.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.UNSELECT_TICK_ELEMENT = exports.UNSELECT_HOVERED_ELEMENT = exports.UNSELECT_HOVERED_CENTROID = exports.UNSELECT_ELEMENT = exports.UNSELECT_CENTROID = exports.TOGGLE_SHOW_ATTRIBUTES = exports.TOGGLE_REFRESHING_STATE = exports.STEPS_ARRAY = exports.START_RECORDING = exports.SHOW_SIRI_COMMAND_MODAL = exports.SHOW_LOCATOR_TEST_MODAL = exports.SHOW_GESTURE_EDITOR = exports.SHOW_GESTURE_ACTION = exports.SET_VISIBLE_COMMAND_RESULT = exports.SET_USER_WAIT_TIMEOUT = exports.SET_SWIPE_START1 = exports.SET_SWIPE_START = exports.SET_SWIPE_END1 = exports.SET_SWIPE_END = exports.SET_SOURCE_AND_SCREENSHOT = exports.SET_SIRI_COMMAND_VALUE = exports.SET_SHOW_CENTROIDS = exports.SET_SHOW_BOILERPLATE = exports.SET_SESSION_TIME = exports.SET_SESSION_DETAILS = exports.SET_SERVER_STATUS = exports.SET_SELECTED_ELEMENT_ID = exports.SET_SEARCHED_FOR_ELEMENT_BOUNDS = exports.SET_SCREENSHOT_INTERACTION_MODE = exports.SET_LOCATOR_TEST_VALUE = exports.SET_LOCATOR_TEST_STRATEGY = exports.SET_LOCATOR_TEST_ELEMENT = exports.SET_LOADED_GESTURE = exports.SET_LAST_ACTIVE_MOMENT = exports.SET_KEEP_ALIVE_INTERVAL = exports.SET_INTERACTIONS_NOT_AVAILABLE = exports.SET_GESTURE_TAP_COORDS_MODE = exports.SET_EXPANDED_PATHS = exports.SET_CONTEXT = exports.SET_COMMAND_ARG = exports.SET_AWAITING_MJPEG_STREAM = exports.SET_APP_MODE = exports.SET_APP_ID = exports.SET_ACTION_FRAMEWORK = exports.SESSION_DONE = exports.SELECT_TICK_ELEMENT = exports.SELECT_INTERACTION_MODE = exports.SELECT_HOVERED_ELEMENT = exports.SELECT_HOVERED_CENTROID = exports.SELECT_ELEMENT = exports.SELECT_COMMAND_SUB_GROUP = exports.SELECT_COMMAND_GROUP = exports.SELECT_CENTROID = exports.SEARCHING_FOR_ELEMENTS_COMPLETED = exports.SEARCHING_FOR_ELEMENTS = exports.REMOVE_LOADED_GESTURE = exports.RECORD_ACTION = exports.QUIT_SESSION_REQUESTED = exports.QUIT_SESSION_DONE = exports.PROMPT_KEEP_ALIVE = exports.PAUSE_RECORDING = exports.METHOD_CALL_REQUESTED = exports.METHOD_CALL_DONE = exports.HIDE_SIRI_COMMAND_MODAL = exports.HIDE_PROMPT_KEEP_ALIVE = exports.HIDE_LOCATOR_TEST_MODAL = exports.HIDE_GESTURE_EDITOR = exports.HIDE_GESTURE_ACTION = exports.GET_SAVED_GESTURES_REQUESTED = exports.GET_SAVED_GESTURES_DONE = exports.GET_FIND_ELEMENTS_TIMES_COMPLETED = exports.GET_FIND_ELEMENTS_TIMES = exports.FINDING_ELEMENT_IN_SOURCE_COMPLETED = exports.FINDING_ELEMENT_IN_SOURCE = exports.ENTERING_COMMAND_ARGS = exports.DELETE_SAVED_GESTURES_REQUESTED = exports.DELETE_SAVED_GESTURES_DONE = exports.CLOSE_RECORDER = exports.CLEAR_TAP_COORDINATES = exports.CLEAR_SWIPE_ACTION = exports.CLEAR_SEARCH_RESULTS = exports.CLEAR_SEARCHED_FOR_ELEMENT_BOUNDS = exports.CLEAR_RECORDING = exports.CLEAR_ASSIGNED_VAR_CACHE = exports.CANCEL_PENDING_COMMAND = exports.ADD_ASSIGNED_VAR_CACHE = void 0;
+exports.ROW = exports.INPUT = exports.BUTTON = exports.ALERT = void 0;
+const BUTTON = {
+  DEFAULT: 'default',
+  PRIMARY: 'primary',
+  DISABLED: 'disabled',
+  DANGER: 'danger'
+};
+exports.BUTTON = BUTTON;
+const ALERT = {
+  ERROR: 'error',
+  WARNING: 'warning',
+  INFO: 'info'
+};
+exports.ALERT = ALERT;
+const INPUT = {
+  NUMBER: 'number',
+  TEXT: 'text',
+  TEXTAREA: 'textarea',
+  PASSWORD: 'password',
+  SUBMIT: 'submit'
+};
+exports.INPUT = INPUT;
+const ROW = {
+  FLEX: 'flex'
+};
+exports.ROW = ROW;
+},{}],"../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+
+  return bundleURL;
+}
+
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error;
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+
+},{}],"../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+
+},{"./bundle-url":"../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/Inspector/Inspector.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+module.exports = {
+  "inspector-container": "_inspector-container_61591",
+  "inspector-toolbar": "_inspector-toolbar_61591",
+  "button_wrapper": "_button_wrapper_61591",
+  "ant-btn": "_ant-btn_61591",
+  "user_actions": "_user_actions_61591",
+  "actionButton": "_actionButton_61591",
+  "inspector-main": "_inspector-main_61591",
+  "whole-btn": "_whole-btn_61591",
+  "screenshot-container": "_screenshot-container_61591",
+  "screenshot": "_screenshot_61591",
+  "screenshot-controls": "_screenshot-controls_61591",
+  "logoContainer": "_logoContainer_61591",
+  "interaction-tab-container": "_interaction-tab-container_61591",
+  "tree-container": "_tree-container_61591",
+  "session-info-table": "_session-info-table_61591",
+  "session-code-box": "_session-code-box_61591",
+  "session-inner-table": "_session-inner-table_61591",
+  "scroll-buttons": "_scroll-buttons_61591",
+  "scroll-right": "_scroll-right_61591",
+  "recorded-actions": "_recorded-actions_61591",
+  "_inspector-main_0387c": "__inspector-main_0387c_61591",
+  "ant-card-body": "_ant-card-body_61591",
+  "interaction-tab-card": "_interaction-tab-card_61591",
+  "highlighter-box": "_highlighter-box_61591",
+  "inspected-element-box": "_inspected-element-box_61591",
+  "hovered-element-box": "_hovered-element-box_61591",
+  "centroid-box": "_centroid-box_61591",
+  "centroid": "_centroid_61591",
+  "overlap": "_overlap_61591",
+  "expand": "_expand_61591",
+  "plus-minus": "_plus-minus_61591",
+  "phone-btn1": "_phone-btn1_61591",
+  "phone-btn2": "_phone-btn2_61591",
+  "phone-btn3": "_phone-btn3_61591",
+  "custom-button-icon": "_custom-button-icon_61591",
+  "elementActions": "_elementActions_61591",
+  "elementKeyInputActions": "_elementKeyInputActions_61591",
+  "selectedElementContainer": "_selectedElementContainer_61591",
+  "selected-element-table-cells": "_selected-element-table-cells_61591",
+  "element-cell-copy": "_element-cell-copy_61591",
+  "selected-element-card": "_selected-element-card_61591",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
+  "context-selector": "_context-selector_61591",
+  "sourceTag": "_sourceTag_61591",
+  "sourceAttrName": "_sourceAttrName_61591",
+  "no-recorded-actions": "_no-recorded-actions_61591",
+  "recorded-code": "_recorded-code_61591",
+  "framework-dropdown": "_framework-dropdown_61591",
+  "searchResultsList": "_searchResultsList_61591",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
+  "searchResultsActions": "_searchResultsActions_61591",
+  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
+  "elementKeyInput": "_elementKeyInput_61591",
+  "element-count-container": "_element-count-container_61591",
+  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
+  "coordinatesContainer": "_coordinatesContainer_61591",
+  "swipeInstructions": "_swipeInstructions_61591",
+  "swipeSvg": "_swipeSvg_61591",
+  "tapDiv": "_tapDiv_61591",
+  "iphone_x": "_iphone_x_61591",
+  "custom_menu": "_custom_menu_61591",
+  "ant-menu-submenu": "_ant-menu-submenu_61591",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_61591",
+  "gestureSvg": "_gestureSvg_61591",
+  "filled": "_filled_61591",
+  "dashed": "_dashed_61591",
+  "whole": "_whole_61591",
+  "newDashed": "_newDashed_61591",
+  "circle-dashed": "_circle-dashed_61591",
+  "circle-newDashed": "_circle-newDashed_61591",
+  "screenimage": "_screenimage_61591",
+  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
+  "screenshotBox": "_screenshotBox_61591",
+  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
+  "commands-container": "_commands-container_61591",
+  "btn-container": "_btn-container_61591",
+  "arg-row": "_arg-row_61591",
+  "arg-container": "_arg-container_61591",
+  "gesture-header": "_gesture-header_61591",
+  "gesture-header-title": "_gesture-header-title_61591",
+  "gesture-header-description": "_gesture-header-description_61591",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
+  "gesture-header-timeline": "_gesture-header-timeline_61591",
+  "timeline-tick-title": "_timeline-tick-title_61591",
+  "gesture-header-icon": "_gesture-header-icon_61591",
+  "pointer-title": "_pointer-title_61591",
+  "tick-card": "_tick-card_61591",
+  "tick-plus-card": "_tick-plus-card_61591",
+  "tick-plus-btn": "_tick-plus-btn_61591",
+  "spaceContainer": "_spaceContainer_61591",
+  "tick-pointer-input": "_tick-pointer-input_61591",
+  "tick-button-group": "_tick-button-group_61591",
+  "tick-button-input": "_tick-button-input_61591",
+  "tick-input-box": "_tick-input-box_61591",
+  "tick-coord-box": "_tick-coord-box_61591",
+  "option-inpt": "_option-inpt_61591"
+};
+},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _antd = require("antd");
+var _icons = require("@ant-design/icons");
+var _AntdTypes = require("../AntdTypes");
+var _Inspector = _interopRequireDefault(require("./Inspector.css"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+const LocatedElements = props => {
+  const {
+    locatedElements,
+    locatedElementsExecutionTime,
+    applyClientMethod,
+    setLocatorTestElement,
+    locatorTestElement,
+    isFindingLocatedElementInSource,
+    searchedForElementBounds,
+    selectLocatedElement,
+    source,
+    driver,
+    t,
+    elements
+  } = props;
+  const sendKeys = (0, _react.useRef)(null);
+  if (locatorTestElement) {
+    console.log("🚀 ~ file: LocatedElements.js:14 ~ LocatedElements ~ locatorTestElement:", locatorTestElement);
+  }
+  const showIdAutocompleteInfo = () => {
+    const {
+      locatorTestStrategy,
+      locatorTestValue
+    } = props;
+    const automationName = driver.client.capabilities.automationName;
+    const idLocatorAutocompletionDisabled = driver.client.capabilities.disableIdLocatorAutocompletion;
+    if (automationName && automationName.toLowerCase() === 'uiautomator2' && locatorTestStrategy === 'id' && !locatorTestValue.includes(':id/') && !idLocatorAutocompletionDisabled) {
+      return /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.Alert, {
+        message: t('idAutocompletionCanBeDisabled'),
+        type: _AntdTypes.ALERT.INFO,
+        showIcon: true
+      }));
+    }
+  };
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, locatedElements.length === 0 && /*#__PURE__*/_react.default.createElement(_antd.Space, {
+    className: _Inspector.default.spaceContainer,
+    direction: "vertical",
+    size: "small"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement("i", null, t('couldNotFindAnyElements'))), showIdAutocompleteInfo()), locatedElements.length > 0 && /*#__PURE__*/_react.default.createElement(_antd.Spin, {
+    spinning: isFindingLocatedElementInSource
+  }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
+    className: _Inspector.default.spaceContainer,
+    direction: "vertical",
+    size: "small"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Row, {
+    justify: "space-between"
+  }, /*#__PURE__*/_react.default.createElement("span", null, t('elementsCount'), " ", /*#__PURE__*/_react.default.createElement(_antd.Badge, {
+    count: locatedElements.length,
+    offset: [0, -2]
+  })), /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, t('Time'), ": ", locatedElementsExecutionTime)), /*#__PURE__*/_react.default.createElement(_antd.Row, null, /*#__PURE__*/_react.default.createElement(_antd.List, {
+    className: _Inspector.default.searchResultsList,
+    size: "small",
+    dataSource: locatedElements,
+    renderItem: elementId => /*#__PURE__*/_react.default.createElement(_antd.List.Item, _extends({
+      type: "text"
+    }, locatorTestElement === elementId ? {
+      className: _Inspector.default.searchResultsSelectedItem
+    } : {}, locatorTestElement !== elementId ? {
+      onClick: () => {
+        setLocatorTestElement(elementId);
+      }
+    } : {}), elementId)
+  })), /*#__PURE__*/_react.default.createElement(_antd.Row, {
+    justify: "center"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Space, {
+    direction: "horizontal",
+    size: "small"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Find and Select in Source'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    icon: /*#__PURE__*/_react.default.createElement(_icons.MenuUnfoldOutlined, null),
+    onClick: () => selectLocatedElement(source, searchedForElementBounds, locatorTestElement)
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Tap'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+    onClick: () => applyClientMethod({
+      methodName: 'click',
+      elementId: locatorTestElement
+    })
+  })), /*#__PURE__*/_react.default.createElement(_antd.Button.Group, {
+    className: _Inspector.default.searchResultsActions
+  }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+    className: _Inspector.default.searchResultsKeyInput,
+    disabled: !locatorTestElement,
+    placeholder: t('Enter Keys to Send'),
+    allowClear: true,
+    onChange: e => sendKeys.current = e.target.value
+  }), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Send Keys'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    icon: /*#__PURE__*/_react.default.createElement(_icons.SendOutlined, null),
+    onClick: () => {
+      applyClientMethod({
+        methodName: 'sendKeys',
+        elementId: locatorTestElement,
+        args: [sendKeys.current || '']
+      });
+    }
+  })), /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
+    title: t('Clear'),
+    placement: "bottom"
+  }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+    disabled: !locatorTestElement,
+    id: "btnClearElement",
+    icon: /*#__PURE__*/_react.default.createElement(_icons.ClearOutlined, null),
+    onClick: () => applyClientMethod({
+      methodName: 'clear',
+      elementId: locatorTestElement
+    })
+  }))))))));
+};
+var _default = LocatedElements;
+exports.default = _default;
+},{"../AntdTypes":"components/AntdTypes.js","./Inspector.css":"components/Inspector/Inspector.css"}],"actions/Inspector.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.UNSELECT_TICK_ELEMENT = exports.UNSELECT_HOVERED_ELEMENT = exports.UNSELECT_HOVERED_CENTROID = exports.UNSELECT_ELEMENT = exports.UNSELECT_CENTROID = exports.TOGGLE_SHOW_ATTRIBUTES = exports.TOGGLE_REFRESHING_STATE = exports.STEPS_ARRAY = exports.START_RECORDING = exports.SHOW_SIRI_COMMAND_MODAL = exports.SHOW_LOCATOR_TEST_MODAL = exports.SHOW_GESTURE_EDITOR = exports.SHOW_GESTURE_ACTION = exports.SET_VISIBLE_COMMAND_RESULT = exports.SET_USER_WAIT_TIMEOUT = exports.SET_SWIPE_START1 = exports.SET_SWIPE_START = exports.SET_SWIPE_END1 = exports.SET_SWIPE_END = exports.SET_SOURCE_AND_SCREENSHOT = exports.SET_SIRI_COMMAND_VALUE = exports.SET_SHOW_CENTROIDS = exports.SET_SHOW_BOILERPLATE = exports.SET_SESSION_TIME = exports.SET_SESSION_DETAILS = exports.SET_SERVER_STATUS = exports.SET_SELECTED_ELEMENT_ID = exports.SET_SEARCHED_FOR_ELEMENT_BOUNDS = exports.SET_SCREENSHOT_INTERACTION_MODE = exports.SET_LOCATOR_TEST_VALUE = exports.SET_LOCATOR_TEST_STRATEGY = exports.SET_LOCATOR_TEST_ELEMENT = exports.SET_LOADED_GESTURE = exports.SET_LAST_ACTIVE_MOMENT = exports.SET_KEEP_ALIVE_INTERVAL = exports.SET_INTERACTIONS_NOT_AVAILABLE = exports.SET_GESTURE_TAP_COORDS_MODE = exports.SET_EXPANDED_PATHS = exports.SET_CONTEXT = exports.SET_COMMAND_ARG = exports.SET_AWAITING_MJPEG_STREAM = exports.SET_APP_MODE = exports.SET_APP_ID = exports.SET_ACTION_FRAMEWORK = exports.SESSION_DONE = exports.SELECT_TICK_ELEMENT = exports.SELECT_INTERACTION_MODE = exports.SELECT_HOVERED_ELEMENT = exports.SELECT_HOVERED_CENTROID = exports.SELECT_ELEMENT = exports.SELECT_COMMAND_SUB_GROUP = exports.SELECT_COMMAND_GROUP = exports.SELECT_CENTROID = exports.SEARCHING_FOR_ELEMENTS_COMPLETED = exports.SEARCHING_FOR_ELEMENTS = exports.REMOVE_LOADED_GESTURE = exports.RECORD_ACTION = exports.QUIT_SESSION_REQUESTED = exports.QUIT_SESSION_DONE = exports.PROMPT_KEEP_ALIVE = exports.PAUSE_RECORDING = exports.METHOD_CALL_REQUESTED = exports.METHOD_CALL_DONE = exports.HIDE_SIRI_COMMAND_MODAL = exports.HIDE_PROMPT_KEEP_ALIVE = exports.HIDE_LOCATOR_TEST_MODAL = exports.HIDE_GESTURE_EDITOR = exports.HIDE_GESTURE_ACTION = exports.GET_SAVED_GESTURES_REQUESTED = exports.GET_SAVED_GESTURES_DONE = exports.GET_FIND_ELEMENTS_TIMES_COMPLETED = exports.GET_FIND_ELEMENTS_TIMES = exports.FINDING_ELEMENT_IN_SOURCE_COMPLETED = exports.FINDING_ELEMENT_IN_SOURCE = exports.ENTERING_COMMAND_ARGS = exports.ELEMENT_KEYS = exports.DELETE_SAVED_GESTURES_REQUESTED = exports.DELETE_SAVED_GESTURES_DONE = exports.CLOSE_RECORDER = exports.CLEAR_TAP_COORDINATES = exports.CLEAR_SWIPE_ACTION = exports.CLEAR_SEARCH_RESULTS = exports.CLEAR_SEARCHED_FOR_ELEMENT_BOUNDS = exports.CLEAR_RECORDING = exports.CLEAR_ASSIGNED_VAR_CACHE = exports.CANCEL_PENDING_COMMAND = exports.ADD_ASSIGNED_VAR_CACHE = void 0;
 exports.addAssignedVarCache = addAssignedVarCache;
 exports.applyClientMethod = applyClientMethod;
 exports.callClientMethod = callClientMethod;
@@ -4068,6 +4406,7 @@ var _settings = require("../../shared/settings");
 var _i18nextConfig = _interopRequireDefault(require("../../configs/i18next.config.renderer"));
 var _appiumClient = _interopRequireWildcard(require("../lib/appium-client"));
 var _antd = require("antd");
+var _LocatedElements = _interopRequireDefault(require("../components/Inspector/LocatedElements"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -4123,6 +4462,8 @@ const SET_SESSION_TIME = 'SET_SESSION_TIME';
 exports.SET_SESSION_TIME = SET_SESSION_TIME;
 const START_RECORDING = 'START_RECORDING';
 exports.START_RECORDING = START_RECORDING;
+const ELEMENT_KEYS = 'ELEMENT_KEYS';
+exports.ELEMENT_KEYS = ELEMENT_KEYS;
 const PAUSE_RECORDING = 'PAUSE_RECORDING';
 exports.PAUSE_RECORDING = PAUSE_RECORDING;
 const CLEAR_RECORDING = 'CLEAR_RECORDING';
@@ -4381,10 +4722,39 @@ function unselectHoveredElement(path) {
 /**
  * Requests a method call on appium
  */
+let elemArr = [];
+let digitsArray = [];
 function applyClientMethod(params) {
+  console.log("🚀 ~ file: Inspector.js:223 ~ applyClientMethod ~ params:", params);
   return async (dispatch, getState) => {
     const isRecording = params.methodName !== 'quit' && params.methodName !== 'getPageSource' && params.methodName !== 'gesture' && params.methodName !== 'status' && getState().inspector.isRecording;
     try {
+      if (params.methodName === 'click') {
+        elemArr.push(params.elementId);
+        console.log("🚀 ~ file: Inspector.js:227 ~ applyClientMethod ~ elemArr:", elemArr);
+      }
+      if (params.methodName === 'sendKeys') {
+        await applyClientMethod({
+          appMode: 'native',
+          methodName: 'click',
+          elementId: elemArr[0]
+        });
+        const digitsArray = params.args[0].split('').map(digit => digit.toString());
+        console.log('Digits Array:', digitsArray);
+        if (elemArr.length > 1) {
+          elemArr.forEach(async (elementId, i) => {
+            const clonedParams = {
+              ...params
+            };
+            clonedParams.args = [digitsArray[i]];
+            clonedParams.elementId = elementId;
+            console.log("🚀 ~ clonedParams:", clonedParams); // Verify the cloned params
+            // Call the method for each element
+            await applyClientMethod(clonedParams);
+          });
+          elemArr = [];
+        }
+      }
       dispatch({
         type: METHOD_CALL_REQUESTED
       });
@@ -5705,114 +6075,51 @@ function toggleShowAttributes() {
     });
   };
 }
-},{"../components/Inspector/shared":"components/Inspector/shared.js","./Session":"actions/Session.js","../util":"util.js","../lib/client-frameworks":"lib/client-frameworks/index.js","../../shared/settings":"../shared/settings.js","../../configs/i18next.config.renderer":"../configs/i18next.config.renderer.js","../lib/appium-client":"lib/appium-client.js"}],"../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error;
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-
-},{}],"../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-  newLink.onload = function () {
-    link.remove();
-  };
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-
-},{"./bundle-url":"../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"components/Session/Session.css":[function(require,module,exports) {
+},{"../components/Inspector/shared":"components/Inspector/shared.js","./Session":"actions/Session.js","../util":"util.js","../lib/client-frameworks":"lib/client-frameworks/index.js","../../shared/settings":"../shared/settings.js","../../configs/i18next.config.renderer":"../configs/i18next.config.renderer.js","../lib/appium-client":"lib/appium-client.js","../components/Inspector/LocatedElements":"components/Inspector/LocatedElements.js"}],"components/Session/Session.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_46061",
-  "sessionContainer": "_sessionContainer_46061",
-  "cloudProviderModal": "_cloudProviderModal_46061",
-  "sessionFooter": "_sessionFooter_46061",
-  "desiredCapsLink": "_desiredCapsLink_46061",
-  "tabText": "_tabText_46061",
-  "serverTabs": "_serverTabs_46061",
-  "scrollingTabCont": "_scrollingTabCont_46061",
-  "scrollingTab": "_scrollingTab_46061",
-  "savedSessions": "_savedSessions_46061",
-  "newSessionForm": "_newSessionForm_46061",
-  "capsFormattedCol": "_capsFormattedCol_46061",
-  "formattedCaps": "_formattedCaps_46061",
-  "formattedCapsBody": "_formattedCapsBody_46061",
-  "start-session-button": "_start-session-button_46061",
-  "filepath-button": "_filepath-button_46061",
-  "capsFormCol": "_capsFormCol_46061",
-  "capsFormRow": "_capsFormRow_46061",
-  "capsBoxFont": "_capsBoxFont_46061",
-  "capsValueControl": "_capsValueControl_46061",
-  "fileControlWrapper": "_fileControlWrapper_46061",
-  "localDesc": "_localDesc_46061",
-  "selected": "_selected_46061",
-  "capsNameEditorButton": "_capsNameEditorButton_46061",
-  "capsEditorControls": "_capsEditorControls_46061",
-  "capsEditorButton": "_capsEditorButton_46061",
-  "capsEditor": "_capsEditor_46061",
-  "capsEditorTitle": "_capsEditorTitle_46061",
-  "capsEditorBody": "_capsEditorBody_46061",
-  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
-  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
-  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
-  "add-desired-capability-button": "_add-desired-capability-button_46061",
-  "editSession": "_editSession_46061",
-  "btnReload": "_btnReload_46061",
-  "btnDeleteCap": "_btnDeleteCap_46061",
-  "inputDataCenter": "_inputDataCenter_46061",
-  "addonDataCenter": "_addonDataCenter_46061",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
+  "active-session": "_active-session_8105c",
+  "sessionContainer": "_sessionContainer_8105c",
+  "cloudProviderModal": "_cloudProviderModal_8105c",
+  "sessionFooter": "_sessionFooter_8105c",
+  "desiredCapsLink": "_desiredCapsLink_8105c",
+  "tabText": "_tabText_8105c",
+  "serverTabs": "_serverTabs_8105c",
+  "scrollingTabCont": "_scrollingTabCont_8105c",
+  "scrollingTab": "_scrollingTab_8105c",
+  "savedSessions": "_savedSessions_8105c",
+  "newSessionForm": "_newSessionForm_8105c",
+  "capsFormattedCol": "_capsFormattedCol_8105c",
+  "formattedCaps": "_formattedCaps_8105c",
+  "formattedCapsBody": "_formattedCapsBody_8105c",
+  "start-session-button": "_start-session-button_8105c",
+  "filepath-button": "_filepath-button_8105c",
+  "capsFormCol": "_capsFormCol_8105c",
+  "capsFormRow": "_capsFormRow_8105c",
+  "capsBoxFont": "_capsBoxFont_8105c",
+  "capsValueControl": "_capsValueControl_8105c",
+  "fileControlWrapper": "_fileControlWrapper_8105c",
+  "localDesc": "_localDesc_8105c",
+  "selected": "_selected_8105c",
+  "capsNameEditorButton": "_capsNameEditorButton_8105c",
+  "capsEditorControls": "_capsEditorControls_8105c",
+  "capsEditorButton": "_capsEditorButton_8105c",
+  "capsEditor": "_capsEditor_8105c",
+  "capsEditorTitle": "_capsEditorTitle_8105c",
+  "capsEditorBody": "_capsEditorBody_8105c",
+  "capsEditorBodyFull": "_capsEditorBodyFull_8105c",
+  "capsEditorBodyResized": "_capsEditorBodyResized_8105c",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_8105c",
+  "advancedSettingsContainer": "_advancedSettingsContainer_8105c",
+  "add-desired-capability-button": "_add-desired-capability-button_8105c",
+  "editSession": "_editSession_8105c",
+  "btnReload": "_btnReload_8105c",
+  "btnDeleteCap": "_btnDeleteCap_8105c",
+  "inputDataCenter": "_inputDataCenter_8105c",
+  "addonDataCenter": "_addonDataCenter_8105c",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -5846,39 +6153,7 @@ const ServerTabHeadspin = ({
 }, t('sessionHeadspinWebDriverURLDescription'))))));
 var _default = ServerTabHeadspin;
 exports.default = _default;
-},{"./Session.css":"components/Session/Session.css"}],"components/AntdTypes.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.ROW = exports.INPUT = exports.BUTTON = exports.ALERT = void 0;
-const BUTTON = {
-  DEFAULT: 'default',
-  PRIMARY: 'primary',
-  DISABLED: 'disabled',
-  DANGER: 'danger'
-};
-exports.BUTTON = BUTTON;
-const ALERT = {
-  ERROR: 'error',
-  WARNING: 'warning',
-  INFO: 'info'
-};
-exports.ALERT = ALERT;
-const INPUT = {
-  NUMBER: 'number',
-  TEXT: 'text',
-  TEXTAREA: 'textarea',
-  PASSWORD: 'password',
-  SUBMIT: 'submit'
-};
-exports.INPUT = INPUT;
-const ROW = {
-  FLEX: 'flex'
-};
-exports.ROW = ROW;
-},{}],"components/Session/ServerTabBrowserstack.js":[function(require,module,exports) {
+},{"./Session.css":"components/Session/Session.css"}],"components/Session/ServerTabBrowserstack.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -8934,6 +9209,7 @@ function mapStateToProps(state) {
 }
 var _default = (0, _util.withTranslation)(_Session2.default, (0, _reactRedux.connect)(mapStateToProps, SessionActions));
 exports.default = _default;
+<<<<<<< HEAD
 },{"../util":"util.js","../actions/Session":"actions/Session.js","../components/Session/Session":"components/Session/Session.js"}],"components/Inspector/Inspector.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
@@ -9039,6 +9315,9 @@ module.exports = {
   "activeCategory": "_activeCategory_5407d"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
+=======
+},{"../util":"util.js","../actions/Session":"actions/Session.js","../components/Session/Session":"components/Session/Session.js"}],"components/Inspector/HighlighterRect.js":[function(require,module,exports) {
+>>>>>>> 985d1ad (added changes of send key)
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -9053,6 +9332,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * boxes of the elements in the app
  */
 const HighlighterRect = props => {
+  console.log("🚀 ~ file: HighlighterRect.js:9 ~ HighlighterRect ~ props:", props);
   const {
     selectedElement = {},
     selectHoveredElement,
@@ -11079,6 +11359,7 @@ const HeaderButtons = props => {
 };
 var _default = HeaderButtons;
 exports.default = _default;
+<<<<<<< HEAD
 },{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../slices/panelSlice":"slices/panelSlice.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
 "use strict";
 
@@ -11213,6 +11494,9 @@ const LocatedElements = props => {
 var _default = LocatedElements;
 exports.default = _default;
 },{"../AntdTypes":"components/AntdTypes.js","./Inspector.css":"components/Inspector/Inspector.css"}],"components/Inspector/ElementLocator.js":[function(require,module,exports) {
+=======
+},{"./Inspector.css":"components/Inspector/Inspector.css","./shared":"components/Inspector/shared.js","../AntdTypes":"components/AntdTypes.js","../../../../assets/images/testinglogo.png":"../../assets/images/testinglogo.png","../../../../assets/images/hamburger.jpg":"../../assets/images/hamburger.jpg"}],"components/Inspector/ElementLocator.js":[function(require,module,exports) {
+>>>>>>> 985d1ad (added changes of send key)
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14426,9 +14710,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_afc3f",
-  "loader": "_loader_afc3f",
-  "load1": "_load1_afc3f"
+  "container": "_container_9b1d1",
+  "loader": "_loader_9b1d1",
+  "load1": "_load1_9b1d1"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -14514,8 +14798,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_e36f2",
-  "copyTraceBtn": "_copyTraceBtn_e36f2"
+  "errorMessage": "_errorMessage_cd7c8",
+  "copyTraceBtn": "_copyTraceBtn_cd7c8"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
@@ -15182,6 +15466,11 @@ function inspector(state = INITIAL_STATE, action) {
       return {
         ...state,
         flow_steps: action.res
+      };
+    case _Inspector.ELEMENT_KEYS:
+      return {
+        ...state,
+        element: action.elements
       };
     case _Inspector.ADD_ASSIGNED_VAR_CACHE:
       return {
