@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-process.env.HMR_PORT=34075;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-process.env.HMR_PORT=43511;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-<<<<<<< HEAD
-process.env.HMR_PORT=45739;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
-=======
-process.env.HMR_PORT=39231;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
->>>>>>> 985d1ad (added changes of send key)
->>>>>>> 3ef41497682a354115b7603c80247a352a9d747a
->>>>>>> e10705b2d23e7cfaef702b4040eebc9dc27e6ce5
+process.env.HMR_PORT=44419;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
