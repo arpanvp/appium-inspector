@@ -1,4 +1,4 @@
-process.env.HMR_PORT=39501;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=34075;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -10808,7 +10808,7 @@ const Screenshot = props => {
   // };
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
-  return /*#__PURE__*/_react.default.createElement(_antd.Spin, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement(_antd.Spin, {
     size: "large",
     spinning: !!methodCallInProgress && !mjpegScreenshotUrl,
     style: {
@@ -10976,7 +10976,7 @@ const Screenshot = props => {
     } : {
       stroke: tick.color
     }
-  }))))))), driver && driver.client.isAndroid && /*#__PURE__*/_react.default.createElement("div", {
+  })))))), driver && driver.client.isAndroid && /*#__PURE__*/_react.default.createElement("div", {
     className: _Inspector.default['whole-btn']
   }, /*#__PURE__*/_react.default.createElement(_antd.Tooltip, {
     title: t('Press Back Button')
@@ -11014,7 +11014,7 @@ const Screenshot = props => {
       methodName: 'pressKeyCode',
       args: [187]
     })
-  }))));
+  }))))));
 };
 var _default = Screenshot;
 exports.default = _default;

@@ -599,6 +599,7 @@ const Screenshot = (props) => {
   // Show the screenshot and highlighter rects.
   // Show loading indicator if a method call is in progress, unless using MJPEG mode.
   return (
+    <>
     <Spin size='large' spinning={!!methodCallInProgress && !mjpegScreenshotUrl} style={{ display: "flex!important" }}>
       <div id='selectedElementContainer'
         className={`${InspectorStyles['interaction-tab-container']} ${InspectorStyles['element-detail-container']} action-col`}>
@@ -609,7 +610,7 @@ const Screenshot = (props) => {
             <Tooltip title={t('Tap')}>
               <Button
                 disabled={isDisabled}
-                icon={<AimOutlined/> }
+                icon={<AimOutlined />}
                 id='btnTapElement'
                 onClick={() => handleTap} />
             </Tooltip>
@@ -782,26 +783,29 @@ const Screenshot = (props) => {
             </svg>
           }
         </div>
+        {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
+          <Tooltip title={t('Press Back Button')}>
+            <Button id='btnPressHomeButton' className={styles['phone-btn1']}
+              icon={<IoChevronBackOutline className={styles['custom-button-icon']} />}
+              onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4] })} />
+          </Tooltip>
+          <Tooltip title={t('Press Home Button')}>
+            <Button id='btnPressHomeButton' className={styles['phone-btn2']}
+              icon={<BiCircle className={styles['custom-button-icon']} />}
+              onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3] })} />
+          </Tooltip>
+          <Tooltip title={t('Press App Switch Button')}>
+            <Button id='btnPressHomeButton' className={styles['phone-btn3']}
+              icon={<BiSquare className={styles['custom-button-icon']} />}
+              onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187] })} />
+          </Tooltip>
+        </div>}
       </div>
-      {driver && driver.client.isAndroid && <div className={styles['whole-btn']}>
-        <Tooltip title={t('Press Back Button')}>
-          <Button id='btnPressHomeButton' className={styles['phone-btn1']}
-            icon={<IoChevronBackOutline className={styles['custom-button-icon']} />}
-            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [4] })} />
-        </Tooltip>
-        <Tooltip title={t('Press Home Button')}>
-          <Button id='btnPressHomeButton' className={styles['phone-btn2']}
-            icon={<BiCircle className={styles['custom-button-icon']} />}
-            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [3] })} />
-        </Tooltip>
-        <Tooltip title={t('Press App Switch Button')}>
-          <Button id='btnPressHomeButton' className={styles['phone-btn3']}
-            icon={<BiSquare className={styles['custom-button-icon']} />}
-            onClick={() => applyClientMethod({ methodName: 'pressKeyCode', args: [187] })} />
-        </Tooltip>
-      </div>}
     </Spin>
+  </>
   );
 };
+
+
 
 export default Screenshot;
