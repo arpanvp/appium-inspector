@@ -145,7 +145,7 @@
     flex-basis: 550px;
     min-width: 380px;
     padding-left: 1em;
-    display: flex !important;
+    display: flex;
     flex-flow: column;
     height: 20px;
 }
