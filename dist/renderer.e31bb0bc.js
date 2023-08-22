@@ -1,4 +1,4 @@
-process.env.HMR_PORT=36831;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=40647;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -5654,10 +5654,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5704,10 +5703,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5747,10 +5745,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5788,10 +5785,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5831,10 +5827,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5874,10 +5869,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -7350,7 +7344,7 @@ function newSession(caps, attachSessId = null) {
         https = session.server.browserstack.ssl = parseInt(port, 10) === 443;
         break;
       case ServerTypes.lambdatest:
-        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai/lambdatest';
+        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai/lambdatest ';
         port = session.server.lambdatest.port = process.env.LAMBDATEST_PORT || 443;
         path = session.server.lambdatest.path = '/wd/hub';
         username = session.server.lambdatest.username || process.env.LAMBDATEST_USERNAME;
@@ -9221,7 +9215,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * boxes of the elements in the app
  */
 const HighlighterRect = props => {
-  console.log("🚀 ~ file: HighlighterRect.js:9 ~ HighlighterRect ~ props:", props);
   const {
     selectedElement = {},
     selectHoveredElement,
@@ -12881,7 +12874,7 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable require-await */ /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable object-shorthand */ /* eslint-disable require-await */ /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
 const {
   SELECT,
   SWIPE,
@@ -12936,7 +12929,10 @@ class Inspector extends _react.Component {
       total_array: [],
       isLongPress: false,
       action: '',
-      mode_orientation: 'PORTRAIT'
+      mode_orientation: 'PORTRAIT',
+      showModal: false,
+      selectedAssertion: '',
+      inputText: ''
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -12944,6 +12940,8 @@ class Inspector extends _react.Component {
     this.updateSourceTreeWidth = (0, _lodash.debounce)(this.updateSourceTreeWidth.bind(this), 50);
     this.updateScaleRatio = (0, _lodash.debounce)(this.updateScaleRatio.bind(this), 500);
     this.mjpegStreamCheckInterval = null;
+    this.handleAssertionClick = this.handleAssertionClick.bind(this);
+    this.handleModalSubmit = this.handleModalSubmit.bind(this);
   }
   /**
    * Calculates the ratio that the image is being scaled by
@@ -13056,7 +13054,7 @@ class Inspector extends _react.Component {
       selectScreenshotInteractionMode,
       clearSwipeAction
     } = this.props;
-    clearSwipeAction(); // When the action changes, reset the swipe action
+    clearSwipeAction();
     selectScreenshotInteractionMode(mode);
     this.setState({
       currentSelection: option
@@ -13099,9 +13097,7 @@ class Inspector extends _react.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data1)
-    }).then(res =>
-    // Convert the response to JSON
-    res.json()).then(res => {
+    }).then(res => res.json()).then(res => {
       console.log("Response data:", res);
       this.setState({
         total_array: res.steps
@@ -13208,7 +13204,7 @@ class Inspector extends _react.Component {
       methodName: 'getPageSource'
     });
   }
-  async shakeBooty() {
+  async shake() {
     console.log('this is shake shake ittt');
     const {
       driver
@@ -13217,6 +13213,7 @@ class Inspector extends _react.Component {
     console.log("🚀 ~ file: Inspector.js:295 ~ shakeBooty ~ isShake:", isShake);
   }
   async callParticularSteps(data) {
+    console.log('this is the data for the single step', data);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
@@ -13237,22 +13234,54 @@ class Inspector extends _react.Component {
       'session_id': driver.sessionId,
       'step-name': 'steps'
     };
-    console.log("🚀 ~ file: Inspector.js:378 ~ fetchAllSteps ~ data1:", data1);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data1)
-    }).then(res =>
-    // Convert the response to JSON
-    res.json()).then(res => {
+    }).then(res => res.json()).then(res => {
       console.log('Response data:', res);
       this.setState({
         total_array: res.steps
       });
     }).catch(error => {
       console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+    });
+  }
+  handleAssertionClick(methodName) {
+    this.setState({
+      showModal: true,
+      selectedAssertion: methodName
+    });
+  }
+  async handleModalSubmit() {
+    const {
+      driver,
+      selectedElement,
+      applyClientMethod
+    } = this.props;
+    let data = {
+      'session_id': driver.sessionId,
+      'step-name': 'assertion',
+      'selectedElement': selectedElement,
+      'params': {
+        'methodName': this.state.selectedAssertion,
+        'args': this.state.inputText
+      }
+    };
+    console.log("🚀 ~ file: Inspector.js:448 ~ handleModalSubmit ~ data:", data);
+    await applyClientMethod({
+      methodName: 'getPageSource'
+    });
+    this.callParticularSteps(data);
+    this.fetchAllSteps();
+
+    // Close the modal after submitting
+    this.setState({
+      showModal: false,
+      selectedAssertion: '',
+      inputText: ''
     });
   }
   render() {
@@ -13281,6 +13310,11 @@ class Inspector extends _react.Component {
       isSourceRefreshOn,
       applyClientMethod
     } = this.props;
+    const {
+      showModal,
+      selectedAssertion,
+      inputText
+    } = this.state;
     const {
       path
     } = selectedElement;
@@ -13665,60 +13699,28 @@ class Inspector extends _react.Component {
     }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'text_equal'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('text_equal');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "text equals")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'text_contains'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('text_contains');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "text contains")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'attribute_equals'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('attribute_equals');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "attribute equals")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'attribute_contains'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('attribute_contains');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13727,13 +13729,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_displayed'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_displayed',
+            'args': true
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13742,13 +13749,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_selected'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_selected',
+            'args': true
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13757,13 +13769,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_enabled'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_enabled',
+            'args': true
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13772,13 +13789,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_disabled'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_disabled',
+            'args': false
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -14416,7 +14438,19 @@ class Inspector extends _react.Component {
       open: !!visibleCommandResult,
       onOk: () => setVisibleCommandResult(null),
       onCancel: () => setVisibleCommandResult(null)
-    }, /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("code", null, visibleCommandResult))));
+    }, /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("code", null, visibleCommandResult))), /*#__PURE__*/_react.default.createElement(_antd.Modal, {
+      title: 'Enter arguments for ',
+      open: showModal,
+      onOk: this.handleModalSubmit,
+      onCancel: () => this.setState({
+        showModal: false
+      })
+    }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+      value: inputText,
+      onChange: e => this.setState({
+        inputText: e.target.value
+      })
+    })));
   }
 }
 exports.default = Inspector;

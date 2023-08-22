@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable require-await */
 /* eslint-disable quotes */
 /* eslint-disable react-native/no-inline-styles */
@@ -8,7 +9,7 @@
 import React, { Component } from 'react';
 import { debounce, drop } from 'lodash';
 import { SCREENSHOT_INTERACTION_MODE, INTERACTION_MODE } from './shared';
-import { Card, Button, Spin, Tooltip, Modal, Tabs, Space, Input, Switch, Menu, Select } from 'antd';
+import { Card, Button, Spin, Tooltip, Modal, Tabs, Space, Input, Switch, Menu, Select, } from 'antd';
 import Screenshot from './Screenshot';
 import HeaderButtons from './HeaderButtons';
 import SelectedElement from './SelectedElement';
@@ -108,6 +109,9 @@ export default class Inspector extends Component {
       isLongPress: false,
       action: '',
       mode_orientation: 'PORTRAIT',
+      showModal: false,
+      selectedAssertion: '',
+      inputText: '',
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -115,6 +119,8 @@ export default class Inspector extends Component {
     this.updateSourceTreeWidth = debounce(this.updateSourceTreeWidth.bind(this), 50);
     this.updateScaleRatio = debounce(this.updateScaleRatio.bind(this), 500);
     this.mjpegStreamCheckInterval = null;
+    this.handleAssertionClick = this.handleAssertionClick.bind(this);
+    this.handleModalSubmit = this.handleModalSubmit.bind(this);
   }
   /**
    * Calculates the ratio that the image is being scaled by
@@ -226,7 +232,7 @@ export default class Inspector extends Component {
   }
   screenshotInteractionChange(mode, option) {
     const { selectScreenshotInteractionMode, clearSwipeAction } = this.props;
-    clearSwipeAction(); // When the action changes, reset the swipe action
+    clearSwipeAction();
     selectScreenshotInteractionMode(mode);
     this.setState({ currentSelection: option });
   }
@@ -271,7 +277,6 @@ export default class Inspector extends Component {
       body: JSON.stringify(data1),
     })
       .then((res) =>
-        // Convert the response to JSON
         res.json()
       )
       .then((res) => {
@@ -374,7 +379,7 @@ export default class Inspector extends Component {
     this.fetchAllSteps();
     await this.props.applyClientMethod({ methodName: 'getPageSource' });
   }
-  async shakeBooty() {
+  async shake() {
     console.log('this is shake shake ittt');
     const { driver } = this.props;
     const isShake = await driver.client.shake();
@@ -382,6 +387,7 @@ export default class Inspector extends Component {
   }
 
   async callParticularSteps(data) {
+    console.log('this is the data for the single step', data);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
@@ -403,7 +409,6 @@ export default class Inspector extends Component {
       'session_id': driver.sessionId,
       'step-name': 'steps'
     };
-    console.log("🚀 ~ file: Inspector.js:378 ~ fetchAllSteps ~ data1:", data1);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
@@ -412,7 +417,6 @@ export default class Inspector extends Component {
       body: JSON.stringify(data1),
     })
       .then((res) =>
-        // Convert the response to JSON
         res.json()
       )
       .then((res) => {
@@ -424,6 +428,40 @@ export default class Inspector extends Component {
       });
   }
 
+  handleAssertionClick(methodName) {
+    this.setState({
+      showModal: true,
+      selectedAssertion: methodName,
+    });
+  };
+
+  async handleModalSubmit() {
+    const { driver, selectedElement, applyClientMethod } = this.props;
+
+    let data = {
+      'session_id': driver.sessionId,
+      'step-name': 'assertion',
+      'selectedElement': selectedElement,
+      'params': {
+        'methodName': this.state.selectedAssertion,
+        'args': this.state.inputText,
+      },
+    };
+    console.log("🚀 ~ file: Inspector.js:448 ~ handleModalSubmit ~ data:", data);
+
+    await applyClientMethod({ methodName: 'getPageSource' });
+    this.callParticularSteps(data);
+    this.fetchAllSteps();
+
+    // Close the modal after submitting
+    this.setState({
+      showModal: false,
+      selectedAssertion: '',
+      inputText: '',
+    });
+  };
+
+
   render() {
     const { screenshot, screenshotError, selectedElement = {},
       quitSession, showRecord,
@@ -433,6 +471,7 @@ export default class Inspector extends Component {
       mjpegScreenshotUrl, isAwaitingMjpegStream, toggleShowCentroids, showCentroids,
       isGestureEditorVisible, toggleShowAttributes, isSourceRefreshOn, applyClientMethod
     } = this.props;
+    const { showModal, selectedAssertion, inputText } = this.state;
     const { path } = selectedElement;
     const { driver } = this.props;
     const { flow_steps } = this.props;
@@ -741,37 +780,37 @@ export default class Inspector extends Component {
                 <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
                   <Button icon={<FundProjectionScreenOutlined />}
                     type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-                    onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0})}
+                    onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0 })}
                     // disabled={isGestureEditorVisible}
                     className={InspectorStyles['user_actions']}
                   >long press key</Button>
                   {this.state.nestedDropIndex === 1 &&
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
 
-                        {options.map((option, index) => (
-                          <Button key={index}
-                            onClick={async () => await this.handleActions(option, 'long_press_key')}>
-                            {option}
-                          </Button>
-                        ))}
+                      {options.map((option, index) => (
+                        <Button key={index}
+                          onClick={async () => await this.handleActions(option, 'long_press_key')}>
+                          {option}
+                        </Button>
+                      ))}
 
                     </div>
                   }
 
                   <Button icon={<FundProjectionScreenOutlined />}
                     type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-                    onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({nestedDropIndex: 0})}
+                    onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({ nestedDropIndex: 0 })}
                     // disabled={isGestureEditorVisible}
                     className={InspectorStyles['user_actions']}
                   >press key</Button>
                   {this.state.nestedDropIndex === 2 &&
-                    <div style={{ display: 'flex', flexDirection: 'column'}}>
-                        {options.map((option, index) => (
-                          <Button style={{ width: '100%' }} key={index}
-                            onClick={async () => await this.handleActions(option, 'press_key')}>
-                            {option}
-                          </Button>
-                        ))}
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      {options.map((option, index) => (
+                        <Button style={{ width: '100%' }} key={index}
+                          onClick={async () => await this.handleActions(option, 'press_key')}>
+                          {option}
+                        </Button>
+                      ))}
 
                     </div>
                   }
@@ -888,49 +927,25 @@ export default class Inspector extends Component {
                   <span>Expected value</span></Button>
                 <Button icon={<CheckCircleOutlined />}
                   onClick={async () => {
-                    let data = {
-                      'session_id': driver.sessionId,
-                      'step-name': 'text_equal',
-                    };
-                    this.callParticularSteps(data);
-                    this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
+                    this.handleAssertionClick('text_equal');
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>text equals</span></Button>
                 <Button icon={<CheckCircleOutlined />}
                   onClick={async () => {
-                    let data = {
-                      'session_id': driver.sessionId,
-                      'step-name': 'text_contains',
-                    };
-                    this.callParticularSteps(data);
-                    this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
+                    this.handleAssertionClick('text_contains');
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>text contains</span></Button>
                 <Button icon={<CheckCircleOutlined />}
                   onClick={async () => {
-                    let data = {
-                      'session_id': driver.sessionId,
-                      'step-name': 'attribute_equals',
-                    };
-                    this.callParticularSteps(data);
-                    this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
+                    this.handleAssertionClick('attribute_equals');
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>attribute equals</span></Button>
                 <Button icon={<CheckCircleOutlined />}
                   onClick={async () => {
-                    let data = {
-                      'session_id': driver.sessionId,
-                      'step-name': 'attribute_contains',
-                    };
-                    this.callParticularSteps(data);
-                    this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
+                    this.handleAssertionClick('attribute_contains');
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>attribute contains</span></Button>
@@ -938,11 +953,16 @@ export default class Inspector extends Component {
                   onClick={async () => {
                     let data = {
                       'session_id': driver.sessionId,
-                      'step-name': 'is_element_displayed',
+                      'step-name': 'assertion',
+                      'selectedElement': selectedElement,
+                      'params': {
+                        'methodName': 'is_element_displayed',
+                        'args': true
+                      }
                     };
+                    await applyClientMethod({ methodName: 'getPageSource' });
                     this.callParticularSteps(data);
                     this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>Is Element Displayed</span></Button>
@@ -950,11 +970,16 @@ export default class Inspector extends Component {
                   onClick={async () => {
                     let data = {
                       'session_id': driver.sessionId,
-                      'step-name': 'is_element_selected',
+                      'step-name': 'assertion',
+                      'selectedElement': selectedElement,
+                      'params': {
+                        'methodName': 'is_element_selected',
+                        'args': true
+                      }
                     };
+                    await applyClientMethod({ methodName: 'getPageSource' });
                     this.callParticularSteps(data);
                     this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>Is Element Selected</span></Button>
@@ -962,11 +987,16 @@ export default class Inspector extends Component {
                   onClick={async () => {
                     let data = {
                       'session_id': driver.sessionId,
-                      'step-name': 'is_element_enabled',
+                      'step-name': 'assertion',
+                      'selectedElement': selectedElement,
+                      'params': {
+                        'methodName': 'is_element_enabled',
+                        'args': true
+                      }
                     };
+                    await applyClientMethod({ methodName: 'getPageSource' });
                     this.callParticularSteps(data);
                     this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>Is Element Enabled</span></Button>
@@ -974,11 +1004,16 @@ export default class Inspector extends Component {
                   onClick={async () => {
                     let data = {
                       'session_id': driver.sessionId,
-                      'step-name': 'is_element_disabled',
+                      'step-name': 'assertion',
+                      'selectedElement': selectedElement,
+                      'params': {
+                        'methodName': 'is_element_disabled',
+                        'args': false
+                      }
                     };
+                    await applyClientMethod({ methodName: 'getPageSource' });
                     this.callParticularSteps(data);
                     this.fetchAllSteps();
-                    await applyClientMethod({ methodName: 'getPageSource' });
                   }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
                   <span>Is Element Disabled</span></Button>
@@ -1159,9 +1194,9 @@ export default class Inspector extends Component {
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
             ><span>Shake</span></Button>
             {/* <Button icon={<UnlockOutlined />} onClick={() => { this.screenshotInteractionChange(UNLOCK, 'Unlock'); this.isUnlocked();}}
-  type={screenshotInteractionMode === UNLOCK ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-  disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
-><span>Unlock</span></Button> */}
+                       type={screenshotInteractionMode === UNLOCK ? BUTTON.PRIMARY : BUTTON.DEFAULT}
+                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+                  ><span>Unlock</span></Button> */}
           </div>}
         {
           this.state.activeCategory === 3 && this.state.showPane &&
@@ -1187,7 +1222,7 @@ export default class Inspector extends Component {
 
             <Button icon={<FundProjectionScreenOutlined />}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
-              onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({ nestedDropIndex: 0})}
+              onClick={() => this.state.nestedDropIndex !== 2 ? this.setState({ nestedDropIndex: 2 }) : this.setState({ nestedDropIndex: 0 })}
               // disabled={isGestureEditorVisible}
               className={InspectorStyles['user_actions']}
             ><span>press key</span></Button>
@@ -1583,6 +1618,18 @@ export default class Inspector extends Component {
       >
         <pre><code>{visibleCommandResult}</code></pre>
       </Modal>
+      <Modal
+        title={'Enter arguments for '}
+        open={showModal}
+        onOk={this.handleModalSubmit}
+        onCancel={() => this.setState({ showModal: false })}
+      >
+        <Input
+          value={inputText}
+          onChange={(e) => this.setState({ inputText: e.target.value })}
+        />
+      </Modal>
+
     </div>);
   }
 }

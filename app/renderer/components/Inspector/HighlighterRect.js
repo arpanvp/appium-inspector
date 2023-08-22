@@ -6,7 +6,6 @@ import InspectorCSS from './Inspector.css';
  * boxes of the elements in the app
  */
 const HighlighterRect = (props) => {
-  console.log("🚀 ~ file: HighlighterRect.js:9 ~ HighlighterRect ~ props:", props)
   const { selectedElement = {}, selectHoveredElement, unselectHoveredElement, hoveredElement = {},
           selectElement, unselectElement, element, scaleRatio, xOffset, elLocation, elSize, dimensions } = props;
   const { path: hoveredPath } = hoveredElement;

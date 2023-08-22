@@ -43,7 +43,7 @@ export const QUIT_SESSION_DONE = 'QUIT_SESSION_DONE';
 export const SET_SESSION_TIME = 'SET_SESSION_TIME';
 
 export const START_RECORDING = 'START_RECORDING';
-export const ELEMENT_KEYS = 'ELEMENT_KEYS'
+export const ELEMENT_KEYS = 'ELEMENT_KEYS';
 export const PAUSE_RECORDING = 'PAUSE_RECORDING';
 export const CLEAR_RECORDING = 'CLEAR_RECORDING';
 export const CLOSE_RECORDER = 'CLOSE_RECORDER';
@@ -221,10 +221,10 @@ export function unselectHoveredElement(path) {
 /**
  * Requests a method call on appium
  */
-let elemArr = []
-let digitsArray = []
+let elemArr = [];
+let digitsArray = [];
 export function applyClientMethod(params) {
-  console.log("🚀 ~ file: Inspector.js:223 ~ applyClientMethod ~ params:", params)
+  console.log("🚀 ~ file: Inspector.js:223 ~ applyClientMethod ~ params:", params);
  
   return async (dispatch, getState) => {
     const isRecording = params.methodName !== 'quit' &&
@@ -241,7 +241,7 @@ export function applyClientMethod(params) {
       if (params.methodName === 'sendKeys') {
         await applyClientMethod({ appMode: 'native', methodName: 'click', elementId: elemArr[0] });
 
-        const digitsArray = params.args[0].split('').map(digit => digit.toString());
+        const digitsArray = params.args[0].split('').map((digit) => digit.toString());
         console.log('Digits Array:', digitsArray);
 
         if (elemArr.length > 1) {
@@ -924,10 +924,10 @@ export function callClientMethod(params) {
           },
           body: JSON.stringify(data1),
         })
-        .then((res) => {
+        .then((res) => 
           // Convert the response to JSON
-          return res.json();
-        })
+           res.json()
+        )
         .then((res) => {
           console.log("Response data:", res);
           dispatch({ type: STEPS_ARRAY, res });
@@ -976,10 +976,10 @@ export function callClientMethod(params) {
         },
         body: JSON.stringify(data1),
       })
-      .then((res) => {
+      .then((res) => 
         // Convert the response to JSON
-        return res.json();
-      })
+         res.json()
+      )
       .then((res) => {
         console.log("Response data:", res);
         dispatch({ type: STEPS_ARRAY, res });
@@ -1021,10 +1021,10 @@ export function callClientMethod(params) {
             },
             body: JSON.stringify(data1),
           })
-          .then((res) => {
+          .then((res) => 
             // Convert the response to JSON
-            return res.json();
-          })
+             res.json()
+          )
           .then((res) => {
             console.log("Response data:", res);
             dispatch({ type: STEPS_ARRAY, res });
@@ -1064,10 +1064,10 @@ export function callClientMethod(params) {
           },
           body: JSON.stringify(data1),
         })
-        .then((res) => {
+        .then((res) => 
           // Convert the response to JSON
-          return res.json();
-        })
+           res.json()
+        )
         .then((res) => {
           console.log("Response data:", res);
           dispatch({ type: STEPS_ARRAY, res });
@@ -1109,10 +1109,10 @@ export function callClientMethod(params) {
         },
         body: JSON.stringify(data1),
       })
-      .then((res) => {
+      .then((res) => 
         // Convert the response to JSON
-        return res.json();
-      })
+         res.json()
+      )
       .then((res) => {
         console.log("Response data:", res);
         dispatch({ type: STEPS_ARRAY, res });
@@ -1154,10 +1154,10 @@ export function callClientMethod(params) {
         },
         body: JSON.stringify(data1),
       })
-      .then((res) => {
+      .then((res) => 
         // Convert the response to JSON
-        return res.json();
-      })
+         res.json()
+      )
       .then((res) => {
         console.log("Response data:", res);
         dispatch({ type: STEPS_ARRAY, res });
