@@ -23,6 +23,8 @@ import menuButton from '../../../../assets/images/hamburger.jpg';
 import { clipboard } from '../../polyfills';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
+import { Line } from 'react-chartjs-2';
+import LineChart from 'echarts-for-react';
 import {
   SelectOutlined,
   ScanOutlined,
@@ -95,6 +97,7 @@ export default class Inspector extends Component {
 
   constructor() {
     super();
+    this.getAllGraphData = this.getAllGraphData.bind(this);
     this.didInitialResize = false;
     this.state = {
       scaleRatio: 1,
@@ -108,6 +111,14 @@ export default class Inspector extends Component {
       isLongPress: false,
       action: '',
       mode_orientation: 'PORTRAIT',
+      cpu_graph_data: [],
+      cpu_graph_options: [],
+      memory_graph_data: [],
+      memory_graph_options: [],
+      battery_graph_data: [],
+      battery_graph_options: [],
+      network_graph_data: [],
+      network_graph_options: [],
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -394,6 +405,69 @@ export default class Inspector extends Component {
       })
       .catch((error) => {
         console.error('API error:', error);
+      });
+  }
+
+  async getAllGraphData() {
+    const {driver} = this.props;
+    await driver.client.getCurrentPackage().then((res) => {
+      console.log('package name>>>>>>>>>>>>>>>', res);
+      if (res !== '') {
+        driver.client.getPerformanceData(res, "cpuinfo", 5).then((res1) =>{
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????',res1);
+          this.setState({cpu_graph_options: res1[0], cpu_graph_data: res1[1]});
+        });
+
+        driver.client.getPerformanceData(res, "memoryinfo", 5).then((res1) =>{
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????',res1);
+          this.setState({memory_graph_options: res1[0], memory_graph_data: res1[1]});
+        });
+
+        driver.client.getPerformanceData(res, "batteryinfo", 5).then((res1) =>{
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????',res1);
+          this.setState({battery_graph_options: res1[0], battery_graph_data: res1[1]});
+        });
+
+        driver.client.getPerformanceData(res, "networkinfo", 5).then((res1) =>{
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????',res1);
+          this.setState({network_graph_options: res1[0], network_graph_data: res1[1]});
+        });
+      }
+    });
+  }
+
+
+  async getPerformance(data1) {
+    const {driver} = this.props;
+      await driver.client.getCurrentPackage().then((res) => {
+        console.log('package name>>>>>>>>>>>>>>>', res);
+        if (res !== '') {
+          driver.client.getPerformanceData(res, data1, 5).then((res1) =>{
+
+            let reqData = {"session_id": driver.sessionId,"step-name": "performance", "data": res1};
+            console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????',res1);
+            this.setState({graph_options: res1[0], graph_data: res1[1]});
+
+          fetch('https://apprecord.testing24x7.ai/appAction', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(reqData),
+        })
+          .then((res) =>
+            // Convert the response to JSON
+            res.json()
+          )
+          .then((res) => {
+            console.log('Response data:>>>>>>>>>>>>>>', res);
+          })
+          .catch((error) => {
+            console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+          });
+          });
+        }
+        this.setState({ package_name: res });
       });
   }
 
@@ -1025,6 +1099,29 @@ export default class Inspector extends Component {
               </div>}
             </div>
 
+
+
+            <div onMouseOver={() => this.setActiveIndex(6)} onMouseOut={() => this.setActiveIndex(0)}
+              style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
+              className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : ""}>
+              <AppstoreAddOutlined style={{ fontSize: '20px' }} />
+              <div>Performance Matrices</div>
+              {this.state.activeIndex === 6 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('cpuinfo'); }}
+                  disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+                > <span>Cpu Performance</span></Button>
+                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('memoryinfo'); }}
+                  disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+                > <span>Memory Performance</span></Button>
+                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('batteryinfo'); }}
+                  disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+                > <span>Battery Performance</span></Button>
+                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('networkinfo'); }}
+                  disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
+                > <span>Network Performance</span></Button>
+              </div>}
+            </div>
+
           </div>}
 
 
@@ -1526,13 +1623,111 @@ export default class Inspector extends Component {
                 </div> */}
               </div>
           }, {
-            label: t('Commands'), key: INTERACTION_MODE.COMMANDS, children:
-              <Card
-                title={<span><ThunderboltOutlined /> {t('Execute Commands')}</span>}
-                className={InspectorStyles['interaction-tab-card']}>
-                <Commands {...this.props} />
-              </Card>
-          }, {
+  label: (
+    <div onClick={this.getAllGraphData}>
+      {t('Performance matrices')}
+    </div>
+  ),
+  key: INTERACTION_MODE.COMMANDS,
+  children: (
+    <div style={{overflowY: 'auto'}}>
+      <h2>Performance Graph</h2>
+      {this.state.cpu_graph_data.length > 0 &&
+      this.state.memory_graph_data.length > 0 &&
+      this.state.battery_graph_data.length > 0 &&
+      this.state.network_graph_data.length > 0 ? (
+        <div>
+        <div>
+        <h4> Cpu Performance</h4>
+          <LineChart
+            option={{
+              xAxis: {
+                type: 'category',
+                data: this.state.cpu_graph_options,
+              },
+              yAxis: {
+                type: 'value',
+              },
+              series: [
+                {
+                  data: this.state.cpu_graph_data,
+                  type: 'line',
+                },
+              ],
+            }}
+          />
+        </div>
+          <div>
+          <h4> Memory Performance</h4>
+          <LineChart
+            option={{
+              xAxis: {
+                type: 'category',
+                data: this.state.memory_graph_options,
+              },
+              yAxis: {
+                type: 'value',
+              },
+              series: [
+                {
+                  data: this.state.memory_graph_data,
+                  type: 'line',
+                },
+              ],
+            }}
+          />
+          </div>
+
+          <div>
+          <h4> Battery Performance</h4>
+          <LineChart
+            option={{
+              xAxis: {
+                type: 'category',
+                data: this.state.battery_graph_options,
+              },
+              yAxis: {
+                type: 'value',
+              },
+              series: [
+                {
+                  data: this.state.battery_graph_data,
+                  type: 'line',
+                },
+              ],
+            }}
+          />
+          </div>
+
+          <div>
+          <h4> Network Performance</h4>
+          <LineChart
+            option={{
+              xAxis: {
+                type: 'category',
+                data: this.state.network_graph_options,
+              },
+              yAxis: {
+                type: 'value',
+              },
+              series: [
+                {
+                  data: this.state.network_graph_data,
+                  type: 'line',
+                },
+              ],
+            }}
+          />
+          </div>
+        </div>
+      ) : (
+        <div>No data found</div>
+      )
+      }
+    </div>
+  ),
+},
+ {
             label: t('Gestures'), key: INTERACTION_MODE.GESTURES, children:
               isGestureEditorVisible ?
                 <Card
