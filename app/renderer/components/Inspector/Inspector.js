@@ -452,8 +452,6 @@ export default class Inspector extends Component {
     let screenShotControls =
       <div className={InspectorStyles['screenshot-controls']}>
 
-        {/* <img src={menuButton} alt="toggleButton" style={{ height: "35px" }}></img> */}
-
         <Tooltip title={t(showCentroids ? 'Hide Element Handles' : 'Show Element Handles')} placement="topRight">
           <Switch
             checkedChildren={<CheckCircleOutlined />}

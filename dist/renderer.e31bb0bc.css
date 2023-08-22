@@ -162,7 +162,7 @@
 ._inspector-main_3421c .ant-card-body {
     height: calc(100% - 48px);
     padding: 12px;
-    scrollbar-width: none;  /* -webkit-scrollbar for Firefox */
+    scrollbar-width: none; 
 }
 
 ._inspector-main_3421c ._interaction-tab-container_3421c .ant-tabs {
