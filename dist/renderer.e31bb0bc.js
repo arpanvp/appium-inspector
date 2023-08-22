@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44419;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=44759;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -4173,7 +4173,8 @@ module.exports = {
   "tick-input-box": "_tick-input-box_3421c",
   "tick-coord-box": "_tick-coord-box_3421c",
   "option-inpt": "_option-inpt_3421c",
-  "activeCategory": "_activeCategory_3421c"
+  "activeCategory": "_activeCategory_3421c",
+  "category": "_category_3421c"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
 "use strict";
