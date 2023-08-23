@@ -599,11 +599,11 @@ export default class Inspector extends Component {
               onMouseOut={() => this.setState({ activeIndex: 0 })}
               onClick={() => this.setState({ activeCategory: 1 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 1 ? InspectorStyles['activeCategory'] : ""}>
+              className={`${InspectorStyles['category']} ${this.state.activeCategory === 1 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
               <LikeOutlined style={{ fontSize: '20px' }} />
               <div>Gestures</div>
               {this.state.activeIndex === 1 &&
-                <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+                <div className={InspectorStyles['activeIndex']}>
                   <Button icon={<SwapRightOutlined />} onClick={() => { this.screenshotInteractionChange(SWIPE, 'Swipe by coordinates'); }}
                     type={screenshotInteractionMode === SWIPE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                     disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -859,11 +859,11 @@ export default class Inspector extends Component {
               onMouseOut={() => this.setState({ activeIndex: 0 })}
               onClick={() => this.setState({ activeCategory: 3 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 3 ? InspectorStyles['activeCategory'] : ""}>
+              className={`${InspectorStyles['category']} ${this.state.activeCategory === 3 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
               <HeatMapOutlined style={{ fontSize: '20px' }} />
               <div>Device Actions</div>
               {this.state.activeIndex === 3 &&
-                <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+                <div className={InspectorStyles['activeIndex']}>
                   <Button icon={<FundProjectionScreenOutlined />}
                     type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                     onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0 })}
@@ -1003,10 +1003,11 @@ export default class Inspector extends Component {
             <div onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 4 }) : this.setActiveIndex(4)} onMouseOut={() => this.setActiveIndex(0)}
               onClick={() => this.setState({ activeCategory: 4 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 4 ? InspectorStyles['activeCategory'] : ""}>
+              className={`${InspectorStyles['category']} ${this.state.activeCategory === 4 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
               <EditOutlined style={{ fontSize: '20px' }} />
               <div>Assertions</div>
-              {this.state.activeIndex === 4 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+              {this.state.activeIndex === 4 &&
+              <div className={InspectorStyles['activeIndex']}>
                 <Button icon={<CheckCircleOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value'); }}
                   type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
@@ -1105,13 +1106,15 @@ export default class Inspector extends Component {
                   <span>Is Element Disabled</span></Button>
               </div>}
             </div>
-            <div onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 5 }) : this.setActiveIndex(5)} onMouseOut={() => this.setActiveIndex(0)}
+            <div
+              onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 5 }) : this.setActiveIndex(5)} onMouseOut={() => this.setActiveIndex(0)}
               onClick={() => this.setState({ activeCategory: 5 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : ""}>
+              className={`${InspectorStyles['category']} ${this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
               <AppstoreAddOutlined style={{ fontSize: '20px' }} />
-              <div>App management</div>
-              {this.state.activeIndex === 5 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
+              <div>App Management</div>
+              {this.state.activeIndex === 5 &&
+              <div className={InspectorStyles['activeIndex']}>
                 {!this.state.isInput ? (<Button icon={<SwitcherOutlined />} onClick={() => this.setState({ isInput: true })}
                   type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1148,9 +1151,10 @@ export default class Inspector extends Component {
 
 
 
-            <div onMouseOver={() => this.setActiveIndex(6)} onMouseOut={() => this.setActiveIndex(0)}
+            <div
+              onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 6 }) : this.setActiveIndex(6)} onMouseOut={() => this.setActiveIndex(0)}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : ""}>
+              className={`${InspectorStyles['category']} ${this.state.activeCategory === 6 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
               <GroupOutlined style={{ fontSize: '20px' }}/>
               <div>Performance Matrices</div>
               {this.state.activeIndex === 6 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
@@ -1261,7 +1265,7 @@ export default class Inspector extends Component {
     let sideMenu =
       <>
         {this.state.activeCategory === 1 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
+          <div className={InspectorStyles['custom_category']}>
             <Button icon={<SwapRightOutlined />} onClick={() => { this.screenshotInteractionChange(SWIPE, 'Swipe by coordinates'); }}
               type={screenshotInteractionMode === SWIPE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1309,7 +1313,7 @@ export default class Inspector extends Component {
           </div>}
         {
           this.state.activeCategory === 3 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
+          <div className={InspectorStyles['custom_category']}>
             <Button icon={<FundProjectionScreenOutlined />}
               type={screenshotInteractionMode === TAKE_SCREENSHOT ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               onClick={() => this.state.nestedDropIndex !== 1 ? this.setState({ nestedDropIndex: 1 }) : this.setState({ nestedDropIndex: 0 })}
@@ -1448,7 +1452,7 @@ export default class Inspector extends Component {
         }
         {
           this.state.activeCategory === 4 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
+          <div className={InspectorStyles['custom_category']}>
             <Button icon={<CheckCircleOutlined />} onClick={() => { this.screenshotInteractionChange(EXPECTED_VALUE, 'Expected Value'); }}
               type={screenshotInteractionMode === EXPECTED_VALUE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}>
@@ -1553,7 +1557,7 @@ export default class Inspector extends Component {
         }
         {
           this.state.activeCategory === 5 && this.state.showPane &&
-          <div style={{ display: 'flex', flexDirection: 'column', marginTop: "40px", maxWidth: "180px", minWidth: "180px" }}>
+          <div className={InspectorStyles['custom_category']}>
             {!this.state.isInput ? (<Button icon={<SwitcherOutlined />} onClick={() => this.setState({ isInput: true })}
               type={screenshotInteractionMode === ROTATE ? BUTTON.PRIMARY : BUTTON.DEFAULT}
               disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
@@ -1595,7 +1599,7 @@ export default class Inspector extends Component {
         {showScreenshot && sideMenu}
         {showScreenshot &&
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            {this.state.currentSelection !== null && <div style={{ textAlign: 'center', color: "white", fontWeight: "bold", background: 'rgb(24, 119, 242)', width: '89%', borderRadius: '5px', padding: "10px", marginLeft: "18px" }}>Current Selection : {this.state.currentSelection}</div>}
+            {this.state.currentSelection !== null && <div style={{ textAlign: 'center', color: "white", fontWeight: "bold", background: '#3f51b5', width: '89%', borderRadius: '5px', padding: "10px", marginLeft: "18px" }}>Current Selection : {this.state.currentSelection}</div>}
             <Screenshot {...this.props} scaleRatio={this.state.scaleRatio} />
           </div>}
         {screenshotError && t('couldNotObtainScreenshot', { screenshotError })}
@@ -1609,11 +1613,12 @@ export default class Inspector extends Component {
         {showRecord &&
           <RecordedActions {...this.props} />
         }
-        <Tabs activeKey={selectedInteractionMode}
+        <Tabs className={InspectorStyles['custom_tab']} activeKey={selectedInteractionMode}
           size="small"
+          // style={{color:"red"}}
           onChange={(tab) => selectInteractionMode(tab)}
           items={[{
-            label: t('Source'), key: INTERACTION_MODE.SOURCE, children:
+            label: t('Flow Table'), key: INTERACTION_MODE.SOURCE, children:
               <div className='action-row'>
                 {/* <div className='action-col'>
                 <Card title={<span><FileTextOutlined /> {t('App Source')} </span>}
@@ -1633,18 +1638,21 @@ export default class Inspector extends Component {
                   <Source {...this.props} />
                 </Card>
               </div> */}
-                <div style={{ fontWeight: 'bold' }}>
+                {/* <div style={{ fontWeight: 'bold' }}>
                   FLOW TABLE:
-                </div>
+                </div> */}
                 <div style={{ width: '100%' }}>
-                  <table>
+                  <table className={InspectorStyles['custom_table']}>
+                    <thead>
                     <tr>
-                      <th>S No.</th>
+                      <th>Sr. No.</th>
                       <th>Step</th>
                       <th>Step Name</th>
                       <th>Search By</th>
                       <th>Search By Value</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     {this.state.total_array.length > 0 && this.state.total_array.map((item, key) => (
                       <tr key={key}>
                         <td>{key + 1}</td>
@@ -1658,6 +1666,7 @@ export default class Inspector extends Component {
                     } */}
                       </tr>
                     ))}
+                    </tbody>
                   </table>
                 </div>
                 {/* <div id='selectedElementContainer'
@@ -1788,14 +1797,16 @@ export default class Inspector extends Component {
                   className={InspectorStyles['interaction-tab-card']}>
                   <SavedGestures {...this.props} />
                 </Card>
-          }, {
-            label: t('log_cats'), key: INTERACTION_MODE.SESSION_INFO, children:
+          },
+          {
+            label: t('Logcat'), key: INTERACTION_MODE.SESSION_INFO, children:
               <Card
                 title={<span><InfoCircleOutlined /> {t('log_cats')}</span>}
                 className={InspectorStyles['interaction-tab-card']}>
                 <SessionInfo {...this.props} />
               </Card>
-          }]}
+          }
+        ]}
         />
       </div>
     </div>;
