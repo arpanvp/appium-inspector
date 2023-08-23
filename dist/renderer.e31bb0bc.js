@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=40541;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=35891;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 4f990b6 (added changes)
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -4076,6 +4080,7 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "inspector-container": "_inspector-container_5407d",
   "inspector-toolbar": "_inspector-toolbar_5407d",
   "button_wrapper": "_button_wrapper_5407d",
@@ -4175,6 +4180,106 @@ module.exports = {
   "option-inpt": "_option-inpt_5407d",
   "activeCategory": "_activeCategory_5407d",
   "category": "_category_5407d"
+=======
+  "inspector-container": "_inspector-container_61591",
+  "inspector-toolbar": "_inspector-toolbar_61591",
+  "button_wrapper": "_button_wrapper_61591",
+  "ant-btn": "_ant-btn_61591",
+  "user_actions": "_user_actions_61591",
+  "actionButton": "_actionButton_61591",
+  "inspector-main": "_inspector-main_61591",
+  "whole-btn": "_whole-btn_61591",
+  "screenshot-container": "_screenshot-container_61591",
+  "screenshot": "_screenshot_61591",
+  "screenshot-controls": "_screenshot-controls_61591",
+  "logoContainer": "_logoContainer_61591",
+  "interaction-tab-container": "_interaction-tab-container_61591",
+  "tree-container": "_tree-container_61591",
+  "session-info-table": "_session-info-table_61591",
+  "session-code-box": "_session-code-box_61591",
+  "session-inner-table": "_session-inner-table_61591",
+  "scroll-buttons": "_scroll-buttons_61591",
+  "scroll-right": "_scroll-right_61591",
+  "recorded-actions": "_recorded-actions_61591",
+  "_inspector-main_0387c": "__inspector-main_0387c_61591",
+  "ant-card-body": "_ant-card-body_61591",
+  "interaction-tab-card": "_interaction-tab-card_61591",
+  "highlighter-box": "_highlighter-box_61591",
+  "inspected-element-box": "_inspected-element-box_61591",
+  "hovered-element-box": "_hovered-element-box_61591",
+  "centroid-box": "_centroid-box_61591",
+  "centroid": "_centroid_61591",
+  "overlap": "_overlap_61591",
+  "expand": "_expand_61591",
+  "plus-minus": "_plus-minus_61591",
+  "phone-btn1": "_phone-btn1_61591",
+  "phone-btn2": "_phone-btn2_61591",
+  "phone-btn3": "_phone-btn3_61591",
+  "custom-button-icon": "_custom-button-icon_61591",
+  "elementActions": "_elementActions_61591",
+  "elementKeyInputActions": "_elementKeyInputActions_61591",
+  "selectedElementContainer": "_selectedElementContainer_61591",
+  "selected-element-table-cells": "_selected-element-table-cells_61591",
+  "element-cell-copy": "_element-cell-copy_61591",
+  "selected-element-card": "_selected-element-card_61591",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_61591",
+  "context-selector": "_context-selector_61591",
+  "sourceTag": "_sourceTag_61591",
+  "sourceAttrName": "_sourceAttrName_61591",
+  "no-recorded-actions": "_no-recorded-actions_61591",
+  "recorded-code": "_recorded-code_61591",
+  "framework-dropdown": "_framework-dropdown_61591",
+  "searchResultsList": "_searchResultsList_61591",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_61591",
+  "searchResultsActions": "_searchResultsActions_61591",
+  "searchResultsKeyInput": "_searchResultsKeyInput_61591",
+  "elementKeyInput": "_elementKeyInput_61591",
+  "element-count-container": "_element-count-container_61591",
+  "locatorStrategyBtn": "_locatorStrategyBtn_61591",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_61591",
+  "coordinatesContainer": "_coordinatesContainer_61591",
+  "swipeInstructions": "_swipeInstructions_61591",
+  "swipeSvg": "_swipeSvg_61591",
+  "tapDiv": "_tapDiv_61591",
+  "iphone_x": "_iphone_x_61591",
+  "custom_menu": "_custom_menu_61591",
+  "ant-menu-submenu": "_ant-menu-submenu_61591",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_61591",
+  "gestureSvg": "_gestureSvg_61591",
+  "filled": "_filled_61591",
+  "dashed": "_dashed_61591",
+  "whole": "_whole_61591",
+  "newDashed": "_newDashed_61591",
+  "circle-dashed": "_circle-dashed_61591",
+  "circle-newDashed": "_circle-newDashed_61591",
+  "screenimage": "_screenimage_61591",
+  "innerScreenshotContainer": "_innerScreenshotContainer_61591",
+  "screenshotBox": "_screenshotBox_61591",
+  "screenshotActionsPanel": "_screenshotActionsPanel_61591",
+  "commands-container": "_commands-container_61591",
+  "btn-container": "_btn-container_61591",
+  "arg-row": "_arg-row_61591",
+  "arg-container": "_arg-container_61591",
+  "gesture-header": "_gesture-header_61591",
+  "gesture-header-title": "_gesture-header-title_61591",
+  "gesture-header-description": "_gesture-header-description_61591",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_61591",
+  "gesture-header-timeline": "_gesture-header-timeline_61591",
+  "timeline-tick-title": "_timeline-tick-title_61591",
+  "gesture-header-icon": "_gesture-header-icon_61591",
+  "pointer-title": "_pointer-title_61591",
+  "tick-card": "_tick-card_61591",
+  "tick-plus-card": "_tick-plus-card_61591",
+  "tick-plus-btn": "_tick-plus-btn_61591",
+  "spaceContainer": "_spaceContainer_61591",
+  "tick-pointer-input": "_tick-pointer-input_61591",
+  "tick-button-group": "_tick-button-group_61591",
+  "tick-button-input": "_tick-button-input_61591",
+  "tick-input-box": "_tick-input-box_61591",
+  "tick-coord-box": "_tick-coord-box_61591",
+  "option-inpt": "_option-inpt_61591",
+  "activeCategory": "_activeCategory_61591"
+>>>>>>> 4f990b6 (added changes)
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
 "use strict";
@@ -6072,46 +6177,46 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_46061",
-  "sessionContainer": "_sessionContainer_46061",
-  "cloudProviderModal": "_cloudProviderModal_46061",
-  "sessionFooter": "_sessionFooter_46061",
-  "desiredCapsLink": "_desiredCapsLink_46061",
-  "tabText": "_tabText_46061",
-  "serverTabs": "_serverTabs_46061",
-  "scrollingTabCont": "_scrollingTabCont_46061",
-  "scrollingTab": "_scrollingTab_46061",
-  "savedSessions": "_savedSessions_46061",
-  "newSessionForm": "_newSessionForm_46061",
-  "capsFormattedCol": "_capsFormattedCol_46061",
-  "formattedCaps": "_formattedCaps_46061",
-  "formattedCapsBody": "_formattedCapsBody_46061",
-  "start-session-button": "_start-session-button_46061",
-  "filepath-button": "_filepath-button_46061",
-  "capsFormCol": "_capsFormCol_46061",
-  "capsFormRow": "_capsFormRow_46061",
-  "capsBoxFont": "_capsBoxFont_46061",
-  "capsValueControl": "_capsValueControl_46061",
-  "fileControlWrapper": "_fileControlWrapper_46061",
-  "localDesc": "_localDesc_46061",
-  "selected": "_selected_46061",
-  "capsNameEditorButton": "_capsNameEditorButton_46061",
-  "capsEditorControls": "_capsEditorControls_46061",
-  "capsEditorButton": "_capsEditorButton_46061",
-  "capsEditor": "_capsEditor_46061",
-  "capsEditorTitle": "_capsEditorTitle_46061",
-  "capsEditorBody": "_capsEditorBody_46061",
-  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
-  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
-  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
-  "add-desired-capability-button": "_add-desired-capability-button_46061",
-  "editSession": "_editSession_46061",
-  "btnReload": "_btnReload_46061",
-  "btnDeleteCap": "_btnDeleteCap_46061",
-  "inputDataCenter": "_inputDataCenter_46061",
-  "addonDataCenter": "_addonDataCenter_46061",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
+  "active-session": "_active-session_8105c",
+  "sessionContainer": "_sessionContainer_8105c",
+  "cloudProviderModal": "_cloudProviderModal_8105c",
+  "sessionFooter": "_sessionFooter_8105c",
+  "desiredCapsLink": "_desiredCapsLink_8105c",
+  "tabText": "_tabText_8105c",
+  "serverTabs": "_serverTabs_8105c",
+  "scrollingTabCont": "_scrollingTabCont_8105c",
+  "scrollingTab": "_scrollingTab_8105c",
+  "savedSessions": "_savedSessions_8105c",
+  "newSessionForm": "_newSessionForm_8105c",
+  "capsFormattedCol": "_capsFormattedCol_8105c",
+  "formattedCaps": "_formattedCaps_8105c",
+  "formattedCapsBody": "_formattedCapsBody_8105c",
+  "start-session-button": "_start-session-button_8105c",
+  "filepath-button": "_filepath-button_8105c",
+  "capsFormCol": "_capsFormCol_8105c",
+  "capsFormRow": "_capsFormRow_8105c",
+  "capsBoxFont": "_capsBoxFont_8105c",
+  "capsValueControl": "_capsValueControl_8105c",
+  "fileControlWrapper": "_fileControlWrapper_8105c",
+  "localDesc": "_localDesc_8105c",
+  "selected": "_selected_8105c",
+  "capsNameEditorButton": "_capsNameEditorButton_8105c",
+  "capsEditorControls": "_capsEditorControls_8105c",
+  "capsEditorButton": "_capsEditorButton_8105c",
+  "capsEditor": "_capsEditor_8105c",
+  "capsEditorTitle": "_capsEditorTitle_8105c",
+  "capsEditorBody": "_capsEditorBody_8105c",
+  "capsEditorBodyFull": "_capsEditorBodyFull_8105c",
+  "capsEditorBodyResized": "_capsEditorBodyResized_8105c",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_8105c",
+  "advancedSettingsContainer": "_advancedSettingsContainer_8105c",
+  "add-desired-capability-button": "_add-desired-capability-button_8105c",
+  "editSession": "_editSession_8105c",
+  "btnReload": "_btnReload_8105c",
+  "btnDeleteCap": "_btnDeleteCap_8105c",
+  "inputDataCenter": "_inputDataCenter_8105c",
+  "addonDataCenter": "_addonDataCenter_8105c",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_8105c"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -12870,6 +12975,8 @@ var _hamburger = _interopRequireDefault(require("../../../../assets/images/hambu
 var _polyfills = require("../../polyfills");
 var _moment = _interopRequireDefault(require("moment"));
 var _reactRedux = require("react-redux");
+var _reactChartjs = require("react-chartjs-2");
+var _echartsForReact = _interopRequireDefault(require("echarts-for-react"));
 var _icons = require("@ant-design/icons");
 var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -12933,9 +13040,12 @@ class Inspector extends _react.Component {
       isLongPress: false,
       action: '',
       mode_orientation: 'PORTRAIT',
+<<<<<<< HEAD
       showModal: false,
       selectedAssertion: '',
       inputText: '',
+=======
+>>>>>>> 4f990b6 (added changes)
       cpu_graph_data: [],
       cpu_graph_options: [],
       memory_graph_data: [],
@@ -13312,6 +13422,15 @@ class Inspector extends _react.Component {
         package_name: res
       });
     });
+<<<<<<< HEAD
+=======
+    let val = {
+      'session_id': driver.sessionId,
+      'step-name': data1
+    };
+    this.callParticularSteps(val);
+    this.fetchAllSteps();
+>>>>>>> 4f990b6 (added changes)
   }
   async fetchAllSteps() {
     const {
@@ -13970,7 +14089,11 @@ class Inspector extends _react.Component {
         cursor: 'pointer'
       },
       className: this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : ""
+<<<<<<< HEAD
     }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
+=======
+    }, /*#__PURE__*/_react.default.createElement(_icons.GroupOutlined, {
+>>>>>>> 4f990b6 (added changes)
       style: {
         fontSize: '20px'
       }
@@ -13984,28 +14107,44 @@ class Inspector extends _react.Component {
         top: '10%'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+=======
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AndroidOutlined, null),
+>>>>>>> 4f990b6 (added changes)
       onClick: async () => {
         await this.getPerformance('cpuinfo');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Cpu Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+=======
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DatabaseOutlined, null),
+>>>>>>> 4f990b6 (added changes)
       onClick: async () => {
         await this.getPerformance('memoryinfo');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Memory Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+=======
+      icon: /*#__PURE__*/_react.default.createElement(_icons.SubnodeOutlined, null),
+>>>>>>> 4f990b6 (added changes)
       onClick: async () => {
         await this.getPerformance('batteryinfo');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Battery Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+<<<<<<< HEAD
       icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+=======
+      icon: /*#__PURE__*/_react.default.createElement(_icons.WifiOutlined, null),
+>>>>>>> 4f990b6 (added changes)
       onClick: async () => {
         await this.getPerformance('networkinfo');
       },
@@ -14535,7 +14674,11 @@ class Inspector extends _react.Component {
           style: {
             overflowY: 'auto'
           }
+<<<<<<< HEAD
         }, /*#__PURE__*/_react.default.createElement("h2", null, "Performance Graph"), this.state.cpu_graph_data.length > 0 && this.state.memory_graph_data.length > 0 && this.state.battery_graph_data.length > 0 && this.state.network_graph_data.length > 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Cpu Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+=======
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Performance Graph"), this.state.cpu_graph_data.length > 0 && this.state.memory_graph_data.length > 0 && this.state.battery_graph_data.length > 0 && this.state.network_graph_data.length > 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Cpu Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
+>>>>>>> 4f990b6 (added changes)
           option: {
             xAxis: {
               type: 'category',
@@ -14549,7 +14692,11 @@ class Inspector extends _react.Component {
               type: 'line'
             }]
           }
+<<<<<<< HEAD
         })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Memory Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+=======
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Memory Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
+>>>>>>> 4f990b6 (added changes)
           option: {
             xAxis: {
               type: 'category',
@@ -14563,7 +14710,11 @@ class Inspector extends _react.Component {
               type: 'line'
             }]
           }
+<<<<<<< HEAD
         })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Battery Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+=======
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Battery Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
+>>>>>>> 4f990b6 (added changes)
           option: {
             xAxis: {
               type: 'category',
@@ -14577,7 +14728,11 @@ class Inspector extends _react.Component {
               type: 'line'
             }]
           }
+<<<<<<< HEAD
         })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Network Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+=======
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Network Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
+>>>>>>> 4f990b6 (added changes)
           option: {
             xAxis: {
               type: 'category',
@@ -14675,9 +14830,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_afc3f",
-  "loader": "_loader_afc3f",
-  "load1": "_load1_afc3f"
+  "container": "_container_9b1d1",
+  "loader": "_loader_9b1d1",
+  "load1": "_load1_9b1d1"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -14763,8 +14918,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_e36f2",
-  "copyTraceBtn": "_copyTraceBtn_e36f2"
+  "errorMessage": "_errorMessage_cd7c8",
+  "copyTraceBtn": "_copyTraceBtn_cd7c8"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
