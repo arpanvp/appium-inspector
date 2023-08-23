@@ -70,6 +70,10 @@ import {
   DatabaseOutlined,
   LineChartOutlined,
   DashboardOutlined,
+  GroupOutlined,
+  AndroidOutlined,
+  SubnodeOutlined,
+  WifiOutlined
 } from '@ant-design/icons';
 import { BUTTON } from '../AntdTypes';
 
@@ -468,21 +472,21 @@ export default class Inspector extends Component {
             },
             body: JSON.stringify(reqData),
           })
-            .then((res) =>
-              // Convert the response to JSON
-              res.json()
-            )
-            .then((res) => {
-              console.log('Response data:>>>>>>>>>>>>>>', res);
-            })
-            .catch((error) => {
-              console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
-            });
-        });
-      }
-      this.setState({ package_name: res });
-    });
-  }
+          .catch((error) => {
+            console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+          });
+          });
+        }
+        this.setState({ package_name: res });
+      });
+
+      let val = {
+        'session_id': driver.sessionId,
+        'step-name': data1
+      };
+      this.callParticularSteps(val);
+      this.fetchAllSteps();
+    }
 
   async fetchAllSteps() {
     const { driver } = this.props;
@@ -1147,19 +1151,19 @@ export default class Inspector extends Component {
             <div onMouseOver={() => this.setActiveIndex(6)} onMouseOut={() => this.setActiveIndex(0)}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
               className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : ""}>
-              <LineChartOutlined style={{ fontSize: '20px' }} />
+              <GroupOutlined style={{ fontSize: '20px' }}/>
               <div>Performance Matrices</div>
               {this.state.activeIndex === 6 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>
-                <Button icon={<DashboardOutlined />} onClick={async () => { await this.getPerformance('cpuinfo'); }}
+                <Button icon={<AndroidOutlined />} onClick={async () => { await this.getPerformance('cpuinfo'); }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
                 > <span>Cpu Performance</span></Button>
-                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('memoryinfo'); }}
+                <Button icon={<DatabaseOutlined />} onClick={async () => { await this.getPerformance('memoryinfo'); }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
                 > <span>Memory Performance</span></Button>
-                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('batteryinfo'); }}
+                <Button icon={<SubnodeOutlined />} onClick={async () => { await this.getPerformance('batteryinfo'); }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
                 > <span>Battery Performance</span></Button>
-                <Button icon={<AimOutlined />} onClick={async () => { await this.getPerformance('networkinfo'); }}
+                <Button icon={<WifiOutlined />} onClick={async () => { await this.getPerformance('networkinfo'); }}
                   disabled={isGestureEditorVisible} className={InspectorStyles['user_actions']}
                 > <span>Network Performance</span></Button>
               </div>}
