@@ -1,4 +1,4 @@
-process.env.HMR_PORT=40541;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=37907;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -12870,13 +12870,13 @@ var _hamburger = _interopRequireDefault(require("../../../../assets/images/hambu
 var _polyfills = require("../../polyfills");
 var _moment = _interopRequireDefault(require("moment"));
 var _reactRedux = require("react-redux");
+var _echartsForReact = _interopRequireDefault(require("echarts-for-react"));
 var _icons = require("@ant-design/icons");
 var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-unresolved */ /* eslint-disable object-shorthand */ /* eslint-disable require-await */ /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */ // import { Line } from 'react-chartjs-2';
-// import LineChart from 'echarts-for-react';
 const {
   SELECT,
   SWIPE,
@@ -13037,15 +13037,21 @@ class Inspector extends _react.Component {
       setAwaitingMjpegStream(true);
     }
   }
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     const {
-      screenshot
+      screenshot,
+      selectedElement
     } = this.props;
     // only update when the screenshot changed, not for any other kind of
     // update
-    if (screenshot !== this.lastScreenshot) {
+    if (screenshot !== this.lastScreenshot || selectedElement !== prevProps.selectedElement) {
       this.updateSourceTreeWidth();
       this.lastScreenshot = screenshot;
+      // Automatically fill the inputText when selectedElement changes
+      const inputText = selectedElement ? selectedElement.attributes.text || '' : '';
+      this.setState({
+        inputText
+      });
     }
   }
   componentWillUnmount() {
@@ -13348,13 +13354,14 @@ class Inspector extends _react.Component {
       selectedElement,
       applyClientMethod
     } = this.props;
+    const inputText = this.state.inputText || this.selectedElement.attributes.text;
     let data = {
       'session_id': driver.sessionId,
       'step-name': 'assertion',
       'selectedElement': selectedElement,
       'params': {
         'methodName': this.state.selectedAssertion,
-        'args': this.state.inputText
+        'args': inputText
       }
     };
     console.log("🚀 ~ file: Inspector.js:448 ~ handleModalSubmit ~ data:", data);
@@ -13970,7 +13977,7 @@ class Inspector extends _react.Component {
         cursor: 'pointer'
       },
       className: this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : ""
-    }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
+    }, /*#__PURE__*/_react.default.createElement(_icons.LineChartOutlined, {
       style: {
         fontSize: '20px'
       }
@@ -13984,7 +13991,7 @@ class Inspector extends _react.Component {
         top: '10%'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DashboardOutlined, null),
       onClick: async () => {
         await this.getPerformance('cpuinfo');
       },
@@ -14535,7 +14542,7 @@ class Inspector extends _react.Component {
           style: {
             overflowY: 'auto'
           }
-        }, /*#__PURE__*/_react.default.createElement("h2", null, "Performance Graph"), this.state.cpu_graph_data.length > 0 && this.state.memory_graph_data.length > 0 && this.state.battery_graph_data.length > 0 && this.state.network_graph_data.length > 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Cpu Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Performance Graph"), this.state.cpu_graph_data.length > 0 && this.state.memory_graph_data.length > 0 && this.state.battery_graph_data.length > 0 && this.state.network_graph_data.length > 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Cpu Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
           option: {
             xAxis: {
               type: 'category',
@@ -14549,7 +14556,7 @@ class Inspector extends _react.Component {
               type: 'line'
             }]
           }
-        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Memory Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Memory Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
           option: {
             xAxis: {
               type: 'category',
@@ -14563,7 +14570,7 @@ class Inspector extends _react.Component {
               type: 'line'
             }]
           }
-        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Battery Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Battery Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
           option: {
             xAxis: {
               type: 'category',
@@ -14577,7 +14584,7 @@ class Inspector extends _react.Component {
               type: 'line'
             }]
           }
-        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Network Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Network Performance"), /*#__PURE__*/_react.default.createElement(_echartsForReact.default, {
           option: {
             xAxis: {
               type: 'category',
@@ -14593,20 +14600,20 @@ class Inspector extends _react.Component {
           }
         }))) : /*#__PURE__*/_react.default.createElement("div", null, "No data found"))
       }, {
-        label: t('Gestures'),
+        label: t('screenshot'),
         key: _shared.INTERACTION_MODE.GESTURES,
         children: isGestureEditorVisible ? /*#__PURE__*/_react.default.createElement(_antd.Card, {
           title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.HighlightOutlined, null), " ", t('Gesture Builder')),
           className: _Inspector.default['interaction-tab-card']
         }, /*#__PURE__*/_react.default.createElement(_GestureEditor.default, this.props)) : /*#__PURE__*/_react.default.createElement(_antd.Card, {
-          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.HighlightOutlined, null), " ", t('Saved Gestures')),
+          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.HighlightOutlined, null), " ", t('Saved screenshot')),
           className: _Inspector.default['interaction-tab-card']
         }, /*#__PURE__*/_react.default.createElement(_SavedGestures.default, this.props))
       }, {
-        label: t('Session Information'),
+        label: t('log_cats'),
         key: _shared.INTERACTION_MODE.SESSION_INFO,
         children: /*#__PURE__*/_react.default.createElement(_antd.Card, {
-          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.InfoCircleOutlined, null), " ", t('Session Information')),
+          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.InfoCircleOutlined, null), " ", t('log_cats')),
           className: _Inspector.default['interaction-tab-card']
         }, /*#__PURE__*/_react.default.createElement(_SessionInfo.default, this.props))
       }]

@@ -151,6 +151,7 @@
     "antd": "4.24.12",
     "bluebird": "3.7.2",
     "cheerio": "1.0.0-rc.10",
+    "echarts-for-react": "^3.0.2",
     "electron-log": "4.4.8",
     "electron-settings": "4.0.2",
     "electron-updater": "6.1.1",
