@@ -1106,7 +1106,8 @@ export default class Inspector extends Component {
                   <span>Is Element Disabled</span></Button>
               </div>}
             </div>
-            <div onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 5 }) : this.setActiveIndex(5)} onMouseOut={() => this.setActiveIndex(0)}
+            <div 
+              onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 5 }) : this.setActiveIndex(5)} onMouseOut={() => this.setActiveIndex(0)}
               onClick={() => this.setState({ activeCategory: 5 })}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
               className={`${InspectorStyles['category']} ${this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
@@ -1150,9 +1151,10 @@ export default class Inspector extends Component {
 
 
 
-            <div onMouseOver={() => this.setActiveIndex(6)} onMouseOut={() => this.setActiveIndex(0)}
+            <div 
+              onMouseOver={() => this.state.showPane ? this.setState({ activeCategory: 6 }) : this.setActiveIndex(6)} onMouseOut={() => this.setActiveIndex(0)}
               style={{ textAlign: 'center', padding: '5px', position: 'relative', cursor: 'pointer' }}
-              className={this.state.activeCategory === 5 ? InspectorStyles['activeCategory'] : ""}>
+              className={`${InspectorStyles['category']} ${this.state.activeCategory === 6 ? InspectorStyles['activeCategory'] : InspectorStyles['']}`}>
               <GroupOutlined style={{ fontSize: '20px' }}/>
               <div>Performance Matrices</div>
               {this.state.activeIndex === 6 && <div style={{ display: 'flex', flexDirection: 'column', position: 'absolute', zIndex: '999', left: '100%', top: '10%' }}>

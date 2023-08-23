@@ -1,4 +1,4 @@
-process.env.HMR_PORT=45889;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=44789;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -13944,7 +13944,9 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))), /*#__PURE__*/_react.default.createElement("div", {
-      onMouseOver: () => this.setActiveIndex(6),
+      onMouseOver: () => this.state.showPane ? this.setState({
+        activeCategory: 6
+      }) : this.setActiveIndex(6),
       onMouseOut: () => this.setActiveIndex(0),
       style: {
         textAlign: 'center',
@@ -13952,7 +13954,7 @@ class Inspector extends _react.Component {
         position: 'relative',
         cursor: 'pointer'
       },
-      className: this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : ""
+      className: `${_Inspector.default['category']} ${this.state.activeCategory === 6 ? _Inspector.default['activeCategory'] : _Inspector.default['']}`
     }, /*#__PURE__*/_react.default.createElement(_icons.GroupOutlined, {
       style: {
         fontSize: '20px'
