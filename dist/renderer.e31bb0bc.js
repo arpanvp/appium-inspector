@@ -1,4 +1,4 @@
-process.env.HMR_PORT=44759;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+process.env.HMR_PORT=37241;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -4119,6 +4119,7 @@ module.exports = {
   "selected-element-card": "_selected-element-card_3421c",
   "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_3421c",
   "context-selector": "_context-selector_3421c",
+  "custom_table": "_custom_table_3421c",
   "sourceTag": "_sourceTag_3421c",
   "sourceAttrName": "_sourceAttrName_3421c",
   "no-recorded-actions": "_no-recorded-actions_3421c",
@@ -4174,7 +4175,11 @@ module.exports = {
   "tick-coord-box": "_tick-coord-box_3421c",
   "option-inpt": "_option-inpt_3421c",
   "activeCategory": "_activeCategory_3421c",
-  "category": "_category_3421c"
+  "category": "_category_3421c",
+  "custom_category": "_custom_category_3421c",
+  "fadeIn": "_fadeIn_3421c",
+  "activeIndex": "_activeIndex_3421c",
+  "test": "_test_3421c"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
 "use strict";
@@ -13342,20 +13347,13 @@ class Inspector extends _react.Component {
         position: 'relative',
         cursor: 'pointer'
       },
-      className: this.state.activeCategory === 1 ? _Inspector.default['activeCategory'] : ""
+      className: `${_Inspector.default['category']} ${this.state.activeCategory === 1 ? _Inspector.default['activeCategory'] : _Inspector.default['']}`
     }, /*#__PURE__*/_react.default.createElement(_icons.LikeOutlined, {
       style: {
         fontSize: '20px'
       }
     }), /*#__PURE__*/_react.default.createElement("div", null, "Gestures"), this.state.activeIndex === 1 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
+      className: _Inspector.default['activeIndex']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwapRightOutlined, null),
       onClick: () => {
@@ -13444,20 +13442,13 @@ class Inspector extends _react.Component {
         position: 'relative',
         cursor: 'pointer'
       },
-      className: this.state.activeCategory === 3 ? _Inspector.default['activeCategory'] : ""
+      className: `${_Inspector.default['category']} ${this.state.activeCategory === 3 ? _Inspector.default['activeCategory'] : _Inspector.default['']}`
     }, /*#__PURE__*/_react.default.createElement(_icons.HeatMapOutlined, {
       style: {
         fontSize: '20px'
       }
     }), /*#__PURE__*/_react.default.createElement("div", null, "Device Actions"), this.state.activeIndex === 3 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
+      className: _Inspector.default['activeIndex']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
@@ -13641,20 +13632,13 @@ class Inspector extends _react.Component {
         position: 'relative',
         cursor: 'pointer'
       },
-      className: this.state.activeCategory === 4 ? _Inspector.default['activeCategory'] : ""
+      className: `${_Inspector.default['category']} ${this.state.activeCategory === 4 ? _Inspector.default['activeCategory'] : _Inspector.default['']}`
     }, /*#__PURE__*/_react.default.createElement(_icons.EditOutlined, {
       style: {
         fontSize: '20px'
       }
     }), /*#__PURE__*/_react.default.createElement("div", null, "Assertions"), this.state.activeIndex === 4 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
+      className: _Inspector.default['activeIndex']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: () => {
@@ -13797,20 +13781,13 @@ class Inspector extends _react.Component {
         position: 'relative',
         cursor: 'pointer'
       },
-      className: this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : ""
+      className: `${_Inspector.default['category']} ${this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : _Inspector.default['']}`
     }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
       style: {
         fontSize: '20px'
       }
-    }), /*#__PURE__*/_react.default.createElement("div", null, "App management"), this.state.activeIndex === 5 && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        position: 'absolute',
-        zIndex: '999',
-        left: '100%',
-        top: '10%'
-      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "App Management"), this.state.activeIndex === 5 && /*#__PURE__*/_react.default.createElement("div", {
+      className: _Inspector.default['activeIndex']
     }, !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
       onClick: () => this.setState({
@@ -13854,13 +13831,7 @@ class Inspector extends _react.Component {
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))));
     let sideMenu = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.state.activeCategory === 1 && this.state.showPane && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: "40px",
-        maxWidth: "180px",
-        minWidth: "180px"
-      }
+      className: _Inspector.default['custom_category']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwapRightOutlined, null),
       onClick: () => {
@@ -13934,13 +13905,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Shake"))), this.state.activeCategory === 3 && this.state.showPane && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: "40px",
-        maxWidth: "180px",
-        minWidth: "180px"
-      }
+      className: _Inspector.default['custom_category']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.FundProjectionScreenOutlined, null),
       type: screenshotInteractionMode === TAKE_SCREENSHOT ? _AntdTypes.BUTTON.PRIMARY : _AntdTypes.BUTTON.DEFAULT,
@@ -14118,13 +14083,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Open Notifications"))), this.state.activeCategory === 4 && this.state.showPane && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: "40px",
-        maxWidth: "180px",
-        minWidth: "180px"
-      }
+      className: _Inspector.default['custom_category']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: () => {
@@ -14254,13 +14213,7 @@ class Inspector extends _react.Component {
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "Is Element Disabled"))), this.state.activeCategory === 5 && this.state.showPane && /*#__PURE__*/_react.default.createElement("div", {
-      style: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginTop: "40px",
-        maxWidth: "180px",
-        minWidth: "180px"
-      }
+      className: _Inspector.default['custom_category']
     }, !this.state.isInput ? /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.SwitcherOutlined, null),
       onClick: () => this.setState({
@@ -14324,7 +14277,7 @@ class Inspector extends _react.Component {
         textAlign: 'center',
         color: "white",
         fontWeight: "bold",
-        background: 'rgb(24, 119, 242)',
+        background: '#3f51b5',
         width: '89%',
         borderRadius: '5px',
         padding: "10px",
@@ -14343,39 +14296,40 @@ class Inspector extends _react.Component {
       id: "sourceTreeContainer",
       className: _Inspector.default['interaction-tab-container']
     }, showRecord && /*#__PURE__*/_react.default.createElement(_RecordedActions.default, this.props), /*#__PURE__*/_react.default.createElement(_antd.Tabs, {
+      className: _Inspector.default['custom_tab'],
       activeKey: selectedInteractionMode,
-      size: "small",
+      size: "small"
+      // style={{color:"red"}}
+      ,
       onChange: tab => selectInteractionMode(tab),
       items: [{
-        label: t('Source'),
+        label: t('Flow Table'),
         key: _shared.INTERACTION_MODE.SOURCE,
         children: /*#__PURE__*/_react.default.createElement("div", {
           className: "action-row"
         }, /*#__PURE__*/_react.default.createElement("div", {
           style: {
-            fontWeight: 'bold'
-          }
-        }, "FLOW TABLE:"), /*#__PURE__*/_react.default.createElement("div", {
-          style: {
             width: '100%'
           }
-        }, /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "S No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value")), this.state.total_array.length > 0 && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
+        }, /*#__PURE__*/_react.default.createElement("table", {
+          className: _Inspector.default['custom_table']
+        }, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, /*#__PURE__*/_react.default.createElement("th", null, "Sr. No."), /*#__PURE__*/_react.default.createElement("th", null, "Step"), /*#__PURE__*/_react.default.createElement("th", null, "Step Name"), /*#__PURE__*/_react.default.createElement("th", null, "Search By"), /*#__PURE__*/_react.default.createElement("th", null, "Search By Value"))), /*#__PURE__*/_react.default.createElement("tbody", null, this.state.total_array.length > 0 && this.state.total_array.map((item, key) => /*#__PURE__*/_react.default.createElement("tr", {
           key: key
         }, /*#__PURE__*/_react.default.createElement("td", null, key + 1), /*#__PURE__*/_react.default.createElement("td", null, item['step']), /*#__PURE__*/_react.default.createElement("td", null, item['step_name']), /*#__PURE__*/_react.default.createElement("td", null, item['search_by']), /*#__PURE__*/_react.default.createElement("td", {
           style: {
             maxWidth: '200px',
             wordWrap: 'break-word'
           }
-        }, item['search_by_value']))))))
+        }, item['search_by_value'])))))))
       }, {
-        label: t('Commands'),
+        label: t('Performance Matrics'),
         key: _shared.INTERACTION_MODE.COMMANDS,
         children: /*#__PURE__*/_react.default.createElement(_antd.Card, {
           title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.ThunderboltOutlined, null), " ", t('Execute Commands')),
           className: _Inspector.default['interaction-tab-card']
         }, /*#__PURE__*/_react.default.createElement(_Commands.default, this.props))
       }, {
-        label: t('Gestures'),
+        label: t('Screenshots'),
         key: _shared.INTERACTION_MODE.GESTURES,
         children: isGestureEditorVisible ? /*#__PURE__*/_react.default.createElement(_antd.Card, {
           title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.HighlightOutlined, null), " ", t('Gesture Builder')),
@@ -14385,7 +14339,7 @@ class Inspector extends _react.Component {
           className: _Inspector.default['interaction-tab-card']
         }, /*#__PURE__*/_react.default.createElement(_SavedGestures.default, this.props))
       }, {
-        label: t('Session Information'),
+        label: t('Logcat'),
         key: _shared.INTERACTION_MODE.SESSION_INFO,
         children: /*#__PURE__*/_react.default.createElement(_antd.Card, {
           title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.InfoCircleOutlined, null), " ", t('Session Information')),
