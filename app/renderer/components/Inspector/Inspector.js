@@ -26,7 +26,7 @@ import { clipboard } from '../../polyfills';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Line } from 'react-chartjs-2';
-// import LineChart from 'echarts-for-react';
+import LineChart from 'echarts-for-react';
 import {
   SelectOutlined,
   ScanOutlined,
