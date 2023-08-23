@@ -13317,6 +13317,12 @@ class Inspector extends _react.Component {
         package_name: res
       });
     });
+    let val = {
+      'session_id': driver.sessionId,
+      'step-name': data1
+    };
+    this.callParticularSteps(val);
+    this.fetchAllSteps();
   }
   async fetchAllSteps() {
     const {
@@ -13947,7 +13953,7 @@ class Inspector extends _react.Component {
         cursor: 'pointer'
       },
       className: this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : ""
-    }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
+    }, /*#__PURE__*/_react.default.createElement(_icons.GroupOutlined, {
       style: {
         fontSize: '20px'
       }
@@ -13961,28 +13967,28 @@ class Inspector extends _react.Component {
         top: '10%'
       }
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AndroidOutlined, null),
       onClick: async () => {
         await this.getPerformance('cpuinfo');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Cpu Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.DatabaseOutlined, null),
       onClick: async () => {
         await this.getPerformance('memoryinfo');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Memory Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.SubnodeOutlined, null),
       onClick: async () => {
         await this.getPerformance('batteryinfo');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Battery Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
-      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      icon: /*#__PURE__*/_react.default.createElement(_icons.WifiOutlined, null),
       onClick: async () => {
         await this.getPerformance('networkinfo');
       },
