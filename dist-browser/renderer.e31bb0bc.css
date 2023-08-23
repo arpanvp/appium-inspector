@@ -960,6 +960,11 @@ table {
     border-radius:10px;
     border:0px solid red;
 }
+
+._category_5407d:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius:10px;
+}
 ._active-session_46061 {
   background-color: #662d91;
   color: white;

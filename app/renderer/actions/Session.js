@@ -327,7 +327,7 @@ export function newSession (caps, attachSessId = null) {
         https = session.server.browserstack.ssl = (parseInt(port, 10) === 443);
         break;
       case ServerTypes.lambdatest:
-        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai/lambdatest';
+        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai/lambdatest ';
         port = session.server.lambdatest.port = process.env.LAMBDATEST_PORT || 443;
         path = session.server.lambdatest.path = '/wd/hub';
         username = session.server.lambdatest.username || process.env.LAMBDATEST_USERNAME;

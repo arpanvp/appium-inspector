@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 process.env.HMR_PORT=37241;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+=======
+process.env.HMR_PORT=40541;process.env.HMR_HOSTNAME="localhost";// modules are defined as an array
+>>>>>>> 552126c6bb41d500b312be80f5377ac79d3534bf
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -4076,6 +4080,7 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
+<<<<<<< HEAD
   "inspector-container": "_inspector-container_3421c",
   "inspector-toolbar": "_inspector-toolbar_3421c",
   "button_wrapper": "_button_wrapper_3421c",
@@ -4180,6 +4185,107 @@ module.exports = {
   "fadeIn": "_fadeIn_3421c",
   "activeIndex": "_activeIndex_3421c",
   "test": "_test_3421c"
+=======
+  "inspector-container": "_inspector-container_5407d",
+  "inspector-toolbar": "_inspector-toolbar_5407d",
+  "button_wrapper": "_button_wrapper_5407d",
+  "ant-btn": "_ant-btn_5407d",
+  "user_actions": "_user_actions_5407d",
+  "actionButton": "_actionButton_5407d",
+  "inspector-main": "_inspector-main_5407d",
+  "whole-btn": "_whole-btn_5407d",
+  "screenshot-container": "_screenshot-container_5407d",
+  "screenshot": "_screenshot_5407d",
+  "screenshot-controls": "_screenshot-controls_5407d",
+  "logoContainer": "_logoContainer_5407d",
+  "interaction-tab-container": "_interaction-tab-container_5407d",
+  "tree-container": "_tree-container_5407d",
+  "session-info-table": "_session-info-table_5407d",
+  "session-code-box": "_session-code-box_5407d",
+  "session-inner-table": "_session-inner-table_5407d",
+  "scroll-buttons": "_scroll-buttons_5407d",
+  "scroll-right": "_scroll-right_5407d",
+  "recorded-actions": "_recorded-actions_5407d",
+  "_inspector-main_0387c": "__inspector-main_0387c_5407d",
+  "ant-card-body": "_ant-card-body_5407d",
+  "interaction-tab-card": "_interaction-tab-card_5407d",
+  "highlighter-box": "_highlighter-box_5407d",
+  "inspected-element-box": "_inspected-element-box_5407d",
+  "hovered-element-box": "_hovered-element-box_5407d",
+  "centroid-box": "_centroid-box_5407d",
+  "centroid": "_centroid_5407d",
+  "overlap": "_overlap_5407d",
+  "expand": "_expand_5407d",
+  "plus-minus": "_plus-minus_5407d",
+  "phone-btn1": "_phone-btn1_5407d",
+  "phone-btn2": "_phone-btn2_5407d",
+  "phone-btn3": "_phone-btn3_5407d",
+  "custom-button-icon": "_custom-button-icon_5407d",
+  "elementActions": "_elementActions_5407d",
+  "elementKeyInputActions": "_elementKeyInputActions_5407d",
+  "selectedElementContainer": "_selectedElementContainer_5407d",
+  "selected-element-table-cells": "_selected-element-table-cells_5407d",
+  "element-cell-copy": "_element-cell-copy_5407d",
+  "selected-element-card": "_selected-element-card_5407d",
+  "selectedElemNotInteractableAlertRow": "_selectedElemNotInteractableAlertRow_5407d",
+  "context-selector": "_context-selector_5407d",
+  "sourceTag": "_sourceTag_5407d",
+  "sourceAttrName": "_sourceAttrName_5407d",
+  "no-recorded-actions": "_no-recorded-actions_5407d",
+  "recorded-code": "_recorded-code_5407d",
+  "framework-dropdown": "_framework-dropdown_5407d",
+  "searchResultsList": "_searchResultsList_5407d",
+  "searchResultsSelectedItem": "_searchResultsSelectedItem_5407d",
+  "searchResultsActions": "_searchResultsActions_5407d",
+  "searchResultsKeyInput": "_searchResultsKeyInput_5407d",
+  "elementKeyInput": "_elementKeyInput_5407d",
+  "element-count-container": "_element-count-container_5407d",
+  "locatorStrategyBtn": "_locatorStrategyBtn_5407d",
+  "locatorSelectorTextArea": "_locatorSelectorTextArea_5407d",
+  "coordinatesContainer": "_coordinatesContainer_5407d",
+  "swipeInstructions": "_swipeInstructions_5407d",
+  "swipeSvg": "_swipeSvg_5407d",
+  "tapDiv": "_tapDiv_5407d",
+  "iphone_x": "_iphone_x_5407d",
+  "custom_menu": "_custom_menu_5407d",
+  "ant-menu-submenu": "_ant-menu-submenu_5407d",
+  "ant-menu-submenu-title": "_ant-menu-submenu-title_5407d",
+  "gestureSvg": "_gestureSvg_5407d",
+  "filled": "_filled_5407d",
+  "dashed": "_dashed_5407d",
+  "whole": "_whole_5407d",
+  "newDashed": "_newDashed_5407d",
+  "circle-dashed": "_circle-dashed_5407d",
+  "circle-newDashed": "_circle-newDashed_5407d",
+  "screenimage": "_screenimage_5407d",
+  "innerScreenshotContainer": "_innerScreenshotContainer_5407d",
+  "screenshotBox": "_screenshotBox_5407d",
+  "screenshotActionsPanel": "_screenshotActionsPanel_5407d",
+  "commands-container": "_commands-container_5407d",
+  "btn-container": "_btn-container_5407d",
+  "arg-row": "_arg-row_5407d",
+  "arg-container": "_arg-container_5407d",
+  "gesture-header": "_gesture-header_5407d",
+  "gesture-header-title": "_gesture-header-title_5407d",
+  "gesture-header-description": "_gesture-header-description_5407d",
+  "gesture-header-coord-btn": "_gesture-header-coord-btn_5407d",
+  "gesture-header-timeline": "_gesture-header-timeline_5407d",
+  "timeline-tick-title": "_timeline-tick-title_5407d",
+  "gesture-header-icon": "_gesture-header-icon_5407d",
+  "pointer-title": "_pointer-title_5407d",
+  "tick-card": "_tick-card_5407d",
+  "tick-plus-card": "_tick-plus-card_5407d",
+  "tick-plus-btn": "_tick-plus-btn_5407d",
+  "spaceContainer": "_spaceContainer_5407d",
+  "tick-pointer-input": "_tick-pointer-input_5407d",
+  "tick-button-group": "_tick-button-group_5407d",
+  "tick-button-input": "_tick-button-input_5407d",
+  "tick-input-box": "_tick-input-box_5407d",
+  "tick-coord-box": "_tick-coord-box_5407d",
+  "option-inpt": "_option-inpt_5407d",
+  "activeCategory": "_activeCategory_5407d",
+  "category": "_category_5407d"
+>>>>>>> 552126c6bb41d500b312be80f5377ac79d3534bf
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Inspector/LocatedElements.js":[function(require,module,exports) {
 "use strict";
@@ -5660,10 +5766,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5710,10 +5815,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5753,10 +5857,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5794,10 +5897,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5837,10 +5939,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -5880,10 +5981,9 @@ function callClientMethod(params) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data1)
-      }).then(res => {
-        // Convert the response to JSON
-        return res.json();
-      }).then(res => {
+      }).then(res =>
+      // Convert the response to JSON
+      res.json()).then(res => {
         console.log("Response data:", res);
         dispatch({
           type: STEPS_ARRAY,
@@ -6083,46 +6183,46 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "active-session": "_active-session_5ede3",
-  "sessionContainer": "_sessionContainer_5ede3",
-  "cloudProviderModal": "_cloudProviderModal_5ede3",
-  "sessionFooter": "_sessionFooter_5ede3",
-  "desiredCapsLink": "_desiredCapsLink_5ede3",
-  "tabText": "_tabText_5ede3",
-  "serverTabs": "_serverTabs_5ede3",
-  "scrollingTabCont": "_scrollingTabCont_5ede3",
-  "scrollingTab": "_scrollingTab_5ede3",
-  "savedSessions": "_savedSessions_5ede3",
-  "newSessionForm": "_newSessionForm_5ede3",
-  "capsFormattedCol": "_capsFormattedCol_5ede3",
-  "formattedCaps": "_formattedCaps_5ede3",
-  "formattedCapsBody": "_formattedCapsBody_5ede3",
-  "start-session-button": "_start-session-button_5ede3",
-  "filepath-button": "_filepath-button_5ede3",
-  "capsFormCol": "_capsFormCol_5ede3",
-  "capsFormRow": "_capsFormRow_5ede3",
-  "capsBoxFont": "_capsBoxFont_5ede3",
-  "capsValueControl": "_capsValueControl_5ede3",
-  "fileControlWrapper": "_fileControlWrapper_5ede3",
-  "localDesc": "_localDesc_5ede3",
-  "selected": "_selected_5ede3",
-  "capsNameEditorButton": "_capsNameEditorButton_5ede3",
-  "capsEditorControls": "_capsEditorControls_5ede3",
-  "capsEditorButton": "_capsEditorButton_5ede3",
-  "capsEditor": "_capsEditor_5ede3",
-  "capsEditorTitle": "_capsEditorTitle_5ede3",
-  "capsEditorBody": "_capsEditorBody_5ede3",
-  "capsEditorBodyFull": "_capsEditorBodyFull_5ede3",
-  "capsEditorBodyResized": "_capsEditorBodyResized_5ede3",
-  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_5ede3",
-  "advancedSettingsContainer": "_advancedSettingsContainer_5ede3",
-  "add-desired-capability-button": "_add-desired-capability-button_5ede3",
-  "editSession": "_editSession_5ede3",
-  "btnReload": "_btnReload_5ede3",
-  "btnDeleteCap": "_btnDeleteCap_5ede3",
-  "inputDataCenter": "_inputDataCenter_5ede3",
-  "addonDataCenter": "_addonDataCenter_5ede3",
-  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_5ede3"
+  "active-session": "_active-session_46061",
+  "sessionContainer": "_sessionContainer_46061",
+  "cloudProviderModal": "_cloudProviderModal_46061",
+  "sessionFooter": "_sessionFooter_46061",
+  "desiredCapsLink": "_desiredCapsLink_46061",
+  "tabText": "_tabText_46061",
+  "serverTabs": "_serverTabs_46061",
+  "scrollingTabCont": "_scrollingTabCont_46061",
+  "scrollingTab": "_scrollingTab_46061",
+  "savedSessions": "_savedSessions_46061",
+  "newSessionForm": "_newSessionForm_46061",
+  "capsFormattedCol": "_capsFormattedCol_46061",
+  "formattedCaps": "_formattedCaps_46061",
+  "formattedCapsBody": "_formattedCapsBody_46061",
+  "start-session-button": "_start-session-button_46061",
+  "filepath-button": "_filepath-button_46061",
+  "capsFormCol": "_capsFormCol_46061",
+  "capsFormRow": "_capsFormRow_46061",
+  "capsBoxFont": "_capsBoxFont_46061",
+  "capsValueControl": "_capsValueControl_46061",
+  "fileControlWrapper": "_fileControlWrapper_46061",
+  "localDesc": "_localDesc_46061",
+  "selected": "_selected_46061",
+  "capsNameEditorButton": "_capsNameEditorButton_46061",
+  "capsEditorControls": "_capsEditorControls_46061",
+  "capsEditorButton": "_capsEditorButton_46061",
+  "capsEditor": "_capsEditor_46061",
+  "capsEditorTitle": "_capsEditorTitle_46061",
+  "capsEditorBody": "_capsEditorBody_46061",
+  "capsEditorBodyFull": "_capsEditorBodyFull_46061",
+  "capsEditorBodyResized": "_capsEditorBodyResized_46061",
+  "advancedSettingsContainerCol": "_advancedSettingsContainerCol_46061",
+  "advancedSettingsContainer": "_advancedSettingsContainer_46061",
+  "add-desired-capability-button": "_add-desired-capability-button_46061",
+  "editSession": "_editSession_46061",
+  "btnReload": "_btnReload_46061",
+  "btnDeleteCap": "_btnDeleteCap_46061",
+  "inputDataCenter": "_inputDataCenter_46061",
+  "addonDataCenter": "_addonDataCenter_46061",
+  "addonDataCenterRadioContainer": "_addonDataCenterRadioContainer_46061"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Session/ServerTabHeadspin.js":[function(require,module,exports) {
 "use strict";
@@ -7356,7 +7456,7 @@ function newSession(caps, attachSessId = null) {
         https = session.server.browserstack.ssl = parseInt(port, 10) === 443;
         break;
       case ServerTypes.lambdatest:
-        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai/lambdatest';
+        host = session.server.lambdatest.hostname = process.env.LAMBDATEST_HOST || 'apprecord.testing24x7.ai/lambdatest ';
         port = session.server.lambdatest.port = process.env.LAMBDATEST_PORT || 443;
         path = session.server.lambdatest.path = '/wd/hub';
         username = session.server.lambdatest.username || process.env.LAMBDATEST_USERNAME;
@@ -9227,7 +9327,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * boxes of the elements in the app
  */
 const HighlighterRect = props => {
-  console.log("🚀 ~ file: HighlighterRect.js:9 ~ HighlighterRect ~ props:", props);
   const {
     selectedElement = {},
     selectHoveredElement,
@@ -12887,7 +12986,8 @@ var _AntdTypes = require("../AntdTypes");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable require-await */ /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); } /* eslint-disable import/no-unresolved */ /* eslint-disable object-shorthand */ /* eslint-disable require-await */ /* eslint-disable quotes */ /* eslint-disable react-native/no-inline-styles */ /* eslint-disable dot-notation */ /* eslint-disable indent */ /* eslint-disable no-console */ /* eslint-disable no-unused-vars */ // import { Line } from 'react-chartjs-2';
+// import LineChart from 'echarts-for-react';
 const {
   SELECT,
   SWIPE,
@@ -12930,6 +13030,7 @@ function downloadXML(sourceXML) {
 class Inspector extends _react.Component {
   constructor() {
     super();
+    this.getAllGraphData = this.getAllGraphData.bind(this);
     this.didInitialResize = false;
     this.state = {
       scaleRatio: 1,
@@ -12942,7 +13043,18 @@ class Inspector extends _react.Component {
       total_array: [],
       isLongPress: false,
       action: '',
-      mode_orientation: 'PORTRAIT'
+      mode_orientation: 'PORTRAIT',
+      showModal: false,
+      selectedAssertion: '',
+      inputText: '',
+      cpu_graph_data: [],
+      cpu_graph_options: [],
+      memory_graph_data: [],
+      memory_graph_options: [],
+      battery_graph_data: [],
+      battery_graph_options: [],
+      network_graph_data: [],
+      network_graph_options: []
     };
     this.screenAndSourceEl = null;
     this.lastScreenshot = null;
@@ -12950,6 +13062,8 @@ class Inspector extends _react.Component {
     this.updateSourceTreeWidth = (0, _lodash.debounce)(this.updateSourceTreeWidth.bind(this), 50);
     this.updateScaleRatio = (0, _lodash.debounce)(this.updateScaleRatio.bind(this), 500);
     this.mjpegStreamCheckInterval = null;
+    this.handleAssertionClick = this.handleAssertionClick.bind(this);
+    this.handleModalSubmit = this.handleModalSubmit.bind(this);
   }
   /**
    * Calculates the ratio that the image is being scaled by
@@ -13062,7 +13176,7 @@ class Inspector extends _react.Component {
       selectScreenshotInteractionMode,
       clearSwipeAction
     } = this.props;
-    clearSwipeAction(); // When the action changes, reset the swipe action
+    clearSwipeAction();
     selectScreenshotInteractionMode(mode);
     this.setState({
       currentSelection: option
@@ -13105,9 +13219,7 @@ class Inspector extends _react.Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data1)
-    }).then(res =>
-    // Convert the response to JSON
-    res.json()).then(res => {
+    }).then(res => res.json()).then(res => {
       console.log("Response data:", res);
       this.setState({
         total_array: res.steps
@@ -13214,7 +13326,7 @@ class Inspector extends _react.Component {
       methodName: 'getPageSource'
     });
   }
-  async shakeBooty() {
+  async shake() {
     console.log('this is shake shake ittt');
     const {
       driver
@@ -13223,6 +13335,7 @@ class Inspector extends _react.Component {
     console.log("🚀 ~ file: Inspector.js:295 ~ shakeBooty ~ isShake:", isShake);
   }
   async callParticularSteps(data) {
+    console.log('this is the data for the single step', data);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
@@ -13235,6 +13348,82 @@ class Inspector extends _react.Component {
       console.error('API error:', error);
     });
   }
+  async getAllGraphData() {
+    const {
+      driver
+    } = this.props;
+    await driver.client.getCurrentPackage().then(res => {
+      console.log('package name>>>>>>>>>>>>>>>', res);
+      if (res !== '') {
+        driver.client.getPerformanceData(res, "cpuinfo", 5).then(res1 => {
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????', res1);
+          this.setState({
+            cpu_graph_options: res1[0],
+            cpu_graph_data: res1[1]
+          });
+        });
+        driver.client.getPerformanceData(res, "memoryinfo", 5).then(res1 => {
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????', res1);
+          this.setState({
+            memory_graph_options: res1[0],
+            memory_graph_data: res1[1]
+          });
+        });
+        driver.client.getPerformanceData(res, "batteryinfo", 5).then(res1 => {
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????', res1);
+          this.setState({
+            battery_graph_options: res1[0],
+            battery_graph_data: res1[1]
+          });
+        });
+        driver.client.getPerformanceData(res, "networkinfo", 5).then(res1 => {
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????', res1);
+          this.setState({
+            network_graph_options: res1[0],
+            network_graph_data: res1[1]
+          });
+        });
+      }
+    });
+  }
+  async getPerformance(data1) {
+    const {
+      driver
+    } = this.props;
+    await driver.client.getCurrentPackage().then(res => {
+      console.log('package name>>>>>>>>>>>>>>>', res);
+      if (res !== '') {
+        driver.client.getPerformanceData(res, data1, 5).then(res1 => {
+          let reqData = {
+            "session_id": driver.sessionId,
+            "step-name": "performance",
+            "data": res1
+          };
+          console.log('res>>>>>>>>>>>>>>>>>>>>>>>>????????????????', res1);
+          this.setState({
+            graph_options: res1[0],
+            graph_data: res1[1]
+          });
+          fetch('https://apprecord.testing24x7.ai/appAction', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(reqData)
+          }).then(res =>
+          // Convert the response to JSON
+          res.json()).then(res => {
+            console.log('Response data:>>>>>>>>>>>>>>', res);
+          }).catch(error => {
+            console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+          });
+        });
+      }
+      this.setState({
+        package_name: res
+      });
+    });
+  }
   async fetchAllSteps() {
     const {
       driver
@@ -13243,22 +13432,54 @@ class Inspector extends _react.Component {
       'session_id': driver.sessionId,
       'step-name': 'steps'
     };
-    console.log("🚀 ~ file: Inspector.js:378 ~ fetchAllSteps ~ data1:", data1);
     await fetch('https://apprecord.testing24x7.ai/appAction', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data1)
-    }).then(res =>
-    // Convert the response to JSON
-    res.json()).then(res => {
+    }).then(res => res.json()).then(res => {
       console.log('Response data:', res);
       this.setState({
         total_array: res.steps
       });
     }).catch(error => {
       console.log('🚀 ~ file: Inspector.js:901 ~ return ~ error:', error);
+    });
+  }
+  handleAssertionClick(methodName) {
+    this.setState({
+      showModal: true,
+      selectedAssertion: methodName
+    });
+  }
+  async handleModalSubmit() {
+    const {
+      driver,
+      selectedElement,
+      applyClientMethod
+    } = this.props;
+    let data = {
+      'session_id': driver.sessionId,
+      'step-name': 'assertion',
+      'selectedElement': selectedElement,
+      'params': {
+        'methodName': this.state.selectedAssertion,
+        'args': this.state.inputText
+      }
+    };
+    console.log("🚀 ~ file: Inspector.js:448 ~ handleModalSubmit ~ data:", data);
+    await applyClientMethod({
+      methodName: 'getPageSource'
+    });
+    this.callParticularSteps(data);
+    this.fetchAllSteps();
+
+    // Close the modal after submitting
+    this.setState({
+      showModal: false,
+      selectedAssertion: '',
+      inputText: ''
     });
   }
   render() {
@@ -13287,6 +13508,11 @@ class Inspector extends _react.Component {
       isSourceRefreshOn,
       applyClientMethod
     } = this.props;
+    const {
+      showModal,
+      selectedAssertion,
+      inputText
+    } = this.state;
     const {
       path
     } = selectedElement;
@@ -13650,60 +13876,28 @@ class Inspector extends _react.Component {
     }, /*#__PURE__*/_react.default.createElement("span", null, "Expected value")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'text_equal'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('text_equal');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "text equals")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'text_contains'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('text_contains');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "text contains")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'attribute_equals'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('attribute_equals');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
     }, /*#__PURE__*/_react.default.createElement("span", null, "attribute equals")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
       icon: /*#__PURE__*/_react.default.createElement(_icons.CheckCircleOutlined, null),
       onClick: async () => {
-        let data = {
-          'session_id': driver.sessionId,
-          'step-name': 'attribute_contains'
-        };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
-        await applyClientMethod({
-          methodName: 'getPageSource'
-        });
+        this.handleAssertionClick('attribute_contains');
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13712,13 +13906,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_displayed'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_displayed',
+            'args': true
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13727,13 +13926,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_selected'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_selected',
+            'args': true
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13742,13 +13946,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_enabled'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_enabled',
+            'args': true
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13757,13 +13966,18 @@ class Inspector extends _react.Component {
       onClick: async () => {
         let data = {
           'session_id': driver.sessionId,
-          'step-name': 'is_element_disabled'
+          'step-name': 'assertion',
+          'selectedElement': selectedElement,
+          'params': {
+            'methodName': 'is_element_disabled',
+            'args': false
+          }
         };
-        this.callParticularSteps(data);
-        this.fetchAllSteps();
         await applyClientMethod({
           methodName: 'getPageSource'
         });
+        this.callParticularSteps(data);
+        this.fetchAllSteps();
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
@@ -13829,7 +14043,58 @@ class Inspector extends _react.Component {
       },
       disabled: isGestureEditorVisible,
       className: _Inspector.default['user_actions']
-    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App"))))));
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Reset App")))), /*#__PURE__*/_react.default.createElement("div", {
+      onMouseOver: () => this.setActiveIndex(6),
+      onMouseOut: () => this.setActiveIndex(0),
+      style: {
+        textAlign: 'center',
+        padding: '5px',
+        position: 'relative',
+        cursor: 'pointer'
+      },
+      className: this.state.activeCategory === 5 ? _Inspector.default['activeCategory'] : ""
+    }, /*#__PURE__*/_react.default.createElement(_icons.AppstoreAddOutlined, {
+      style: {
+        fontSize: '20px'
+      }
+    }), /*#__PURE__*/_react.default.createElement("div", null, "Performance Matrices"), this.state.activeIndex === 6 && /*#__PURE__*/_react.default.createElement("div", {
+      style: {
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'absolute',
+        zIndex: '999',
+        left: '100%',
+        top: '10%'
+      }
+    }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      onClick: async () => {
+        await this.getPerformance('cpuinfo');
+      },
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Cpu Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      onClick: async () => {
+        await this.getPerformance('memoryinfo');
+      },
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Memory Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      onClick: async () => {
+        await this.getPerformance('batteryinfo');
+      },
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Battery Performance")), /*#__PURE__*/_react.default.createElement(_antd.Button, {
+      icon: /*#__PURE__*/_react.default.createElement(_icons.AimOutlined, null),
+      onClick: async () => {
+        await this.getPerformance('networkinfo');
+      },
+      disabled: isGestureEditorVisible,
+      className: _Inspector.default['user_actions']
+    }, " ", /*#__PURE__*/_react.default.createElement("span", null, "Network Performance"))))));
     let sideMenu = /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, this.state.activeCategory === 1 && this.state.showPane && /*#__PURE__*/_react.default.createElement("div", {
       className: _Inspector.default['custom_category']
     }, /*#__PURE__*/_react.default.createElement(_antd.Button, {
@@ -14322,12 +14587,75 @@ class Inspector extends _react.Component {
           }
         }, item['search_by_value'])))))))
       }, {
+<<<<<<< HEAD
         label: t('Performance Matrics'),
+=======
+        label: /*#__PURE__*/_react.default.createElement("div", {
+          onClick: this.getAllGraphData
+        }, t('Performance matrices')),
+>>>>>>> 552126c6bb41d500b312be80f5377ac79d3534bf
         key: _shared.INTERACTION_MODE.COMMANDS,
-        children: /*#__PURE__*/_react.default.createElement(_antd.Card, {
-          title: /*#__PURE__*/_react.default.createElement("span", null, /*#__PURE__*/_react.default.createElement(_icons.ThunderboltOutlined, null), " ", t('Execute Commands')),
-          className: _Inspector.default['interaction-tab-card']
-        }, /*#__PURE__*/_react.default.createElement(_Commands.default, this.props))
+        children: /*#__PURE__*/_react.default.createElement("div", {
+          style: {
+            overflowY: 'auto'
+          }
+        }, /*#__PURE__*/_react.default.createElement("h2", null, "Performance Graph"), this.state.cpu_graph_data.length > 0 && this.state.memory_graph_data.length > 0 && this.state.battery_graph_data.length > 0 && this.state.network_graph_data.length > 0 ? /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Cpu Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+          option: {
+            xAxis: {
+              type: 'category',
+              data: this.state.cpu_graph_options
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [{
+              data: this.state.cpu_graph_data,
+              type: 'line'
+            }]
+          }
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Memory Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+          option: {
+            xAxis: {
+              type: 'category',
+              data: this.state.memory_graph_options
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [{
+              data: this.state.memory_graph_data,
+              type: 'line'
+            }]
+          }
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Battery Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+          option: {
+            xAxis: {
+              type: 'category',
+              data: this.state.battery_graph_options
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [{
+              data: this.state.battery_graph_data,
+              type: 'line'
+            }]
+          }
+        })), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, " Network Performance"), /*#__PURE__*/_react.default.createElement(LineChart, {
+          option: {
+            xAxis: {
+              type: 'category',
+              data: this.state.network_graph_options
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [{
+              data: this.state.network_graph_data,
+              type: 'line'
+            }]
+          }
+        }))) : /*#__PURE__*/_react.default.createElement("div", null, "No data found"))
       }, {
         label: t('Screenshots'),
         key: _shared.INTERACTION_MODE.GESTURES,
@@ -14371,7 +14699,19 @@ class Inspector extends _react.Component {
       open: !!visibleCommandResult,
       onOk: () => setVisibleCommandResult(null),
       onCancel: () => setVisibleCommandResult(null)
-    }, /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("code", null, visibleCommandResult))));
+    }, /*#__PURE__*/_react.default.createElement("pre", null, /*#__PURE__*/_react.default.createElement("code", null, visibleCommandResult))), /*#__PURE__*/_react.default.createElement(_antd.Modal, {
+      title: 'Enter arguments for ',
+      open: showModal,
+      onOk: this.handleModalSubmit,
+      onCancel: () => this.setState({
+        showModal: false
+      })
+    }, /*#__PURE__*/_react.default.createElement(_antd.Input, {
+      value: inputText,
+      onChange: e => this.setState({
+        inputText: e.target.value
+      })
+    })));
   }
 }
 exports.default = Inspector;
@@ -14399,9 +14739,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "container": "_container_70832",
-  "loader": "_loader_70832",
-  "load1": "_load1_70832"
+  "container": "_container_afc3f",
+  "loader": "_loader_afc3f",
+  "load1": "_load1_afc3f"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/Spinner/Spinner.js":[function(require,module,exports) {
 "use strict";
@@ -14487,8 +14827,8 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "errorMessage": "_errorMessage_8d2a9",
-  "copyTraceBtn": "_copyTraceBtn_8d2a9"
+  "errorMessage": "_errorMessage_e36f2",
+  "copyTraceBtn": "_copyTraceBtn_e36f2"
 };
 },{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/ErrorBoundary/ErrorMessage.js":[function(require,module,exports) {
 "use strict";
