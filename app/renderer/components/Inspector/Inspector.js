@@ -26,6 +26,7 @@ import { clipboard } from '../../polyfills';
 import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 // import { Line } from 'react-chartjs-2';
+import Chart from 'react-google-charts';
 import LineChart from 'echarts-for-react';
 import {
   SelectOutlined,
@@ -1755,36 +1756,66 @@ export default class Inspector extends Component {
                       />
                     </div>
 
-                    <div>
-                      <h4> Network Performance</h4>
-                      <LineChart
-                        option={{
-                          xAxis: {
-                            type: 'category',
-                            data: this.state.network_graph_options,
-                          },
-                          yAxis: {
-                            type: 'value',
-                          },
-                          series: [
-                            {
-                              data: this.state.network_graph_data,
-                              type: 'line',
-                            },
-                          ],
-                        }}
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <div>No data found</div>
-                )
-                }
-              </div>
-            ),
-          },
-          {
-            label: t('screenshot'), key: INTERACTION_MODE.GESTURES, children:
+          <div>
+          <h4> Network Performance</h4>
+          <LineChart
+            option={{
+              xAxis: {
+                type: 'category',
+                data: this.state.network_graph_options,
+              },
+              yAxis: {
+                type: 'value',
+              },
+              series: [
+                {
+                  data: this.state.network_graph_data,
+                  type: 'line',
+                },
+              ],
+            }}
+          />
+
+        {/* <Chart
+          width={'700px'}
+          height={'410px'}
+          chartType="LineChart"
+          loader={<div>Loading Chart</div>}
+          data = {[
+            ['x', 'dogs', 'cats'],
+            [0, 0, 0],
+            [1, 10, 5],
+            [2, 23, 15],
+            [3, 17, 9],
+            [4, 18, 10],
+            [5, 9, 5],
+            [6, 11, 3],
+            [7, 27, 19],
+          ]}
+          options={{
+            hAxis: {
+              title: 'Time',
+            },
+            vAxis: {
+              title: 'Popularity',
+            },
+            series: {
+              1: { curveType: 'function' },
+            },
+          }}
+          rootProps={{ 'data-testid': '2' }}
+        /> */}
+          </div>
+        </div>
+      ) : (
+        <div>Loading...</div>
+      )
+      }
+    </div>
+  ),
+},
+ {
+            label: t('Gestures'), key: INTERACTION_MODE.GESTURES, children:
               isGestureEditorVisible ?
                 <Card
                   title={<span><HighlightOutlined /> {t('Gesture Builder')}</span>}
